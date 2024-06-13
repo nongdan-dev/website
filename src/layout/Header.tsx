@@ -3,7 +3,9 @@ import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-const SCROLL_THRESHOLD = 200
+import { Button } from '@/components'
+
+const SCROLL_THRESHOLD = 100
 
 function Header() {
   const [showBorder, setShowBorder] = useState(false)
@@ -36,7 +38,7 @@ function Header() {
             <li>
               <Link
                 to='/services'
-                className='flex h-full items-center px-5 font-medium transition-colors hover:text-indigo-500'
+                className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
               >
                 Services
               </Link>
@@ -44,7 +46,7 @@ function Header() {
             <li>
               <Link
                 to='/work'
-                className='flex h-full items-center px-5 font-medium transition-colors hover:text-indigo-500'
+                className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
               >
                 Work
               </Link>
@@ -52,19 +54,16 @@ function Header() {
             <li>
               <Link
                 to='/about-us'
-                className='flex h-full items-center px-5 font-medium transition-colors hover:text-indigo-500'
+                className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
               >
                 About us
               </Link>
             </li>
             <li>
               <span className='flex h-full items-center pl-5'>
-                <Link
-                  to='/contact'
-                  className='block rounded-md bg-indigo-500 px-6 py-2 font-medium text-white'
-                >
-                  Build with us
-                </Link>
+                <Button asChild>
+                  <Link to='/contact'>Build with us</Link>
+                </Button>
               </span>
             </li>
           </ul>

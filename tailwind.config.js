@@ -6,10 +6,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        body: '#282828',
+        body: '#23232e',
       },
       fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
         1440: 1440,
