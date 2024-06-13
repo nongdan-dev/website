@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
+      maxWidth: {
+        1440: 1440,
+      },
     },
   },
   plugins: [],
