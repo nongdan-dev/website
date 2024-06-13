@@ -1,13 +1,16 @@
 import { Outlet } from 'react-router-dom'
 
+import { SkipToMainContent } from '@/components'
+
 import Footer from './Footer'
 import Header from './Header'
 
 function Layout() {
   return (
     <div className='relative flex min-h-dvh flex-col bg-white text-body'>
+      <SkipToMainContent />
       <Header />
-      <main className='mt-20 flex-1'>
+      <main id='main-content' className='flex-1 pt-20'>
         <Outlet />
       </main>
       <Footer />
