@@ -11,9 +11,6 @@ export default {
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
-      maxWidth: {
-        1440: 1440,
-      },
     },
   },
   plugins: [],

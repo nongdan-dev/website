@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { Button } from '@/components'
 
-const SCROLL_THRESHOLD = 100
+const SCROLL_THRESHOLD = 80
 
 function Header() {
   const [showBorder, setShowBorder] = useState(false)
@@ -29,45 +29,47 @@ function Header() {
         showBorder ? 'border-gray-300' : 'border-transparent',
       )}
     >
-      <div className='mx-auto flex h-full max-w-1440 flex-row justify-between px-4'>
-        <Link to='/' className='self-center'>
-          Logo
-        </Link>
-        <nav aria-label='main'>
-          <ul className='flex h-full flex-row'>
-            <li>
-              <Link
-                to='/services'
-                className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to='/work'
-                className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
-              >
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link
-                to='/about-us'
-                className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
-              >
-                About us
-              </Link>
-            </li>
-            <li>
-              <span className='flex h-full items-center pl-5'>
-                <Button asChild>
-                  <Link to='/contact'>Build with us</Link>
-                </Button>
-              </span>
-            </li>
-          </ul>
-        </nav>
+      <div className='grid-container h-full'>
+        <div className='col-content flex flex-row justify-between'>
+          <Link to='/' className='self-center'>
+            Logo
+          </Link>
+          <nav aria-label='main'>
+            <ul className='flex h-full flex-row'>
+              <li>
+                <Link
+                  to='/services'
+                  className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/work'
+                  className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
+                >
+                  Work
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/about-us'
+                  className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <span className='flex h-full items-center pl-5'>
+                  <Button asChild>
+                    <Link to='/contact'>Build with us</Link>
+                  </Button>
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   )
