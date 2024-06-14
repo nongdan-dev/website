@@ -13,12 +13,12 @@
     [content-end] minmax(var(--gap-x), 1fr) [full-width-end];
 }
 
-.grid-container .col-full-width {
-  grid-column: full-width !important;
-  display: grid;
-  grid-template-columns: subgrid;
-}
-
 .grid-container .col-content {
   grid-column: content;
+}
+
+.grid-container .col-full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: subgrid;
 }

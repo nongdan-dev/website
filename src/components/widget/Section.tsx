@@ -17,7 +17,7 @@ export function Section({ title, subtitle, children, ...props }: SectionProps) {
     <section
       {...props}
       aria-labelledby={titleId}
-      className={twMerge('col-content py-16', props.className)}
+      className={twMerge('col-content py-20', props.className)}
     >
       {!!subtitle && (
         <span
