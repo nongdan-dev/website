@@ -5,7 +5,7 @@ import { Button, LineBreak } from '@/components'
 
 function Hero() {
   return (
-    <div className='py-28'>
+    <div className='col-content py-24'>
       <h1 className='text-balance text-5xl font-semibold leading-snug'>
         Empower Innovation <LineBreak /> with Software Craftsmanship
       </h1>

@@ -1,5 +1,9 @@
 function Footer() {
-  return <footer className='col-content row-footer'>footer</footer>
+  return (
+    <footer className='grid-container'>
+      <div className='col-content py-16'>footer</div>
+    </footer>
+  )
 }
 
 export default Footer

@@ -7,10 +7,10 @@ import Header from './Header'
 
 function Layout() {
   return (
-    <div className='grid-container relative min-h-dvh bg-white text-body'>
+    <div className='relative min-h-dvh bg-white text-body'>
       <SkipToMainContent />
       <Header />
-      <main id='main-content' className='col-content row-main pt-20'>
+      <main id='main-content' className='grid-container pt-20'>
         <Outlet />
       </main>
       <Footer />

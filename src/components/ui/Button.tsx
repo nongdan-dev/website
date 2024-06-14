@@ -16,7 +16,7 @@ export type ButtonProps = ComponentProps<'button'> & {
 }
 
 const baseClasses =
-  'inline-grid grid-flow-col place-items-center gap-3 font-medium transition-colors active:translate-y-px focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50'
+  'inline-grid grid-flow-col place-items-center gap-3 font-medium transition-colors active:translate-y-px disabled:pointer-events-none disabled:opacity-50'
 
 const impactClasses: Record<Tone, Record<Impact, string>> = {
   primary: {

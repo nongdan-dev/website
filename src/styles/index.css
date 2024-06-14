@@ -11,23 +11,14 @@
     [full-width-start] minmax(var(--gap-x), 1fr)
     [content-start] min(100% - (var(--gap-x) * 2), var(--content-max-width))
     [content-end] minmax(var(--gap-x), 1fr) [full-width-end];
-  grid-template-rows: [main-start] 1fr [main-end footer-start] auto [footer-end];
 }
 
 .grid-container .col-full-width {
-  grid-column: full-width;
+  grid-column: full-width !important;
   display: grid;
   grid-template-columns: subgrid;
 }
 
 .grid-container .col-content {
   grid-column: content;
-}
-
-.grid-container .row-main {
-  grid-row: main;
-}
-
-.grid-container .row-footer {
-  grid-row: footer;
 }
