@@ -7,17 +7,13 @@ function Hero() {
   return (
     <div className='col-content py-24'>
       <h1 className='text-balance text-5xl font-semibold leading-snug'>
-        Empower Innovation <LineBreak /> with Software Craftsmanship
+        Practical <LineBreak /> Software Development
       </h1>
       <p className='mt-6 text-balance text-lg'>
-        Our agile team of craftsmen has worked with companies varied in size
-        <LineBreak />
-        from startups to corporates, to build world-class quality products and
-        <LineBreak />
-        lead the road to success, since 2013.
+        Through dedication and endurance effort, we have been delivering <LineBreak /> production-grade software solutions to companies and startups around the world.
       </p>
       <Button className='mt-8' asChild>
-        <Link to='/contact'>Let's talk</Link>
+        <Link to='/projects'>View our projects</Link>
       </Button>
       <Swiper spaceBetween={40} className='mt-20' tag='ul' slidesPerView={3.2}>
         <SwiperSlide tag='li'>

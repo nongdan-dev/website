@@ -109,7 +109,7 @@ function Home() {
               We'd love to work with you.
             </h2>
             <p className='mt-3'>
-              Drop us a message if you need any helps from the Dwarves
+              Drop us a message if you need any help
             </p>
             <Button asChild className='mt-8'>
               <Link to='/contact'>Let's build with us</Link>

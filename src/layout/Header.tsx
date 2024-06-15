@@ -63,7 +63,7 @@ function Header() {
               <li>
                 <span className='flex h-full items-center pl-5'>
                   <Button asChild>
-                    <Link to='/contact'>Build with us</Link>
+                    <Link to='/contact'>Contact us</Link>
                   </Button>
                 </span>
               </li>
