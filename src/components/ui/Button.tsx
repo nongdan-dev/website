@@ -38,7 +38,7 @@ const impactClasses: Record<Tone, Record<Impact, string>> = {
 
 const sizeClasses: Record<Size, string> = {
   small: 'px-3 py-1 text-sm',
-  medium: 'px-5 py-2 text-base',
+  medium: 'px-5 py-3 text-base',
   large: 'px-7 py-2.5 text-lg',
 }
 

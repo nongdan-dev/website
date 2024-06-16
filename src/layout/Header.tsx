@@ -1,9 +1,8 @@
 import { throttle } from 'lodash'
 import { useCallback, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-import { Button } from '@/components'
+import { Button, Link } from '@/components'
 
 const SCROLL_THRESHOLD = 80
 
@@ -37,33 +36,26 @@ function Header() {
           <nav aria-label='main'>
             <ul className='flex h-full flex-row'>
               <li>
-                <Link
-                  to='/services'
-                  className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
-                >
+                <Link to='/services' className='flex h-full items-center px-5'>
                   Services
                 </Link>
               </li>
               <li>
-                <Link
-                  to='/work'
-                  className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
-                >
+                <Link to='/work' className='flex h-full items-center px-5'>
                   Work
                 </Link>
               </li>
               <li>
-                <Link
-                  to='/about-us'
-                  className='flex h-full items-center px-5 transition-colors hover:text-indigo-500'
-                >
+                <Link to='/about-us' className='flex h-full items-center px-5'>
                   About us
                 </Link>
               </li>
               <li>
                 <span className='flex h-full items-center pl-5'>
                   <Button asChild>
-                    <Link to='/contact'>Contact us</Link>
+                    <Link to='/contact' defaultStyle>
+                      Contact us
+                    </Link>
                   </Button>
                 </span>
               </li>

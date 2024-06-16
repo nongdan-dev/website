@@ -81,7 +81,7 @@ function Home() {
               <h3 className='text-2xl font-medium'>
                 Empower startups through design solutions
               </h3>
-              <p className='mt-4'>
+              <p className='mt-5'>
                 Emphasize your business solution through Design Thinking - our
                 approach to create strategic and people-centric design
                 solutions. Together we collaborate to build experiences that
@@ -108,9 +108,7 @@ function Home() {
             <h2 id={titleId} className='text-3xl font-semibold leading-snug'>
               We'd love to work with you.
             </h2>
-            <p className='mt-3'>
-              Drop us a message if you need any help
-            </p>
+            <p className='mt-3'>Drop us a message if you need any help</p>
             <Button asChild className='mt-8'>
               <Link to='/contact'>Let's build with us</Link>
             </Button>
