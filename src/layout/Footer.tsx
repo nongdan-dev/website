@@ -56,8 +56,99 @@ function Footer() {
                 Thanh My Ward, Thu Duc city, HCMC, Viet Nam
               </a>
             </div>
+            <ul className='ml-7 mt-4 flex flex-row gap-4 text-lg text-gray-400'>
+              <li>
+                <a href='http://google.com'>
+                  <FaFacebook />
+                </a>
+              </li>
+              <li>
+                <a href='http://google.com'>
+                  <FaLinkedin />
+                </a>
+              </li>
+              <li>
+                <a href='http://google.com'>
+                  <FaTwitter />
+                </a>
+              </li>
+              <li>
+                <a href='http://google.com'>
+                  <FaGithub />
+                </a>
+              </li>
+              <li>
+                <a href='http://google.com'>
+                  <FaSlack />
+                </a>
+              </li>
+            </ul>
           </address>
           <div className='grid grid-cols-2 gap-16 lg:w-2/3 lg:grid-cols-3'>
+            <nav aria-label='Services'>
+              <span aria-hidden='true' className='font-semibold'>
+                Services
+              </span>
+              <ul className='mt-3'>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Web Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Mobile Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Tooling Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    API Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Strategy & Architecture
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Managed Services
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <nav aria-label='Design'>
+              <span aria-hidden='true' className='font-semibold'>
+                Design
+              </span>
+              <ul className='mt-3'>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    User Research
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    User Interface
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Experience Design
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/' className='inline-block py-1'>
+                    Digital Product Design
+                  </Link>
+                </li>
+              </ul>
+            </nav>
             <nav aria-label='About us'>
               <span aria-hidden='true' className='font-semibold'>
                 About us
@@ -85,63 +176,6 @@ function Footer() {
                 </li>
               </ul>
             </nav>
-            <nav aria-label='Services'>
-              <span aria-hidden='true' className='font-semibold'>
-                Services
-              </span>
-              <ul className='mt-3'>
-                <li>
-                  <Link to='/' className='inline-block py-1'>
-                    Consulting and Research
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/' className='inline-block py-1'>
-                    Product Design and Prototype
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/' className='inline-block py-1'>
-                    Minimal Product Development
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/' className='inline-block py-1'>
-                    Offshore Center
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-            <div>
-              <p className='font-semibold'>Follow us</p>
-              <ul className='mt-4 flex flex-row gap-4 text-lg'>
-                <li>
-                  <a href='http://google.com'>
-                    <FaFacebook />
-                  </a>
-                </li>
-                <li>
-                  <a href='http://google.com'>
-                    <FaLinkedin />
-                  </a>
-                </li>
-                <li>
-                  <a href='http://google.com'>
-                    <FaTwitter />
-                  </a>
-                </li>
-                <li>
-                  <a href='http://google.com'>
-                    <FaGithub />
-                  </a>
-                </li>
-                <li>
-                  <a href='http://google.com'>
-                    <FaSlack />
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         <hr aria-hidden='true' className='mt-10 border-b border-gray-200' />
@@ -154,3 +188,36 @@ function Footer() {
 }
 
 export default Footer
+
+{
+  /* <div>
+<p className='font-semibold'>Follow us</p>
+<ul className='mt-4 flex flex-row gap-4 text-lg'>
+  <li>
+    <a href='http://google.com'>
+      <FaFacebook />
+    </a>
+  </li>
+  <li>
+    <a href='http://google.com'>
+      <FaLinkedin />
+    </a>
+  </li>
+  <li>
+    <a href='http://google.com'>
+      <FaTwitter />
+    </a>
+  </li>
+  <li>
+    <a href='http://google.com'>
+      <FaGithub />
+    </a>
+  </li>
+  <li>
+    <a href='http://google.com'>
+      <FaSlack />
+    </a>
+  </li>
+</ul>
+</div> */
+}
