@@ -56,7 +56,7 @@ function Footer() {
                 Thanh My Ward, Thu Duc city, HCMC, Viet Nam
               </a>
             </div>
-            <ul className='ml-7 mt-4 flex flex-row gap-4 text-lg text-gray-400'>
+            <ul className='ml-7 mt-4 flex flex-row gap-4 text-gray-400'>
               <li>
                 <a href='http://google.com'>
                   <FaFacebook />
@@ -85,9 +85,9 @@ function Footer() {
             </ul>
           </address>
           <div className='grid grid-cols-2 gap-16 lg:w-2/3 lg:grid-cols-3'>
-            <nav aria-label='Services'>
+            <nav aria-label='Development'>
               <span aria-hidden='true' className='font-semibold'>
-                Services
+                Development
               </span>
               <ul className='mt-3'>
                 <li>
