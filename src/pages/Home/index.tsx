@@ -30,7 +30,7 @@ function Home() {
             foundation.
           </p>
         </div>
-        <ul className='mt-16 grid grid-cols-4 gap-10'>
+        <ul className='mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4'>
           {Array.from({ length: 4 }).map((_, idx) => (
             <li
               key={idx}
@@ -71,7 +71,7 @@ function Home() {
           products, we take care of the whole product cycle so you can truly
           focus on the business.
         </p>
-        <ul className='mt-16 grid grid-cols-2 gap-10'>
+        <ul className='mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2'>
           {Array.from({ length: 4 }).map((_, idx) => (
             <li
               key={idx}

@@ -15,8 +15,8 @@ function Footer() {
   return (
     <footer className='grid-container mt-20'>
       <div className='col-content'>
-        <div className='flex gap-16'>
-          <address className='flex w-1/3 flex-col gap-y-1.5 not-italic'>
+        <div className='flex flex-col gap-16 lg:flex-row'>
+          <address className='order-1 flex flex-col gap-y-1.5 not-italic lg:order-none lg:w-1/3'>
             <div className='flex items-center gap-3'>
               <BiSolidPhoneCall
                 aria-hidden='true'
@@ -57,7 +57,7 @@ function Footer() {
               </a>
             </div>
           </address>
-          <div className='grid w-2/3 grid-cols-3 gap-16'>
+          <div className='grid grid-cols-2 gap-16 lg:w-2/3 lg:grid-cols-3'>
             <nav aria-label='About us'>
               <span aria-hidden='true' className='font-semibold'>
                 About us

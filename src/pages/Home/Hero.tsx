@@ -18,7 +18,17 @@ function Hero() {
           View our projects
         </Link>
       </Button>
-      <Swiper spaceBetween={40} className='mt-20' tag='ul' slidesPerView={3.2}>
+      <Swiper
+        spaceBetween={40}
+        className='mt-20'
+        tag='ul'
+        slidesPerView={1.2}
+        breakpoints={{
+          640: { slidesPerView: 1.5 },
+          950: { slidesPerView: 2.1 },
+          1300: { slidesPerView: 3.2 },
+        }}
+      >
         <SwiperSlide tag='li'>
           <img
             src='https://placehold.co/420x320'

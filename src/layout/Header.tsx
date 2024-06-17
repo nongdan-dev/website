@@ -1,5 +1,6 @@
 import { throttle } from 'lodash'
 import { useCallback, useEffect, useState } from 'react'
+import { RxHamburgerMenu } from 'react-icons/rx'
 import { twMerge } from 'tailwind-merge'
 
 import { Button, Link } from '@/components'
@@ -33,7 +34,7 @@ function Header() {
           <Link to='/' className='self-center'>
             Logo
           </Link>
-          <nav aria-label='main'>
+          <nav aria-label='main' className='hidden lg:block'>
             <ul className='flex h-full flex-row'>
               <li>
                 <Link to='/services' className='flex h-full items-center px-5'>
@@ -61,6 +62,13 @@ function Header() {
               </li>
             </ul>
           </nav>
+          <button
+            className='px-5 py-3'
+            aria-label='toggle mobile menu'
+            aria-expanded='false'
+          >
+            <RxHamburgerMenu className='text-3xl' />
+          </button>
         </div>
       </div>
     </header>
