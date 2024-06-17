@@ -188,36 +188,3 @@ function Footer() {
 }
 
 export default Footer
-
-{
-  /* <div>
-<p className='font-semibold'>Follow us</p>
-<ul className='mt-4 flex flex-row gap-4 text-lg'>
-  <li>
-    <a href='http://google.com'>
-      <FaFacebook />
-    </a>
-  </li>
-  <li>
-    <a href='http://google.com'>
-      <FaLinkedin />
-    </a>
-  </li>
-  <li>
-    <a href='http://google.com'>
-      <FaTwitter />
-    </a>
-  </li>
-  <li>
-    <a href='http://google.com'>
-      <FaGithub />
-    </a>
-  </li>
-  <li>
-    <a href='http://google.com'>
-      <FaSlack />
-    </a>
-  </li>
-</ul>
-</div> */
-}
