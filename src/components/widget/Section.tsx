@@ -28,7 +28,10 @@ export function Section({ title, subtitle, children, ...props }: SectionProps) {
         </span>
       )}
       {!!title && (
-        <h2 id={titleId} className='mb-8 text-5xl font-semibold leading-snug'>
+        <h2
+          id={titleId}
+          className='mb-8 text-balance text-4xl font-semibold leading-snug sm:text-5xl sm:leading-snug'
+        >
           {title}
         </h2>
       )}

@@ -34,9 +34,9 @@ function Home() {
           {Array.from({ length: 4 }).map((_, idx) => (
             <li
               key={idx}
-              className='flex h-52 flex-col justify-between rounded-md bg-gray-200/80 p-8'
+              className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'
             >
-              <IoCodeSlashOutline className='text-4xl text-gray-500' />
+              <IoCodeSlashOutline className='mb-8 text-4xl text-gray-500' />
               <h3 className='text-balance text-xl font-medium'>
                 Pride in well-crafted products
               </h3>
@@ -71,11 +71,11 @@ function Home() {
           products, we take care of the whole product cycle so you can truly
           focus on the business.
         </p>
-        <ul className='mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2'>
+        <ul className='mt-16 grid grid-cols-1 gap-10 md:grid-cols-2'>
           {Array.from({ length: 4 }).map((_, idx) => (
             <li
               key={idx}
-              className='min-h-80 rounded-md border border-gray-300 p-10 pr-40'
+              className='rounded-md border border-gray-300 p-10 xl:pr-40'
             >
               <h4 className='mb-2 text-sm uppercase text-indigo-500'>design</h4>
               <h3 className='text-2xl font-medium'>
@@ -105,7 +105,10 @@ function Home() {
       <Section className='col-full-width bg-gray-50'>
         {titleId => (
           <div className='col-content text-center'>
-            <h2 id={titleId} className='text-3xl font-semibold leading-snug'>
+            <h2
+              id={titleId}
+              className='text-balance text-3xl font-semibold leading-snug'
+            >
               We'd love to work with you.
             </h2>
             <p className='mt-3'>Drop us a message if you need any help</p>

@@ -5,8 +5,8 @@ import { Button, LineBreak, Link } from '@/components'
 function Hero() {
   return (
     <div className='col-content py-24'>
-      <h1 className='text-balance text-5xl font-semibold leading-snug'>
-        Practical <LineBreak /> Software Development
+      <h1 className='text-balance text-4xl font-semibold leading-snug sm:text-5xl sm:leading-snug'>
+        Practical <LineBreak className='md:inline' /> Software Development
       </h1>
       <p className='mt-6 text-balance text-lg'>
         Through dedication and endurance effort, we have been delivering{' '}
@@ -19,14 +19,14 @@ function Hero() {
         </Link>
       </Button>
       <Swiper
-        spaceBetween={40}
+        spaceBetween={20}
         className='mt-20'
         tag='ul'
-        slidesPerView={1.2}
+        slidesPerView={1.1}
         breakpoints={{
           640: { slidesPerView: 1.5 },
           950: { slidesPerView: 2.1 },
-          1300: { slidesPerView: 3.2 },
+          1300: { slidesPerView: 3.1 },
         }}
       >
         <SwiperSlide tag='li'>
