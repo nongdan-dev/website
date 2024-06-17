@@ -63,7 +63,7 @@ function Header() {
             </ul>
           </nav>
           <button
-            className='px-5 py-3'
+            className='px-5 py-3 lg:hidden'
             aria-label='toggle mobile menu'
             aria-expanded='false'
           >
