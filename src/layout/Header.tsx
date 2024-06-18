@@ -33,8 +33,12 @@ function Header() {
     >
       <div className='grid-container h-full'>
         <div className='col-content flex flex-row items-center justify-between'>
-          <Link to='/' className='self-center'>
-            <img className='w-36' src={logo} alt='nongdan.dev homepage' />
+          <Link
+            to='/'
+            className='self-center'
+            aria-label='nongdan.dev homepage'
+          >
+            <img className='w-36' src={logo} alt='' aria-hidden='true' />
           </Link>
           <nav aria-label='main' className='hidden lg:block'>
             <ul className='flex h-full flex-row'>
@@ -70,7 +74,12 @@ function Header() {
             aria-expanded={showMenu}
             onClick={() => setShowMenu(prev => !prev)}
           >
-            <svg viewBox='0 0 100 100' width={40} className='fill-body'>
+            <svg
+              viewBox='0 0 100 100'
+              width={40}
+              className='fill-body'
+              aria-hidden='true'
+            >
               <rect
                 width='80'
                 height='8'
