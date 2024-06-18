@@ -92,7 +92,7 @@ function Home() {
         </ul>
         <div className='mt-10'>
           <Link
-            to='/'
+            to='/projects'
             className='inline-flex items-center gap-2 font-semibold text-indigo-500'
           >
             Explore our work <FaArrowRightLong />

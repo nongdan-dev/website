@@ -44,7 +44,7 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link to='/work' className='flex h-full items-center px-5'>
+                <Link to='/projects' className='flex h-full items-center px-5'>
                   Work
                 </Link>
               </li>
