@@ -4,6 +4,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { twMerge } from 'tailwind-merge'
 
 import { Button, Link } from '@/components'
+import logo from '../assets/logo.svg'
 
 const SCROLL_THRESHOLD = 80
 
@@ -32,7 +33,7 @@ function Header() {
       <div className='grid-container h-full'>
         <div className='col-content flex flex-row justify-between'>
           <Link to='/' className='self-center'>
-            Logo
+            <img width="200" src={logo} />
           </Link>
           <nav aria-label='main' className='hidden lg:block'>
             <ul className='flex h-full flex-row'>
