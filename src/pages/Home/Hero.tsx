@@ -9,7 +9,7 @@ function Hero() {
         Practical <LineBreak className='md:inline' /> Software Development
       </h1>
       <p className='mt-6 text-balance text-lg'>
-        Through dedication and endurance effort, we have been delivering{' '}
+        Through a dedicated & persistent effort, we have been delivering{' '}
         <LineBreak /> production-grade software solutions to companies and
         startups around the world.
       </p>
