@@ -2,7 +2,7 @@ import { throttle } from 'lodash'
 import { useCallback, useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { Button, Link } from '@/components'
+import { Button, Link, SkipToMainContent } from '@/components'
 
 import logo from '../assets/logo.svg'
 
@@ -17,6 +17,14 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.removeAttribute('style')
+    }
+  }, [showMenu])
+
   const handleScroll = useCallback(
     throttle(() => {
       setShowBorder(window.scrollY >= SCROLL_THRESHOLD)
@@ -25,13 +33,14 @@ function Header() {
   )
 
   return (
-    <header
-      className={twMerge(
-        'fixed inset-x-0 top-0 z-10 h-20 border-b bg-white transition-colors',
-        showBorder ? 'border-gray-300' : 'border-transparent',
-      )}
-    >
-      <div className='grid-container h-full'>
+    <header className='fixed inset-x-0 top-0 z-10'>
+      <SkipToMainContent />
+      <div
+        className={twMerge(
+          'grid-container relative h-20 border-b bg-white transition-colors',
+          showBorder ? 'border-gray-300' : 'border-transparent',
+        )}
+      >
         <div className='col-content flex flex-row items-center justify-between'>
           <Link
             to='/'
@@ -117,6 +126,15 @@ function Header() {
             </svg>
           </button>
         </div>
+      </div>
+      <div
+        aria-hidden={!showMenu}
+        className={twMerge(
+          'fixed inset-x-0 inset-y-0 top-20 z-10 bg-white transition-all duration-200 lg:hidden',
+          !showMenu ? 'translate-x-full' : 'translate-x-0',
+        )}
+      >
+        hi
       </div>
     </header>
   )
