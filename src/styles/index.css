@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .grid-container {
-  --gap-x: 1rem;
+  --gap-x: 1.2rem;
   --content-max-width: 90rem;
 
   display: grid;

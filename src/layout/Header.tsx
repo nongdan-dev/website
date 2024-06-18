@@ -69,7 +69,7 @@ function Header() {
             </ul>
           </nav>
           <button
-            className='bg-red-500 px-5 py-3 lg:hidden'
+            className='px-5 py-3 pr-0 lg:hidden'
             aria-label='toggle mobile menu'
             aria-expanded={showMenu}
             onClick={() => setShowMenu(prev => !prev)}
