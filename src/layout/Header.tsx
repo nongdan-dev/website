@@ -130,7 +130,7 @@ function Header() {
         </div>
       </header>
       <Portal>
-        <MobileMenu visible={showMenu} />
+        <MobileMenu visible={showMenu} onClose={() => setShowMenu(false)} />
       </Portal>
     </Fragment>
   )

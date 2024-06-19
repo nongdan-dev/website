@@ -5,14 +5,26 @@ import useLockScroll from '@/hooks/useLockScroll'
 
 export type MobileMenuProps = {
   visible: boolean
+  onClose: () => void
 }
 
-export function MobileMenu({ visible }: MobileMenuProps) {
+export function MobileMenu({ visible, onClose }: MobileMenuProps) {
   const lockScroll = useLockScroll()
 
   useEffect(() => {
     lockScroll[visible ? 'on' : 'off']()
   }, [visible])
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onClose()
+    }
+  }
 
   return (
     <div
