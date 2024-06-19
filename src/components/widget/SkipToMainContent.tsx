@@ -11,7 +11,7 @@ export function SkipToMainContent() {
   return (
     <button
       type='button'
-      className='absolute left-2 top-2 z-20 -translate-y-[120%] bg-white p-4 text-lg underline transition-transform focus-visible:translate-y-0'
+      className='fixed left-2 top-2 z-20 -translate-y-[120%] bg-white p-4 text-lg underline transition-transform focus-visible:translate-y-0'
       onClick={handleClick}
     >
       Skip to main content
