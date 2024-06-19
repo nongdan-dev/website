@@ -1,10 +1,21 @@
+import { useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
+
+import useLockScroll from '@/hooks/useLockScroll'
 
 export type MobileMenuProps = {
   visible: boolean
 }
 
 export function MobileMenu({ visible }: MobileMenuProps) {
+  const { on } = useLockScroll()
+
+  useEffect(() => {
+    if (visible) {
+      on()
+    }
+  }, [visible])
+
   return (
     <div
       aria-hidden={!visible}
