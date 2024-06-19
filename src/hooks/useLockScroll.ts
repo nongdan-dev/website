@@ -1,15 +1,15 @@
-import { useRef } from 'react'
+import { useCallback, useRef } from 'react'
 
 function useLockScroll() {
   const scrollPosition = useRef({ top: 0, left: 0 })
 
-  const handleWheel = (e: WheelEvent | TouchEvent) => {
+  const handleWheel = useCallback((e: WheelEvent | TouchEvent) => {
     e.preventDefault()
-  }
+  }, [])
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     window.scrollTo(scrollPosition.current)
-  }
+  }, [])
 
   const on = () => {
     scrollPosition.current = {

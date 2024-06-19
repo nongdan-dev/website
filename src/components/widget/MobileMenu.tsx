@@ -8,12 +8,10 @@ export type MobileMenuProps = {
 }
 
 export function MobileMenu({ visible }: MobileMenuProps) {
-  const { on } = useLockScroll()
+  const lockScroll = useLockScroll()
 
   useEffect(() => {
-    if (visible) {
-      on()
-    }
+    lockScroll[visible ? 'on' : 'off']()
   }, [visible])
 
   return (
