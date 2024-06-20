@@ -1,33 +1,29 @@
 import { ComponentProps, ReactNode, useId } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+type TitleProps = {
+  titleId: string
+  titleClassName: string
+}
+
 export type SectionProps = Omit<
   ComponentProps<'section'>,
   'title' | 'children'
 > & {
-  title?:
-    | ReactNode
-    | (({
-        titleId,
-        className,
-      }: {
-        titleId: string
-        className: string
-      }) => ReactNode)
+  title?: ReactNode | ((props: TitleProps) => ReactNode)
   subtitle?: string
-  children?: ReactNode | ((titleId: string) => ReactNode)
+  children?: ReactNode | ((props: TitleProps) => ReactNode)
 }
 
 export function Section({ title, subtitle, children, ...props }: SectionProps) {
   const titleId = useId()
-
   const titleClassName =
     'mb-8 text-balance text-4xl font-semibold leading-snug sm:text-5xl sm:leading-snug'
 
   const renderTitle = () => {
     if (!title) return null
     if (typeof title === 'function') {
-      return title({ titleId, className: titleClassName })
+      return title({ titleId, titleClassName })
     }
     return (
       <h2 id={titleId} className={titleClassName}>
@@ -51,7 +47,9 @@ export function Section({ title, subtitle, children, ...props }: SectionProps) {
         </span>
       )}
       {renderTitle()}
-      {typeof children === 'function' ? children(titleId) : children}
+      {typeof children === 'function'
+        ? children({ titleId, titleClassName })
+        : children}
     </section>
   )
 }

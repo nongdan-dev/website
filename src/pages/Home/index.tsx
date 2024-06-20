@@ -102,8 +102,8 @@ function HomePage() {
 
       {/* --------------------------------------------------------------------------------------------------- */}
 
-      <Section className='col-full-width bg-gray-50'>
-        {titleId => (
+      <Section className='col-full-width bg-gray-100'>
+        {({ titleId }) => (
           <div className='col-content text-center'>
             <h2
               id={titleId}
