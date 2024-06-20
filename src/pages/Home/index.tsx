@@ -7,7 +7,7 @@ import { Button, LineBreak, Section } from '@/components'
 
 import Hero from './Hero'
 
-function Home() {
+function HomePage() {
   return (
     <Fragment>
       <Hero />
@@ -122,4 +122,4 @@ function Home() {
   )
 }
 
-export default Home
+export default HomePage

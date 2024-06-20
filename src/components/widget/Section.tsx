@@ -22,7 +22,7 @@ export function Section({ title, subtitle, children, ...props }: SectionProps) {
       {!!subtitle && (
         <span
           aria-hidden='true'
-          className='mb-4 block text-base font-medium uppercase text-gray-400'
+          className='mb-2 block text-base font-medium uppercase text-gray-400'
         >
           {subtitle}
         </span>
