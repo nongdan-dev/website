@@ -1,6 +1,7 @@
 export * from './ui/Button'
 export * from './ui/Link'
 export * from './ui/Portal'
+export * from './form/Select'
 export * from './widget/SkipToMainContent'
 export * from './widget/LineBreak'
 export * from './widget/Section'
