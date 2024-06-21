@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { GrMail } from 'react-icons/gr'
 import { twMerge } from 'tailwind-merge'
 
+import { companyInfo } from '@/config/metadata'
 import useLockScroll from '@/hooks/useLockScroll'
 
 import { Button } from '../ui/Button'
@@ -95,10 +96,10 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             <GrMail aria-hidden='true' className='h-4 w-4 flex-shrink-0' />
             <a
               className='text-xs'
-              href={`mailto:nongdan.dev@gmail.com`}
-              aria-label={`email us at nongdan.dev@gmail.com`}
+              href={`mailto:${companyInfo.email}`}
+              aria-label={`email us at ${companyInfo.email}`}
             >
-              nongdan.dev@gmail.com
+              {companyInfo.email}
             </a>
           </div>
         </div>

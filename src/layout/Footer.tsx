@@ -10,6 +10,7 @@ import {
 import { GrMail } from 'react-icons/gr'
 
 import { Link } from '@/components'
+import { companyInfo } from '@/config/metadata'
 
 function Footer() {
   return (
@@ -23,10 +24,10 @@ function Footer() {
                 className='h-4 w-4 flex-shrink-0 text-body/80'
               />
               <a
-                href={`tel:+84000000000`}
-                aria-label={`call us at +84000000000`}
+                href={`tel:${companyInfo.phone}`}
+                aria-label={`call us at ${companyInfo.phone}`}
               >
-                (+84) 000 000 000
+                {companyInfo.phone}
               </a>
             </div>
             <div className='flex items-center gap-3'>
@@ -35,10 +36,10 @@ function Footer() {
                 className='h-4 w-4 flex-shrink-0 text-body/80'
               />
               <a
-                href={`mailto:nongdan.dev@gmail.com`}
-                aria-label={`email us at nongdan.dev@gmail.com`}
+                href={`mailto:${companyInfo.email}`}
+                aria-label={`email us at ${companyInfo.email}`}
               >
-                nongdan.dev@gmail.com
+                {companyInfo.email}
               </a>
             </div>
             <div className='flex gap-3'>
@@ -50,35 +51,34 @@ function Footer() {
                 className='text-balance'
                 href={`https://maps.google.com/?q=vietnam`}
                 target='_blank'
-                aria-label={`visit us at vietnam`}
+                aria-label={`visit us at ${companyInfo.location.address}`}
               >
-                T12-05 Manhattan, Vinhomes Grand Park, Nguyen Xien street, Long
-                Thanh My Ward, Thu Duc city, HCMC, Viet Nam
+                {companyInfo.location.address}
               </a>
             </div>
             <ul className='ml-7 mt-4 flex flex-row gap-4 text-gray-400'>
               <li>
-                <a href='http://google.com'>
+                <a target='_blank' href={companyInfo.social.facebook}>
                   <FaFacebook />
                 </a>
               </li>
               <li>
-                <a href='http://google.com'>
+                <a target='_blank' href={companyInfo.social.linkedin}>
                   <FaLinkedin />
                 </a>
               </li>
               <li>
-                <a href='http://google.com'>
+                <a target='_blank' href={companyInfo.social.twitter}>
                   <FaTwitter />
                 </a>
               </li>
               <li>
-                <a href='http://google.com'>
+                <a target='_blank' href={companyInfo.social.github}>
                   <FaGithub />
                 </a>
               </li>
               <li>
-                <a href='http://google.com'>
+                <a target='_blank' href={companyInfo.social.slack}>
                   <FaSlack />
                 </a>
               </li>
