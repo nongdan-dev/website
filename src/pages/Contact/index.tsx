@@ -19,8 +19,8 @@ function ContactPage() {
             Our methodology drives a strategic process that helps organizations
             identify and design a proper roadmap.
           </p>
-          <div className='mt-24 grid grid-cols-1 gap-16 lg:grid-cols-3'>
-            <div>
+          <div className='mt-24 grid grid-cols-1 gap-10 lg:grid-cols-3'>
+            <div className='rounded-md border border-gray-300 p-6'>
               <span
                 aria-hidden='true'
                 className='mb-2 block text-sm font-bold uppercase text-indigo-500'
@@ -28,20 +28,21 @@ function ContactPage() {
                 STEP 1
               </span>
               <h2
-                aria-label='Step 1. Problem Understanding'
+                aria-label='Step 1. Discovery Stage'
                 className='mb-4 text-2xl font-medium'
               >
-                Problem Understanding
+                Discovery Stage
               </h2>
-              <p className='mb-1'>
-                A common understanding via video call with our Experts or have
-                the Client come into our office.
-              </p>
-              <p className=''>
-                The goal is to ensure we are a good fit for the Client.
-              </p>
+              <div className='flex flex-col gap-1'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Voluptate impedit illo nemo sit similique qui temporibus
+                  itaque
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+              </div>
             </div>
-            <div>
+            <div className='rounded-md border border-gray-300 p-6'>
               <span
                 aria-hidden='true'
                 className='mb-2 block text-sm font-bold uppercase text-indigo-500'
@@ -49,21 +50,23 @@ function ContactPage() {
                 STEP 2
               </span>
               <h2
-                aria-label='Step 2. Business Proposal'
+                aria-label='Step 2. Analysis & Planning'
                 className='mb-4 text-2xl font-medium'
               >
-                Business Proposal
+                Analysis & Planning
               </h2>
-              <p className='mb-1'>
-                We shift ourselves to the Client's point of view and understand
-                their vision.
-              </p>
-              <p className=''>
-                The Client agrees to the outcomes and estimated iterations we're
-                trying to achieve.
-              </p>
+              <div className='flex flex-col gap-1'>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptates, quis.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Earum, dicta.
+                </p>
+              </div>
             </div>
-            <div>
+            <div className='rounded-md border border-gray-300 p-6'>
               <span
                 aria-hidden='true'
                 className='mb-2 block text-sm font-bold uppercase text-indigo-500'
@@ -71,15 +74,84 @@ function ContactPage() {
                 STEP 3
               </span>
               <h2
-                aria-label='Step 3. Agreement'
+                aria-label='Step 3. UI / UX Design'
                 className='mb-4 text-2xl font-medium'
               >
-                Agreement
+                UI / UX Design
               </h2>
-              <p className='mb-1'>
-                The NDA and Agreement will be signed by both parties. We roll up
-                our sleeves and start building towards your desired outcomes.
-              </p>
+              <div className='flex flex-col gap-1'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatem molestiae maxime quod dicta iste. Reprehenderit
+                  quia placeat obcaecati repellat id!
+                </p>
+              </div>
+            </div>
+            <div className='rounded-md border border-gray-300 p-6'>
+              <span
+                aria-hidden='true'
+                className='mb-2 block text-sm font-bold uppercase text-indigo-500'
+              >
+                STEP 4
+              </span>
+              <h2
+                aria-label='Step 4. App Development'
+                className='mb-4 text-2xl font-medium'
+              >
+                App Development
+              </h2>
+              <div className='flex flex-col gap-1'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatem molestiae maxime quod dicta iste. Reprehenderit
+                  quia
+                </p>
+                <p>Lorem ipsum dolor sit adipisicing elit.</p>
+              </div>
+            </div>
+            <div className='rounded-md border border-gray-300 p-6'>
+              <span
+                aria-hidden='true'
+                className='mb-2 block text-sm font-bold uppercase text-indigo-500'
+              >
+                STEP 5
+              </span>
+              <h2
+                aria-label='Step 5. QA Testing'
+                className='mb-4 text-2xl font-medium'
+              >
+                QA Testing
+              </h2>
+              <div className='flex flex-col gap-1'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatem molestiae maxime quod dicta iste. Reprehenderit
+                  quia
+                </p>
+                <p>Lorem ipsum dolor sit adipisicing elit.</p>
+              </div>
+            </div>
+            <div className='rounded-md border border-gray-300 p-6'>
+              <span
+                aria-hidden='true'
+                className='mb-2 block text-sm font-bold uppercase text-indigo-500'
+              >
+                STEP 6
+              </span>
+              <h2
+                aria-label='Step 6. Deployment & Support'
+                className='mb-4 text-2xl font-medium'
+              >
+                Deployment & Support
+              </h2>
+              <div className='flex flex-col gap-1'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatem molestiae maxime quod dicta iste. Reprehenderit
+                  quia
+                </p>
+                <p>Lorem ipsum dolor sit amet elit.</p>
+              </div>
             </div>
           </div>
         </Section>
@@ -91,7 +163,8 @@ function ContactPage() {
               id={titleId}
               className='mb-4 text-balance text-4xl font-semibold leading-snug'
             >
-              Build with us
+              Let's <span className='text-indigo-500'>build</span> an awesome
+              project <span className='text-indigo-500'>together</span>
             </h2>
             <p className='mb-px'>
               Let's discuss your ideas. The more specific you are, the faster we
