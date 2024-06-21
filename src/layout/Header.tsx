@@ -38,6 +38,7 @@ function Header() {
               to='/'
               className='self-center'
               aria-label='nongdan.dev homepage'
+              onClick={() => setShowMenu(false)}
             >
               <img className='w-36' src={logo} alt='' aria-hidden='true' />
             </Link>

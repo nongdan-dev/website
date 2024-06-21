@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 
 import { SkipToMainContent } from '@/components'
 
@@ -6,6 +7,12 @@ import Footer from './Footer'
 import Header from './Header'
 
 function Layout() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
+  }, [pathname])
+
   return (
     <div className='relative min-h-dvh bg-white text-body'>
       <SkipToMainContent />
