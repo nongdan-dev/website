@@ -194,7 +194,6 @@ function ContactPage() {
             </p>
             <p>Our team will get back to you within 24hrs.</p>
             <Select
-              virtual={false}
               mode='multiple'
               placeholder='asd'
               onChange={console.log}

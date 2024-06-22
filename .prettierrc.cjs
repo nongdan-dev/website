@@ -20,12 +20,7 @@ module.exports = {
   ],
 
   // @trivago/prettier-plugin-sort-imports
-  importOrder: [
-    '<THIRD_PARTY_MODULES>',
-    '^@/(.*)$',
-    '^(?!.*[.]css$)[./].*$',
-    '[.]css$',
-  ],
+  importOrder: ['<THIRD_PARTY_MODULES>', '^[a-z](.*)css$', '^@/(.*)$', '^[./]'],
   importOrderSeparation: true,
   importOrderCaseInsensitive: true,
 
