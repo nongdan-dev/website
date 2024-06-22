@@ -60,3 +60,29 @@
     @apply !bg-transparent;
   }
 }
+
+.rc-select-dropdown {
+  @apply min-h-0 rounded-md border-gray-300 py-1.5;
+  & .rc-virtual-list-holder {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.gray.300') transparent;
+    @apply overscroll-contain;
+  }
+
+  & .rc-select-item-option {
+    @apply px-4 py-2;
+  }
+  & .rc-select-item-option-active {
+    @apply bg-indigo-50;
+  }
+  & .rc-select-item-option-selected {
+    @apply bg-indigo-500 text-white;
+  }
+
+  & .rc-select-item-group {
+    @apply py-2 font-medium uppercase;
+    &:not(:first-child) {
+      @apply pt-3;
+    }
+  }
+}

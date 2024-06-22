@@ -7,7 +7,13 @@ export type SelectProps = RcSelectProps
 
 function Select(props: SelectProps) {
   return (
-    <RcSelect {...props} suffixIcon={<IoChevronDown />}>
+    <RcSelect
+      {...props}
+      suffixIcon={<IoChevronDown />}
+      menuItemSelectedIcon={null}
+      open
+      notFoundContent={<div className='py-2'>No options</div>}
+    >
       {props.children}
     </RcSelect>
   )

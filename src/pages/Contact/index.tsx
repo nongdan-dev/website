@@ -3,6 +3,34 @@ import { twMerge } from 'tailwind-merge'
 
 import { Section, Select } from '@/components'
 
+const options = [
+  {
+    label: 'Development',
+    options: [
+      { label: 'Web Development', value: 'Web Development' },
+      { label: 'Mobile Development', value: 'Mobile Development' },
+      { label: 'Tooling Development', value: 'Tooling Development' },
+      { label: 'API Integration', value: 'API Integration' },
+    ],
+  },
+  {
+    label: 'Design',
+    options: [
+      { label: 'User Research', value: 'User Research' },
+      { label: 'User Interface', value: 'User Interface' },
+      { label: 'Experience Design', value: 'Experience Design' },
+      { label: 'Digital Product Design', value: 'Digital Product Design' },
+    ],
+  },
+  {
+    label: 'Other',
+    options: [
+      { label: 'Strategy & Architecture', value: 'Strategy & Architecture' },
+      { label: 'Managed Services', value: 'Managed Services' },
+    ],
+  },
+]
+
 function ContactPage() {
   return (
     <Fragment>
@@ -165,16 +193,13 @@ function ContactPage() {
               can help.
             </p>
             <p>Our team will get back to you within 24hrs.</p>
-            <Select mode='multiple' placeholder='asd'>
-              <Select.Option value='asd'>Lorem ipsum dolor sit.</Select.Option>
-              <Select.Option value='asd2'>Lorem, ipsum.</Select.Option>
-              <Select.Option value='asd3'>
-                Lorem ipsum dolor sit amet.
-              </Select.Option>
-              <Select.Option value='asd4'>
-                Lorem ipsum dolor sit amet consectetur.
-              </Select.Option>
-            </Select>
+            <Select
+              virtual={false}
+              mode='multiple'
+              placeholder='asd'
+              onChange={console.log}
+              options={options}
+            ></Select>
           </div>
         )}
       </Section>
