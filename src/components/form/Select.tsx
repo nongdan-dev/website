@@ -1,5 +1,5 @@
 import RcSelect, { SelectProps as RcSelectProps } from 'rc-select'
-import { IoChevronDown, IoClose } from 'react-icons/io5'
+import { IoChevronDown } from 'react-icons/io5'
 
 import 'rc-select/assets/index.css'
 
@@ -7,11 +7,7 @@ export type SelectProps = RcSelectProps
 
 function Select(props: SelectProps) {
   return (
-    <RcSelect
-      {...props}
-      suffixIcon={<IoChevronDown />}
-      allowClear={{ clearIcon: <IoClose /> }}
-    >
+    <RcSelect {...props} suffixIcon={<IoChevronDown />}>
       {props.children}
     </RcSelect>
   )
