@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
-import { Section, Select } from '@/components'
+import { Input, Section, Select } from '@/components'
 
 const options = [
   {
@@ -193,12 +193,15 @@ function ContactPage() {
               can help.
             </p>
             <p>Our team will get back to you within 24hrs.</p>
+
+            <Input containerClassName='my-4' />
+
             <Select
               mode='multiple'
-              placeholder='asd'
+              placeholder='Select services'
               onChange={console.log}
               options={options}
-            ></Select>
+            />
           </div>
         )}
       </Section>

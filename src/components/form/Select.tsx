@@ -10,6 +10,7 @@ export function Select(props: SelectProps) {
       virtual={false}
       suffixIcon={<IoChevronDown />}
       menuItemSelectedIcon={null}
+      className='group'
       notFoundContent={<div className='py-2'>No options</div>}
     >
       {props.children}

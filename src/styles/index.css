@@ -23,11 +23,14 @@
 }
 
 .rc-select {
-  @apply w-full overflow-x-clip;
+  @apply w-full;
   & .rc-select-selector {
-    @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 !pr-10 pl-2 transition-colors hover:border-indigo-500;
+    @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 !pr-10 pl-2 outline-0 transition-all hover:border-indigo-500;
   }
 
+  &.rc-select-open .rc-select-selector {
+    @apply ring-2 ring-indigo-500;
+  }
   &.rc-select-open .rc-select-arrow {
     @apply rotate-180;
   }
@@ -70,7 +73,7 @@
   }
 
   & .rc-select-item-option {
-    @apply px-4 py-2;
+    @apply px-4 py-2 transition-colors;
   }
   & .rc-select-item-option-active {
     @apply bg-indigo-50;
