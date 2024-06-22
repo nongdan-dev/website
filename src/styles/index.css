@@ -15,7 +15,6 @@
   & .col-content {
     grid-column: content;
   }
-
   & .col-full-width {
     grid-column: full-width;
     display: grid;
@@ -25,13 +24,19 @@
 
 .rc-select {
   @apply w-full overflow-x-clip;
-
   & .rc-select-selector {
-    @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 pl-2 transition-colors hover:border-indigo-500;
+    @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 !pr-10 pl-2 transition-colors hover:border-indigo-500;
+  }
+
+  &.rc-select-open .rc-select-arrow {
+    @apply rotate-180;
   }
 
   & .rc-select-selection-overflow {
     @apply gap-1;
+  }
+  & .rc-select-arrow {
+    @apply right-0 top-1/2 -translate-y-1/2 p-2 text-xl transition-transform;
   }
 
   & .rc-select-selection-overflow-item:not(:last-child) {
@@ -39,14 +44,19 @@
     & .rc-select-selection-item {
       @apply mr-0 !bg-transparent p-0 text-[13px];
     }
-
     & .rc-select-selection-item-content {
       @apply pl-1.5 pr-[3px];
     }
-
     & .rc-select-selection-item-remove {
       user-select: unset !important;
       @apply px-1 text-sm transition-colors hover:cursor-pointer hover:bg-red-300 hover:text-red-500;
     }
+  }
+
+  & .rc-select-selection-placeholder {
+    @apply absolute top-1/2 -translate-y-1/2 text-sm;
+  }
+  & .rc-select-selection-search input {
+    @apply !bg-transparent;
   }
 }

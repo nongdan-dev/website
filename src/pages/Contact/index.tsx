@@ -165,7 +165,7 @@ function ContactPage() {
               can help.
             </p>
             <p>Our team will get back to you within 24hrs.</p>
-            <Select mode='multiple'>
+            <Select mode='multiple' placeholder='asd'>
               <Select.Option value='asd'>Lorem ipsum dolor sit.</Select.Option>
               <Select.Option value='asd2'>Lorem, ipsum.</Select.Option>
               <Select.Option value='asd3'>
