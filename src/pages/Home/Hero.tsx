@@ -1,5 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-
 import { Button, LineBreak, Link } from '@/components'
 
 function Hero() {
@@ -18,46 +16,7 @@ function Hero() {
           View our projects
         </Link>
       </Button>
-      <Swiper
-        spaceBetween={20}
-        className='mt-20'
-        tag='ul'
-        slidesPerView={1.1}
-        breakpoints={{
-          640: { slidesPerView: 1.5 },
-          950: { slidesPerView: 2.1 },
-          1300: { slidesPerView: 3.1 },
-        }}
-      >
-        <SwiperSlide tag='li'>
-          <img
-            src='https://placehold.co/420x320'
-            alt='showcase 1'
-            className='h-80 w-full rounded-md object-cover'
-          />
-        </SwiperSlide>
-        <SwiperSlide tag='li'>
-          <img
-            src='https://placehold.co/420x320'
-            alt='showcase 2'
-            className='h-80 w-full rounded-md object-cover'
-          />
-        </SwiperSlide>
-        <SwiperSlide tag='li'>
-          <img
-            src='https://placehold.co/420x320'
-            alt='showcase 3'
-            className='h-80 w-full rounded-md object-cover'
-          />
-        </SwiperSlide>
-        <SwiperSlide tag='li'>
-          <img
-            src='https://placehold.co/420x320'
-            alt='showcase 4'
-            className='h-80 w-full rounded-md object-cover'
-          />
-        </SwiperSlide>
-      </Swiper>
+      <div className='mt-16'>testimonial</div>
     </div>
   )
 }
