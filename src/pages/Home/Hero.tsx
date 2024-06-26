@@ -15,7 +15,7 @@ function Hero() {
         </p>
         <Button className='mt-8' asChild>
           <Link to='/porfolio' defaultStyle>
-            View our porfolio
+            View our Porfolio
           </Link>
         </Button>
         <div className='mt-16'>asd</div>
