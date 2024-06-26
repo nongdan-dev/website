@@ -1,9 +1,13 @@
+import bg from '@/assets/bg.png'
 import { Button, LineBreak, Link } from '@/components'
 
 function Hero() {
   return (
-    <div className='col-full-width bg-gray-50'>
-      <div className='col-content py-24'>
+    <div
+      className='col-full-width bg-cover bg-center bg-no-repeat'
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <div className='col-content pb-24 pt-44'>
         <h1 className='text-balance text-4xl font-semibold leading-snug sm:text-5xl sm:leading-snug'>
           Practical <LineBreak className='md:inline' /> Software Development
         </h1>

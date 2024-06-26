@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import { twMerge } from 'tailwind-merge'
 
 import { SkipToMainContent } from '@/components'
 
@@ -17,7 +18,10 @@ function Layout() {
     <div className='relative min-h-dvh bg-white text-body'>
       <SkipToMainContent />
       <Header />
-      <main id='main-content' className='grid-container pt-20'>
+      <main
+        id='main-content'
+        className={twMerge('grid-container', pathname !== '/' && 'pt-20')}
+      >
         <Outlet />
       </main>
       <Footer />
