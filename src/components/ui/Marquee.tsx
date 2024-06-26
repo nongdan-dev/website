@@ -1,4 +1,10 @@
-import { ComponentProps, Children, cloneElement, ReactElement } from 'react'
+import {
+  ComponentProps,
+  Children,
+  cloneElement,
+  ReactElement,
+  CSSProperties,
+} from 'react'
 import { twMerge } from 'tailwind-merge'
 
 export type MarqueeProps = ComponentProps<'ul'> & {
@@ -12,17 +18,27 @@ export type MarqueeItemProps = ComponentProps<'li'> & {
 }
 
 export function Marquee({
+  direction = 'left',
+  duration = 40,
   gap = 24,
   className,
   children,
   ...props
 }: MarqueeProps) {
+  const cssVariables = {
+    '--gap': `${gap}px`,
+    '--duration': `${duration}s`,
+    '--direction': direction,
+  } as CSSProperties
+
   return (
-    <div className='relative overflow-x-clip'>
+    <div className='relative overflow-x-clip' style={cssVariables}>
       <ul
         {...props}
-        className={twMerge(`flex w-max flex-nowrap`, className)}
-        style={{ ...props.style, gap }}
+        className={twMerge(
+          `flex w-max flex-nowrap gap-[var(--gap)]`,
+          className,
+        )}
       >
         {children}
         {Children.map(children, child =>
