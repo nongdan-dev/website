@@ -34,6 +34,39 @@ const testimonials = [
   },
 ]
 
+const testimonials2 = [
+  {
+    id: 1,
+    name: 'Anon',
+    content: 'Lorem ipsum dolor sit',
+  },
+  {
+    id: 2,
+    name: 'Bnon',
+    content: 'Lorem ipsum dolor sit amet consectetur',
+  },
+  {
+    id: 3,
+    name: 'Cnon',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
+  },
+  {
+    id: 4,
+    name: 'Dnon',
+    content: 'Lorem ipsum',
+  },
+  {
+    id: 5,
+    name: 'Enon',
+    content: 'Lorem ipsum dolor',
+  },
+  {
+    id: 6,
+    name: 'Fnon',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
+  },
+]
+
 function Hero() {
   return (
     <div className='col-full-width relative overflow-hidden pb-28 pt-48'>
@@ -62,7 +95,7 @@ function Hero() {
           {testimonials.map(({ id, name, content }) => (
             <Marquee.Item
               key={id}
-              className='flex min-w-52 max-w-96 gap-4 rounded-full bg-white px-6 py-3 text-sm shadow-md shadow-indigo-100'
+              className='flex min-w-52 max-w-96 items-center gap-4 rounded-full bg-white px-6 py-3 text-sm shadow-md shadow-indigo-100'
             >
               <Avatar
                 name='Anon'
@@ -76,10 +109,10 @@ function Hero() {
           ))}
         </Marquee>
         <Marquee>
-          {testimonials.map(({ id, name, content }) => (
+          {testimonials2.map(({ id, name, content }) => (
             <Marquee.Item
               key={id}
-              className='flex min-w-52 max-w-96 gap-4 rounded-full bg-white px-6 py-3 text-sm shadow-md shadow-indigo-100'
+              className='flex min-w-52 max-w-96 items-center gap-4 rounded-full bg-white px-6 py-3 text-sm shadow-md shadow-indigo-100'
             >
               <Avatar
                 name='Anon'

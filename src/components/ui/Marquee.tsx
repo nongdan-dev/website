@@ -19,7 +19,7 @@ export type MarqueeItemProps = ComponentProps<'li'> & {
 
 export function Marquee({
   direction = 'left',
-  duration = 40,
+  duration,
   gap = 24,
   className,
   children,
@@ -27,12 +27,12 @@ export function Marquee({
 }: MarqueeProps) {
   const cssVariables = {
     '--gap': `${gap}px`,
-    '--duration': `${duration}s`,
-    '--direction': direction,
+    '--duration': `${duration || Children.count(children) * 15}s`,
+    '--direction': direction === 'left' ? 'forwards' : 'reverse',
   } as CSSProperties
 
   return (
-    <div className='relative overflow-x-clip' style={cssVariables}>
+    <div className='marquee overflow-hidden py-1' style={cssVariables}>
       <ul
         {...props}
         className={twMerge(
