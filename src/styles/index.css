@@ -89,19 +89,3 @@
     }
   }
 }
-
-.hero-bg {
-  background-image: url(../assets/bg.svg);
-  opacity: 0.04;
-  width: 2000px;
-  height: 2000px;
-  top: -1000px;
-  right: -900px;
-  animation: hero-bg-spin 240s linear infinite;
-  pointer-events: none;
-}
-@keyframes hero-bg-spin {
-  100% {
-    transform: rotate(-360deg);
-  }
-}
