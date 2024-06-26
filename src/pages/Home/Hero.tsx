@@ -18,7 +18,7 @@ function Hero() {
             View our porfolio
           </Link>
         </Button>
-        <div className='mt-16'>testimonial</div>
+        <div className='mt-16'>asd</div>
       </div>
     </div>
   )
