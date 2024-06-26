@@ -61,11 +61,11 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             </li>
             <li>
               <Link
-                to='/projects'
+                to='/portfolio'
                 className='block py-4 text-center text-lg font-medium'
                 onClick={onClose}
               >
-                Work
+                Porfolio
               </Link>
             </li>
             <li>
