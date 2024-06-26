@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client'
 
 import 'rc-select/assets/index.css'
-import 'swiper/css'
 
 import App from './App.tsx'
 import './styles/index.css'
