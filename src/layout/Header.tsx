@@ -1,38 +1,17 @@
-import { throttle } from 'lodash'
-import { Fragment, useCallback, useEffect, useState } from 'react'
+import { Fragment, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Button, Link, MobileMenu, Portal } from '@/components'
 
 import logo from '../assets/logo.svg'
 
-const SCROLL_THRESHOLD = 80
-
 function Header() {
   const [showMenu, setShowMenu] = useState(false)
-  const [showBorder, setShowBorder] = useState(false)
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const handleScroll = useCallback(
-    throttle(() => {
-      setShowBorder(window.scrollY >= SCROLL_THRESHOLD)
-    }, 16),
-    [],
-  )
 
   return (
     <Fragment>
       <header className='fixed inset-x-0 top-0 z-10'>
-        <div
-          className={twMerge(
-            'grid-container relative h-20 border-b bg-white transition-colors',
-            showBorder ? 'border-gray-300' : 'border-transparent',
-          )}
-        >
+        <div className='grid-container relative h-20 border-b border-gray-200 bg-white'>
           <div className='col-content flex flex-row items-center justify-between'>
             <Link
               to='/'
