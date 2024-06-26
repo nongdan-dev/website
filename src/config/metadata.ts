@@ -1,9 +1,9 @@
 export const companyInfo = {
-  email: 'nongdan.dev@gmail.com',
-  phone: '(+84) 000 000 000',
+  email: 'nam@nongdan.dev',
+  phone: '(+84) 35 664 5211',
   location: {
     address:
-      'T12-05 Manhattan, Vinhomes Grand Park, Nguyen Xien street, Long Thanh My Ward, Thu Duc city, HCMC, Viet Nam',
+      'T12-05, The Manhattan, Vinhomes Grand Park, Ho Chi Minh city, Vietnam',
   },
   social: {
     facebook: 'https://www.facebook.com/',
