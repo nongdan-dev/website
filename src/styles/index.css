@@ -28,7 +28,7 @@
     @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 !pr-10 pl-2 outline-0 transition-all hover:border-indigo-500;
   }
 
-  &.rc-select-open .rc-select-selector {
+  &.rc-select-focused .rc-select-selector {
     @apply ring-2 ring-indigo-500;
   }
   &.rc-select-open .rc-select-arrow {

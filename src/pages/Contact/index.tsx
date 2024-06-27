@@ -1,7 +1,10 @@
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
+import { z } from 'zod'
 
-import { Input, Section, Select } from '@/components'
+import { Button, FormField, Input, Section, Select } from '@/components'
 
 const options = [
   {
@@ -31,7 +34,26 @@ const options = [
   },
 ]
 
+const FormSchema = z.object({
+  name: z.string({ required_error: 'Name is required' }),
+  email: z
+    .string({ required_error: 'Email is required' })
+    .email('Invalid email address'),
+  services: z.any(),
+})
+
+type FormValues = z.infer<typeof FormSchema>
+
 function ContactPage() {
+  const { handleSubmit: _handleSubmit, control } = useForm<FormValues>({
+    resolver: zodResolver(FormSchema),
+    shouldFocusError: false,
+  })
+
+  const handleSubmit = (e: unknown) => {
+    console.log(e)
+  }
+
   return (
     <Fragment>
       <Section
@@ -194,14 +216,23 @@ function ContactPage() {
             </p>
             <p>Our team will get back to you within 24hrs.</p>
 
-            <Input containerClassName='my-4' />
+            <form onSubmit={_handleSubmit(handleSubmit)}>
+              <FormField label='Name' name='name' control={control} required>
+                <Input placeholder='e.g. John Doe' />
+              </FormField>
+              <FormField label='Email' name='email' control={control} required>
+                <Input placeholder='e.g. john_doe@example.com' />
+              </FormField>
+              <FormField label='Services' name='services' control={control}>
+                <Select
+                  mode='multiple'
+                  placeholder='Select services'
+                  options={options}
+                />
+              </FormField>
 
-            <Select
-              mode='multiple'
-              placeholder='Select services'
-              onChange={console.log}
-              options={options}
-            />
+              <Button>Send</Button>
+            </form>
           </div>
         )}
       </Section>
