@@ -1,8 +1,4 @@
-import RcSelect, {
-  BaseSelectRef,
-  SelectProps as RcSelectProps,
-} from 'rc-select'
-import { forwardRef } from 'react'
+import RcSelect, { SelectProps as RcSelectProps } from 'rc-select'
 import { IoChevronDown } from 'react-icons/io5'
 
 export type SelectProps = RcSelectProps & {
@@ -10,22 +6,19 @@ export type SelectProps = RcSelectProps & {
   __required?: true
 }
 
-export const Select = forwardRef<BaseSelectRef, SelectProps>(
-  ({ __invalid, __required, ...props }, ref) => {
-    return (
-      <RcSelect
-        {...props}
-        ref={ref}
-        aria-required={__required}
-        aria-invalid={__invalid}
-        virtual={false}
-        suffixIcon={<IoChevronDown />}
-        menuItemSelectedIcon={null}
-        className='group'
-        notFoundContent={<div className='py-2'>No options</div>}
-      >
-        {props.children}
-      </RcSelect>
-    )
-  },
-)
+export function Select({ __invalid, __required, ...props }: SelectProps) {
+  return (
+    <RcSelect
+      {...props}
+      aria-required={__required}
+      aria-invalid={__invalid}
+      virtual={false}
+      suffixIcon={<IoChevronDown />}
+      menuItemSelectedIcon={null}
+      className='group'
+      notFoundContent={<div className='py-2'>No options</div>}
+    >
+      {props.children}
+    </RcSelect>
+  )
+}
