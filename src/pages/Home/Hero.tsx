@@ -1,5 +1,8 @@
+import { BiSolidQuoteAltLeft } from 'react-icons/bi'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import Illustration from '@/assets/illustration.svg'
-import { Button, LineBreak, Link } from '@/components'
+import { Avatar, Button, LineBreak, Link } from '@/components'
 
 function Hero() {
   return (
@@ -29,8 +32,80 @@ function Hero() {
           />
         </div>
       </div>
-      <div className='col-content mt-24 flex flex-col gap-y-6 xl:mt-[7.5rem]'>
-        asd
+      <div className='col-content mt-24 xl:mt-[7.5rem]'>
+        <Swiper
+          spaceBetween={32}
+          slidesPerView={1.1}
+          breakpoints={{
+            640: { slidesPerView: 1.5 },
+            950: { slidesPerView: 2.1 },
+            1300: { slidesPerView: 3 },
+          }}
+        >
+          <SwiperSlide
+            tag='blockquote'
+            className='rounded-xl border border-gray-300 px-8 py-10 leading-relaxed shadow-md'
+          >
+            <BiSolidQuoteAltLeft className='mb-8 text-5xl text-indigo-500' />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+              eum laboriosam ipsum dignissimos incidunt veritatis delectus
+              laborum beatae ad neque cupiditate minima perspiciatis non at
+              voluptatum aliquid, sapiente aspernatur maxime?
+            </p>
+            <footer className='mt-8 flex items-center gap-3'>
+              <Avatar
+                className='h-12 w-12'
+                name='Anon'
+                url='https://placehold.co/40x40?text=Anon'
+              />
+              <span className='font-medium'>Anonymous</span>
+            </footer>
+          </SwiperSlide>
+          <SwiperSlide
+            tag='blockquote'
+            className='rounded-xl border border-gray-300 px-8 py-10 leading-relaxed shadow-md'
+          >
+            <BiSolidQuoteAltLeft className='mb-8 text-5xl text-indigo-500' />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+              eum laboriosam ipsum dignissimos incidunt veritatis delectus
+              laborum beatae ad neque cupiditate minima perspiciatis non at
+              voluptatum aliquid, sapiente aspernatur maxime?
+            </p>
+            <footer className='mt-8 flex items-center gap-3'>
+              <Avatar
+                className='h-12 w-12'
+                name='Anon'
+                url='https://placehold.co/40x40?text=Anon'
+              />
+              <span className='font-medium'>Anonymous</span>
+            </footer>
+          </SwiperSlide>
+          <SwiperSlide
+            tag='blockquote'
+            className='relative rounded-xl border border-gray-300 px-8 py-10 leading-relaxed shadow-md'
+          >
+            <BiSolidQuoteAltLeft
+              aria-hidden='true'
+              className='mb-8 text-5xl text-indigo-500'
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+              eum laboriosam ipsum dignissimos incidunt veritatis delectus
+              laborum beatae ad neque cupiditate minima perspiciatis non at
+              voluptatum aliquid, sapiente aspernatur maxime?
+            </p>
+            <footer className='mt-8 flex items-center gap-3'>
+              <Avatar
+                className='h-12 w-12'
+                name='Anon'
+                url='https://placehold.co/40x40?text=Anon'
+              />
+              <span className='font-medium'>Anonymous</span>
+            </footer>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   )
