@@ -1,71 +1,5 @@
 import Illustration from '@/assets/illustration.svg'
-import { Avatar, Button, LineBreak, Link, Marquee } from '@/components'
-
-const testimonials = [
-  {
-    id: 1,
-    name: 'Anon',
-    content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit',
-  },
-  {
-    id: 2,
-    name: 'Bnon',
-    content: 'Lorem ipsum dolor sit amet consectetur',
-  },
-  {
-    id: 3,
-    name: 'Cnon',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
-  },
-  {
-    id: 4,
-    name: 'Dnon',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-  {
-    id: 5,
-    name: 'Enon',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-  {
-    id: 6,
-    name: 'Fnon',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
-  },
-]
-
-const testimonials2 = [
-  {
-    id: 1,
-    name: 'Anon',
-    content: 'Lorem ipsum dolor sit',
-  },
-  {
-    id: 2,
-    name: 'Bnon',
-    content: 'Lorem ipsum dolor sit amet consectetur',
-  },
-  {
-    id: 3,
-    name: 'Cnon',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
-  },
-  {
-    id: 4,
-    name: 'Dnon',
-    content: 'Lorem ipsum',
-  },
-  {
-    id: 5,
-    name: 'Enon',
-    content: 'Lorem ipsum dolor',
-  },
-  {
-    id: 6,
-    name: 'Fnon',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
-  },
-]
+import { Button, LineBreak, Link } from '@/components'
 
 function Hero() {
   return (
@@ -96,40 +30,7 @@ function Hero() {
         </div>
       </div>
       <div className='col-content mt-24 flex flex-col gap-y-6 xl:mt-[7.5rem]'>
-        <Marquee>
-          {testimonials.map(({ id, name, content }) => (
-            <Marquee.Item
-              key={id}
-              className='flex min-w-52 max-w-96 items-center gap-4 rounded-full bg-white px-6 py-3 text-sm shadow-md shadow-indigo-100'
-            >
-              <Avatar
-                name='Anon'
-                url={`https://placehold.co/40x40?text=${name}`}
-                className='flex-shrink-0'
-              />
-              <p>
-                {content} - @{name}
-              </p>
-            </Marquee.Item>
-          ))}
-        </Marquee>
-        <Marquee>
-          {testimonials2.map(({ id, name, content }) => (
-            <Marquee.Item
-              key={id}
-              className='flex min-w-52 max-w-96 items-center gap-4 rounded-full bg-white px-6 py-3 text-sm shadow-md shadow-indigo-100'
-            >
-              <Avatar
-                name='Anon'
-                url={`https://placehold.co/40x40?text=${name}`}
-                className='flex-shrink-0'
-              />
-              <p>
-                {content} - @{name}
-              </p>
-            </Marquee.Item>
-          ))}
-        </Marquee>
+        asd
       </div>
     </div>
   )
