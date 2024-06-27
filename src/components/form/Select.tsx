@@ -1,12 +1,19 @@
 import RcSelect, { SelectProps as RcSelectProps } from 'rc-select'
+import { DefaultOptionType } from 'rc-select/lib/Select'
 import { IoChevronDown } from 'react-icons/io5'
 
-export type SelectProps = RcSelectProps & {
+export type SelectProps = Omit<RcSelectProps, 'children' | 'onChange'> & {
   __invalid?: true
   __required?: true
+  onChange?: (value: DefaultOptionType) => void
 }
 
-export function Select({ __invalid, __required, ...props }: SelectProps) {
+export function Select({
+  __invalid,
+  __required,
+  onChange,
+  ...props
+}: SelectProps) {
   return (
     <RcSelect
       {...props}
@@ -15,10 +22,8 @@ export function Select({ __invalid, __required, ...props }: SelectProps) {
       virtual={false}
       suffixIcon={<IoChevronDown />}
       menuItemSelectedIcon={null}
-      className='group'
       notFoundContent={<div className='py-2'>No options</div>}
-    >
-      {props.children}
-    </RcSelect>
+      onChange={(_, v) => onChange?.(v)}
+    />
   )
 }

@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { IoMdSend } from 'react-icons/io'
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
@@ -39,7 +40,7 @@ const FormSchema = z.object({
   email: z
     .string({ required_error: 'Email is required' })
     .email('Invalid email address'),
-  services: z.any(),
+  services: z.custom<(typeof options)[number]['options']>(),
 })
 
 type FormValues = z.infer<typeof FormSchema>
@@ -50,8 +51,8 @@ function ContactPage() {
     shouldFocusError: false,
   })
 
-  const handleSubmit = (e: unknown) => {
-    console.log(e)
+  const handleSubmit = (values: FormValues) => {
+    console.log(values)
   }
 
   return (
@@ -215,24 +216,36 @@ function ContactPage() {
               can help.
             </p>
             <p>Our team will get back to you within 24hrs.</p>
-
-            <form onSubmit={_handleSubmit(handleSubmit)}>
-              <FormField label='Name' name='name' control={control} required>
-                <Input placeholder='e.g. John Doe' />
-              </FormField>
-              <FormField label='Email' name='email' control={control} required>
-                <Input placeholder='e.g. john_doe@example.com' />
-              </FormField>
-              <FormField label='Services' name='services' control={control}>
-                <Select
-                  mode='multiple'
-                  placeholder='Select services'
-                  options={options}
-                />
-              </FormField>
-
-              <Button>Send</Button>
-            </form>
+            <div className='mt-12 grid grid-cols-2'>
+              <form onSubmit={_handleSubmit(handleSubmit)}>
+                <FormField label='Name' name='name' control={control} required>
+                  <Input placeholder='e.g. John Doe' />
+                </FormField>
+                <FormField
+                  label='Email'
+                  name='email'
+                  control={control}
+                  required
+                >
+                  <Input placeholder='e.g. john_doe@example.com' />
+                </FormField>
+                <FormField
+                  label='Which services are you looking for?'
+                  name='services'
+                  control={control}
+                >
+                  <Select
+                    mode='multiple'
+                    placeholder='Select services'
+                    options={options}
+                  />
+                </FormField>
+                <Button type='submit' className='px-8'>
+                  Send
+                  <IoMdSend />
+                </Button>
+              </form>
+            </div>
           </div>
         )}
       </Section>
