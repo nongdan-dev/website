@@ -27,7 +27,7 @@ export function Marquee({
 }: MarqueeProps) {
   const cssVariables = {
     '--gap': `${gap}px`,
-    '--duration': `${duration || Children.count(children) * 15}s`,
+    '--duration': `${duration || Children.count(children) * 25}s`,
     '--direction': direction === 'left' ? 'forwards' : 'reverse',
   } as CSSProperties
 
