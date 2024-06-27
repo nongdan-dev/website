@@ -32,11 +32,11 @@ export function Marquee({
   } as CSSProperties
 
   return (
-    <div className='marquee overflow-hidden py-1' style={cssVariables}>
+    <div className='marquee overflow-hidden' style={cssVariables}>
       <ul
         {...props}
         className={twMerge(
-          `flex w-max flex-nowrap gap-[var(--gap)]`,
+          `flex w-max flex-nowrap gap-[var(--gap)] py-1`,
           className,
         )}
       >

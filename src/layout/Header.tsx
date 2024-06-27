@@ -29,10 +29,8 @@ function Header() {
       <header className='fixed inset-x-0 top-0 z-10'>
         <div
           className={twMerge(
-            'grid-container transition-color relative h-20 border-b',
-            showBorder
-              ? 'border-gray-300 bg-white'
-              : 'border-transparent bg-transparent',
+            'grid-container transition-color relative h-20 border-b bg-white',
+            showBorder ? 'border-gray-300' : 'border-transparent',
           )}
         >
           <div className='col-content flex flex-row items-center justify-between'>

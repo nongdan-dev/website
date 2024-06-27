@@ -69,7 +69,7 @@ const testimonials2 = [
 
 function Hero() {
   return (
-    <div className='col-full-width relative overflow-hidden pb-28 pt-48'>
+    <div className='col-full-width relative overflow-hidden pb-20 pt-48'>
       <div className='col-content xl:grid xl:grid-cols-2'>
         <div>
           <h1 className='text-balance text-4xl font-semibold leading-snug sm:text-5xl sm:leading-snug'>
@@ -86,11 +86,16 @@ function Hero() {
             </Link>
           </Button>
         </div>
-        <div className='hidden xl:block xl:translate-x-32'>
-          <img aria-hidden='true' src={Illustration} alt='' />
+        <div className='hidden xl:block xl:translate-x-36'>
+          <img
+            aria-hidden='true'
+            className='h-[26.25rem]'
+            src={Illustration}
+            alt=''
+          />
         </div>
       </div>
-      <div className='col-content mt-28 flex flex-col gap-y-6 xl:mt-32'>
+      <div className='col-content mt-24 flex flex-col gap-y-6 xl:mt-[7.5rem]'>
         <Marquee>
           {testimonials.map(({ id, name, content }) => (
             <Marquee.Item
