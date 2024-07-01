@@ -48,7 +48,7 @@ const FormSchema = z.object({
     .string({ required_error: 'Email is required' })
     .email('Invalid email address'),
   services: z.custom<(typeof options)[number]['options'] | undefined>(),
-  requirements: z.string(),
+  requirements: z.string().optional(),
 })
 
 type FormValues = z.infer<typeof FormSchema>
@@ -224,7 +224,7 @@ function ContactPage() {
               can help.
             </p>
             <p>Our team will get back to you within 24hrs.</p>
-            <div className='mt-12 grid grid-cols-2'>
+            <div className='mt-12 grid grid-cols-2 gap-24'>
               <form onSubmit={_handleSubmit(handleSubmit)}>
                 <FormField label='Name' name='name' control={control} required>
                   <Input placeholder='e.g. John Doe' />
@@ -260,6 +260,7 @@ function ContactPage() {
                   <IoMdSend />
                 </Button>
               </form>
+              <div>maps</div>
             </div>
           </div>
         )}
