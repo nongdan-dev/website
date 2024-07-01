@@ -60,7 +60,7 @@ function ContactPage() {
   })
 
   const handleSubmit = (values: FormValues) => {
-    console.log(values)
+    alert(JSON.stringify(values))
   }
 
   return (
