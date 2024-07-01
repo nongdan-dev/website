@@ -252,7 +252,6 @@ function ContactPage() {
                   label='Requirements'
                   name='requirements'
                   control={control}
-                  required
                 >
                   <Textarea placeholder='Share your requirements here...' />
                 </FormField>
