@@ -5,7 +5,14 @@ import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
 
-import { Button, FormField, Input, Section, Select } from '@/components'
+import {
+  Button,
+  FormField,
+  Input,
+  Section,
+  Select,
+  Textarea,
+} from '@/components'
 
 const options = [
   {
@@ -40,9 +47,8 @@ const FormSchema = z.object({
   email: z
     .string({ required_error: 'Email is required' })
     .email('Invalid email address'),
-  services: z.custom<(typeof options)[number]['options'] | undefined>(
-    val => !!val,
-  ),
+  services: z.custom<(typeof options)[number]['options'] | undefined>(),
+  requirements: z.string(),
 })
 
 type FormValues = z.infer<typeof FormSchema>
@@ -241,6 +247,14 @@ function ContactPage() {
                     placeholder='Select services'
                     options={options}
                   />
+                </FormField>
+                <FormField
+                  label='Requirements'
+                  name='requirements'
+                  control={control}
+                  required
+                >
+                  <Textarea placeholder='Share your requirements here...' />
                 </FormField>
                 <Button type='submit' className='px-8'>
                   Send
