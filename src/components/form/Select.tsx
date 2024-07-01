@@ -1,6 +1,7 @@
 import RcSelect, { SelectProps as RcSelectProps } from 'rc-select'
 import { DefaultOptionType } from 'rc-select/lib/Select'
 import { IoChevronDown } from 'react-icons/io5'
+import { twMerge } from 'tailwind-merge'
 
 export type SelectProps = Omit<RcSelectProps, 'children' | 'onChange'> & {
   __invalid?: true
@@ -17,6 +18,7 @@ export function Select({
   return (
     <RcSelect
       {...props}
+      className={twMerge(props.className, __invalid && 'invalid')}
       aria-required={__required}
       aria-invalid={__invalid}
       virtual={false}

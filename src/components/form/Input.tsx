@@ -40,12 +40,12 @@ export function Input({
         aria-required={__required}
         aria-invalid={__invalid}
         className={twMerge(
-          'block h-full w-full rounded-md border border-gray-300 bg-white px-2 text-sm outline-0 transition-all focus:ring-2',
+          'block h-full w-full rounded-md border bg-white px-2 text-sm outline-0 transition-all focus:ring-2',
           prefix && 'pl-9',
           suffix && 'pr-9',
           __invalid
             ? 'border-red-500 hover:border-red-500 focus:border-red-500 focus:ring-red-500'
-            : 'hover:border-indigo-500 focus:border-indigo-500 focus:ring-indigo-500',
+            : 'border-gray-300 hover:border-indigo-500 focus:border-indigo-500 focus:ring-indigo-500',
         )}
       />
       {suffix && <Append className='right-0 top-0'>{suffix}</Append>}

@@ -40,7 +40,9 @@ const FormSchema = z.object({
   email: z
     .string({ required_error: 'Email is required' })
     .email('Invalid email address'),
-  services: z.custom<(typeof options)[number]['options'] | undefined>(),
+  services: z.custom<(typeof options)[number]['options'] | undefined>(
+    val => !!val,
+  ),
 })
 
 type FormValues = z.infer<typeof FormSchema>

@@ -24,6 +24,15 @@
 
 .rc-select {
   @apply w-full;
+  &.invalid {
+    & .rc-select-selector {
+      @apply !border-red-500 hover:!border-red-500;
+    }
+    &.rc-select-focused .rc-select-selector {
+      @apply !ring-red-500;
+    }
+  }
+
   & .rc-select-selector {
     @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 !pr-10 pl-2 outline-0 transition-all hover:border-indigo-500;
   }
