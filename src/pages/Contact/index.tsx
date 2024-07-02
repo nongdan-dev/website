@@ -1,68 +1,11 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { IoMdSend } from 'react-icons/io'
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
-import { z } from 'zod'
 
-import {
-  Button,
-  FormField,
-  Input,
-  Section,
-  Select,
-  Textarea,
-} from '@/components'
+import { Section } from '@/components'
 
-const options = [
-  {
-    label: 'Development',
-    options: [
-      { label: 'Web Development', value: 'Web Development' },
-      { label: 'Mobile Development', value: 'Mobile Development' },
-      { label: 'Tooling Development', value: 'Tooling Development' },
-      { label: 'API Integration', value: 'API Integration' },
-    ],
-  },
-  {
-    label: 'Design',
-    options: [
-      { label: 'User Research', value: 'User Research' },
-      { label: 'User Interface', value: 'User Interface' },
-      { label: 'Experience Design', value: 'Experience Design' },
-      { label: 'Digital Product Design', value: 'Digital Product Design' },
-    ],
-  },
-  {
-    label: 'Other',
-    options: [
-      { label: 'Strategy & Architecture', value: 'Strategy & Architecture' },
-      { label: 'Managed Services', value: 'Managed Services' },
-    ],
-  },
-]
-
-const FormSchema = z.object({
-  name: z.string({ required_error: 'Name is required' }),
-  email: z
-    .string({ required_error: 'Email is required' })
-    .email('Invalid email address'),
-  services: z.custom<(typeof options)[number]['options'] | undefined>(),
-  requirements: z.string().optional(),
-})
-
-type FormValues = z.infer<typeof FormSchema>
+import ContactForm from './ContactForm'
 
 function ContactPage() {
-  const { handleSubmit: _handleSubmit, control } = useForm<FormValues>({
-    resolver: zodResolver(FormSchema),
-    shouldFocusError: false,
-  })
-
-  const handleSubmit = (values: FormValues) => {
-    alert(JSON.stringify(values))
-  }
-
   return (
     <Fragment>
       <Section
@@ -225,41 +168,7 @@ function ContactPage() {
             </p>
             <p>Our team will get back to you within 24hrs.</p>
             <div className='mt-12 grid grid-cols-2 gap-32'>
-              <form onSubmit={_handleSubmit(handleSubmit)}>
-                <FormField label='Name' name='name' control={control} required>
-                  <Input placeholder='e.g. John Doe' />
-                </FormField>
-                <FormField
-                  label='Email'
-                  name='email'
-                  control={control}
-                  required
-                >
-                  <Input placeholder='e.g. john_doe@example.com' />
-                </FormField>
-                <FormField
-                  label='Which services are you looking for?'
-                  name='services'
-                  control={control}
-                >
-                  <Select
-                    mode='multiple'
-                    placeholder='Select services'
-                    options={options}
-                  />
-                </FormField>
-                <FormField
-                  label='Requirements'
-                  name='requirements'
-                  control={control}
-                >
-                  <Textarea placeholder='Share your requirements here...' />
-                </FormField>
-                <Button type='submit' className='px-8'>
-                  Send
-                  <IoMdSend />
-                </Button>
-              </form>
+              <ContactForm />
               <iframe
                 title='maps'
                 src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501725.4184284701!2d106.36555456720427!3d10.755292872920842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1719846597084!5m2!1svi!2s'
