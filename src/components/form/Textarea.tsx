@@ -17,8 +17,13 @@ export function Textarea({
     <textarea
       rows={rows}
       {...props}
+      aria-required={__required}
+      aria-invalid={__invalid}
       className={twMerge(
-        'block w-full rounded-md border border-gray-300 p-2 text-sm outline-none transition-colors hover:border-indigo-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500',
+        'block w-full rounded-md border p-2 text-sm outline-none transition-colors focus:ring-2',
+        __invalid
+          ? 'border-red-500 hover:border-red-500 focus:border-red-500 focus:ring-red-500'
+          : 'border-gray-300 hover:border-indigo-500 focus:border-indigo-500 focus:ring-indigo-500',
         className,
       )}
     />
