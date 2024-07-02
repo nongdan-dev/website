@@ -38,13 +38,13 @@ function ContactPage() {
               can help.
             </p>
             <p>Our team will get back to you within 24hrs.</p>
-            <div className='mt-12 grid grid-cols-2 gap-32'>
+            <div className='mt-12 grid gap-14 lg:grid-cols-2 xl:gap-32'>
               <ContactForm />
               <iframe
                 title='maps'
                 src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501725.4184284701!2d106.36555456720427!3d10.755292872920842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1719846597084!5m2!1svi!2s'
                 loading='lazy'
-                className='h-full w-full overflow-clip rounded-md'
+                className='h-full min-h-[28rem] w-full overflow-clip rounded-md'
                 referrerPolicy='no-referrer-when-downgrade'
               />
             </div>
