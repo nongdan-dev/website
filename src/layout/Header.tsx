@@ -53,11 +53,8 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to='/portfolio'
-                    className='flex h-full items-center px-5'
-                  >
-                    Portfolio
+                  <Link to='/work' className='flex h-full items-center px-5'>
+                    Our work
                   </Link>
                 </li>
                 <li>

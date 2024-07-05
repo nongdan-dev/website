@@ -18,8 +18,8 @@ function Hero() {
             the world.
           </p>
           <Button className='mt-8' asChild>
-            <Link to='/porfolio' defaultStyle>
-              View our Porfolio
+            <Link to='/work' defaultStyle>
+              View our Work
             </Link>
           </Button>
         </div>
