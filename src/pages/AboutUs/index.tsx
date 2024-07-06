@@ -19,12 +19,26 @@ function AboutUsPage() {
           farmers, are also a characteristic part of Vietnam, with a simple and
           hard-working personality
         </p>
-        <img
-          aria-hidden='true'
-          src='https://placehold.co/1000x320'
-          alt=''
-          className='mt-10 h-80 w-full object-cover'
-        />
+        <div className='mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2'>
+          <div className='rounded-md border border-gray-300 p-6'>
+            <h2 className='mb-4 text-2xl font-medium'>Our Mission</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+              pariatur aperiam quo tempora vel odio iste! Cumque optio beatae
+              nam. Quos reprehenderit voluptate voluptatem blanditiis numquam
+              nisi ut quas repudiandae.
+            </p>
+          </div>
+          <div className='rounded-md border border-gray-300 p-6'>
+            <h2 className='mb-4 text-2xl font-medium'>Our Vision</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+              pariatur aperiam quo tempora vel odio iste! Cumque optio beatae
+              nam. Quos reprehenderit voluptate voluptatem blanditiis numquam
+              nisi ut quas repudiandae.
+            </p>
+          </div>
+        </div>
       </Section>
     </Fragment>
   )
