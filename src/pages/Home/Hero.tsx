@@ -12,7 +12,7 @@ function Hero() {
           <h1 className='text-balance text-4xl font-semibold leading-snug sm:text-5xl sm:leading-snug'>
             Practical <LineBreak className='md:inline' /> Software Development
           </h1>
-          <p className='mt-6 text-balance text-lg'>
+          <p className='mt-6 text-balance text-lg lg:max-w-[95%]'>
             Through dedicated and persistent effort, we have been delivering
             production-grade software solutions to companies and startups around
             the world.
