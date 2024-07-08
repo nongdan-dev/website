@@ -30,7 +30,8 @@ function AboutUsPage() {
                 nisi ut quas repudiandae.
               </p>
               <svg
-                className='flex-shrink-0 translate-x-4'
+                aria-hidden='true'
+                className='pointer-events-none flex-shrink-0 translate-x-4'
                 width='177'
                 height='149'
                 viewBox='0 0 177 149'
@@ -58,7 +59,8 @@ function AboutUsPage() {
                 nisi ut quas repudiandae.
               </p>
               <svg
-                className='flex-shrink-0 translate-x-2'
+                aria-hidden='true'
+                className='pointer-events-none flex-shrink-0 translate-x-2'
                 width='178'
                 height='151'
                 viewBox='0 0 178 151'
