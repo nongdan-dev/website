@@ -23,7 +23,7 @@ function Hero() {
             </Link>
           </Button>
         </div>
-        <div className='hidden xl:block xl:translate-x-36'>
+        <div className='hidden xl:block xl:translate-x-20'>
           <img
             aria-hidden='true'
             className='h-[26.25rem]'
