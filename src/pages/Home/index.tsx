@@ -3,7 +3,7 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 import { IoCodeSlashOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
-import { Button, LineBreak, Section } from '@/components'
+import { BuildWithUs, LineBreak, Section } from '@/components'
 
 import Hero from './Hero'
 
@@ -102,22 +102,7 @@ function HomePage() {
 
       {/* --------------------------------------------------------------------------------------------------- */}
 
-      <Section className='col-full-width bg-gray-100'>
-        {({ titleId }) => (
-          <div className='col-content text-center'>
-            <h2
-              id={titleId}
-              className='text-balance text-3xl font-semibold leading-snug'
-            >
-              We'd love to work with you.
-            </h2>
-            <p className='mt-3'>Drop us a message if you need any help</p>
-            <Button asChild className='mt-8'>
-              <Link to='/contact'>Let's build with us</Link>
-            </Button>
-          </div>
-        )}
-      </Section>
+      <BuildWithUs />
     </Fragment>
   )
 }

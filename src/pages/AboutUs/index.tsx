@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
-import { Section } from '@/components'
+import { BuildWithUs, Section } from '@/components'
 
 function AboutUsPage() {
   return (
@@ -84,7 +84,7 @@ function AboutUsPage() {
           </div>
         </div>
       </Section>
-      <Section className='col-full-width bg-gray-100'></Section>
+      <BuildWithUs />
     </Fragment>
   )
 }
