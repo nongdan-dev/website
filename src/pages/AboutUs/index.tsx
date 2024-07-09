@@ -3,6 +3,8 @@ import { twMerge } from 'tailwind-merge'
 
 import { BuildWithUs, Section } from '@/components'
 
+import TeamMembers from './TeamMembers'
+
 function AboutUsPage() {
   return (
     <Fragment>
@@ -60,7 +62,7 @@ function AboutUsPage() {
               </p>
               <svg
                 aria-hidden='true'
-                className='pointer-events-none flex-shrink-0 translate-x-2'
+                className='pointer-events-none flex-shrink-0 translate-x-4'
                 width='178'
                 height='151'
                 viewBox='0 0 178 151'
@@ -84,6 +86,7 @@ function AboutUsPage() {
           </div>
         </div>
       </Section>
+      <TeamMembers />
       <BuildWithUs />
     </Fragment>
   )
