@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
-import { BuildWithUs, Section } from '@/components'
+import { BuildWithUs, LineBreak, Section } from '@/components'
 
 import TeamMembers from './TeamMembers'
 
@@ -85,6 +85,56 @@ function AboutUsPage() {
             </div>
           </div>
         </div>
+      </Section>
+      <Section className='col-full-width bg-gray-100'>
+        {({ titleId, titleClassName }) => (
+          <div className='col-content'>
+            <h2 id={titleId} className={twMerge(titleClassName)}>
+              Nothing is impossible, when we come <LineBreak /> together
+            </h2>
+            <ul className='grid grid-cols-5 gap-6'>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+                <span className='text-5xl font-bold text-indigo-500'>12+</span>
+                <span className='font-medium'>Years of experience</span>
+              </li>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+                <span className='text-5xl font-bold text-indigo-500'>400+</span>
+                <span className='font-medium'>Projects</span>
+              </li>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+                <span className='text-5xl font-bold text-indigo-500'>80%</span>
+                <span className='font-medium'>Repeat clients</span>
+              </li>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+                <span className='text-5xl font-bold text-indigo-500'>90+</span>
+                <span className='font-medium'>Clients</span>
+              </li>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+                <span className='text-5xl font-bold text-indigo-500'>8</span>
+                <span className='font-medium'>Sectors</span>
+              </li>
+            </ul>
+            <div className='mt-10 grid grid-cols-2 gap-8'>
+              <div className='flex flex-col gap-4'>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Vitae, repellat voluptatem quibusdam, quia nemo voluptates
+                  quas distinctio nostrum voluptatibus velit reprehenderit quas
+                  distinctio nostrum voluptatibus velit reprehenderit
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Vitae, repellat voluptatem quibusdam, quia nemo voluptates
+                  quas distinctio nostrum voluptatibus velit reprehenderit
+                  impedit dolores quis eveniet architecto et vero consequatur
+                  ea! impedit dolores quis eveniet architecto et vero ea!
+                  impedit dolores quis eveniet architecto et vero consequatur
+                </p>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        )}
       </Section>
       <TeamMembers />
       <BuildWithUs />

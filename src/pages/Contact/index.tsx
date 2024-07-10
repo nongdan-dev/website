@@ -24,12 +24,9 @@ function ContactPage() {
         <ProcessSteps />
       </Section>
       <Section className='col-full-width bg-gray-100'>
-        {({ titleId }) => (
+        {({ titleId, titleClassName }) => (
           <div className='col-content'>
-            <h2
-              id={titleId}
-              className='mb-4 text-balance text-4xl font-semibold leading-snug'
-            >
+            <h2 id={titleId} className={twMerge(titleClassName, 'mb-4')}>
               Let's <span className='text-indigo-500'>build</span> an awesome
               project <span className='text-indigo-500'>together</span>
             </h2>
