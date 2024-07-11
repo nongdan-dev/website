@@ -114,11 +114,12 @@ function AboutUsPage() {
                 <span className='font-medium'>Sectors</span>
               </li>
             </ul>
-            <div className='mt-10 grid grid-cols-2 gap-8'>
+            <div className='mt-16 grid grid-cols-2 items-center gap-12'>
               <div className='flex flex-col gap-4'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Vitae, repellat voluptatem quibusdam, quia nemo voluptates
+                  quas distinctio nostrum voluptatibus velit reprehenderit quas
                   quas distinctio nostrum voluptatibus velit reprehenderit quas
                   distinctio nostrum voluptatibus velit reprehenderit
                 </p>
@@ -127,11 +128,24 @@ function AboutUsPage() {
                   Vitae, repellat voluptatem quibusdam, quia nemo voluptates
                   quas distinctio nostrum voluptatibus velit reprehenderit
                   impedit dolores quis eveniet architecto et vero consequatur
-                  ea! impedit dolores quis eveniet architecto et vero ea!
-                  impedit dolores quis eveniet architecto et vero consequatur
+                  ea! impedit dolores quis eveniet architecto et vero ea! ea!
+                  impedit dolores quis eveniet architecto et vero ea! impedit
+                  dolores quis eveniet architecto et vero consequatur
                 </p>
               </div>
-              <div></div>
+              <div className='relative'>
+                <img
+                  aria-hidden='true'
+                  className='pointer-events-none absolute h-[23rem] w-full rounded-md object-cover blur-sm'
+                  src='https://placehold.co/600x400'
+                  alt=''
+                />
+                <img
+                  className='relative h-[23rem] w-full rounded-md object-cover'
+                  src='https://placehold.co/600x400'
+                  alt=''
+                />
+              </div>
             </div>
           </div>
         )}
