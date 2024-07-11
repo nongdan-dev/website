@@ -16,13 +16,13 @@ function AboutUsPage() {
           </h1>
         )}
       >
-        <p className='w-full lg:w-6/12'>
+        <p className='w-full md:w-9/12 lg:w-7/12 xl:w-6/12'>
           The name <span className='mr-1 italic'>"nongdan"</span> meaning
           farmers, are also a characteristic part of Vietnam, with a simple and
           hard-working personality
         </p>
         <div className='mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2'>
-          <div className='overflow-clip rounded-md border border-gray-300 p-6 pb-4 pr-0'>
+          <div className='overflow-clip rounded-md border border-gray-300 p-6 pb-4 xl:pr-0'>
             <h2 className='mb-4 text-2xl font-medium'>Our Mission</h2>
             <div className='flex gap-3'>
               <p>
@@ -33,7 +33,7 @@ function AboutUsPage() {
               </p>
               <svg
                 aria-hidden='true'
-                className='pointer-events-none flex-shrink-0 translate-x-4'
+                className='pointer-events-none hidden flex-shrink-0 translate-x-4 xl:block'
                 width='177'
                 height='149'
                 viewBox='0 0 177 149'
@@ -51,7 +51,7 @@ function AboutUsPage() {
               </svg>
             </div>
           </div>
-          <div className='overflow-clip rounded-md border border-gray-300 p-6 pb-4 pr-0'>
+          <div className='overflow-clip rounded-md border border-gray-300 p-6 pb-4 xl:pr-0'>
             <h2 className='mb-4 text-2xl font-medium'>Our Vision</h2>
             <div className='flex gap-3'>
               <p>
@@ -62,7 +62,7 @@ function AboutUsPage() {
               </p>
               <svg
                 aria-hidden='true'
-                className='pointer-events-none flex-shrink-0 translate-x-4'
+                className='pointer-events-none hidden flex-shrink-0 translate-x-4 xl:block'
                 width='178'
                 height='151'
                 viewBox='0 0 178 151'
@@ -92,7 +92,7 @@ function AboutUsPage() {
             <h2 id={titleId} className={twMerge(titleClassName)}>
               Nothing is impossible, when we come <LineBreak /> together
             </h2>
-            <ul className='grid grid-cols-5 gap-6'>
+            <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
               <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
                 <span className='text-5xl font-bold text-indigo-500'>12+</span>
                 <span className='font-medium'>Years of experience</span>
@@ -114,7 +114,7 @@ function AboutUsPage() {
                 <span className='font-medium'>Sectors</span>
               </li>
             </ul>
-            <div className='mt-16 grid grid-cols-2 items-center gap-12'>
+            <div className='mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
               <div className='flex flex-col gap-4'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.

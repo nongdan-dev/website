@@ -27,7 +27,7 @@ function TeamMembers() {
             <span className='text-indigo-500'>designers</span> and{' '}
             <span className='text-indigo-500'>problem solvers</span>
           </h2>
-          <ul className='mt-16 grid grid-cols-4 gap-x-6 gap-y-8'>
+          <ul className='grid-col-1 mt-16 grid gap-x-6 gap-y-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
             {MEMBERS.map(member => (
               <li key={member.id}>
                 <img

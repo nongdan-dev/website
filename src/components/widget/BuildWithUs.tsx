@@ -7,7 +7,7 @@ import { Section } from './Section'
 export function BuildWithUs() {
   return (
     <Section
-      className='col-full-width bg-gray-100 !bg-cover !bg-no-repeat py-24'
+      className='col-full-width bg-gray-100 !bg-cover !bg-no-repeat py-20'
       style={{ background: `url(${SectionBg})` }}
     >
       {({ titleId }) => (
