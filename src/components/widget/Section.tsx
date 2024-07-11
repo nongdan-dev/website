@@ -18,7 +18,7 @@ export type SectionProps = Omit<
 export function Section({ title, subtitle, children, ...props }: SectionProps) {
   const titleId = useId()
   const titleClassName =
-    'mb-8 text-balance font-semibold leading-snug text-5xl sm:leading-snug'
+    'mb-8 text-balance font-semibold text-4xl sm:text-5xl !leading-snug'
 
   const renderTitle = () => {
     if (!title) return null
