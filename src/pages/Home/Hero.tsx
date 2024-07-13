@@ -34,6 +34,7 @@ function Hero() {
       </div>
       <div className='col-content mt-24 xl:mt-[7.5rem]'>
         <Swiper
+          className='pb-1'
           spaceBetween={32}
           slidesPerView={1.1}
           breakpoints={{
@@ -84,7 +85,7 @@ function Hero() {
           </SwiperSlide>
           <SwiperSlide
             tag='blockquote'
-            className='relative rounded-xl border border-gray-300 px-8 py-10 leading-relaxed shadow-md'
+            className='rounded-xl border border-gray-300 px-8 py-10 leading-relaxed shadow-md'
           >
             <BiSolidQuoteAltLeft
               aria-hidden='true'

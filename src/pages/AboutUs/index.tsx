@@ -93,28 +93,28 @@ function AboutUsPage() {
               Nothing is impossible, when we come <LineBreak /> together
             </h2>
             <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
-              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
                 <span className='text-5xl font-bold text-indigo-500'>12+</span>
                 <span className='font-medium'>Years of experience</span>
               </li>
-              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
                 <span className='text-5xl font-bold text-indigo-500'>400+</span>
                 <span className='font-medium'>Projects</span>
               </li>
-              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
                 <span className='text-5xl font-bold text-indigo-500'>80%</span>
                 <span className='font-medium'>Repeat clients</span>
               </li>
-              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
                 <span className='text-5xl font-bold text-indigo-500'>90+</span>
                 <span className='font-medium'>Clients</span>
               </li>
-              <li className='flex flex-col items-center justify-center gap-1 rounded-md bg-white p-8 text-center shadow-md'>
+              <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
                 <span className='text-5xl font-bold text-indigo-500'>8</span>
                 <span className='font-medium'>Sectors</span>
               </li>
             </ul>
-            <div className='mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
+            <div className='mt-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
               <div className='flex flex-col gap-4'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
