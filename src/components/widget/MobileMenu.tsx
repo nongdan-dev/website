@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { MouseEventHandler, useEffect } from 'react'
 import { GrMail } from 'react-icons/gr'
 import { twMerge } from 'tailwind-merge'
 
@@ -36,6 +36,13 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
     }
   }
 
+  const handleScrollToSection: MouseEventHandler<HTMLAnchorElement> = e => {
+    e.preventDefault()
+    const id = (e.target as HTMLAnchorElement).hash.replace('#', '')
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    onClose()
+  }
+
   return (
     <div
       aria-hidden={!visible}
@@ -52,9 +59,9 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
           <ul>
             <li>
               <Link
-                to='/services'
+                to='#services'
                 className='block py-4 text-center text-lg font-medium'
-                onClick={onClose}
+                onClick={handleScrollToSection}
               >
                 Services
               </Link>

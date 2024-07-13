@@ -16,7 +16,7 @@ function Footer() {
   return (
     <footer className='grid-container mt-20'>
       <div className='col-content'>
-        <div className='flex flex-col gap-16 lg:flex-row'>
+        <div id='services' className='flex flex-col gap-16 lg:flex-row'>
           <address className='order-1 flex flex-col gap-y-1.5 not-italic lg:order-none lg:w-1/3'>
             <div className='flex items-center gap-3'>
               <BiSolidPhoneCall

@@ -1,5 +1,11 @@
 import { throttle } from 'lodash'
-import { Fragment, useState, useCallback, useEffect } from 'react'
+import {
+  Fragment,
+  useState,
+  useCallback,
+  useEffect,
+  MouseEventHandler,
+} from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Button, Link, MobileMenu, Portal } from '@/components'
@@ -24,6 +30,12 @@ function Header() {
     [],
   )
 
+  const handleScrollToSection: MouseEventHandler<HTMLAnchorElement> = e => {
+    e.preventDefault()
+    const id = (e.target as HTMLAnchorElement).hash.replace('#', '')
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <Fragment>
       <header className='fixed inset-x-0 top-0 z-10'>
@@ -46,8 +58,9 @@ function Header() {
               <ul className='flex h-full flex-row'>
                 <li>
                   <Link
-                    to='/services'
+                    to='#services'
                     className='flex h-full items-center px-5'
+                    onClick={handleScrollToSection}
                   >
                     Services
                   </Link>
