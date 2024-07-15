@@ -1,5 +1,7 @@
 import { Fragment } from 'react'
 
+import BeingsLogo from '@/assets/app-logos/beings.png'
+import BrekekeLogo from '@/assets/app-logos/brekeke.png'
 import ChimeraLogo from '@/assets/app-logos/chimera.png'
 import { BuildWithUs, LineBreak, Section } from '@/components'
 
@@ -25,11 +27,12 @@ function OurWorkPage() {
             </div>
             <div className='order-1'>
               <div className='mb-5'>
-                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+                <img src={BeingsLogo} alt='beings' className='max-h-10' />
               </div>
               <div className='flex flex-col gap-2'>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <span className='font-semibold text-indigo-500'>Beings</span>{' '}
+                  is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Obcaecati repellendus, vitae, ea numquam animi saepe ducimus
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
@@ -61,11 +64,12 @@ function OurWorkPage() {
             </div>
             <div className='lg:order-[-1]'>
               <div className='mb-5'>
-                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+                <img src={BrekekeLogo} alt='brekeke' className='max-h-10' />
               </div>
               <div className='flex flex-col gap-2'>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <span className='font-semibold text-indigo-500'>Brekeke</span>{' '}
+                  is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Obcaecati repellendus, vitae, ea numquam animi saepe ducimus
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
@@ -95,7 +99,7 @@ function OurWorkPage() {
               </div>
               <div className='flex flex-col gap-2'>
                 <p>
-                  <span className='font-medium text-indigo-500'>Chimera</span>{' '}
+                  <span className='font-semibold text-indigo-500'>Chimera</span>{' '}
                   is a Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Nesciunt temporibus vitae quaerat. Deleniti neque quisquam est
                 </p>
