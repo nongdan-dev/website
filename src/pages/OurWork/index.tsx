@@ -68,25 +68,28 @@ function OurWorkPage() {
               </div>
               <div className='flex flex-col gap-2'>
                 <p>
-                  <span className='font-semibold text-indigo-500'>Brekeke</span>{' '}
-                  is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati repellendus, vitae, ea numquam animi saepe ducimus
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <span className='font-semibold text-indigo-500'>
+                    Brekeke Software, Inc.
+                  </span>{' '}
+                  is an industry-leading developer of SIP
+                  <span className='italic'>
+                    (Session Initiation Protocol)
+                  </span>{' '}
+                  software products for IP{' '}
+                  <span className='italic'>(Internet Protocol)</span> network
+                  communications.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-                  deserunt! Iure dolore, beatae asperiores illum nulla iusto
-                  autem, voluptatum facere voluptate a, ex vel eius consequatur
-                  quasi. Numquam hic accusantium sunt! Vero impedit qui at
-                  quibusdam illum dolore. Labore quia quas ratione animi ab
-                  exercitationem molestiae non totam consequuntur beatae eius
-                  quibusdam amet rem quis nisi sit debitis minima obcaecati
-                  alias tempore, recusandae doloribus ipsam magnam? Similique
-                  quas deserunt earum hic voluptatibus sunt voluptates illo
-                  possimus ratione! Tempora quo delectus ad nesciunt quasi
-                  quisquam inventore fugit porro, veniam aut aliquam error
-                  voluptas sit earum corrupti, magni dolores provident fuga.
-                  Saepe.
+                  Our products set such a high standard in quality and
+                  reliability that they are deployed as mission-critical
+                  communication platforms for healthcare systems, military and
+                  emergency communication systems, mass-communication
+                  environments{' '}
+                  <span className='italic'>
+                    (such as call centers and financial institutions)
+                  </span>{' '}
+                  and SIP telephony platforms for a large number of SIP
+                  applications and SIP telephony networks.
                 </p>
               </div>
             </div>
