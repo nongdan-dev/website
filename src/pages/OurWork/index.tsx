@@ -15,9 +15,15 @@ function OurWorkPage() {
         }
       >
         <div className='mt-20'>
-          <div className='flex gap-8'>
-            <img src='https://placehold.co/500x300' alt='app screenshot' />
-            <div>
+          <div className='grid gap-10 lg:grid-cols-[31.25rem,1fr]'>
+            <div className='flex justify-center bg-blue-200'>
+              <img
+                src='https://placehold.co/500x300'
+                className='max-h-[18.75rem] self-center'
+                alt='app screenshot'
+              />
+            </div>
+            <div className='order-1'>
               <div className='mb-5'>
                 <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
               </div>
@@ -45,9 +51,15 @@ function OurWorkPage() {
               </div>
             </div>
           </div>
-          <div className='mt-16 flex gap-8'>
-            <img src='https://placehold.co/500x300' alt='app screenshot' />
-            <div className='order-[-1]'>
+          <div className='mt-20 grid gap-10 lg:grid-cols-[1fr,31.25rem]'>
+            <div className='flex justify-center bg-green-200'>
+              <img
+                src='https://placehold.co/500x300'
+                className='max-h-[18.75rem] self-center'
+                alt='app screenshot'
+              />
+            </div>
+            <div className='lg:order-[-1]'>
               <div className='mb-5'>
                 <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
               </div>
@@ -75,8 +87,8 @@ function OurWorkPage() {
               </div>
             </div>
           </div>
-          <div className='my-16 h-px w-full bg-gray-200' />
-          <ul className='grid grid-cols-3 gap-16'>
+          <div className='my-20 h-px w-full bg-gray-200' />
+          <ul className='grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3'>
             <li>
               <div className='mb-5'>
                 <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
