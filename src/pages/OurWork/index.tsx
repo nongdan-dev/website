@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 
+import ChimeraLogo from '@/assets/app-logos/chimera.png'
 import { BuildWithUs, LineBreak, Section } from '@/components'
 
 function OurWorkPage() {
@@ -17,7 +18,9 @@ function OurWorkPage() {
           <div className='flex gap-8'>
             <img src='https://placehold.co/500x300' alt='app screenshot' />
             <div>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -45,7 +48,9 @@ function OurWorkPage() {
           <div className='mt-16 flex gap-8'>
             <img src='https://placehold.co/500x300' alt='app screenshot' />
             <div className='order-[-1]'>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -73,11 +78,14 @@ function OurWorkPage() {
           <div className='my-16 h-px w-full bg-gray-200' />
           <ul className='grid grid-cols-3 gap-16'>
             <li>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
-                  Obcaecati repellendus, vitae, ea numquam animi saepe ducimus
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <span className='font-medium text-indigo-500'>Chimera</span>{' '}
+                  is a Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Nesciunt temporibus vitae quaerat. Deleniti neque quisquam est
                 </p>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
@@ -91,7 +99,9 @@ function OurWorkPage() {
               </div>
             </li>
             <li>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -109,7 +119,9 @@ function OurWorkPage() {
               </div>
             </li>
             <li>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -127,7 +139,9 @@ function OurWorkPage() {
               </div>
             </li>
             <li>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -145,7 +159,9 @@ function OurWorkPage() {
               </div>
             </li>
             <li>
-              <div className='mb-4 text-2xl'>APP LOGO</div>
+              <div className='mb-5'>
+                <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+              </div>
               <div className='flex flex-col gap-2'>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
