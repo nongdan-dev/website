@@ -3,7 +3,8 @@ import { Fragment } from 'react'
 import BeingsLogo from '@/assets/app-logos/beings.png'
 import BrekekeLogo from '@/assets/app-logos/brekeke.png'
 import ChimeraLogo from '@/assets/app-logos/chimera.png'
-import { BuildWithUs, LineBreak, Section } from '@/components'
+import brekekeThumbnail from '@/assets/brekeke-thumbnail.png'
+import { BuildWithUs, Button, LineBreak, Section } from '@/components'
 
 function OurWorkPage() {
   return (
@@ -55,9 +56,9 @@ function OurWorkPage() {
             </div>
           </div>
           <div className='mt-20 grid gap-10 lg:grid-cols-[1fr,31.25rem]'>
-            <div className='flex justify-center bg-green-200'>
+            <div className='flex justify-center overflow-clip rounded-md bg-[#74CADC]'>
               <img
-                src='https://placehold.co/500x300'
+                src={brekekeThumbnail}
                 className='max-h-[18.75rem] self-center'
                 alt='app screenshot'
               />
@@ -91,10 +92,15 @@ function OurWorkPage() {
                   and SIP telephony platforms for a large number of SIP
                   applications and SIP telephony networks.
                 </p>
+                <Button asChild className='mt-2 inline-block w-fit'>
+                  <a href='https://brekeke.com/' target='_blank'>
+                    Try now!
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
-          <div className='my-20 h-px w-full bg-gray-200' />
+          <div className='my-16 h-px w-full bg-gray-200 md:my-20' />
           <ul className='grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3'>
             <li>
               <div className='mb-5'>
