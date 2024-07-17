@@ -39,7 +39,7 @@ function Hero() {
           slidesPerView={1.1}
           breakpoints={{
             640: { slidesPerView: 1.5 },
-            950: { slidesPerView: 2.1 },
+            950: { slidesPerView: 2.2 },
             1300: { slidesPerView: 3 },
           }}
         >

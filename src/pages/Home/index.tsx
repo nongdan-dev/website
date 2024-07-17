@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
-import { FaArrowRightLong } from 'react-icons/fa6'
-import { IoCodeSlashOutline } from 'react-icons/io5'
+import { FaArrowRightLong, FaCode, FaCodeCommit } from 'react-icons/fa6'
+import { MdOutlineMonitorHeart } from 'react-icons/md'
+import { TbDiamond } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
@@ -32,17 +33,30 @@ function HomePage() {
           </p>
         </div>
         <ul className='mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4'>
-          {Array.from({ length: 4 }).map((_, idx) => (
-            <li
-              key={idx}
-              className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'
-            >
-              <IoCodeSlashOutline className='mb-8 text-4xl text-gray-500' />
-              <h3 className='text-balance text-xl font-medium'>
-                Pride in well-crafted products
-              </h3>
-            </li>
-          ))}
+          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
+            <TbDiamond className='mb-8 text-4xl text-gray-500/70' />
+            <h3 className='text-balance text-xl font-medium'>
+              Pride in well-crafted products
+            </h3>
+          </li>
+          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
+            <FaCode className='mb-8 text-4xl text-gray-500/70' />
+            <h3 className='text-balance text-xl font-medium'>
+              Cultivating engineering culture
+            </h3>
+          </li>
+          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
+            <FaCodeCommit className='mb-8 text-4xl text-gray-500/70' />
+            <h3 className='text-balance text-xl font-medium'>
+              Embracing the Agile Manifesto
+            </h3>
+          </li>
+          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
+            <MdOutlineMonitorHeart className='mb-8 text-4xl text-gray-500/70' />
+            <h3 className='text-balance text-xl font-medium'>
+              Technical decision based on real value
+            </h3>
+          </li>
         </ul>
         <div className='mt-10'>
           <Link
