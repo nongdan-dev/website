@@ -3,6 +3,8 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
+import BgPattern1 from '@/assets/bg-pattern-1.png'
+import BgPattern2 from '@/assets/bg-pattern-2.png'
 import { Code, Diamond, Flow, Monitor } from '@/components/svg'
 import { BuildWithUs, LineBreak, Section } from '@/components/widget'
 
@@ -32,29 +34,53 @@ function HomePage() {
           </p>
         </div>
         <ul className='mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4'>
-          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <Diamond className='mb-8 text-3xl text-gray-500/90' />
-            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
-              Pride in well-crafted products
-            </h3>
+          <li className='relative flex flex-col justify-between overflow-clip rounded-md bg-gray-200 p-8'>
+            <div
+              className='absolute inset-0 bg-cover'
+              style={{ backgroundImage: `url(${BgPattern1})` }}
+            />
+            <div className='relative'>
+              <Diamond className='mb-8 text-3xl text-gray-500/90' />
+              <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
+                Pride in well-crafted products
+              </h3>
+            </div>
           </li>
-          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <Code className='mb-8 text-3xl text-gray-500' />
-            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
-              Cultivating engineering culture
-            </h3>
+          <li className='relative flex flex-col justify-between overflow-clip rounded-md bg-gray-200 p-8'>
+            <div
+              className='absolute inset-0 bg-cover'
+              style={{ backgroundImage: `url(${BgPattern2})` }}
+            />
+            <div className='relative'>
+              <Code className='mb-8 text-3xl text-gray-500' />
+              <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
+                Cultivating engineering culture
+              </h3>
+            </div>
           </li>
-          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <Flow className='mb-8 text-3xl text-gray-500' />
-            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
-              Embracing the Agile Manifesto
-            </h3>
+          <li className='relative flex flex-col justify-between overflow-clip rounded-md bg-gray-200 p-8'>
+            <div
+              className='absolute inset-0 rotate-180 scale-110 bg-cover'
+              style={{ backgroundImage: `url(${BgPattern1})` }}
+            />
+            <div className='relative'>
+              <Flow className='mb-8 text-3xl text-gray-500' />
+              <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
+                Embracing the Agile Manifesto
+              </h3>
+            </div>
           </li>
-          <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <Monitor className='mb-8 text-3xl text-gray-500/90' />
-            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
-              Technical decision based on real value
-            </h3>
+          <li className='relative flex flex-col justify-between overflow-clip rounded-md bg-gray-200 p-8'>
+            <div
+              className='absolute inset-0 rotate-180 bg-cover'
+              style={{ backgroundImage: `url(${BgPattern2})` }}
+            />
+            <div className='relative'>
+              <Monitor className='mb-8 text-3xl text-gray-500/90' />
+              <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
+                Technical decision based on real value
+              </h3>
+            </div>
           </li>
         </ul>
         <div className='mt-10'>
