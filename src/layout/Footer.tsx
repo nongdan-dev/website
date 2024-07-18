@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa6'
 import { GrMail } from 'react-icons/gr'
 
-import { Link } from '@/components'
+import { Link } from '@/components/ui'
 import { companyInfo } from '@/config/metadata'
 
 function Footer() {

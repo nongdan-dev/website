@@ -2,7 +2,8 @@ import { BiSolidQuoteAltLeft } from 'react-icons/bi'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import Illustration from '@/assets/illustration.svg'
-import { Avatar, Button, LineBreak, Link } from '@/components'
+import { Avatar, Button, Link } from '@/components/ui'
+import { LineBreak } from '@/components/widget'
 
 function Hero() {
   return (

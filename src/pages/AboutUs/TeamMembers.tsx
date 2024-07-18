@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
-import { LineBreak, Section } from '@/components'
+import { LineBreak, Section } from '@/components/widget'
 
 const MEMBERS = [
   { id: 1, name: 'Michael McElhaney', role: 'Founder & CEO' },

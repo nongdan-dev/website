@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-import { SkipToMainContent } from '@/components'
+import { SkipToMainContent } from '@/components/widget'
 
 import Footer from './Footer'
 import Header from './Header'

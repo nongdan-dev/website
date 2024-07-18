@@ -4,7 +4,8 @@ import BeingsLogo from '@/assets/beings-logo.png'
 import BrekekeLogo from '@/assets/brekeke-logo.png'
 import brekekeThumbnail from '@/assets/brekeke-thumbnail.png'
 import ChimeraLogo from '@/assets/chimera-logo.png'
-import { BuildWithUs, Button, LineBreak, Section } from '@/components'
+import { Button } from '@/components/ui'
+import { BuildWithUs, LineBreak, Section } from '@/components/widget'
 
 function OurWorkPage() {
   return (

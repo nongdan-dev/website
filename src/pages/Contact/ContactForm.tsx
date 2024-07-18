@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import { IoMdSend } from 'react-icons/io'
 import { z } from 'zod'
 
-import { Button, FormField, Input, Select, Textarea } from '@/components'
+import { FormField, Input, Select, Textarea } from '@/components/form'
+import { Button } from '@/components/ui'
 
 const options = [
   {

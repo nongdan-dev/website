@@ -3,8 +3,8 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-import { BuildWithUs, LineBreak, Section } from '@/components'
 import { Code, Diamond, Flow, Monitor } from '@/components/svg'
+import { BuildWithUs, LineBreak, Section } from '@/components/widget'
 
 import Hero from './Hero'
 

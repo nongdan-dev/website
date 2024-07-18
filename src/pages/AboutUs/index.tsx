@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
-import { BuildWithUs, LineBreak, Section } from '@/components'
+import { BuildWithUs, LineBreak, Section } from '@/components/widget'
 
 import TeamMembers from './TeamMembers'
 

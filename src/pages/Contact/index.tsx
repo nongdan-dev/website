@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
-import { Section } from '@/components'
+import { Section } from '@/components/widget'
 
 import ContactForm from './ContactForm'
 import ProcessSteps from './ProcessSteps'

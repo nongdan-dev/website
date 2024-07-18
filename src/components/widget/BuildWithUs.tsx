@@ -1,7 +1,6 @@
 import SectionBg from '@/assets/build-width-us-bg.png'
 
-import { Button } from '../ui/Button'
-import { Link } from '../ui/Link'
+import { Button, Link } from '../ui'
 import { Section } from './Section'
 
 export function BuildWithUs() {

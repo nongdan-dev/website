@@ -8,7 +8,8 @@ import {
 } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { Button, Link, MobileMenu, Portal } from '@/components'
+import { Button, Link, Portal } from '@/components/ui'
+import { MobileMenu } from '@/components/widget'
 
 import logo from '../assets/logo.svg'
 

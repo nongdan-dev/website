@@ -5,8 +5,7 @@ import { twMerge } from 'tailwind-merge'
 import { companyInfo } from '@/config/metadata'
 import useLockScroll from '@/hooks/useLockScroll'
 
-import { Button } from '../ui/Button'
-import { Link } from '../ui/Link'
+import { Button, Link } from '../ui'
 
 export type MobileMenuProps = {
   visible: boolean
