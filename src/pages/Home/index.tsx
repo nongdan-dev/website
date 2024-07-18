@@ -1,11 +1,10 @@
 import { Fragment } from 'react'
-import { FaArrowRightLong, FaCode, FaCodeCommit } from 'react-icons/fa6'
-import { MdOutlineMonitorHeart } from 'react-icons/md'
-import { TbDiamond } from 'react-icons/tb'
+import { FaArrowRightLong } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import { BuildWithUs, LineBreak, Section } from '@/components'
+import { Code, Diamond, Flow, Monitor } from '@/components/svg'
 
 import Hero from './Hero'
 
@@ -34,26 +33,26 @@ function HomePage() {
         </div>
         <ul className='mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4'>
           <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <TbDiamond className='mb-8 text-4xl text-gray-500/70' />
-            <h3 className='text-balance text-xl font-medium'>
+            <Diamond className='mb-8 text-3xl text-gray-500/90' />
+            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
               Pride in well-crafted products
             </h3>
           </li>
           <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <FaCode className='mb-8 text-4xl text-gray-500/70' />
-            <h3 className='text-balance text-xl font-medium'>
+            <Code className='mb-8 text-3xl text-gray-500' />
+            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
               Cultivating engineering culture
             </h3>
           </li>
           <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <FaCodeCommit className='mb-8 text-4xl text-gray-500/70' />
-            <h3 className='text-balance text-xl font-medium'>
+            <Flow className='mb-8 text-3xl text-gray-500' />
+            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
               Embracing the Agile Manifesto
             </h3>
           </li>
           <li className='flex flex-col justify-between rounded-md bg-gray-200/80 p-8'>
-            <MdOutlineMonitorHeart className='mb-8 text-4xl text-gray-500/70' />
-            <h3 className='text-balance text-xl font-medium'>
+            <Monitor className='mb-8 text-3xl text-gray-500/90' />
+            <h3 className='text-balance text-xl font-medium tracking-[0.2px]'>
               Technical decision based on real value
             </h3>
           </li>
