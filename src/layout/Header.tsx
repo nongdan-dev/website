@@ -8,10 +8,9 @@ import {
 } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+import { Logo } from '@/components/svg'
 import { Button, Link, Portal } from '@/components/ui'
 import { MobileMenu } from '@/components/widget'
-
-import logo from '../assets/logo.svg'
 
 const SCROLL_THRESHOLD = 80
 
@@ -53,7 +52,10 @@ function Header() {
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMenu(false)}
             >
-              <img className='w-36' src={logo} alt='' aria-hidden='true' />
+              <Logo
+                aria-hidden='true'
+                className='h-full w-36 text-indigo-500'
+              />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row'>
