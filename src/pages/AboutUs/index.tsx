@@ -133,19 +133,11 @@ function AboutUsPage() {
                   dolores quis eveniet architecto et vero consequatur
                 </p>
               </div>
-              <div className='relative'>
-                <img
-                  aria-hidden='true'
-                  className='pointer-events-none absolute h-[23rem] w-full rounded-md object-cover blur-sm'
-                  src='https://placehold.co/600x400'
-                  alt=''
-                />
-                <img
-                  className='relative h-[23rem] w-full rounded-md object-cover'
-                  src='https://placehold.co/600x400'
-                  alt=''
-                />
-              </div>
+              <img
+                className='h-[23rem] w-full rounded-md object-cover'
+                src='https://placehold.co/600x400'
+                alt=''
+              />
             </div>
           </div>
         )}
