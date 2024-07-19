@@ -61,7 +61,7 @@ function OurWorkPage() {
               <img
                 src={brekekeThumbnail}
                 className='max-h-[18.75rem] self-center'
-                alt='brekeke thumbnail'
+                alt='thumbnail of Brekeke software'
               />
             </div>
             <div className='lg:order-[-1]'>
