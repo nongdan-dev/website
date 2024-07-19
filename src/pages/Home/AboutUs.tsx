@@ -14,23 +14,23 @@ function AboutUs() {
             Nothing is impossible, <LineBreak /> when we come together
           </h2>
           <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
-            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
+            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-8 text-center shadow-md'>
               <span className='text-5xl font-bold text-indigo-500'>12+</span>
               <span className='font-medium'>Years of experience</span>
             </li>
-            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
+            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-8 text-center shadow-md'>
               <span className='text-5xl font-bold text-indigo-500'>400+</span>
               <span className='font-medium'>Projects</span>
             </li>
-            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
+            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-8 text-center shadow-md'>
               <span className='text-5xl font-bold text-indigo-500'>80%</span>
               <span className='font-medium'>Repeat clients</span>
             </li>
-            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
+            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-8 text-center shadow-md'>
               <span className='text-5xl font-bold text-indigo-500'>90+</span>
               <span className='font-medium'>Clients</span>
             </li>
-            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-100 bg-white p-8 text-center shadow-md'>
+            <li className='flex flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-8 text-center shadow-md'>
               <span className='text-5xl font-bold text-indigo-500'>8</span>
               <span className='font-medium'>Sectors</span>
             </li>
@@ -55,12 +55,6 @@ function AboutUs() {
               </p>
             </div>
             <div className='relative'>
-              <img
-                aria-hidden='true'
-                className='pointer-events-none absolute h-[23rem] w-full rounded-md object-cover blur-sm'
-                src='https://placehold.co/600x400'
-                alt=''
-              />
               <img
                 className='relative h-[23rem] w-full rounded-md object-cover'
                 src='https://placehold.co/600x400'
