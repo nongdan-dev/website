@@ -1,4 +1,4 @@
-import { Fragment } from 'react/jsx-runtime'
+import { Fragment } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { LineBreak, Section } from '@/components/widget'
