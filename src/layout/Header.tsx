@@ -1,11 +1,11 @@
-import { throttle } from 'lodash'
+import * as Popover from '@radix-ui/react-popover'
 import {
   Fragment,
   useState,
-  useCallback,
-  useEffect,
   Dispatch,
   SetStateAction,
+  useRef,
+  RefObject,
 } from 'react'
 import { FaAngleDown } from 'react-icons/fa6'
 import { twMerge } from 'tailwind-merge'
@@ -13,8 +13,6 @@ import { twMerge } from 'tailwind-merge'
 import { Logo } from '@/components/svg'
 import { Button, Link, Portal } from '@/components/ui'
 import { MobileMenu } from '@/components/widget'
-
-const SCROLL_THRESHOLD = 80
 
 function MobileMenuTrigger({
   visible,
@@ -75,31 +73,129 @@ function MobileMenuTrigger({
   )
 }
 
-function Header() {
-  const [showBorder, setShowBorder] = useState(false)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const handleScroll = useCallback(
-    throttle(() => {
-      setShowBorder(window.scrollY >= SCROLL_THRESHOLD)
-    }, 16),
-    [],
+function DropdownMenu({
+  containerRef,
+}: {
+  containerRef: RefObject<HTMLElement>
+}) {
+  return (
+    <Popover.Root>
+      <Popover.Trigger asChild aria-haspopup='menu'>
+        <button className='group flex h-full items-center gap-1.5 px-5 transition-colors hover:text-indigo-500 focus-visible:text-indigo-500 data-[state=open]:text-indigo-500'>
+          <span>Services</span>
+          <FaAngleDown className='transition-transform group-data-[state=open]:-rotate-180' />
+        </button>
+      </Popover.Trigger>
+      <Popover.Portal container={containerRef.current}>
+        <Popover.Content
+          sideOffset={16}
+          className='data-[state=open]:animate-slideUpAndFade z-10 grid grid-cols-3 gap-20 rounded-b-md bg-white px-10 py-8 shadow-lg'
+        >
+          <nav aria-label='Development'>
+            <span aria-hidden='true' className='font-semibold'>
+              Development
+            </span>
+            <ul className='mt-3'>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Web Development
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Mobile Development
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Tooling Development
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  API Integration
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Strategy & Architecture
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Managed Services
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <nav aria-label='Design'>
+            <span aria-hidden='true' className='font-semibold'>
+              Design
+            </span>
+            <ul className='mt-3'>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  User Research
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  User Interface
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Experience Design
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Digital Product Design
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <nav aria-label='Other'>
+            <span aria-hidden='true' className='font-semibold'>
+              Other
+            </span>
+            <ul className='mt-3'>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Our Clients
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to='/' className='inline-block py-1'>
+                  Goals
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   )
+}
+
+function Header() {
+  const headerRef = useRef<HTMLElement>(null)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   return (
     <Fragment>
-      <header className='fixed inset-x-0 top-0 z-10'>
-        <div
-          className={twMerge(
-            'grid-container transition-color relative h-20 border-b bg-white',
-            showBorder ? 'border-gray-300' : 'border-transparent',
-          )}
-        >
+      <header ref={headerRef} className='fixed inset-x-0 top-0 z-10'>
+        <div className='grid-container transition-color relative h-20 border-b border-gray-300 bg-white'>
           <div className='col-content flex flex-row items-center justify-between'>
             <Link
               to='/'
@@ -115,10 +211,7 @@ function Header() {
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row'>
                 <li>
-                  <button className='flex h-full items-center gap-1.5 px-5 transition-colors hover:text-indigo-500 focus-visible:text-indigo-500'>
-                    <span>Services</span>
-                    <FaAngleDown />
-                  </button>
+                  <DropdownMenu containerRef={headerRef} />
                 </li>
                 <li>
                   <Link
