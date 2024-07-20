@@ -19,7 +19,7 @@ export function BuildWithUs() {
           </h2>
           <p className='mt-3'>Drop us a message if you need any help</p>
           <Button asChild className='mt-8'>
-            <Link to='/contact' defaultStyle>
+            <Link to='/contact' useDefaultStyle>
               Let's build with us
             </Link>
           </Button>

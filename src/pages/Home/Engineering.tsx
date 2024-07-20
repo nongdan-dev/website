@@ -1,9 +1,9 @@
 import { FaArrowRightLong } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
 
 import BgPattern1 from '@/assets/bg-pattern-1.png'
 import BgPattern2 from '@/assets/bg-pattern-2.png'
 import { Code, Diamond, Flow, Monitor } from '@/components/svg'
+import { Link } from '@/components/ui'
 import { Section } from '@/components/widget'
 
 function Engineering() {
@@ -79,6 +79,7 @@ function Engineering() {
       <div className='mt-10'>
         <Link
           to='/'
+          useDefaultStyle
           className='inline-flex items-center gap-2 font-semibold text-indigo-500'
         >
           Our Engineering definition <FaArrowRightLong />

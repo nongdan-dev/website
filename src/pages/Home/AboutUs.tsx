@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
+import { Link } from '@/components/ui'
 import { LineBreak, Section } from '@/components/widget'
 
 function AboutUs() {
@@ -63,6 +63,7 @@ function AboutUs() {
           <div className='mt-10'>
             <Link
               to='/about-us'
+              useDefaultStyle
               className='inline-flex items-center gap-2 font-semibold text-indigo-500'
             >
               View more about us <FaArrowRightLong />

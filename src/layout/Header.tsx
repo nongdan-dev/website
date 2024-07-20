@@ -68,7 +68,7 @@ function Header() {
                 <li>
                   <span className='flex h-full items-center pl-5'>
                     <Button asChild>
-                      <Link to='/contact' defaultStyle>
+                      <Link to='/contact' useDefaultStyle>
                         Contact us
                       </Link>
                     </Button>

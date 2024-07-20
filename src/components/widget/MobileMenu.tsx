@@ -86,7 +86,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             <li>
               <span className='block py-4 text-center text-lg font-medium'>
                 <Button asChild>
-                  <Link to='/contact' defaultStyle onClick={onClose}>
+                  <Link to='/contact' useDefaultStyle onClick={onClose}>
                     Contact us
                   </Link>
                 </Button>

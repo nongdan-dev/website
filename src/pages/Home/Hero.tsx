@@ -19,7 +19,7 @@ function Hero() {
             the world.
           </p>
           <Button className='mt-8' asChild>
-            <Link to='/work' defaultStyle>
+            <Link to='/work' useDefaultStyle>
               View our Work
             </Link>
           </Button>

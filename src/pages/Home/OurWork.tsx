@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
 
+import { Link } from '@/components/ui'
 import { LineBreak, Section } from '@/components/widget'
 
 function OurWork() {
@@ -197,6 +197,7 @@ function OurWork() {
         <div className='mt-10'>
           <Link
             to='/work'
+            useDefaultStyle
             className='inline-flex items-center gap-2 font-semibold text-indigo-500'
           >
             Explore our work <FaArrowRightLong />
