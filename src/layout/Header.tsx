@@ -1,11 +1,5 @@
 import { throttle } from 'lodash'
-import {
-  Fragment,
-  useState,
-  useCallback,
-  useEffect,
-  MouseEventHandler,
-} from 'react'
+import { Fragment, useState, useCallback, useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Logo } from '@/components/svg'
@@ -29,12 +23,6 @@ function Header() {
     }, 16),
     [],
   )
-
-  const handleScrollToSection: MouseEventHandler<HTMLAnchorElement> = e => {
-    e.preventDefault()
-    const id = (e.target as HTMLAnchorElement).hash.replace('#', '')
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <Fragment>
@@ -60,11 +48,7 @@ function Header() {
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row'>
                 <li>
-                  <Link
-                    to='#services'
-                    className='flex h-full items-center px-5'
-                    onClick={handleScrollToSection}
-                  >
+                  <Link to='/' className='flex h-full items-center px-5'>
                     Services
                   </Link>
                 </li>
