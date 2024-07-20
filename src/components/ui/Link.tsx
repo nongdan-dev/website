@@ -10,7 +10,12 @@ export type LinkProps = RLinkProps & {
   useActiveStyle?: boolean
 }
 
-export function Link({ useDefaultStyle, className, ...props }: LinkProps) {
+export function Link({
+  useDefaultStyle,
+  useActiveStyle,
+  className,
+  ...props
+}: LinkProps) {
   const { pathname } = useLocation()
 
   return (
@@ -19,7 +24,7 @@ export function Link({ useDefaultStyle, className, ...props }: LinkProps) {
       className={twMerge(
         !useDefaultStyle &&
           'transition-colors hover:text-indigo-500 focus-visible:text-indigo-500',
-        pathname === props.to && '',
+        useActiveStyle && pathname === props.to && 'text-indigo-500',
         className,
       )}
     />

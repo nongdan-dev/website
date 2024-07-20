@@ -20,7 +20,7 @@ function Hero() {
           </p>
           <Button className='mt-8' asChild>
             <Link to='/work' useDefaultStyle>
-              View our Work
+              Explore our work
             </Link>
           </Button>
         </div>

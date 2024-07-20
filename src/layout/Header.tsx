@@ -53,13 +53,18 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/work' className='flex h-full items-center px-5'>
+                  <Link
+                    to='/work'
+                    useActiveStyle
+                    className='flex h-full items-center px-5'
+                  >
                     Our work
                   </Link>
                 </li>
                 <li>
                   <Link
                     to='/about-us'
+                    useActiveStyle
                     className='flex h-full items-center px-5'
                   >
                     About us
