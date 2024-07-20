@@ -1,4 +1,4 @@
-import { Fragment } from 'react/jsx-runtime'
+import { Fragment } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { BuildWithUs, LineBreak, Section } from '@/components/widget'
@@ -56,8 +56,8 @@ function AboutUsPage() {
                 className='fill-indigo-200'
               />
               <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
+                fillRule='evenodd'
+                clipRule='evenodd'
                 d='M87.3528 106.786L95.1048 110.016L115.479 62.8988L107.731 59.6662L87.3528 106.786ZM79.9603 68.347L64.5004 84.8423L79.9603 101.335L85.5953 95.3218L75.7725 84.8423L85.5953 74.3607L79.9603 68.347ZM121.115 68.347L115.479 74.3607L125.3 84.8423L115.479 95.3218L121.115 101.335L136.574 84.8423L121.115 68.347Z'
                 fill='white'
               />
