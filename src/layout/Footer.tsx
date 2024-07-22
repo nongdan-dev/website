@@ -91,32 +91,32 @@ function Footer() {
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Web Development
                   </Link>
                 </li>
                 <li>
-                  <Link to='/' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Mobile Development
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Tooling Development
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     API Integration
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Strategy & Architecture
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Managed Services
                   </Link>
                 </li>
@@ -128,22 +128,22 @@ function Footer() {
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     User Research
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     User Interface
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Experience Design
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Digital Product Design
                   </Link>
                 </li>
@@ -155,17 +155,17 @@ function Footer() {
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Case Studies
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Our Clients
                   </Link>
                 </li>
                 <li>
-                  <Link to='/#' className='inline-block py-1'>
+                  <Link to='/coming-soon' className='inline-block py-1'>
                     Events
                   </Link>
                 </li>
