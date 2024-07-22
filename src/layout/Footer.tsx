@@ -169,11 +169,6 @@ function Footer() {
                     Events
                   </Link>
                 </li>
-                <li>
-                  <Link to='/' className='inline-block py-1'>
-                    Goals
-                  </Link>
-                </li>
               </ul>
             </nav>
           </div>

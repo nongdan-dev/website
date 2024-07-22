@@ -89,7 +89,7 @@ function DropdownMenu({
       <Popover.Portal container={containerRef.current}>
         <Popover.Content
           sideOffset={16}
-          className='data-[state=open]:animate-slideUpAndFade z-10 grid grid-cols-3 gap-20 rounded-b-md bg-white px-10 py-8 shadow-lg'
+          className='z-10 grid grid-cols-3 gap-20 rounded-b-md bg-white px-10 py-8 shadow-lg data-[state=open]:animate-slideUpAndFade'
         >
           <nav aria-label='Development'>
             <span aria-hidden='true' className='font-semibold'>
@@ -173,11 +173,6 @@ function DropdownMenu({
               <li>
                 <Link to='/' className='inline-block py-1'>
                   Events
-                </Link>
-              </li>
-              <li>
-                <Link to='/' className='inline-block py-1'>
-                  Goals
                 </Link>
               </li>
             </ul>
