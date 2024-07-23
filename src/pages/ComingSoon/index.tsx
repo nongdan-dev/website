@@ -1,7 +1,7 @@
 import { twMerge } from 'tailwind-merge'
 
 import { Input } from '@/components/form'
-import { Button } from '@/components/ui'
+import { Badge, Button } from '@/components/ui'
 import { Section } from '@/components/widget'
 
 function ComingSoonPage() {
@@ -10,6 +10,9 @@ function ComingSoonPage() {
       {({ titleId, titleClassName }) => (
         <div className='grid grid-cols-[35rem,1fr] gap-16'>
           <div>
+            <Badge tone='warning' bordered className='mb-3 inline-block'>
+              Coming soon
+            </Badge>
             <h1 id={titleId} className={twMerge(titleClassName, 'mb-10')}>
               We are currently working on this page
             </h1>
