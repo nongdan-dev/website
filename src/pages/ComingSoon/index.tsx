@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 
+import illustration from '@/assets/illustration2.svg'
 import { Input } from '@/components/form'
 import { Badge, Button } from '@/components/ui'
 import { Section } from '@/components/widget'
@@ -8,12 +9,12 @@ function ComingSoonPage() {
   return (
     <Section>
       {({ titleId, titleClassName }) => (
-        <div className='grid grid-cols-[33rem,1fr] gap-16'>
-          <div>
+        <div className='grid grid-cols-[32rem,1fr] gap-16'>
+          <div className='content-center'>
             <Badge tone='warning' bordered className='mb-3 inline-block'>
               Coming soon
             </Badge>
-            <h1 id={titleId} className={twMerge(titleClassName, 'mb-14')}>
+            <h1 id={titleId} className={twMerge(titleClassName, 'mb-10')}>
               We are currently working on this page
             </h1>
             <div>
@@ -32,7 +33,12 @@ function ComingSoonPage() {
               </form>
             </div>
           </div>
-          <div className='h-full w-full bg-red-100'></div>
+          <img
+            src={illustration}
+            className='w-full translate-x-6 scale-110'
+            alt=''
+            aria-hidden='true'
+          />
         </div>
       )}
     </Section>
