@@ -6,8 +6,10 @@ import {
   SetStateAction,
   useRef,
   RefObject,
+  useEffect,
 } from 'react'
 import { FaAngleDown } from 'react-icons/fa6'
+import { useLocation } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import { Logo } from '@/components/svg'
@@ -78,8 +80,15 @@ function DropdownMenu({
 }: {
   containerRef: RefObject<HTMLElement>
 }) {
+  const { pathname } = useLocation()
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
   return (
-    <Popover.Root>
+    <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger asChild aria-haspopup='menu'>
         <button className='group flex h-full items-center gap-1.5 px-5 transition-colors hover:text-indigo-500 focus-visible:text-indigo-500 data-[state=open]:text-indigo-500'>
           <span>Services</span>
