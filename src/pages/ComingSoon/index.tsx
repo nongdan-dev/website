@@ -8,17 +8,17 @@ function ComingSoonPage() {
   return (
     <Section>
       {({ titleId, titleClassName }) => (
-        <div className='grid grid-cols-[35rem,1fr] gap-16'>
+        <div className='grid grid-cols-[33rem,1fr] gap-16'>
           <div>
             <Badge tone='warning' bordered className='mb-3 inline-block'>
               Coming soon
             </Badge>
-            <h1 id={titleId} className={twMerge(titleClassName, 'mb-10')}>
+            <h1 id={titleId} className={twMerge(titleClassName, 'mb-14')}>
               We are currently working on this page
             </h1>
             <div>
               <h2>Get notify when it's ready</h2>
-              <form className='mt-2'>
+              <form className='mt-1.5'>
                 <Input
                   containerClassName='h-14'
                   className='rounded-full pl-4 pr-36 text-base'
