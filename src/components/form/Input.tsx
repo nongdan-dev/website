@@ -5,6 +5,7 @@ export type InputProps = ComponentProps<'input'> & {
   __invalid?: true
   __required?: true
   containerClassName?: string
+  addOn?: ReactNode
   prefix?: ReactNode
   suffix?: ReactNode
 }
@@ -28,6 +29,8 @@ export function Input({
   __invalid,
   __required,
   containerClassName,
+  className,
+  addOn,
   prefix,
   suffix,
   ...props
@@ -46,9 +49,11 @@ export function Input({
           __invalid
             ? 'border-red-500 hover:border-red-500 focus:border-red-500 focus:ring-red-500'
             : 'border-gray-300 hover:border-indigo-500 focus:border-indigo-500 focus:ring-indigo-500',
+          className,
         )}
       />
       {suffix && <Append className='right-0 top-0'>{suffix}</Append>}
+      {addOn}
     </div>
   )
 }
