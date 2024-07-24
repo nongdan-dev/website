@@ -106,12 +106,18 @@ function DropdownMenu({
             </span>
             <ul className='mt-3'>
               <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
+                <Link
+                  to='/development/web-development'
+                  className='inline-block py-1'
+                >
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
+                <Link
+                  to='/development/mobile-development'
+                  className='inline-block py-1'
+                >
                   Mobile Development
                 </Link>
               </li>

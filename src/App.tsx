@@ -4,6 +4,8 @@ import Layout from './layout'
 import AboutUsPage from './pages/AboutUs'
 import ComingSoonPage from './pages/ComingSoon'
 import ContactPage from './pages/Contact'
+import MobileDevelopment from './pages/Development/MobileDevelopment'
+import WebDevelopment from './pages/Development/WebDevelopment'
 import HomePage from './pages/Home'
 import OurWorkPage from './pages/OurWork'
 
@@ -13,10 +15,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path='/contact' element={<ContactPage />} />
-          <Route path='/work' element={<OurWorkPage />} />
-          <Route path='/about-us' element={<AboutUsPage />} />
-          <Route path='/coming-soon' element={<ComingSoonPage />} />
+          <Route path='contact' element={<ContactPage />} />
+          <Route path='work' element={<OurWorkPage />} />
+          <Route path='about-us' element={<AboutUsPage />} />
+          <Route path='coming-soon' element={<ComingSoonPage />} />
+        </Route>
+        <Route path='/development' element={<Layout />}>
+          <Route path='web-development' element={<WebDevelopment />} />
+          <Route path='mobile-development' element={<MobileDevelopment />} />
         </Route>
         <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
