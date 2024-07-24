@@ -29,12 +29,18 @@ function ComingSoonPage() {
   return (
     <Section>
       {({ titleId, titleClassName }) => (
-        <div className='grid grid-cols-[32rem,1fr] gap-20'>
+        <div className='grid grid-cols-1 gap-10 md:overflow-clip lg:grid-cols-[32rem,1fr] xl:gap-20'>
           <div className='content-center'>
             <Badge tone='warning' bordered className='mb-3 inline-block'>
               Coming soon
             </Badge>
-            <h1 id={titleId} className={twMerge(titleClassName, 'mb-10')}>
+            <h1
+              id={titleId}
+              className={twMerge(
+                titleClassName,
+                'mb-10 max-w-[90%] lg:max-w-full',
+              )}
+            >
               We are currently working on this page
             </h1>
             <div>
@@ -57,7 +63,7 @@ function ComingSoonPage() {
           </div>
           <img
             src={illustration}
-            className='w-full translate-x-6 scale-110'
+            className='hidden w-full translate-x-6 scale-110 lg:block xl:h-[40rem]'
             alt=''
             aria-hidden='true'
           />
