@@ -6,7 +6,7 @@ export type FormFieldProps<T extends FieldValues> = Omit<
   'control'
 > &
   Required<Pick<UseControllerProps<T>, 'control'>> & {
-    label: string
+    label?: string
     children: ReactElement
     required?: boolean
     onChangePropName?: string
@@ -24,12 +24,14 @@ export function FormField<T extends FieldValues>({
 
   return (
     <div className='mb-6'>
-      <label htmlFor={fieldId} className='mb-1 inline-block text-sm'>
-        {label}{' '}
-        <span aria-hidden='true' className='text-red-500'>
-          {required && '*'}
-        </span>
-      </label>
+      {label && (
+        <label htmlFor={fieldId} className='mb-1 inline-block text-sm'>
+          {label}{' '}
+          <span aria-hidden='true' className='text-red-500'>
+            {required && '*'}
+          </span>
+        </label>
+      )}
       {cloneElement(children, {
         [onChangePropName]: field.onChange,
         id: fieldId,
