@@ -1,10 +1,9 @@
 import { Fragment } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { Section } from '@/components/widget'
+import { ProcessSteps, Section } from '@/components/widget'
 
 import ContactForm from './ContactForm'
-import ProcessSteps from './ProcessSteps'
 
 function ContactPage() {
   return (

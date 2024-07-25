@@ -1,3 +1,6 @@
+import { ComponentProps } from 'react'
+import { twMerge } from 'tailwind-merge'
+
 const STEPS = [
   {
     id: 1,
@@ -48,9 +51,15 @@ const STEPS = [
   },
 ]
 
-function ProcessSteps() {
+export function ProcessSteps(props: ComponentProps<'div'>) {
   return (
-    <div className='mt-24 grid grid-cols-1 gap-10 lg:grid-cols-3'>
+    <div
+      {...props}
+      className={twMerge(
+        'mt-24 grid grid-cols-1 gap-10 lg:grid-cols-3',
+        props.className,
+      )}
+    >
       {STEPS.map(({ id, title, content }) => (
         <div key={id} className='rounded-md border border-gray-300 p-6'>
           <span
@@ -75,5 +84,3 @@ function ProcessSteps() {
     </div>
   )
 }
-
-export default ProcessSteps
