@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 import ChimeraLogo from '@/assets/chimera-logo.png'
 import { Button, Link } from '@/components/ui'
-import { BuildWithUs, ProcessSteps, Section } from '@/components/widget'
+import { ProcessSteps, Section } from '@/components/widget'
 
 function MobileDevelopment() {
   return (
@@ -27,13 +27,13 @@ function MobileDevelopment() {
           </Fragment>
         )}
       </Section>
-      <Section className='pb-0 pt-24'>
+      <Section>
         {({ titleId, titleClassName }) => (
           <Fragment>
             <h2
               className={twMerge(
                 titleClassName,
-                'mb-8 text-3xl sm:text-3xl md:text-3xl',
+                'mb-6 text-3xl sm:text-3xl md:text-3xl',
               )}
               id={titleId}
             >
@@ -68,24 +68,13 @@ function MobileDevelopment() {
           </Fragment>
         )}
       </Section>
-      <Section className='py-24'>
-        {({ titleId, titleClassName }) => (
-          <Fragment>
-            <h2
-              className={twMerge(
-                titleClassName,
-                'mb-8 text-3xl sm:text-3xl md:text-3xl',
-              )}
-              id={titleId}
-            >
-              Step by step from idea stage
-            </h2>
-            <ProcessSteps className='mt-0' />
-          </Fragment>
-        )}
-      </Section>
-
-      <BuildWithUs />
+      <div className='col-full-width bg-gray-100'>
+        <Section subtitle='process' title='Step by step from idea stage'>
+          <div className='col-content'>
+            <ProcessSteps className='mt-10' />
+          </div>
+        </Section>
+      </div>
     </Fragment>
   )
 }

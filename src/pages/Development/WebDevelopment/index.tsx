@@ -71,7 +71,7 @@ function WebDevelopment() {
       <div className='col-full-width bg-gray-100'>
         <Section subtitle='process' title='Step by step from idea stage'>
           <div className='col-content'>
-            <ProcessSteps className='mt-12' />
+            <ProcessSteps className='mt-10' />
           </div>
         </Section>
       </div>
