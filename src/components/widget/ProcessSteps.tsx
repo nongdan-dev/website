@@ -61,7 +61,10 @@ export function ProcessSteps(props: ComponentProps<'div'>) {
       )}
     >
       {STEPS.map(({ id, title, content }) => (
-        <div key={id} className='rounded-md border border-gray-300 p-6'>
+        <div
+          key={id}
+          className='rounded-md border border-gray-300 bg-white p-6 shadow-sm'
+        >
           <span
             aria-hidden='true'
             className='mb-2 block text-sm font-bold uppercase text-indigo-500'

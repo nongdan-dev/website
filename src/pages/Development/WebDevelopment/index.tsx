@@ -1,8 +1,9 @@
 import { Fragment } from 'react/jsx-runtime'
 import { twMerge } from 'tailwind-merge'
 
+import ChimeraLogo from '@/assets/chimera-logo.png'
 import { Button, Link } from '@/components/ui'
-import { Section } from '@/components/widget'
+import { ProcessSteps, Section } from '@/components/widget'
 
 function WebDevelopment() {
   return (
@@ -26,6 +27,54 @@ function WebDevelopment() {
           </Fragment>
         )}
       </Section>
+      <Section>
+        {({ titleId, titleClassName }) => (
+          <Fragment>
+            <h2
+              className={twMerge(
+                titleClassName,
+                'mb-6 text-3xl sm:text-3xl md:text-3xl',
+              )}
+              id={titleId}
+            >
+              What we have built
+            </h2>
+            <ul className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3'>
+              {Array.from({ length: 3 }).map((_, idx) => (
+                <li key={idx} className='rounded-md border border-gray-300 p-8'>
+                  <div className='mb-5'>
+                    <img src={ChimeraLogo} alt='chimera' className='max-h-10' />
+                  </div>
+                  <div className='flex flex-col gap-2'>
+                    <p>
+                      <span className='font-semibold text-indigo-500'>
+                        Chimera
+                      </span>{' '}
+                      is a Lorem ipsum dolor sit, amet consectetur adipisicing
+                      elit. Nesciunt temporibus vitae quaerat. Deleniti neque
+                      quisquam est
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Aut dolores unde repellat sit incidunt obcaecati ipsam,
+                      molestias laudantium facere, placeat quia nostrum
+                      laboriosam dignissimos fugiat quaerat asperiores ex nulla
+                      hic!
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Fragment>
+        )}
+      </Section>
+      <div className='col-full-width bg-gray-100'>
+        <Section subtitle='process' title='Step by step from idea stage'>
+          <div className='col-content'>
+            <ProcessSteps className='mt-12' />
+          </div>
+        </Section>
+      </div>
     </Fragment>
   )
 }
