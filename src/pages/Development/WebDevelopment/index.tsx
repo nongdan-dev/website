@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 import ChimeraLogo from '@/assets/chimera-logo.png'
 import { Button, Link } from '@/components/ui'
-import { ProcessSteps, Section } from '@/components/widget'
+import { LineBreak, ProcessSteps, Section } from '@/components/widget'
 
 function WebDevelopment() {
   return (
@@ -75,6 +75,20 @@ function WebDevelopment() {
           </div>
         </Section>
       </div>
+      <Section
+        subtitle='techstack'
+        title={
+          <Fragment>
+            Technologies and platforms <LineBreak /> we work with
+          </Fragment>
+        }
+      >
+        <p className='max-w-[45%]'>
+          We employ cutting-edge tools and tech stack and ensure compatibility
+          with various platforms. This versatility allows us to build software
+          that seamlessly integrates into your existing systems.
+        </p>
+      </Section>
     </Fragment>
   )
 }
