@@ -7,6 +7,7 @@ import Cypress from '@/assets/tech/cypress.svg'
 import Deno from '@/assets/tech/deno.svg'
 import Django from '@/assets/tech/django.svg'
 import Docker from '@/assets/tech/docker.svg'
+import Eslint from '@/assets/tech/eslint.svg'
 import Figma from '@/assets/tech/figma.svg'
 import Firebase from '@/assets/tech/firebase.svg'
 import Gatsby from '@/assets/tech/gatsby.svg'
@@ -46,6 +47,7 @@ export default [
   { name: 'JQuery', img: JQuery },
   { name: 'React', img: React },
   { name: 'TypeScript', img: Typescript },
+  { name: 'Eslint', img: Eslint },
   { name: 'Zod', img: Zod },
   { name: 'Vue', img: Vue },
   { name: 'NextJs', img: NextJs },

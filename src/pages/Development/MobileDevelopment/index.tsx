@@ -1,9 +1,18 @@
 import { Fragment } from 'react/jsx-runtime'
+import { Grid } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { twMerge } from 'tailwind-merge'
 
 import ChimeraLogo from '@/assets/chimera-logo.png'
 import { Button, Link } from '@/components/ui'
-import { ProcessSteps, Section } from '@/components/widget'
+import {
+  BuildWithUs,
+  LineBreak,
+  ProcessSteps,
+  Section,
+} from '@/components/widget'
+
+import techStackData from './techStackData'
 
 function MobileDevelopment() {
   return (
@@ -75,6 +84,48 @@ function MobileDevelopment() {
           </div>
         </Section>
       </div>
+      <Section
+        subtitle='techstack'
+        title={
+          <Fragment>
+            Technologies and platforms <LineBreak /> we work with
+          </Fragment>
+        }
+      >
+        <p className='lg:max-w-[45%]'>
+          We employ cutting-edge tools and tech stack and ensure compatibility
+          with various platforms. This versatility allows us to build software
+          that seamlessly integrates into your existing systems.
+        </p>
+        <Swiper
+          tag='ul'
+          grid={{ rows: 3 }}
+          slidesPerView={1.5}
+          spaceBetween={24}
+          className='mt-12 h-[520px] py-1'
+          modules={[Grid]}
+          breakpoints={{
+            450: { slidesPerView: 2.2 },
+            650: { slidesPerView: 3.2 },
+            850: { slidesPerView: 4.2 },
+            1050: { slidesPerView: 5.2 },
+            1250: { slidesPerView: 6.2 },
+            1400: { slidesPerView: 7.2 },
+          }}
+        >
+          {techStackData.map(({ name, img }) => (
+            <SwiperSlide
+              key={name}
+              tag='li'
+              className='flex flex-col items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-6 shadow-md'
+            >
+              <img src={img} alt='' className='h-16 w-16' />
+              <p className='mt-3'>{name}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+      <BuildWithUs />
     </Fragment>
   )
 }
