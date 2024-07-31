@@ -1,9 +1,18 @@
 import { Fragment } from 'react/jsx-runtime'
+import { Grid } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { twMerge } from 'tailwind-merge'
 
 import ChimeraLogo from '@/assets/chimera-logo.png'
 import { Button, Link } from '@/components/ui'
-import { LineBreak, ProcessSteps, Section } from '@/components/widget'
+import {
+  BuildWithUs,
+  LineBreak,
+  ProcessSteps,
+  Section,
+} from '@/components/widget'
+
+import techStackData from './techStackData'
 
 function WebDevelopment() {
   return (
@@ -88,7 +97,27 @@ function WebDevelopment() {
           with various platforms. This versatility allows us to build software
           that seamlessly integrates into your existing systems.
         </p>
+        <Swiper
+          tag='ul'
+          grid={{ rows: 3 }}
+          slidesPerView={7.2}
+          spaceBetween={24}
+          className='mt-12 h-[520px] py-1'
+          modules={[Grid]}
+        >
+          {techStackData.map(({ name, img }) => (
+            <SwiperSlide
+              key={name}
+              tag='li'
+              className='flex flex-col items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-6 shadow-md'
+            >
+              <img src={img} alt='' className='h-16 w-16' />
+              <p className='mt-3'>{name}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Section>
+      <BuildWithUs />
     </Fragment>
   )
 }
