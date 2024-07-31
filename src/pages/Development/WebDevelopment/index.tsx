@@ -92,7 +92,7 @@ function WebDevelopment() {
           </Fragment>
         }
       >
-        <p className='max-w-[45%]'>
+        <p className='lg:max-w-[45%]'>
           We employ cutting-edge tools and tech stack and ensure compatibility
           with various platforms. This versatility allows us to build software
           that seamlessly integrates into your existing systems.
@@ -100,10 +100,18 @@ function WebDevelopment() {
         <Swiper
           tag='ul'
           grid={{ rows: 3 }}
-          slidesPerView={7.2}
+          slidesPerView={1.5}
           spaceBetween={24}
           className='mt-12 h-[520px] py-1'
           modules={[Grid]}
+          breakpoints={{
+            450: { slidesPerView: 2.2 },
+            650: { slidesPerView: 3.2 },
+            850: { slidesPerView: 4.2 },
+            1050: { slidesPerView: 5.2 },
+            1250: { slidesPerView: 6.2 },
+            1400: { slidesPerView: 7.2 },
+          }}
         >
           {techStackData.map(({ name, img }) => (
             <SwiperSlide
