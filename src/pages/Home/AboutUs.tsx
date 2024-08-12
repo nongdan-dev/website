@@ -38,20 +38,23 @@ function AboutUs() {
           <div className='mt-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
             <div className='flex flex-col gap-4'>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-                repellat voluptatem quibusdam, quia nemo voluptates quas
-                distinctio nostrum voluptatibus velit reprehenderit quas quas
-                distinctio nostrum voluptatibus velit reprehenderit quas
-                distinctio nostrum voluptatibus velit reprehenderit
+                <span className='font-semibold'>Nongdan.dev</span> is a startup
+                based in Ho Chi Minh City, Vietnam, specializing in providing
+                software development, maintenance, and upgrade services for
+                businesses and individuals. We are committed to delivering
+                optimal technology solutions, helping our clients enhance work
+                efficiency, increase competitiveness, and easily adapt to the
+                fast-paced changes in the market.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-                repellat voluptatem quibusdam, quia nemo voluptates quas
-                distinctio nostrum voluptatibus velit reprehenderit impedit
-                dolores quis eveniet architecto et vero consequatur ea! impedit
-                dolores quis eveniet architecto et vero ea! ea! impedit dolores
-                quis eveniet architecto et vero ea! impedit dolores quis eveniet
-                architecto et vero consequatur
+                With a team of experienced and dedicated professionals, we are
+                proud to be a trusted partner, accompanying you on the journey
+                of digital transformation and sustainable development. We
+                believe in building long-term relationships with our clients by
+                understanding their unique needs and delivering tailor-made
+                solutions. Our mission is to empower businesses and individuals
+                to thrive in the digital age, ensuring their growth and success
+                in an increasingly competitive environment.
               </p>
             </div>
             <img
