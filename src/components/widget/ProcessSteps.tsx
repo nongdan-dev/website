@@ -6,47 +6,42 @@ const STEPS = [
     id: 1,
     title: 'Discovery Stage',
     content: [
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate impedit illo nemo sit similique qui temporibus itaque',
-      'Lorem ipsum dolor sit amet consectetur',
+      "Involves gathering and understanding the client's requirements and objectives. It sets the foundation by aligning everyone on the project's vision.",
     ],
   },
   {
     id: 2,
     title: 'Analysis & Planning',
     content: [
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, quis.',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, dicta.',
+      'Focuses on analyzing requirements, breaking them down into tasks, and creating a detailed project plan, ensuring the project stays on track and within budget.',
     ],
   },
   {
     id: 3,
     title: 'UI / UX Design',
     content: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit Voluptatem molestiae maxime quod dicta iste. Reprehenderit quia placeat obcaecati repellat id!',
+      'Centers on creating intuitive and engaging interfaces that enhance user experience, turning ideas into wireframes and prototypes.',
     ],
   },
   {
     id: 4,
     title: 'App Development',
     content: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem molestiae maxime quod dicta iste. Reprehenderit quia',
-      'Lorem ipsum dolor sit adipisicing elit.',
+      'The step where developers translate designs into functional software, writing code and building features while ensuring the software works as intended.',
     ],
   },
   {
     id: 5,
     title: 'QA Testing',
     content: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem molestiae maxime quod dicta iste. Reprehenderit quia',
-      'Lorem ipsum dolor sit adipisicing elit.',
+      'Covers quality assurance, involving rigorous testing to identify and fix any issues, ensuring stability and reliability before release.',
     ],
   },
   {
     id: 6,
     title: 'Deployment & Support',
     content: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem molestiae maxime quod dicta iste. Reprehenderit quia',
-      'Lorem ipsum dolor sit amet elit.',
+      'Concludes with deploying the software to users, followed by ongoing support and maintenance to address issues and implement updates.',
     ],
   },
 ]
