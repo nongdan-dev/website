@@ -5,44 +5,38 @@ const STEPS = [
   {
     id: 1,
     title: 'Discovery Stage',
-    content: [
+    content:
       "Involves gathering and understanding the client's requirements and objectives. It sets the foundation by aligning everyone on the project's vision.",
-    ],
   },
   {
     id: 2,
     title: 'Analysis & Planning',
-    content: [
+    content:
       'Focuses on analyzing requirements, breaking them down into tasks, and creating a detailed project plan, ensuring the project stays on track and within budget.',
-    ],
   },
   {
     id: 3,
     title: 'UI / UX Design',
-    content: [
+    content:
       'Centers on creating intuitive and engaging interfaces that enhance user experience, turning ideas into wireframes and prototypes.',
-    ],
   },
   {
     id: 4,
     title: 'App Development',
-    content: [
+    content:
       'The step where developers translate designs into functional software, writing code and building features while ensuring the software works as intended.',
-    ],
   },
   {
     id: 5,
     title: 'QA Testing',
-    content: [
+    content:
       'Covers quality assurance, involving rigorous testing to identify and fix any issues, ensuring stability and reliability before release.',
-    ],
   },
   {
     id: 6,
     title: 'Deployment & Support',
-    content: [
+    content:
       'Concludes with deploying the software to users, followed by ongoing support and maintenance to address issues and implement updates.',
-    ],
   },
 ]
 
@@ -73,9 +67,7 @@ export function ProcessSteps(props: ComponentProps<'div'>) {
             {title}
           </h2>
           <div className='flex flex-col gap-1'>
-            {content.map((c, idx) => (
-              <p key={idx}>{c}</p>
-            ))}
+            <p>{content}</p>
           </div>
         </div>
       ))}
