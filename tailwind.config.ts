@@ -15,7 +15,8 @@ export default {
         ]),
       ),
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['Mulish', ...defaultTheme.fontFamily.sans],
+        title: ['Montserrat'],
       },
       animation: {
         slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',

@@ -245,7 +245,7 @@ function Header() {
                   <span className='flex h-full items-center pl-5'>
                     <Button asChild>
                       <Link to='/contact' useDefaultStyle>
-                        Contact us
+                        Build with us
                       </Link>
                     </Button>
                   </span>

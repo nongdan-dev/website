@@ -15,7 +15,7 @@ function Layout() {
   }, [pathname])
 
   return (
-    <div className='relative min-h-dvh bg-white'>
+    <div className='text-body relative min-h-dvh'>
       <SkipToMainContent />
       <Header />
       <main

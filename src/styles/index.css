@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-title {
+  @apply font-title text-balance text-6xl font-bold leading-[1.2] text-gray-950;
+}
+
+.text-body {
+  @apply font-sans text-base font-normal leading-normal text-gray-900;
+}
+
 .grid-container {
   --gap-x: 2rem;
   --content-max-width: 90rem;
