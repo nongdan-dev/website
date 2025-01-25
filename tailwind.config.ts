@@ -1,9 +1,10 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+import type { Config } from 'tailwindcss'
+
 import colors from './src/config/colors'
 import { hexToTwColorFormat } from './src/utils/color'
 
-/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -14,9 +15,13 @@ export default {
           hexToTwColorFormat(values),
         ]),
       ),
+      fontSize: Object.keys(defaultTheme.fontSize).reduce((acc, cur) => {
+        acc[cur] = defaultTheme.fontSize[cur][0]
+        return acc
+      }, {}),
       fontFamily: {
-        sans: ['Mulish', ...defaultTheme.fontFamily.sans],
         title: ['Montserrat'],
+        body: ['Mulish', ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
         1440: 'var(--max_width_1440)',
@@ -36,4 +41,4 @@ export default {
     },
   },
   plugins: [],
-}
+} satisfies Config

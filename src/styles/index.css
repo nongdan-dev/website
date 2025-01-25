@@ -12,15 +12,15 @@
 }
 
 .text-body {
-  @apply font-sans text-base font-normal leading-normal text-gray-900;
+  @apply font-body text-base font-normal leading-normal text-gray-900;
 }
 
 .hero-bg {
-  background: linear-gradient(180deg, #BDD7FF 0%, rgba(255, 255, 255, 0.00) 100%);
+  background: linear-gradient(180deg, #bdd7ff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .grid-container {
-  --gap-x: 2rem;
+  --gap-x: theme('spacing.12');
 
   display: grid;
   grid-template-columns:

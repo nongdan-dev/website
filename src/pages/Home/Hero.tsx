@@ -9,7 +9,7 @@ function Hero() {
           <h1 className='text-title'>
             Practical Software <LineBreak className='md:inline' /> Development
           </h1>
-          <p className='text-lg leading-normal'>
+          <p className='text-lg'>
             Through dedicated and persistent effort, we have been delivering
             production-grade software solutions to companies and startups around
             the world.
