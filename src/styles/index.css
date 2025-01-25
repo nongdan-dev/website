@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --max_width_1440: 90rem;
+  --header_height: theme('spacing.20');
+}
+
 .text-title {
   @apply font-title text-balance text-6xl font-bold leading-[1.2] text-gray-950;
 }
@@ -10,14 +15,17 @@
   @apply font-sans text-base font-normal leading-normal text-gray-900;
 }
 
+.hero-bg {
+  background: linear-gradient(180deg, #BDD7FF 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
 .grid-container {
   --gap-x: 2rem;
-  --content-max-width: 90rem;
 
   display: grid;
   grid-template-columns:
     [full-width-start] minmax(var(--gap-x), 1fr)
-    [content-start] min(100% - (var(--gap-x) * 2), var(--content-max-width))
+    [content-start] min(100% - (var(--gap-x) * 2), var(--max_width_1440))
     [content-end] minmax(var(--gap-x), 1fr) [full-width-end];
 
   & .col-content {

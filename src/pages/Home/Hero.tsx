@@ -3,13 +3,13 @@ import { LineBreak } from '@/components/widget'
 
 function Hero() {
   return (
-    <div className='col-full-width overflow-hidden pt-20'>
+    <div className='hero-bg col-full-width overflow-hidden pt-40'>
       <div className='col-content'>
         <div>
           <h1 className='text-title'>
             Practical Software <LineBreak className='md:inline' /> Development
           </h1>
-          <p>
+          <p className='text-lg leading-normal'>
             Through dedicated and persistent effort, we have been delivering
             production-grade software solutions to companies and startups around
             the world.

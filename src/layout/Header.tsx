@@ -205,7 +205,7 @@ function Header() {
   return (
     <Fragment>
       <header ref={headerRef} className='fixed inset-x-0 top-0 z-10'>
-        <div className='grid-container transition-color relative h-20 border-b border-gray-300 bg-white'>
+        <div className='grid-container transition-color h-header relative'>
           <div className='col-content flex flex-row items-center justify-between'>
             <Link
               to='/'
@@ -213,10 +213,7 @@ function Header() {
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMobileMenu(false)}
             >
-              <Logo
-                aria-hidden='true'
-                className='h-full w-36 text-indigo-500'
-              />
+              <Logo aria-hidden='true' className='h-full w-36' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row'>
@@ -243,7 +240,7 @@ function Header() {
                 </li>
                 <li>
                   <span className='flex h-full items-center pl-5'>
-                    <Button asChild>
+                    <Button asChild tone='dark'>
                       <Link to='/contact' useDefaultStyle>
                         Build with us
                       </Link>

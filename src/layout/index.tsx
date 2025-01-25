@@ -20,7 +20,10 @@ function Layout() {
       <Header />
       <main
         id='main-content'
-        className={twMerge('grid-container', pathname !== '/' && 'pt-20')}
+        className={twMerge(
+          'grid-container',
+          pathname !== '/' && 'pt-[--header_height]',
+        )}
       >
         <Outlet />
       </main>

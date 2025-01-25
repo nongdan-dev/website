@@ -18,6 +18,12 @@ export default {
         sans: ['Mulish', ...defaultTheme.fontFamily.sans],
         title: ['Montserrat'],
       },
+      maxWidth: {
+        1440: 'var(--max_width_1440)',
+      },
+      height: {
+        header: 'var(--header_height)',
+      },
       animation: {
         slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
