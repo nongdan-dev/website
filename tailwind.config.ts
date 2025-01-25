@@ -1,13 +1,19 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+import colors from './src/config/colors'
+import { hexToTwColorFormat } from './src/utils/color'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: {
-        body: '#23232e',
-      },
+      colors: Object.fromEntries(
+        Object.entries(colors).map(([key, values]) => [
+          key,
+          hexToTwColorFormat(values),
+        ]),
+      ),
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
