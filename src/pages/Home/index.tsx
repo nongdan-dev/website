@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <Fragment>
       <Hero />
-      {/* <Engineering /> */}
+      <Engineering />
       {/* <OurWork /> */}
       {/* <AboutUs /> */}
       {/* <BuildWithUs /> */}
