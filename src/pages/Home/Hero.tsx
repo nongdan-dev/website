@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import HeroImg from '@/assets/hero.png'
 import { Button } from '@/components/ui'
 import { FeedBack, LineBreak } from '@/components/widget'
 
@@ -49,6 +50,13 @@ function Hero() {
               business owner"
           />
         </div>
+      </div>
+      <div className='col-content mt-20'>
+        <img
+          src={HeroImg}
+          alt=''
+          className='h-[24rem] translate-y-5 scale-110'
+        />
       </div>
     </div>
   )
