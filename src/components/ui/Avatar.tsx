@@ -2,7 +2,7 @@ import { update } from 'jdenticon'
 import { ComponentProps, useEffect, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-type Size = 'small' | 'medium' | 'large'
+type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 export type AvatarProps = ComponentProps<'div'> & {
   name: string
@@ -11,15 +11,16 @@ export type AvatarProps = ComponentProps<'div'> & {
 }
 
 const sizeClasses: Record<Size, string> = {
-  small: 'w-5 h-5',
-  medium: 'w-10 h-10',
-  large: 'w-20 h-20',
+  sm: 'w-5 h-5',
+  md: 'w-10 h-10',
+  lg: 'w-12 h-12',
+  xl: 'w-20 h-20',
 }
 
 export function Avatar({
   name,
   url,
-  size = 'medium',
+  size = 'md',
   className,
   ...props
 }: AvatarProps) {

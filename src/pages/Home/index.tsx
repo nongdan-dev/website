@@ -11,10 +11,10 @@ function HomePage() {
   return (
     <Fragment>
       <Hero />
-      <Engineering />
-      <OurWork />
-      <AboutUs />
-      <BuildWithUs />
+      {/* <Engineering /> */}
+      {/* <OurWork /> */}
+      {/* <AboutUs /> */}
+      {/* <BuildWithUs /> */}
     </Fragment>
   )
 }
