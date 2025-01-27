@@ -204,8 +204,8 @@ function Header() {
 
   return (
     <Fragment>
-      <header ref={headerRef} className='fixed inset-x-0 top-0 z-10'>
-        <div className='grid-container transition-color h-header relative'>
+      <header ref={headerRef} className='fixed inset-x-0 top-0 z-20'>
+        <div className='grid-container transition-color relative h-header'>
           <div className='col-content flex flex-row items-center justify-between'>
             <Link
               to='/'
