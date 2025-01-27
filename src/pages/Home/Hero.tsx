@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import HeroImg from '@/assets/hero.png'
+import HeroImg from '@/assets/images/hero.png'
 import { Button } from '@/components/ui'
 import { FeedBack, LineBreak } from '@/components/widget'
 

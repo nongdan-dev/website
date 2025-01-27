@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
 
-import illustration from '@/assets/illustration2.svg'
+import illustration from '@/assets/svg/coming-soon.svg'
 import { FormField, Input } from '@/components/form'
 import { Badge, Button } from '@/components/ui'
 import { Section } from '@/components/widget'

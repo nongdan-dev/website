@@ -1,4 +1,4 @@
-import SectionBg from '@/assets/build-width-us-bg.png'
+import SectionBg from '@/assets/images/build-width-us-bg.png'
 
 import { Button, Link } from '../ui'
 import { Section } from './Section'

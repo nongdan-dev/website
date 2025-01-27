@@ -1,6 +1,6 @@
-import BgPattern1 from '@/assets/bg-pattern-1.png'
-import BgPattern2 from '@/assets/bg-pattern-2.png'
-import EngineeringImg from '@/assets/engineering.png'
+import BgPattern1 from '@/assets/images/bg-pattern-1.png'
+import BgPattern2 from '@/assets/images/bg-pattern-2.png'
+import EngineeringImg from '@/assets/images/engineering.png'
 import { Code, Diamond, Flow, Monitor } from '@/components/svg'
 import { LineBreak, Section } from '@/components/widget'
 

@@ -1,9 +1,9 @@
 import { Fragment } from 'react'
 
-import BeingsLogo from '@/assets/beings-logo.png'
-import BrekekeLogo from '@/assets/brekeke-logo.png'
-import brekekeThumbnail from '@/assets/brekeke-thumbnail.png'
-import ChimeraLogo from '@/assets/chimera-logo.png'
+import BeingsLogo from '@/assets/images/beings-logo.png'
+import BrekekeLogo from '@/assets/images/brekeke-logo.png'
+import brekekeThumbnail from '@/assets/images/brekeke-thumbnail.png'
+import ChimeraLogo from '@/assets/images/chimera-logo.png'
 import { Button } from '@/components/ui'
 import { BuildWithUs, LineBreak, Section } from '@/components/widget'
 

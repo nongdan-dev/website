@@ -3,7 +3,7 @@ import { Grid } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { twMerge } from 'tailwind-merge'
 
-import ChimeraLogo from '@/assets/chimera-logo.png'
+import ChimeraLogo from '@/assets/images/chimera-logo.png'
 import { Button, Link } from '@/components/ui'
 import {
   BuildWithUs,
