@@ -14,14 +14,14 @@ import { companyInfo } from '@/config/metadata'
 
 function Footer() {
   return (
-    <footer className='grid-container mt-20'>
+    <footer className='content-grid mt-20'>
       <div className='col-content'>
         <div id='services' className='flex flex-col gap-16 lg:flex-row'>
           <address className='order-1 flex flex-col gap-y-1.5 not-italic lg:order-none lg:w-1/3'>
             <div className='flex items-center gap-3'>
               <BiSolidPhoneCall
                 aria-hidden='true'
-                className='h-4 w-4 flex-shrink-0 text-body/80'
+                className='text-body/80 h-4 w-4 flex-shrink-0'
               />
               <a
                 href={`tel:${companyInfo.phone}`}
@@ -33,7 +33,7 @@ function Footer() {
             <div className='flex items-center gap-3'>
               <GrMail
                 aria-hidden='true'
-                className='h-4 w-4 flex-shrink-0 text-body/80'
+                className='text-body/80 h-4 w-4 flex-shrink-0'
               />
               <a
                 href={`mailto:${companyInfo.email}`}
@@ -45,7 +45,7 @@ function Footer() {
             <div className='flex gap-3'>
               <FaLocationDot
                 aria-hidden='true'
-                className='h-4 w-4 flex-shrink-0 translate-y-1 text-body/80'
+                className='text-body/80 h-4 w-4 flex-shrink-0 translate-y-1'
               />
               <a
                 className='text-balance'

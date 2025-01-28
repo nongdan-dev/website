@@ -50,7 +50,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
         !visible ? 'translate-x-full' : 'translate-x-0',
       )}
     >
-      <div className='grid-container flex-1 pt-8'>
+      <div className='content-grid flex-1 pt-8'>
         <nav
           aria-label='mobile'
           className='col-content flex h-full flex-col justify-center'
@@ -97,10 +97,10 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
           </ul>
         </nav>
       </div>
-      <div className='grid-container py-4'>
+      <div className='content-grid py-4'>
         <div className='col-content'>
           <hr aria-hidden='true' className='my-4 border-b border-gray-200' />
-          <div className='flex items-center justify-center gap-2 text-center text-body/60'>
+          <div className='text-body/60 flex items-center justify-center gap-2 text-center'>
             <GrMail aria-hidden='true' className='h-4 w-4 flex-shrink-0' />
             <a
               className='text-xs'

@@ -6,7 +6,13 @@ import { FeedBack, LineBreak } from '@/components/widget'
 
 function Hero() {
   return (
-    <div className='hero-bg col-full-width overflow-hidden pt-40'>
+    <div
+      className='col-full-width overflow-hidden pt-40'
+      style={{
+        background:
+          'linear-gradient(180deg, #bdd7ff 0%, rgba(255, 255, 255, 0) 100%)',
+      }}
+    >
       <div className='col-content flex h-[23.75rem] items-center'>
         <div className='w-[41.25rem] flex-shrink-0'>
           <h1 className='text-title mb-4'>

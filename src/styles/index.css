@@ -8,125 +8,29 @@
 }
 
 .text-title {
-  @apply font-title text-balance text-6xl font-bold leading-[1.2] text-gray-950;
+  @apply text-balance font-title text-6xl font-bold leading-[1.2] text-gray-950;
 }
 
 .text-body {
   @apply font-body text-base font-normal leading-normal text-gray-900;
 }
 
-.hero-bg {
-  background: linear-gradient(180deg, #bdd7ff 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.grid-container {
+.content-grid {
   --gap-x: theme('spacing.12');
 
   display: grid;
   grid-template-columns:
     [full-width-start] minmax(var(--gap-x), 1fr)
-    [content-start] min(100% - (var(--gap-x) * 2), var(--max_width_1440))
+    [content-start] min(calc(100% - (var(--gap-x) * 2)), var(--max_width_1440))
     [content-end] minmax(var(--gap-x), 1fr) [full-width-end];
 
   & .col-content {
     grid-column: content;
   }
+
   & .col-full-width {
     grid-column: full-width;
     display: grid;
     grid-template-columns: subgrid;
-  }
-}
-
-.rc-select {
-  @apply w-full;
-  &.invalid {
-    & .rc-select-selector {
-      @apply !border-red-500 hover:!border-red-500;
-    }
-    &.rc-select-focused .rc-select-selector {
-      @apply !ring-red-500;
-    }
-  }
-
-  & .rc-select-selector {
-    @apply min-h-10 items-center rounded-md border-gray-300 bg-white py-0.5 !pr-10 pl-2 outline-0 transition-all hover:border-indigo-500;
-  }
-
-  &.rc-select-focused .rc-select-selector {
-    @apply ring-2 ring-indigo-500;
-  }
-  &.rc-select-open .rc-select-arrow {
-    @apply rotate-180;
-  }
-
-  & .rc-select-selection-overflow {
-    @apply gap-1;
-  }
-  & .rc-select-arrow {
-    @apply right-0 top-1/2 origin-center -translate-y-1/2 p-2 text-xl transition-transform;
-  }
-
-  & .rc-select-selection-overflow-item:not(:last-child) {
-    @apply inline-flex items-center overflow-clip rounded-sm bg-gray-200;
-    & .rc-select-selection-item {
-      @apply mr-0 !bg-transparent p-0 text-[13px];
-    }
-    & .rc-select-selection-item-content {
-      @apply pl-1.5 pr-[3px];
-    }
-    & .rc-select-selection-item-remove {
-      user-select: unset !important;
-      @apply px-1 text-sm transition-colors hover:cursor-pointer hover:bg-red-500 hover:text-white;
-    }
-  }
-
-  & .rc-select-selection-placeholder {
-    @apply absolute top-1/2 -translate-y-1/2 text-sm;
-  }
-  & .rc-select-selection-search input {
-    @apply !bg-transparent;
-  }
-}
-
-.rc-select-dropdown {
-  @apply min-h-0 rounded-md border-gray-300 py-1.5;
-  & .rc-virtual-list-holder {
-    scrollbar-width: thin;
-    scrollbar-color: theme('colors.gray.300') transparent;
-    @apply overscroll-contain;
-  }
-
-  & .rc-select-item-option {
-    @apply px-4 py-2 transition-colors;
-  }
-  & .rc-select-item-option-active {
-    @apply bg-indigo-50;
-  }
-  & .rc-select-item-option-selected {
-    @apply bg-indigo-500 text-white;
-  }
-
-  & .rc-select-item-group {
-    @apply py-2 font-medium uppercase;
-    &:not(:first-child) {
-      @apply pt-3;
-    }
-  }
-}
-
-.marquee {
-  mask: linear-gradient(90deg, transparent, white 2%, white 98%, transparent);
-  & > ul {
-    animation: marquee var(--duration) var(--direction) linear infinite;
-  }
-  &:hover > ul {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(calc(-50% - (var(--gap) / 2)));
   }
 }
