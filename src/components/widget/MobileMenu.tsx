@@ -1,11 +1,12 @@
 import { MouseEventHandler, useEffect } from 'react'
 import { GrMail } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import { companyInfo } from '@/config/metadata'
 import useLockScroll from '@/hooks/useLockScroll'
 
-import { Button, Link } from '../ui'
+import { Button } from '../ui'
 
 export type MobileMenuProps = {
   visible: boolean
@@ -68,7 +69,6 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             <li>
               <Link
                 to='/work'
-                useActiveStyle
                 className='block py-4 text-center text-lg font-medium'
                 onClick={onClose}
               >
@@ -78,7 +78,6 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             <li>
               <Link
                 to='/about-us'
-                useActiveStyle
                 className='block py-4 text-center text-lg font-medium'
                 onClick={onClose}
               >
@@ -88,7 +87,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             <li>
               <span className='block py-4 text-center text-lg font-medium'>
                 <Button asChild>
-                  <Link to='/contact' useDefaultStyle onClick={onClose}>
+                  <Link to='/contact' onClick={onClose}>
                     Contact us
                   </Link>
                 </Button>

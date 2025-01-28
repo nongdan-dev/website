@@ -9,11 +9,11 @@ import {
   useEffect,
 } from 'react'
 import { FaAngleDown } from 'react-icons/fa6'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import { Logo } from '@/components/svg'
-import { Button, Link, Portal } from '@/components/ui'
+import { Button, Portal } from '@/components/ui'
 import { MobileMenu } from '@/components/widget'
 
 function MobileMenuTrigger({
@@ -221,18 +221,13 @@ function Header() {
                   <DropdownMenu containerRef={headerRef} />
                 </li>
                 <li>
-                  <Link
-                    to='/work'
-                    useActiveStyle
-                    className='flex h-full items-center px-5'
-                  >
+                  <Link to='/work' className='flex h-full items-center px-5'>
                     Our work
                   </Link>
                 </li>
                 <li>
                   <Link
                     to='/about-us'
-                    useActiveStyle
                     className='flex h-full items-center px-5'
                   >
                     About us
@@ -241,9 +236,7 @@ function Header() {
                 <li>
                   <span className='flex h-full items-center pl-5'>
                     <Button asChild tone='dark'>
-                      <Link to='/contact' useDefaultStyle>
-                        Build with us
-                      </Link>
+                      <Link to='/contact'>Build with us</Link>
                     </Button>
                   </span>
                 </li>

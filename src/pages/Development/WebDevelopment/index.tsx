@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import { Fragment } from 'react/jsx-runtime'
 import { Grid } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { twMerge } from 'tailwind-merge'
 
 import ChimeraLogo from '@/assets/images/chimera-logo.png'
-import { Button, Link } from '@/components/ui'
+import { Button } from '@/components/ui'
 import {
   BuildWithUs,
   LineBreak,
@@ -29,9 +30,7 @@ function WebDevelopment() {
               focusing on delivering values to your business and users.
             </p>
             <Button asChild className='mt-8'>
-              <Link to='/contact' useDefaultStyle>
-                Let's build
-              </Link>
+              <Link to='/contact'>Let's build</Link>
             </Button>
           </Fragment>
         )}

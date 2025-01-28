@@ -9,6 +9,7 @@ import {
 } from 'react-icons/fa6'
 import { GrMail } from 'react-icons/gr'
 
+import { Logo } from '@/components/svg/Logo'
 import { Link } from '@/components/ui'
 import { companyInfo } from '@/config/metadata'
 
@@ -18,6 +19,9 @@ function Footer() {
       <div className='col-content'>
         <div id='services' className='flex flex-col gap-16 lg:flex-row'>
           <address className='order-1 flex flex-col gap-y-1.5 not-italic lg:order-none lg:w-1/3'>
+            <div aria-label='website logo' className='mb-4'>
+              <Logo />
+            </div>
             <div className='flex items-center gap-3'>
               <BiSolidPhoneCall
                 aria-hidden='true'
@@ -86,7 +90,7 @@ function Footer() {
           </address>
           <div className='grid grid-cols-2 gap-16 lg:w-2/3 lg:grid-cols-3'>
             <nav aria-label='Development'>
-              <span aria-hidden='true' className='font-semibold'>
+              <span aria-hidden='true' className='font-bold'>
                 Development
               </span>
               <ul className='mt-3'>
@@ -129,7 +133,7 @@ function Footer() {
               </ul>
             </nav>
             <nav aria-label='Design'>
-              <span aria-hidden='true' className='font-semibold'>
+              <span aria-hidden='true' className='font-bold'>
                 Design
               </span>
               <ul className='mt-3'>
@@ -156,7 +160,7 @@ function Footer() {
               </ul>
             </nav>
             <nav aria-label='About us'>
-              <span aria-hidden='true' className='font-semibold'>
+              <span aria-hidden='true' className='font-bold'>
                 About us
               </span>
               <ul className='mt-3'>
