@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --max_width_1440: 90rem;
-  --header_height: theme('spacing.20');
-}
-
 .text-title {
   @apply text-balance font-title text-6xl font-bold leading-[1.2] text-gray-950;
 }
@@ -23,7 +18,7 @@
     [full-width-start] minmax(var(--gap-x), 1fr)
     [content-start] min(
       100% - (var(--gap-x) * 2),
-      var(--max_width_1440) - var(--gap-x) * 2
+      theme('maxWidth.1440') - var(--gap-x) * 2
     )
     [content-end] minmax(var(--gap-x), 1fr) [full-width-end];
 

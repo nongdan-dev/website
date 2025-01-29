@@ -1,4 +1,5 @@
 import * as Popover from '@radix-ui/react-popover'
+import { throttle } from 'lodash'
 import {
   Fragment,
   useState,
@@ -7,6 +8,7 @@ import {
   useRef,
   RefObject,
   useEffect,
+  useCallback,
 } from 'react'
 import { FaAngleDown } from 'react-icons/fa6'
 import { Link, useLocation } from 'react-router-dom'
@@ -15,6 +17,8 @@ import { twMerge } from 'tailwind-merge'
 import { Logo } from '@/components/svg'
 import { Button, Portal } from '@/components/ui'
 import { MobileMenu } from '@/components/widget'
+import useTailwind from '@/hooks/useTailwind'
+import { remToPx } from '@/utils/style'
 
 function MobileMenuTrigger({
   visible,
@@ -201,11 +205,35 @@ function DropdownMenu({
 function Header() {
   const headerRef = useRef<HTMLElement>(null)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [activeHeaderStyle, setActiveHeaderStyle] = useState(false)
+
+  const { theme } = useTailwind()
+
+  useEffect(() => {
+    toggleActiveHeaderStyle()
+    window.addEventListener('scroll', throttleToggleActiveHeaderStyle)
+    return () =>
+      window.removeEventListener('scroll', throttleToggleActiveHeaderStyle)
+  }, [])
+
+  const toggleActiveHeaderStyle = () => {
+    setActiveHeaderStyle(window.scrollY >= remToPx(theme.height.header))
+  }
+
+  const throttleToggleActiveHeaderStyle = useCallback(
+    throttle(toggleActiveHeaderStyle, 100),
+    [],
+  )
 
   return (
     <Fragment>
-      <header ref={headerRef} className='fixed inset-x-0 top-0 z-20'>
-        <div className='content-grid transition-color relative h-header'>
+      <header ref={headerRef} className='fixed inset-x-0 top-0 z-50'>
+        <div
+          className={twMerge(
+            'content-grid relative h-header border-b border-transparent transition-colors',
+            activeHeaderStyle && 'border-gray-300 bg-white',
+          )}
+        >
           <div className='col-content flex flex-row items-center justify-between'>
             <Link
               to='/'

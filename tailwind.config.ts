@@ -3,7 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
 
 import colors from './src/config/colors'
-import { hexToTwColorFormat } from './src/utils/color'
+import { hexToTwColorFormat } from './src/utils/style'
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -24,10 +24,10 @@ export default {
         body: ['Mulish', ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
-        1440: 'var(--max_width_1440)',
+        1440: '90rem',
       },
-      height: {
-        header: 'var(--header_height)',
+      spacing: {
+        header: defaultTheme.spacing[20],
       },
       animation: {
         slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
