@@ -14,7 +14,7 @@ function HomePage() {
       <Engineering />
       <OurWork />
       <AboutUs />
-      {/* <BuildWithUs /> */}
+      <BuildWithUs />
     </Fragment>
   )
 }

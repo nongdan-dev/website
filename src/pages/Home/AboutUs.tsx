@@ -108,10 +108,10 @@ function AboutUs() {
             <p className='text-left text-xl'>Learn more</p>
             <Link
               to='/about-us'
-              className='flex items-center gap-3 text-[1.75rem] font-semibold text-primary-500 hover:underline'
+              className='flex items-center gap-3 text-primary-500 hover:underline'
             >
-              About us
-              <FaArrowRightLong aria-hidden className='text-lg' />
+              <span className='text-[1.75rem] font-semibold'>About us</span>
+              <FaArrowRightLong aria-hidden className='text-xl' />
             </Link>
           </div>
         </div>
