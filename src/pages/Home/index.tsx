@@ -13,7 +13,7 @@ function HomePage() {
       <Hero />
       <Engineering />
       <OurWork />
-      {/* <AboutUs /> */}
+      <AboutUs />
       {/* <BuildWithUs /> */}
     </Fragment>
   )

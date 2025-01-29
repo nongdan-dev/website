@@ -38,7 +38,7 @@ function Hero() {
               business owner"
           />
           <FeedBack
-            className='absolute top-1/2 z-10 -translate-y-1/2 shadow-sm'
+            className='absolute left-0 top-1/2 z-10 -translate-y-1/2 shadow-sm'
             starCount={5}
             userName='Eric Zimerman'
             userRole='Founder of Broadflow'
