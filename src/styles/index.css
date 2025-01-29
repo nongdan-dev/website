@@ -21,7 +21,10 @@
   display: grid;
   grid-template-columns:
     [full-width-start] minmax(var(--gap-x), 1fr)
-    [content-start] min(calc(100% - (var(--gap-x) * 2)), var(--max_width_1440))
+    [content-start] min(
+      100% - (var(--gap-x) * 2),
+      var(--max_width_1440) - var(--gap-x) * 2
+    )
     [content-end] minmax(var(--gap-x), 1fr) [full-width-end];
 
   & .col-content {
