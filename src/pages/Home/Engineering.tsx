@@ -2,7 +2,8 @@ import BgPattern1 from '@/assets/images/bg-pattern-1.png'
 import BgPattern2 from '@/assets/images/bg-pattern-2.png'
 import EngineeringImg from '@/assets/images/engineering.png'
 import { Code, Diamond, Flow, Monitor } from '@/components/svg'
-import { LineBreak, Section } from '@/components/widget'
+import { LineBreak } from '@/components/ui'
+import { Section } from '@/components/widget'
 
 function Engineering() {
   return (
@@ -27,7 +28,7 @@ function Engineering() {
               foundation.
             </p>
           </div>
-          <ul className='mt-12 grid grid-cols-2 gap-6'>
+          <ul className='mt-12 grid grid-cols-2 gap-6 pr-20'>
             <li className='relative flex flex-col justify-between overflow-clip rounded-md bg-gray-200 px-8 py-10'>
               <div
                 className='absolute inset-0 bg-cover'

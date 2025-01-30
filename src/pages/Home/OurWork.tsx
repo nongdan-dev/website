@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 
-import { LineBreak, Section } from '@/components/widget'
+import { LineBreak } from '@/components/ui'
+import { Section } from '@/components/widget'
 
 function OurWork() {
   return (

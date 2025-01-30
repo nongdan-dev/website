@@ -11,7 +11,8 @@ import Chart2 from '@/assets/svg/chart-2.svg'
 import ChromeLogo from '@/assets/svg/chrome.svg'
 import FigmaLogo from '@/assets/svg/figma.svg'
 import GooglePlayLogo from '@/assets/svg/google-play.svg'
-import { LineBreak, Section } from '@/components/widget'
+import { LineBreak } from '@/components/ui'
+import { Section } from '@/components/widget'
 
 function AboutUs() {
   return (

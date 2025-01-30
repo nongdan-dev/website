@@ -5,7 +5,8 @@ import BrekekeLogo from '@/assets/images/brekeke-logo.png'
 import brekekeThumbnail from '@/assets/images/brekeke-thumbnail.png'
 import ChimeraLogo from '@/assets/images/chimera-logo.png'
 import { Button } from '@/components/ui'
-import { BuildWithUs, LineBreak, Section } from '@/components/widget'
+import { LineBreak } from '@/components/ui'
+import { BuildWithUs, Section } from '@/components/widget'
 
 function OurWorkPage() {
   return (

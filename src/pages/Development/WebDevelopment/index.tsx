@@ -5,13 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { twMerge } from 'tailwind-merge'
 
 import ChimeraLogo from '@/assets/images/chimera-logo.png'
-import { Button } from '@/components/ui'
-import {
-  BuildWithUs,
-  LineBreak,
-  ProcessSteps,
-  Section,
-} from '@/components/widget'
+import { Button, LineBreak } from '@/components/ui'
+import { BuildWithUs, ProcessSteps, Section } from '@/components/widget'
 
 import techStackData from './techStackData'
 

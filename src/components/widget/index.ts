@@ -1,5 +1,4 @@
 export * from './BuildWithUs'
-export * from './LineBreak'
 export * from './MobileMenu'
 export * from './ProcessSteps'
 export * from './SkipToMainContent'
