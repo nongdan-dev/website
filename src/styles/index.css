@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-body {
+  @apply font-sans text-base leading-normal text-gray-900;
+}
+
 .content-grid {
   --gap-x: theme('spacing.12');
 

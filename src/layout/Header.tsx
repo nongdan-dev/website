@@ -1,20 +1,10 @@
-import * as Popover from '@radix-ui/react-popover'
-import {
-  Fragment,
-  useState,
-  Dispatch,
-  SetStateAction,
-  useRef,
-  RefObject,
-  useEffect,
-} from 'react'
-import { FaAngleDown } from 'react-icons/fa6'
-import { Link, useLocation } from 'react-router-dom'
+import { Fragment, useState, Dispatch, SetStateAction, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
 import { Button, Portal } from '@/components/ui'
-import { MobileMenu } from '@/components/widget'
+import { MobileMenu, DropdownMenu } from '@/components/widget'
 
 function MobileMenuTrigger({
   visible,
@@ -75,98 +65,77 @@ function MobileMenuTrigger({
   )
 }
 
-function DropdownMenu({
-  containerRef,
-}: {
-  containerRef: RefObject<HTMLElement>
-}) {
-  const { pathname } = useLocation()
-  const [open, setOpen] = useState(false)
-
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
-
+function ServicesMenuContent() {
   return (
-    <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild aria-haspopup='menu'>
-        <button className='group flex h-full items-center gap-1.5 px-5 transition-colors hover:text-indigo-500 focus-visible:text-indigo-500 data-[state=open]:text-indigo-500'>
-          <span>Services</span>
-          <FaAngleDown className='transition-transform group-data-[state=open]:-rotate-180' />
-        </button>
-      </Popover.Trigger>
-      <Popover.Portal container={containerRef.current}>
-        <Popover.Content
-          sideOffset={16}
-          className='z-10 grid grid-cols-2 gap-20 rounded-b-md bg-white px-10 py-8 shadow-lg data-[state=open]:animate-slideUpAndFade'
-        >
-          <nav aria-label='Development'>
-            <span aria-hidden='true' className='font-semibold'>
-              Development
-            </span>
-            <ul className='mt-3'>
-              <li>
-                <Link
-                  to='/development/web-development'
-                  className='inline-block py-1'
-                >
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to='/development/mobile-development'
-                  className='inline-block py-1'
-                >
-                  Mobile Development
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Tooling Development
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  API Integration
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <nav aria-label='Design'>
-            <span aria-hidden='true' className='font-semibold'>
-              Design
-            </span>
-            <ul className='mt-3'>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  User Interface
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  User Experience
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </Popover.Content>
-      </Popover.Portal>
-    </Popover.Root>
+    <Fragment>
+      <nav aria-label='Development'>
+        <span aria-hidden='true' className='font-semibold'>
+          Development
+        </span>
+        <ul className='mt-3'>
+          <li>
+            <Link
+              to='/development/web-development'
+              className='inline-block py-1'
+            >
+              Web Development
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/development/mobile-development'
+              className='inline-block py-1'
+            >
+              Mobile Development
+            </Link>
+          </li>
+          <li>
+            <Link to='/coming-soon' className='inline-block py-1'>
+              Tooling Development
+            </Link>
+          </li>
+          <li>
+            <Link to='/coming-soon' className='inline-block py-1'>
+              API Integration
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <nav aria-label='Design'>
+        <span aria-hidden='true' className='font-semibold'>
+          Design
+        </span>
+        <ul className='mt-3'>
+          <li>
+            <Link to='/coming-soon' className='inline-block py-1'>
+              User Interface
+            </Link>
+          </li>
+          <li>
+            <Link to='/coming-soon' className='inline-block py-1'>
+              User Experience
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </Fragment>
   )
 }
 
 function Header() {
   const headerRef = useRef<HTMLElement>(null)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [dropdownActive, setDropdownActive] = useState(false)
+
+  const activeHeaderStyle = dropdownActive
 
   return (
     <Fragment>
       <header ref={headerRef} className='fixed inset-x-0 top-0 z-50'>
         <div
           className={twMerge(
-            'content-grid relative h-header border-b border-transparent transition-colors',
-            false && 'border-gray-300 bg-white',
+            'content-grid relative h-header transition-colors',
+            activeHeaderStyle && 'bg-white/85 shadow-sm backdrop-blur-md',
           )}
         >
           <div className='col-content flex flex-row items-center justify-between'>
@@ -176,12 +145,19 @@ function Header() {
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMobileMenu(false)}
             >
-              <img src={Logo} alt='' className='h-full w-36' />
+              <img src={Logo} alt='' className='w-36' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row'>
                 <li>
-                  <DropdownMenu containerRef={headerRef} />
+                  <DropdownMenu onOpenChange={setDropdownActive}>
+                    <DropdownMenu.Trigger aria-haspopup='menu'>
+                      Services
+                    </DropdownMenu.Trigger>
+                    <DropdownMenu.Content containerRef={headerRef}>
+                      <ServicesMenuContent />
+                    </DropdownMenu.Content>
+                  </DropdownMenu>
                 </li>
                 <li>
                   <Link to='/work' className='flex h-full items-center px-5'>

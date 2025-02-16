@@ -19,6 +19,9 @@ export default {
       spacing: {
         header: defaultTheme.spacing[20],
       },
+      boxShadow: {
+        sm: '0px 2px 4px 0px rgba(0, 0, 0, 0.10)',
+      },
       animation: {
         slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
