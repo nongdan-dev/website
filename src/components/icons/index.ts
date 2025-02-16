@@ -1,2 +1,7 @@
+export { CheckCircle } from './CheckCircle'
 export { ChevronDown } from './ChevronDown'
+export { Flame } from './Flame'
+export { Medal1st } from './Medal1st'
 export { Orbits } from './Orbits'
+export { Sparks } from './Sparks'
+export { Star } from './Star'
