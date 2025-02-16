@@ -34,9 +34,9 @@ export function Content({
   return (
     <Popover.Portal container={containerRef?.current}>
       <Popover.Content
-        sideOffset={20}
+        sideOffset={16}
         className={twMerge(
-          'z-10 grid grid-cols-2 gap-20 rounded-b-lg bg-white px-10 py-8 shadow-sm data-[state=open]:animate-slideUpAndFade',
+          'z-10 grid grid-cols-2 gap-20 rounded-b-lg bg-white/85 px-10 py-8 shadow-sm backdrop-blur-md data-[state=open]:animate-slideUpAndFade',
           className,
         )}
         {...props}

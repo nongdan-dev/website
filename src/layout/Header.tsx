@@ -1,9 +1,8 @@
 import { Fragment, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
-import { Button, Portal } from '@/components/ui'
+import { Button, Portal, Link, NavLink } from '@/components/ui'
 import {
   MobileMenu,
   DropdownMenu,
@@ -19,30 +18,30 @@ function ServicesMenuContent() {
         </span>
         <ul className='mt-3'>
           <li>
-            <Link
+            <NavLink
               to='/development/web-development'
               className='inline-block py-1'
             >
               Web Development
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to='/development/mobile-development'
               className='inline-block py-1'
             >
               Mobile Development
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to='/coming-soon' className='inline-block py-1'>
+            <NavLink to='/coming-soon' className='inline-block py-1'>
               Tooling Development
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to='/coming-soon' className='inline-block py-1'>
+            <NavLink to='/coming-soon' className='inline-block py-1'>
               API Integration
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -52,14 +51,14 @@ function ServicesMenuContent() {
         </span>
         <ul className='mt-3'>
           <li>
-            <Link to='/coming-soon' className='inline-block py-1'>
+            <NavLink to='/coming-soon' className='inline-block py-1'>
               User Interface
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to='/coming-soon' className='inline-block py-1'>
+            <NavLink to='/coming-soon' className='inline-block py-1'>
               User Experience
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -90,7 +89,7 @@ function Header() {
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMobileMenu(false)}
             >
-              <img src={Logo} alt='' className='w-36' />
+              <img src={Logo} alt='' className='w-32' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row gap-6'>
@@ -105,14 +104,14 @@ function Header() {
                   </DropdownMenu>
                 </li>
                 <li>
-                  <Link to='/work' className='flex h-full items-center'>
+                  <NavLink to='/work' className='flex h-full items-center'>
                     Our work
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to='/about-us' className='flex h-full items-center'>
+                  <NavLink to='/about-us' className='flex h-full items-center'>
                     About us
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
