@@ -4,8 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.text-body {
-  @apply font-sans text-base leading-normal text-gray-900;
+body {
+  @apply leading-body text-base font-normal text-gray-900;
+}
+
+.text-title {
+  @apply text-6xl font-bold leading-tight;
 }
 
 .content-grid {

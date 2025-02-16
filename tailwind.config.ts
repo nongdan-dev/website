@@ -8,10 +8,14 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: generateColors(),
-      fontSize: generateFontSizes(),
       fontFamily: {
         sans: ['Matter', ...defaultTheme.fontFamily.sans],
+      },
+      colors: generateColors(),
+      fontSize: generateFontSizes(),
+      lineHeight: {
+        title: '120%',
+        body: '150%',
       },
       maxWidth: {
         1440: '90rem',

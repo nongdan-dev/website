@@ -1,69 +1,14 @@
-import { Fragment, useState, Dispatch, SetStateAction, useRef } from 'react'
+import { Fragment, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
 import { Button, Portal } from '@/components/ui'
-import { MobileMenu, DropdownMenu } from '@/components/widget'
-
-function MobileMenuTrigger({
-  visible,
-  setVisible,
-}: {
-  visible: boolean
-  setVisible: Dispatch<SetStateAction<boolean>>
-}) {
-  return (
-    <button
-      className='px-5 py-3 pr-0 lg:hidden'
-      aria-label='toggle mobile menu'
-      aria-expanded={visible}
-      onClick={() => setVisible(prev => !prev)}
-    >
-      <svg
-        viewBox='0 0 100 100'
-        width={40}
-        className='fill-body'
-        aria-hidden='true'
-      >
-        <rect
-          width='80'
-          height='8'
-          x='10'
-          y={!visible ? 26 : 46}
-          rx='5'
-          className={twMerge(
-            'origin-center transition-all',
-            visible && 'rotate-45',
-          )}
-        />
-        <rect
-          width='80'
-          height='8'
-          x='10'
-          y='46'
-          rx='5'
-          className={twMerge(
-            'origin-center transition-all',
-            visible && 'opacity-0',
-          )}
-        />
-        <rect
-          width='80'
-          height='8'
-          x='10'
-          y={!visible ? 66 : 46}
-          rx='5'
-          rotate={45}
-          className={twMerge(
-            'origin-center transition-all',
-            visible && '-rotate-45',
-          )}
-        />
-      </svg>
-    </button>
-  )
-}
+import {
+  MobileMenu,
+  DropdownMenu,
+  MobileMenuTrigger,
+} from '@/components/widget'
 
 function ServicesMenuContent() {
   return (
@@ -148,7 +93,7 @@ function Header() {
               <img src={Logo} alt='' className='w-36' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
-              <ul className='flex h-full flex-row'>
+              <ul className='flex h-full flex-row gap-6'>
                 <li>
                   <DropdownMenu onOpenChange={setDropdownActive}>
                     <DropdownMenu.Trigger aria-haspopup='menu'>
@@ -160,20 +105,17 @@ function Header() {
                   </DropdownMenu>
                 </li>
                 <li>
-                  <Link to='/work' className='flex h-full items-center px-5'>
+                  <Link to='/work' className='flex h-full items-center'>
                     Our work
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to='/about-us'
-                    className='flex h-full items-center px-5'
-                  >
+                  <Link to='/about-us' className='flex h-full items-center'>
                     About us
                   </Link>
                 </li>
-                <li>
-                  <span className='flex h-full items-center pl-5'>
+                <li className='ml-2'>
+                  <span className='flex h-full items-center'>
                     <Button asChild>
                       <Link to='/contact'>Build with us</Link>
                     </Button>

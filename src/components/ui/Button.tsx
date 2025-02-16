@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-type Tone = 'primary'
+type Tone = 'primary' | 'light'
 type Impact = 'bold' | 'light' | 'none'
 type Size = 'small' | 'medium' | 'large'
 type Shape = 'square' | 'rounded' | 'pill'
@@ -23,6 +23,11 @@ const impactClasses: Record<Tone, Record<Impact, string>> = {
     bold: 'bg-primary-500 text-primary-50 hover:bg-primary-600',
     light: 'bg-primary-100 text-primary-700 hover:bg-primary-200',
     none: 'bg-transparent text-primary-700 hover:bg-primary-50',
+  },
+  light: {
+    bold: 'border border-gray-600 bg-white text-gray-700 hover:bg-gray-950 hover:text-primary-50 hover:border-gray-950',
+    light: '',
+    none: '',
   },
 }
 
