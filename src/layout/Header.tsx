@@ -1,5 +1,4 @@
 import * as Popover from '@radix-ui/react-popover'
-import { throttle } from 'lodash'
 import {
   Fragment,
   useState,
@@ -8,17 +7,14 @@ import {
   useRef,
   RefObject,
   useEffect,
-  useCallback,
 } from 'react'
 import { FaAngleDown } from 'react-icons/fa6'
 import { Link, useLocation } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-import { Logo } from '@/components/svg'
+import Logo from '@/assets/svg/logo.svg'
 import { Button, Portal } from '@/components/ui'
 import { MobileMenu } from '@/components/widget'
-import useTailwind from '@/hooks/useTailwind'
-import { remToPx } from '@/utils/style'
 
 function MobileMenuTrigger({
   visible,
@@ -102,7 +98,7 @@ function DropdownMenu({
       <Popover.Portal container={containerRef.current}>
         <Popover.Content
           sideOffset={16}
-          className='z-10 grid grid-cols-3 gap-20 rounded-b-md bg-white px-10 py-8 shadow-lg data-[state=open]:animate-slideUpAndFade'
+          className='z-10 grid grid-cols-2 gap-20 rounded-b-md bg-white px-10 py-8 shadow-lg data-[state=open]:animate-slideUpAndFade'
         >
           <nav aria-label='Development'>
             <span aria-hidden='true' className='font-semibold'>
@@ -135,16 +131,6 @@ function DropdownMenu({
                   API Integration
                 </Link>
               </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Strategy & Architecture
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Managed Services
-                </Link>
-              </li>
             </ul>
           </nav>
           <nav aria-label='Design'>
@@ -154,44 +140,12 @@ function DropdownMenu({
             <ul className='mt-3'>
               <li>
                 <Link to='/coming-soon' className='inline-block py-1'>
-                  User Research
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
                   User Interface
                 </Link>
               </li>
               <li>
                 <Link to='/coming-soon' className='inline-block py-1'>
-                  Experience Design
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Digital Product Design
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <nav aria-label='Other'>
-            <span aria-hidden='true' className='font-semibold'>
-              Other
-            </span>
-            <ul className='mt-3'>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Our Clients
-                </Link>
-              </li>
-              <li>
-                <Link to='/coming-soon' className='inline-block py-1'>
-                  Events
+                  User Experience
                 </Link>
               </li>
             </ul>
@@ -205,25 +159,6 @@ function DropdownMenu({
 function Header() {
   const headerRef = useRef<HTMLElement>(null)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
-  const [activeHeaderStyle, setActiveHeaderStyle] = useState(false)
-
-  const { theme } = useTailwind()
-
-  useEffect(() => {
-    toggleActiveHeaderStyle()
-    window.addEventListener('scroll', throttleToggleActiveHeaderStyle)
-    return () =>
-      window.removeEventListener('scroll', throttleToggleActiveHeaderStyle)
-  }, [])
-
-  const toggleActiveHeaderStyle = () => {
-    setActiveHeaderStyle(window.scrollY >= remToPx(theme.height.header))
-  }
-
-  const throttleToggleActiveHeaderStyle = useCallback(
-    throttle(toggleActiveHeaderStyle, 100),
-    [],
-  )
 
   return (
     <Fragment>
@@ -231,7 +166,7 @@ function Header() {
         <div
           className={twMerge(
             'content-grid relative h-header border-b border-transparent transition-colors',
-            activeHeaderStyle && 'border-gray-300 bg-white',
+            false && 'border-gray-300 bg-white',
           )}
         >
           <div className='col-content flex flex-row items-center justify-between'>
@@ -241,7 +176,7 @@ function Header() {
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMobileMenu(false)}
             >
-              <Logo aria-hidden='true' className='h-full w-36' />
+              <img src={Logo} alt='' className='h-full w-36' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row'>
@@ -263,7 +198,7 @@ function Header() {
                 </li>
                 <li>
                   <span className='flex h-full items-center pl-5'>
-                    <Button asChild tone='dark'>
+                    <Button asChild>
                       <Link to='/contact'>Build with us</Link>
                     </Button>
                   </span>

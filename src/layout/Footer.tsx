@@ -1,15 +1,3 @@
-import { BiSolidPhoneCall } from 'react-icons/bi'
-import {
-  FaFacebook,
-  FaGithub,
-  FaLinkedin,
-  FaLocationDot,
-  FaSlack,
-  FaTwitter,
-} from 'react-icons/fa6'
-import { GrMail } from 'react-icons/gr'
-
-import { Logo } from '@/components/svg/Logo'
 import { Link } from '@/components/ui'
 import { companyInfo } from '@/config/metadata'
 
@@ -20,13 +8,9 @@ function Footer() {
         <div id='services' className='flex flex-col gap-16 lg:flex-row'>
           <address className='order-1 flex flex-col gap-y-1.5 not-italic lg:order-none lg:w-1/3'>
             <div aria-label='website logo' className='mb-4'>
-              <Logo />
+              logo
             </div>
             <div className='flex items-center gap-3'>
-              <BiSolidPhoneCall
-                aria-hidden='true'
-                className='text-body/80 h-4 w-4 flex-shrink-0'
-              />
               <a
                 href={`tel:${companyInfo.phone}`}
                 aria-label={`call us at ${companyInfo.phone}`}
@@ -34,23 +18,7 @@ function Footer() {
                 {companyInfo.phone}
               </a>
             </div>
-            <div className='flex items-center gap-3'>
-              <GrMail
-                aria-hidden='true'
-                className='text-body/80 h-4 w-4 flex-shrink-0'
-              />
-              <a
-                href={`mailto:${companyInfo.email}`}
-                aria-label={`email us at ${companyInfo.email}`}
-              >
-                {companyInfo.email}
-              </a>
-            </div>
             <div className='flex gap-3'>
-              <FaLocationDot
-                aria-hidden='true'
-                className='text-body/80 h-4 w-4 flex-shrink-0 translate-y-1'
-              />
               <a
                 className='text-balance'
                 href={`https://maps.google.com/?q=vietnam`}
@@ -60,33 +28,6 @@ function Footer() {
                 {companyInfo.location.address}
               </a>
             </div>
-            <ul className='ml-7 mt-4 flex flex-row gap-4 text-gray-400'>
-              <li>
-                <a target='_blank' href={companyInfo.social.facebook}>
-                  <FaFacebook />
-                </a>
-              </li>
-              <li>
-                <a target='_blank' href={companyInfo.social.linkedin}>
-                  <FaLinkedin />
-                </a>
-              </li>
-              <li>
-                <a target='_blank' href={companyInfo.social.twitter}>
-                  <FaTwitter />
-                </a>
-              </li>
-              <li>
-                <a target='_blank' href={companyInfo.social.github}>
-                  <FaGithub />
-                </a>
-              </li>
-              <li>
-                <a target='_blank' href={companyInfo.social.slack}>
-                  <FaSlack />
-                </a>
-              </li>
-            </ul>
           </address>
           <div className='grid grid-cols-2 gap-16 lg:w-2/3 lg:grid-cols-3'>
             <nav aria-label='Development'>
@@ -120,16 +61,6 @@ function Footer() {
                     API Integration
                   </Link>
                 </li>
-                <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
-                    Strategy & Architecture
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
-                    Managed Services
-                  </Link>
-                </li>
               </ul>
             </nav>
             <nav aria-label='Design'>
@@ -139,44 +70,29 @@ function Footer() {
               <ul className='mt-3'>
                 <li>
                   <Link to='/coming-soon' className='inline-block py-1'>
-                    User Research
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
                     User Interface
                   </Link>
                 </li>
                 <li>
                   <Link to='/coming-soon' className='inline-block py-1'>
-                    Experience Design
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
-                    Digital Product Design
+                    User Experience
                   </Link>
                 </li>
               </ul>
             </nav>
-            <nav aria-label='About us'>
+            <nav aria-label='Other'>
               <span aria-hidden='true' className='font-bold'>
-                About us
+                Other
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
-                    Case Studies
+                  <Link to='/work' className='inline-block py-1'>
+                    Our Work
                   </Link>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
-                    Our Clients
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
-                    Events
+                  <Link to='/contact' className='inline-block py-1'>
+                    Contact Us
                   </Link>
                 </li>
               </ul>
