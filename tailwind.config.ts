@@ -2,26 +2,16 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 
 import type { Config } from 'tailwindcss'
 
-import colors from './src/config/colors'
-import { hexToTwColorFormat } from './src/utils/style'
+import { generateColors, generateFontSizes } from './src/utils/style'
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: Object.fromEntries(
-        Object.entries(colors).map(([key, values]) => [
-          key,
-          hexToTwColorFormat(values),
-        ]),
-      ),
-      fontSize: Object.keys(defaultTheme.fontSize).reduce((acc, cur) => {
-        acc[cur] = defaultTheme.fontSize[cur][0]
-        return acc
-      }, {}),
+      colors: generateColors(),
+      fontSize: generateFontSizes(),
       fontFamily: {
-        title: ['Montserrat'],
-        body: ['Mulish', ...defaultTheme.fontFamily.sans],
+        sans: ['Matter', ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
         1440: '90rem',

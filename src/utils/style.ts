@@ -1,4 +1,6 @@
-import { ColorData, ColorKey } from '@/config/colors'
+import { fontSize } from 'tailwindcss/defaultTheme'
+
+import { ColorData, ColorKey, colors } from '../config/colors'
 
 export function hexToRgb(hex: string) {
   return hex
@@ -33,4 +35,24 @@ export function remToPx(rem: string, baseFontSize?: number) {
   }
 
   return remValue * baseFontSize
+}
+
+export function generateColors() {
+  return Object.fromEntries(
+    Object.entries(colors).map(([key, values]) => [
+      key,
+      hexToTwColorFormat(values),
+    ]),
+  )
+}
+
+export function generateFontSizes() {
+  const keys = Object.keys(fontSize) as (keyof typeof fontSize)[]
+  return keys.reduce(
+    (acc, cur) => {
+      acc[cur] = fontSize[cur][0]
+      return acc
+    },
+    {} as Record<keyof typeof fontSize, string>,
+  )
 }
