@@ -1,9 +1,7 @@
 import { MouseEventHandler, useEffect } from 'react'
-import { GrMail } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-import { companyInfo } from '@/config/metadata'
 import useLockScroll from '@/hooks/useLockScroll'
 
 import { Button } from '../ui'
@@ -95,21 +93,6 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             </li>
           </ul>
         </nav>
-      </div>
-      <div className='content-grid py-4'>
-        <div className='col-content'>
-          <hr aria-hidden='true' className='my-4 border-b border-gray-200' />
-          <div className='text-body/60 flex items-center justify-center gap-2 text-center'>
-            <GrMail aria-hidden='true' className='h-4 w-4 flex-shrink-0' />
-            <a
-              className='text-xs'
-              href={`mailto:${companyInfo.email}`}
-              aria-label={`email us at ${companyInfo.email}`}
-            >
-              {companyInfo.email}
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   )
