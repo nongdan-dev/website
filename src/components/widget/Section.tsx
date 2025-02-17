@@ -14,12 +14,12 @@ const SectionContext = createContext<SectionCtx | undefined>(undefined)
 export type SectionProps = ComponentProps<'section'>
 export type SubTitleProps = ChipProps
 
-export type TitleProps = Omit<ComponentProps<'h2'>, 'chilren'> & {
-  children: ReactNode | ((props: SectionCtx) => ReactNode)
+export type TitleProps = Omit<ComponentProps<'h2'>, 'children'> & {
+  children: ((props: SectionCtx) => ReactNode) | ReactNode
 }
 
-export type ContentProps = Omit<ComponentProps<'div'>, 'chilren'> & {
-  children: ReactNode | ((props: { contentClassName: string }) => ReactNode)
+export type ContentProps = Omit<ComponentProps<'div'>, 'children'> & {
+  children: ((props: { contentClassName: string }) => ReactNode) | ReactNode
 }
 
 export function Section({ className, ...props }: SectionProps) {
