@@ -116,7 +116,9 @@ function Header() {
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
                     <Button asChild>
-                      <Link to='/contact'>Build with us</Link>
+                      <Link noHover to='/contact'>
+                        Build with us
+                      </Link>
                     </Button>
                   </span>
                 </li>
