@@ -4,7 +4,7 @@ import { Button, Link } from '@/components/ui'
 
 function Hero() {
   return (
-    <div className='col-full-width relative bg-gradient-to-b from-primary-200 to-white/0 pt-[calc(theme(spacing.header)*2)]'>
+    <section className='col-full-width relative bg-gradient-to-b from-primary-200 to-white/0 pt-[calc(theme(spacing.header)*2)]'>
       <Orbits className='pointer-events-none absolute left-1/2 z-0 -translate-x-1/2 -translate-y-1/4 text-[48.75rem] text-primary-200' />
       <div className='col-content z-10 place-items-center'>
         <h1 className='text-title mb-4'>Idea. Develop. Launch.</h1>
@@ -28,7 +28,7 @@ function Hero() {
       <div aria-hidden className='col-content z-10 mt-header'>
         <img src={HeroImg} alt='' />
       </div>
-    </div>
+    </section>
   )
 }
 

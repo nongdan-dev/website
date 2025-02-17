@@ -28,7 +28,11 @@ export function Section({ className, ...props }: SectionProps) {
 
   return (
     <SectionContext.Provider value={{ titleId, titleClassName }}>
-      <section {...props} className={twMerge('col-content py-20', className)} />
+      <section
+        {...props}
+        aria-labelledby={titleId}
+        className={twMerge('col-content py-20', className)}
+      />
     </SectionContext.Provider>
   )
 }
