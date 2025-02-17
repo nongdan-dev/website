@@ -1,4 +1,5 @@
-import { Fragment, useState, useRef } from 'react'
+import { throttle } from 'lodash'
+import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
@@ -8,6 +9,8 @@ import {
   DropdownMenu,
   MobileMenuTrigger,
 } from '@/components/widget'
+import useTailwind from '@/hooks/useTailwind'
+import { remToPx } from '@/utils/style'
 
 function ServicesMenuContent() {
   return (
@@ -67,11 +70,30 @@ function ServicesMenuContent() {
 }
 
 function Header() {
+  const { theme } = useTailwind()
   const headerRef = useRef<HTMLElement>(null)
+
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [dropdownActive, setDropdownActive] = useState(false)
+  const [scrollActive, setScrollActive] = useState(false)
 
-  const activeHeaderStyle = dropdownActive
+  useEffect(() => {
+    toggleScrollActive()
+    window.addEventListener('scroll', throttleToggleScrollActive)
+    return () =>
+      window.removeEventListener('scroll', throttleToggleScrollActive)
+  }, [])
+
+  const toggleScrollActive = () => {
+    setScrollActive(window.scrollY >= remToPx(theme.height.header))
+  }
+
+  const throttleToggleScrollActive = useCallback(
+    throttle(toggleScrollActive, 100),
+    [],
+  )
+
+  const activeHeaderStyle = dropdownActive || scrollActive
 
   return (
     <Fragment>
