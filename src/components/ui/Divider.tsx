@@ -9,7 +9,7 @@ export type DividerProps = ComponentProps<'div'> & {
 
 const directionClasses: Record<Direction, string> = {
   vertical:
-    'flex-col mx-4 w-4 h-40 before:h-full before:w-px after:h-full after:w-px',
+    'flex-col mx-4 w-4 h-full before:h-full before:w-px after:h-full after:w-px',
   horizontal:
     'flex-row my-4 h-4 w-full before:h-px before:w-full after:h-px after:w-full',
 }
