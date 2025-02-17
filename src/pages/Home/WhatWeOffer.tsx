@@ -16,7 +16,7 @@ function WhatWeOffer() {
           <img src={WhatWeOffer1} alt='' />
           <div className='px-6 py-8'>
             <h3 className='mb-3 text-2xl font-medium'>Software Development</h3>
-            <p className='text-lg'>
+            <p>
               Custom software development optimized for performance and
               scalability as your business grows.
             </p>
@@ -26,7 +26,7 @@ function WhatWeOffer() {
           <img src={WhatWeOffer2} alt='' />
           <div className='px-6 py-8'>
             <h3 className='mb-3 text-2xl font-medium'>API Integration</h3>
-            <p className='text-lg'>
+            <p>
               Seamlessly connect your app with third-party systems to automate
               and streamline workflows.
             </p>
@@ -36,7 +36,7 @@ function WhatWeOffer() {
           <img src={WhatWeOffer3} alt='' />
           <div className='px-6 py-8'>
             <h3 className='mb-3 text-2xl font-medium'>UI/UX Design</h3>
-            <p className='text-lg'>
+            <p>
               Modern interface design with intuitive layouts, smooth
               interactions, and an optimized user experience.
             </p>
