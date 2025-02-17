@@ -8,6 +8,7 @@ export function Medal1st(props: ComponentProps<'svg'>) {
       height='1em'
       viewBox='0 0 16 16'
       fill='none'
+      aria-hidden
       {...props}
     >
       <path

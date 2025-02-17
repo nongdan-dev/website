@@ -10,14 +10,14 @@ export type SectionProps = Omit<
   ComponentProps<'section'>,
   'title' | 'children'
 > & {
+  subtitle?: ReactNode
   title?: ReactNode | ((props: TitleProps) => ReactNode)
-  subtitle?: string
   children?: ReactNode | ((props: TitleProps) => ReactNode)
 }
 
 export function Section({ title, subtitle, children, ...props }: SectionProps) {
   const titleId = useId()
-  const titleClassName = 'text-title mb-6'
+  const titleClassName = 'text-title'
 
   const renderTitle = () => {
     if (!title) return null
@@ -37,15 +37,10 @@ export function Section({ title, subtitle, children, ...props }: SectionProps) {
       aria-labelledby={titleId}
       className={twMerge('col-content py-20', props.className)}
     >
-      {!!subtitle && (
-        <span
-          aria-hidden='true'
-          className='mb-1 block font-semibold uppercase text-gray-400'
-        >
-          {subtitle}
-        </span>
-      )}
-      {renderTitle()}
+      <div className='mb-12 flex flex-col gap-y-3.5'>
+        {subtitle}
+        {renderTitle()}
+      </div>
       {typeof children === 'function'
         ? children({ titleId, titleClassName })
         : children}

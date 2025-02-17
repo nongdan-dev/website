@@ -14,7 +14,7 @@ function Clients() {
           </p>
         </div>
         <div className='place-content-center place-items-center border-r border-gray-200 py-4'>
-          <img src={Broadflow} alt='Broadflow' className='h-7' />
+          <img src={Broadflow} alt='Broadflow' className='h-8' />
         </div>
         <div className='place-content-center place-items-center border-r border-gray-200 py-4'>
           <img src={Beings} alt='Beings' className='h-9' />

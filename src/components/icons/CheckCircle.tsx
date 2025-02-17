@@ -8,6 +8,7 @@ export function CheckCircle(props: ComponentProps<'svg'>) {
       height='1em'
       viewBox='0 0 16 16'
       fill='none'
+      aria-hidden
       {...props}
     >
       <g clipPath='url(#clip0_613_223)'>
