@@ -34,3 +34,31 @@ body {
     grid-template-columns: subgrid;
   }
 }
+
+#why-choose-us > #grid-layout {
+  @apply grid grid-cols-5 grid-rows-4 gap-8;
+  grid-template-areas:
+    'one one one two two'
+    'one one one three three'
+    'four four six six six'
+    'five five six six six';
+
+  & div:nth-child(1) {
+    grid-area: one;
+  }
+  & div:nth-child(2) {
+    grid-area: two;
+  }
+  & div:nth-child(3) {
+    grid-area: three;
+  }
+  & div:nth-child(4) {
+    grid-area: four;
+  }
+  & div:nth-child(5) {
+    grid-area: five;
+  }
+  & div:nth-child(6) {
+    grid-area: six;
+  }
+}
