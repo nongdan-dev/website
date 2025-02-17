@@ -126,7 +126,7 @@ function Header() {
                   </DropdownMenu>
                 </li>
                 <li>
-                  <NavLink to='/work' className='flex h-full items-center'>
+                  <NavLink to='/our-work' className='flex h-full items-center'>
                     Our work
                   </NavLink>
                 </li>
@@ -138,7 +138,7 @@ function Header() {
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
                     <Button asChild>
-                      <Link noHover to='/contact'>
+                      <Link noHover to='/contact-us'>
                         Build with us
                       </Link>
                     </Button>

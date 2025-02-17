@@ -1,37 +1,37 @@
+import Flag from '@/assets/svg/flag.svg'
+import Logo from '@/assets/svg/logo.svg'
 import { Link } from '@/components/ui'
 import { companyInfo } from '@/config/metadata'
 
 function Footer() {
   return (
-    <footer className='content-grid mt-20'>
+    <footer className='content-grid bor border-t border-gray-200 pt-20 text-lg'>
       <div className='col-content'>
-        <div id='services' className='flex flex-col gap-16 lg:flex-row'>
-          <address className='order-1 flex flex-col gap-y-1.5 not-italic lg:order-none lg:w-1/3'>
+        <div className='flex flex-row gap-16'>
+          <address className='flex w-1/3 flex-col gap-y-2 not-italic'>
             <div aria-label='website logo' className='mb-4'>
-              logo
+              <img src={Logo} alt='' className='h-6' />
             </div>
-            <div className='flex items-center gap-3'>
-              <a
-                href={`tel:${companyInfo.phone}`}
-                aria-label={`call us at ${companyInfo.phone}`}
-              >
-                {companyInfo.phone}
-              </a>
-            </div>
-            <div className='flex gap-3'>
-              <a
-                className='text-balance'
-                href={`https://maps.google.com/?q=vietnam`}
-                target='_blank'
-                aria-label={`visit us at ${companyInfo.location.address}`}
-              >
-                {companyInfo.location.address}
-              </a>
-            </div>
+            <a
+              className='flex items-center gap-1.5'
+              href={`tel:${companyInfo.phone}`}
+              aria-label={`call us at ${companyInfo.phone}`}
+            >
+              <img src={Flag} alt='' className='h-5 rounded-sm' />
+              {companyInfo.phone}
+            </a>
+            <a
+              className='text-balance'
+              href={`https://maps.google.com/?q=vietnam`}
+              target='_blank'
+              aria-label={`visit us at ${companyInfo.location.address}`}
+            >
+              {companyInfo.location.address}
+            </a>
           </address>
-          <div className='grid grid-cols-2 gap-16 lg:w-2/3 lg:grid-cols-3'>
+          <div className='grid w-2/3 grid-cols-3 gap-16'>
             <nav aria-label='Development'>
-              <span aria-hidden='true' className='font-bold'>
+              <span aria-hidden className='font-bold'>
                 Development
               </span>
               <ul className='mt-3'>
@@ -64,7 +64,7 @@ function Footer() {
               </ul>
             </nav>
             <nav aria-label='Design'>
-              <span aria-hidden='true' className='font-bold'>
+              <span aria-hidden className='font-bold'>
                 Design
               </span>
               <ul className='mt-3'>
@@ -81,17 +81,22 @@ function Footer() {
               </ul>
             </nav>
             <nav aria-label='Other'>
-              <span aria-hidden='true' className='font-bold'>
+              <span aria-hidden className='font-bold'>
                 Other
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/work' className='inline-block py-1'>
+                  <Link to='/about-us' className='inline-block py-1'>
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/our-work' className='inline-block py-1'>
                     Our Work
                   </Link>
                 </li>
                 <li>
-                  <Link to='/contact' className='inline-block py-1'>
+                  <Link to='/contact-us' className='inline-block py-1'>
                     Contact Us
                   </Link>
                 </li>
@@ -99,8 +104,8 @@ function Footer() {
             </nav>
           </div>
         </div>
-        <hr aria-hidden='true' className='mt-10 border-b border-gray-200' />
-        <p className='py-4 text-sm text-gray-400'>
+        <hr aria-hidden className='mt-10 border-b border-gray-100' />
+        <p className='py-4 text-gray-400'>
           nongdan.dev, LLC © {new Date().getFullYear()} All rights reserved.
         </p>
       </div>

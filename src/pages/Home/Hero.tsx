@@ -14,12 +14,12 @@ function Hero() {
         </p>
         <div className='mt-6 flex gap-4'>
           <Button asChild>
-            <Link noHover to='/contact'>
+            <Link noHover to='/contact-us'>
               Let's build with us
             </Link>
           </Button>
           <Button tone='light' asChild>
-            <Link noHover to='/work'>
+            <Link noHover to='/our-work'>
               Explore our work
             </Link>
           </Button>
