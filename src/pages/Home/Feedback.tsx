@@ -1,10 +1,11 @@
 import Broadflow from '@/assets/images/client-logos/broadflow.png'
 import { Divider } from '@/components/ui'
+import { Section } from '@/components/widget'
 import { colors } from '@/config/colors'
 
 function Feedback() {
   return (
-    <section className='col-content relative overflow-clip border-b border-gray-200 py-20'>
+    <Section className='col-content relative overflow-clip border-b border-gray-200'>
       <figure className='relative z-10'>
         <blockquote className='w-7/12 font-serif text-5xl font-bold leading-[110%]'>
           “For the past ten years, I've had the privilege of working with Nam,
@@ -29,7 +30,7 @@ function Feedback() {
           background: `radial-gradient(ellipse farthest-side at 50% 100%, ${colors.primary[100]} 0%, transparent 100%)`,
         }}
       />
-    </section>
+    </Section>
   )
 }
 
