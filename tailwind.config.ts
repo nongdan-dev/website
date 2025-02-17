@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+import { fontFamily, spacing } from 'tailwindcss/defaultTheme'
 
 import type { Config } from 'tailwindcss'
 
@@ -9,7 +9,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Matter', ...defaultTheme.fontFamily.sans],
+        sans: ['Matter', ...fontFamily.sans],
+        serif: ['Garamond', ...fontFamily.serif],
       },
       colors: generateColors(),
       fontSize: generateFontSizes(),
@@ -21,7 +22,7 @@ export default {
         1440: '90rem',
       },
       spacing: {
-        header: defaultTheme.spacing[20],
+        header: spacing[20],
       },
       boxShadow: {
         sm: '0px 2px 4px 0px rgba(0, 0, 0, 0.10)',
