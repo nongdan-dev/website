@@ -1,49 +1,76 @@
-import { ComponentProps, ReactNode, useId } from 'react'
+import { ComponentProps, ReactNode, useId, createContext } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-type TitleProps = {
+import { Chip, ChipProps } from '@/components/ui'
+import { useContext } from '@/hooks/useContext'
+
+type SectionCtx = {
   titleId: string
   titleClassName: string
 }
 
-export type SectionProps = Omit<
-  ComponentProps<'section'>,
-  'title' | 'children'
-> & {
-  subtitle?: ReactNode
-  title?: ReactNode | ((props: TitleProps) => ReactNode)
-  children?: ReactNode | ((props: TitleProps) => ReactNode)
+export type SectionProps = ComponentProps<'section'>
+export type SubTitleProps = ChipProps
+
+export type TitleProps = Omit<ComponentProps<'h2'>, 'chilren'> & {
+  children: ReactNode | ((props: SectionCtx) => ReactNode)
 }
 
-export function Section({ title, subtitle, children, ...props }: SectionProps) {
+export type ContentProps = Omit<ComponentProps<'div'>, 'chilren'> & {
+  children: ReactNode | ((props: { contentClassName: string }) => ReactNode)
+}
+
+const SectionContext = createContext<SectionCtx | undefined>(undefined)
+
+export function Section(props: SectionProps) {
   const titleId = useId()
   const titleClassName = 'text-title'
 
-  const renderTitle = () => {
-    if (!title) return null
-    if (typeof title === 'function') {
-      return title({ titleId, titleClassName })
-    }
-    return (
-      <h2 id={titleId} className={titleClassName}>
-        {title}
-      </h2>
-    )
+  return (
+    <SectionContext.Provider value={{ titleId, titleClassName }}>
+      <section {...props} />
+    </SectionContext.Provider>
+  )
+}
+
+export function SubTitle(props: SubTitleProps) {
+  return (
+    <Chip
+      aria-hidden
+      {...props}
+      className={twMerge('mb-3.5', props.className)}
+    />
+  )
+}
+
+export function Title({ children, className, ...props }: TitleProps) {
+  const { titleId, titleClassName } = useContext(SectionContext)
+
+  if (typeof children === 'function') {
+    return children({ titleId, titleClassName })
   }
 
   return (
-    <section
-      {...props}
-      aria-labelledby={titleId}
-      className={twMerge('col-content py-20', props.className)}
-    >
-      <div className='mb-12 flex flex-col gap-y-3.5'>
-        {subtitle}
-        {renderTitle()}
-      </div>
-      {typeof children === 'function'
-        ? children({ titleId, titleClassName })
-        : children}
-    </section>
+    <h2 {...props} id={titleId} className={twMerge(titleClassName, className)}>
+      {children}
+    </h2>
   )
 }
+
+export function Content({ children, className, ...props }: ContentProps) {
+  const contentClassName = 'mb-12'
+
+  if (typeof children === 'function') {
+    return children({ contentClassName })
+  }
+
+  return (
+    <div {...props} className={twMerge('mb-12', className)}>
+      {children}
+    </div>
+  )
+}
+
+Section.SubTitle = SubTitle
+Section.Title = Title
+Section.Content = Content
