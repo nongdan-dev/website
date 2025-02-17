@@ -9,6 +9,8 @@ type SectionCtx = {
   titleClassName: string
 }
 
+const SectionContext = createContext<SectionCtx | undefined>(undefined)
+
 export type SectionProps = ComponentProps<'section'>
 export type SubTitleProps = ChipProps
 
@@ -20,15 +22,13 @@ export type ContentProps = Omit<ComponentProps<'div'>, 'chilren'> & {
   children: ReactNode | ((props: { contentClassName: string }) => ReactNode)
 }
 
-const SectionContext = createContext<SectionCtx | undefined>(undefined)
-
-export function Section(props: SectionProps) {
+export function Section({ className, ...props }: SectionProps) {
   const titleId = useId()
-  const titleClassName = 'text-title'
+  const titleClassName = 'text-title w-1/2'
 
   return (
     <SectionContext.Provider value={{ titleId, titleClassName }}>
-      <section {...props} />
+      <section {...props} className={twMerge('col-content py-20', className)} />
     </SectionContext.Provider>
   )
 }
@@ -37,8 +37,9 @@ export function SubTitle(props: SubTitleProps) {
   return (
     <Chip
       aria-hidden
+      bordered
       {...props}
-      className={twMerge('mb-3.5', props.className)}
+      className={twMerge('mb-2.5', props.className)}
     />
   )
 }
