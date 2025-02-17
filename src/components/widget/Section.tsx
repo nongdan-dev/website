@@ -58,14 +58,14 @@ export function Title({ children, className, ...props }: TitleProps) {
 }
 
 export function Content({ children, className, ...props }: ContentProps) {
-  const contentClassName = 'mb-12'
+  const contentClassName = 'mt-12'
 
   if (typeof children === 'function') {
     return children({ contentClassName })
   }
 
   return (
-    <div {...props} className={twMerge('mb-12', className)}>
+    <div {...props} className={twMerge(contentClassName, className)}>
       {children}
     </div>
   )
