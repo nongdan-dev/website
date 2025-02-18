@@ -1,3 +1,4 @@
+export { ArrowRight } from './ArrowRight'
 export { CheckCircle } from './CheckCircle'
 export { ChevronDown } from './ChevronDown'
 export { Flame } from './Flame'
