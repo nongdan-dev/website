@@ -26,14 +26,14 @@ function Feedback() {
         </figcaption>
       </figure>
       <div
-        className='bg-radial absolute inset-0'
+        className='bg-radial pointer-events-none absolute inset-0'
         style={{
           background: `radial-gradient(ellipse farthest-side at 50% 100%, ${colors.primary[100]} 0%, transparent 100%)`,
         }}
       />
       <Orbits
         hideInnerCircles
-        className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-[55rem] text-primary-100'
+        className='pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-[55rem] text-primary-100'
       />
     </Section>
   )
