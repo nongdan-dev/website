@@ -1,4 +1,5 @@
 import Broadflow from '@/assets/images/client-logos/broadflow.png'
+import { Orbits } from '@/components/icons'
 import { Divider } from '@/components/ui'
 import { Section } from '@/components/widget'
 import { colors } from '@/config/colors'
@@ -29,6 +30,10 @@ function Feedback() {
         style={{
           background: `radial-gradient(ellipse farthest-side at 50% 100%, ${colors.primary[100]} 0%, transparent 100%)`,
         }}
+      />
+      <Orbits
+        hideInnerCircles
+        className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-[55rem] text-primary-100'
       />
     </Section>
   )

@@ -38,27 +38,27 @@ body {
 #why-choose-us > #grid-layout {
   @apply grid grid-cols-5 grid-rows-4 gap-8;
   grid-template-areas:
-    'one one one two two'
-    'one one one three three'
-    'four four six six six'
-    'five five six six six';
+    'b1 b1 b1 b2 b2'
+    'b1 b1 b1 b3 b3'
+    'b4 b4 b6 b6 b6'
+    'b5 b5 b6 b6 b6';
 
   & div:nth-child(1) {
-    grid-area: one;
+    grid-area: b1;
   }
   & div:nth-child(2) {
-    grid-area: two;
+    grid-area: b2;
   }
   & div:nth-child(3) {
-    grid-area: three;
+    grid-area: b3;
   }
   & div:nth-child(4) {
-    grid-area: four;
+    grid-area: b4;
   }
   & div:nth-child(5) {
-    grid-area: five;
+    grid-area: b5;
   }
   & div:nth-child(6) {
-    grid-area: six;
+    grid-area: b6;
   }
 }

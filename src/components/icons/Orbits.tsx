@@ -1,6 +1,9 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, Fragment } from 'react'
 
-export function Orbits(props: ComponentProps<'svg'>) {
+export function Orbits({
+  hideInnerCircles,
+  ...props
+}: ComponentProps<'svg'> & { hideInnerCircles?: boolean }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -33,30 +36,34 @@ export function Orbits(props: ComponentProps<'svg'>) {
           stroke='currentColor'
           strokeWidth='0.015'
         />
-        <circle
-          cx='9.66406'
-          cy='6.93237'
-          r='0.174658'
-          fill='currentColor'
-          stroke='currentColor'
-          strokeWidth='0.00663506'
-        />
-        <circle
-          cx='0.231381'
-          cy='9.81536'
-          r='0.219152'
-          fill='currentColor'
-          stroke='currentColor'
-          strokeWidth='0.00663506'
-        />
-        <circle
-          cx='4.09344'
-          cy='6.87884'
-          r='0.30814'
-          fill='currentColor'
-          stroke='currentColor'
-          strokeWidth='0.00663506'
-        />
+        {!hideInnerCircles && (
+          <Fragment>
+            <circle
+              cx='9.66406'
+              cy='6.93237'
+              r='0.174658'
+              fill='currentColor'
+              stroke='currentColor'
+              strokeWidth='0.00663506'
+            />
+            <circle
+              cx='0.231381'
+              cy='9.81536'
+              r='0.219152'
+              fill='currentColor'
+              stroke='currentColor'
+              strokeWidth='0.00663506'
+            />
+            <circle
+              cx='4.09344'
+              cy='6.87884'
+              r='0.30814'
+              fill='currentColor'
+              stroke='currentColor'
+              strokeWidth='0.00663506'
+            />
+          </Fragment>
+        )}
       </g>
     </svg>
   )
