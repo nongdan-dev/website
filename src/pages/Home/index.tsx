@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import Clients from './Clients'
 import Feedback from './Feedback'
 import Hero from './Hero'
+import OurWork from './OurWork'
 import WhatWeOffer from './WhatWeOffer'
 import WhyChooseUs from './WhyChooseUs'
 
@@ -14,6 +15,7 @@ function HomePage() {
       <WhatWeOffer />
       <Feedback />
       <WhyChooseUs />
+      <OurWork />
     </Fragment>
   )
 }
