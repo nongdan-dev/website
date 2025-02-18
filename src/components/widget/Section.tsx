@@ -42,6 +42,7 @@ export function SubTitle(props: SubTitleProps) {
     <Chip
       aria-hidden
       bordered
+      size='medium'
       {...props}
       className={twMerge('mb-2.5', props.className)}
     />
@@ -63,7 +64,7 @@ export function Title({ children, className, ...props }: TitleProps) {
 }
 
 export function Content({ children, className, ...props }: ContentProps) {
-  const contentClassName = 'mt-12'
+  const contentClassName = 'mt-14'
 
   if (typeof children === 'function') {
     return children({ contentClassName })

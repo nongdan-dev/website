@@ -14,7 +14,7 @@ export type ChipProps = ComponentProps<'span'> & {
 }
 
 const baseClasses =
-  'inline-flex flex-1 flex-wrap min-w-fit place-items-center place-content-center font-medium gap-1 px-2.5 py-0.5'
+  'inline-flex flex-1 flex-wrap min-w-fit place-items-center place-content-center font-medium gap-1 px-2.5 py-1'
 
 const toneClasses: Record<Tone, string> = {
   primary: 'bg-primary-50 text-primary-500',
