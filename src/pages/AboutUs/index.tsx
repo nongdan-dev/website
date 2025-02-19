@@ -1,5 +1,15 @@
+import { Fragment } from 'react'
+
+import Clients from './Clients'
+import Hero from './Hero'
+
 function AboutUsPage() {
-  return <div>about us</div>
+  return (
+    <Fragment>
+      <Hero />
+      <Clients />
+    </Fragment>
+  )
 }
 
 export default AboutUsPage
