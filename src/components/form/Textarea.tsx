@@ -23,7 +23,7 @@ export function Textarea({
         'block w-full rounded-md border p-2 text-sm outline-none transition-colors focus:ring-2',
         __invalid
           ? 'border-red-500 hover:border-red-500 focus:border-red-500 focus:ring-red-500'
-          : 'border-gray-300 hover:border-indigo-500 focus:border-indigo-500 focus:ring-indigo-500',
+          : 'border-gray-300 hover:border-primary-500 focus:border-primary-500 focus:ring-primary-500',
         className,
       )}
     />
