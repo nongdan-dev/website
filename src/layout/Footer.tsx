@@ -80,14 +80,14 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     Tooling Development
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     API Integration
-                  </Link>
+                  </span>
                 </li>
               </ul>
             </nav>
@@ -97,14 +97,14 @@ function Footer() {
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     User Interface
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     User Experience
-                  </Link>
+                  </span>
                 </li>
               </ul>
             </nav>

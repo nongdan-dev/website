@@ -37,14 +37,14 @@ function ServicesMenuContent() {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/coming-soon' className='inline-block py-1'>
+            <span className='inline-block cursor-default py-1 text-gray-400'>
               Tooling Development
-            </NavLink>
+            </span>
           </li>
           <li>
-            <NavLink to='/coming-soon' className='inline-block py-1'>
+            <span className='inline-block cursor-default py-1 text-gray-400'>
               API Integration
-            </NavLink>
+            </span>
           </li>
         </ul>
       </nav>
@@ -54,14 +54,14 @@ function ServicesMenuContent() {
         </span>
         <ul className='mt-3'>
           <li>
-            <NavLink to='/coming-soon' className='inline-block py-1'>
+            <span className='inline-block cursor-default py-1 text-gray-400'>
               User Interface
-            </NavLink>
+            </span>
           </li>
           <li>
-            <NavLink to='/coming-soon' className='inline-block py-1'>
+            <span className='inline-block cursor-default py-1 text-gray-400'>
               User Experience
-            </NavLink>
+            </span>
           </li>
         </ul>
       </nav>
