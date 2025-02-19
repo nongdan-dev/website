@@ -76,7 +76,7 @@ function OurWork() {
   }
 
   return (
-    <Section id='why-choose-us'>
+    <Section>
       <div className='w-full place-items-center text-center'>
         <Section.SubTitle>
           <Sparks className='text-base' /> Our work
