@@ -43,7 +43,7 @@ function OurWork() {
           'h-[8.25rem] cursor-pointer rounded-lg border p-4 text-left transition-all',
           isActive
             ? 'border-primary-500 bg-primary-500 shadow-md shadow-primary-200'
-            : 'border-gray-200 bg-white',
+            : 'border-gray-200 bg-white hover:bg-primary-100',
         )}
       >
         <span

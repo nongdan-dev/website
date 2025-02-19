@@ -14,7 +14,7 @@ export function DropdownMenu(props: DropdownMenuProps) {
   return <Popover.Root {...props} />
 }
 
-export function Trigger({ children, ...props }: TriggerProps) {
+function Trigger({ children, ...props }: TriggerProps) {
   return (
     <Popover.Trigger asChild {...props}>
       <button className='group flex h-full items-center gap-1 transition-colors hover:text-indigo-500 focus-visible:text-indigo-500 data-[state=open]:text-indigo-500'>
@@ -25,7 +25,7 @@ export function Trigger({ children, ...props }: TriggerProps) {
   )
 }
 
-export function Content({
+function Content({
   containerRef,
   className,
   children,
