@@ -1,5 +1,7 @@
 import { Fragment } from 'react'
 
+import { CallToAction } from '@/components/widget'
+
 import Clients from './Clients'
 import Feedback from './Feedback'
 import Hero from './Hero'
@@ -16,6 +18,7 @@ function HomePage() {
       <Feedback />
       <WhyChooseUs />
       <OurWork />
+      <CallToAction />
     </Fragment>
   )
 }
