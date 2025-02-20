@@ -4,12 +4,44 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-base font-normal leading-snug text-gray-900;
+@layer reset {
+  html {
+    text-size-adjust: none;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
 }
 
-.text-title {
-  @apply text-6xl font-bold leading-title;
+@layer base {
+  html {
+    @apply leading-normal;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-balance leading-title;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+}
+
+@layer utilities {
+  .text-title {
+    @apply text-6xl font-bold leading-title;
+  }
 }
 
 .content-grid {

@@ -13,7 +13,7 @@ function Feedback() {
           who is both a talented technical expert and a conscientious business
           owner”
         </blockquote>
-        <figcaption className='mt-12 flex'>
+        <figcaption className='mt-12 flex items-center'>
           <img src={Broadflow} alt='broadflow logo' className='h-11' />
           <Divider
             direction='vertical'
