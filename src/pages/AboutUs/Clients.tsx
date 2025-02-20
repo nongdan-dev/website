@@ -1,6 +1,6 @@
 import AboutUs from '@/assets/images/webp/about-us-1.webp'
 import AboutUs2 from '@/assets/images/webp/about-us-2.webp'
-import Vector from '@/assets/images/webp/bg-vector.webp'
+import AboutUs3 from '@/assets/images/webp/about-us-3.webp'
 import Apple from '@/assets/svg/apple.svg'
 import BarChart from '@/assets/svg/bar-chart.svg'
 import Figma from '@/assets/svg/figma.svg'
@@ -13,106 +13,98 @@ import { Section } from '@/components/widget'
 
 function Clients() {
   return (
-    <Section id='our-company'>
-      <Section.Title className='w-full max-w-[48rem]'>
-        Nothing is impossible, when we come together
-      </Section.Title>
-      <p className='mt-4 w-[38rem] text-base font-normal'>
+    <Section id='about-us'>
+      <Section.Title>Nothing is impossible, when we are together</Section.Title>
+      <p className='mt-4 w-1/2 text-lg'>
         Our team is a startup based in Ho Chi Minh City, Vietnam, specializing
         in providing software development, maintenance and upgrade services for
         businesses and individuals.
       </p>
       <Section.Content id='grid-layout'>
-        <div className='flex flex-1 flex-col rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-xl'>
-          <p className='text-7xl font-bold leading-none text-white'>12+</p>
-          <p className='mb-8 mt-1 text-lg uppercase tracking-wider text-white'>
-            Years of experience
-          </p>
-          <div className='bottom-0 right-0 flex flex-1 items-end justify-end'>
-            <img src={AboutUs} alt='' className='h-full' />
+        <div className='rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
+          <div className='mb-8 flex h-[111px] flex-col gap-1'>
+            <h3 className='text-7xl font-semibold leading-none text-white'>
+              12+
+            </h3>
+            <p className='text-lg uppercase tracking-wider text-white'>
+              Years of experience
+            </p>
           </div>
+          <img src={AboutUs} alt='' className='w-full' />
         </div>
-        <div className='relative h-full overflow-hidden rounded-xl bg-white p-6 shadow-sm'>
-          <div className='clip-wave absolute inset-0 rounded-xl'>
-            <img src={Vector} alt='' className='bottom-0 right-0' />
-          </div>
 
-          <div className='relative z-10 flex h-full flex-1 flex-col justify-between gap-6'>
-            <div className='flex items-center gap-4'>
-              <div className='flex items-center justify-center rounded-xl bg-white px-3 py-2'>
-                <img src={Figma} alt='' className='h-9 w-6' />
-              </div>
-            </div>
-            <div>
-              <p className='mb-1 text-5xl font-bold leading-none text-gray-900'>
-                400+
-              </p>
-              <p className='text-lg uppercase tracking-wider text-gray-900'>
-                Projects
-              </p>
-            </div>
+        <div className='relative h-[300px] overflow-clip rounded-xl border border-gray-200 p-6 shadow-sm'>
+          <div className='pointer-events-none absolute inset-0'>
+            <img src={AboutUs3} alt='' />
           </div>
-
-          <div className='absolute right-6 top-6 flex flex-col items-end gap-4'>
-            <div className='flex flex-row gap-4'>
-              <div className='flex items-center justify-center rounded-xl bg-white p-3'>
-                <img src={Chrome} alt='' className='h-12 w-12' />
+          <div className='relative z-10 flex h-full flex-col justify-between gap-0'>
+            <div className='flex justify-between'>
+              <div className='flex size-[3.75rem] items-center justify-center rounded-xl bg-white'>
+                <img src={Figma} alt='' />
               </div>
-              <div className='flex items-center justify-center rounded-xl bg-white p-3'>
-                <img src={ChPlay} alt='' className='h-12 w-12' />
+              <div className='flex w-[calc(theme(width.20)*2+theme(spacing.4))] flex-wrap gap-4'>
+                <div className='flex size-20 items-center justify-center rounded-xl bg-white'>
+                  <img src={Chrome} alt='' />
+                </div>
+                <div className='flex size-20 items-center justify-center rounded-xl bg-white'>
+                  <img src={ChPlay} alt='' />
+                </div>
+                <div className='pointer-events-none flex size-20 items-center justify-center rounded-xl bg-white opacity-0'>
+                  <img src={Apple} alt='' />
+                </div>
+                <div className='flex size-20 items-center justify-center rounded-xl bg-white'>
+                  <img src={Apple} alt='' />
+                </div>
               </div>
             </div>
-            <div className='flex items-center justify-center rounded-xl bg-white p-3'>
-              <img src={Apple} alt='' className='h-12 w-12' />
+            <div className='flex h-20 flex-col justify-between'>
+              <h3 className='text-5xl font-semibold'>400+</h3>
+              <p className='text-lg uppercase tracking-wider'>Projects</p>
             </div>
           </div>
         </div>
+
         <div
-          className='relative flex w-full flex-1 rounded-xl bg-slate-100 bg-cover bg-center'
+          className='relative h-[300px] rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
           style={{ backgroundImage: `url(${AboutUs2})` }}
         >
-          <div className='absolute right-4 top-4 rounded-xl bg-white px-6 py-3 shadow-md'>
-            <p className='mb-1 text-center text-6xl font-semibold leading-none text-gray-900'>
+          <div className='absolute right-6 top-6 rounded-xl bg-white px-6 py-3 shadow-md'>
+            <h3 className='mb-0.5 text-center text-6xl font-semibold leading-none'>
               8
-            </p>
-            <p className='text-center text-lg font-normal uppercase text-gray-900'>
-              SECTORS
-            </p>
+            </h3>
+            <p className='text-center text-lg uppercase'>SECTORS</p>
           </div>
         </div>
 
-        <div className='flex flex-row justify-between rounded-xl border border-gray-200 px-6 shadow-sm'>
-          <div className='flex items-center justify-center rounded-xl bg-white p-3'>
+        <div className='flex h-[138px] justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+          <div className='flex-grow-0 self-center'>
             <img src={BarChart} alt='' />
           </div>
-          <div className='flex flex-col items-end justify-center'>
-            <p className='mb-1 text-5xl font-bold leading-none text-gray-900'>
-              90+
-            </p>
-            <p className='text-lg uppercase tracking-wider text-gray-900'>
-              Active Clients
-            </p>
+          <div className='flex h-20 flex-col justify-between text-right'>
+            <h3 className='text-5xl font-semibold'>90+</h3>
+            <p className='text-lg uppercase tracking-wider'>Active Clients</p>
           </div>
         </div>
-        <div className='flex flex-row justify-between rounded-xl border border-gray-200 px-6 shadow-sm'>
-          <div className='flex flex-col items-start justify-center'>
-            <p className='mb-1 text-5xl font-bold leading-none text-gray-900'>
-              80%
-            </p>
-            <p className='text-lg uppercase tracking-wider text-gray-900'>
-              Repeat clients
-            </p>
+
+        <div className='flex h-[138px] justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+          <div className='flex h-20 flex-col justify-between'>
+            <h3 className='text-5xl font-semibold'>80%</h3>
+            <p className='text-lg uppercase tracking-wider'>Repeat clients</p>
           </div>
-          <div className='flex items-center justify-center rounded-xl bg-white p-3'>
+          <div className='flex-grow-0 self-center'>
             <img src={WaveChart} alt='' />
           </div>
         </div>
-        <div className='flex cursor-pointer flex-col items-center justify-center bg-white text-center text-lg shadow-sm'>
-          <div className='flex flex-col items-start'>
-            <p className='text-xl'>Are you ready to</p>
-            <Link to='/our-work' className='flex flex-row items-center gap-x-3'>
-              <p className='text-3xl'>Build with us</p>
-              <ArrowRight className='text-3xl' />
+
+        <div className='flex items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
+          <div className='flex flex-col gap-1'>
+            <p className='text-lg'>Are you ready to</p>
+            <Link
+              to='/contact-us'
+              className='flex flex-row items-center gap-3 text-2xl font-semibold text-primary-500 hover:underline'
+            >
+              Build with us
+              <ArrowRight className='text-xl' />
             </Link>
           </div>
         </div>
