@@ -1,5 +1,5 @@
-import WhyChooseUs1 from '@/assets/images/png/why-choose-us-1.png'
-import WhyChooseUs2 from '@/assets/images/png/why-choose-us-2.png'
+import WhyChooseUs1 from '@/assets/images/webp/why-choose-us-1.webp'
+import WhyChooseUs2 from '@/assets/images/webp/why-choose-us-2.webp'
 import { CheckCircle, Medal1st } from '@/components/icons'
 import { Section } from '@/components/widget'
 

@@ -1,6 +1,6 @@
-import WhatWeOffer1 from '@/assets/images/png/what-we-offer-1.png'
-import WhatWeOffer2 from '@/assets/images/png/what-we-offer-2.png'
-import WhatWeOffer3 from '@/assets/images/png/what-we-offer-3.png'
+import WhatWeOffer1 from '@/assets/images/webp/what-we-offer-1.webp'
+import WhatWeOffer2 from '@/assets/images/webp/what-we-offer-2.webp'
+import WhatWeOffer3 from '@/assets/images/webp/what-we-offer-3.webp'
 import { Flame } from '@/components/icons'
 import { Section } from '@/components/widget'
 

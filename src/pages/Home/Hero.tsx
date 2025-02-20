@@ -1,4 +1,4 @@
-import HeroImg from '@/assets/images/png/hero.png'
+import HeroImg from '@/assets/images/webp/hero.webp'
 import { Orbits } from '@/components/icons'
 import { Button, Link } from '@/components/ui'
 
