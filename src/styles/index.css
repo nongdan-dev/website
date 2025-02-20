@@ -4,20 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  text-size-adjust: none;
+@layer reset {
+  html {
+    text-size-adjust: none;
+  }
+
+  body {
+    @apply text-base font-normal leading-normal text-gray-900;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+  }
 }
 
-body {
-  @apply text-base font-normal leading-normal text-gray-900;
-}
-
-p {
-  @apply text-pretty;
-}
-
-.text-title {
-  @apply text-6xl font-bold leading-title;
+@layer utilities {
+  .text-title {
+    @apply text-6xl font-bold leading-title;
+  }
 }
 
 .content-grid {
