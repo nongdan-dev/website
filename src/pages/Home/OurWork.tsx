@@ -57,7 +57,7 @@ function OurWork() {
         </span>
         <h3
           className={twMerge(
-            'mb-1 text-xl font-medium leading-title transition-colors',
+            'mb-1 text-xl font-medium transition-colors',
             isActive && 'text-white',
           )}
         >

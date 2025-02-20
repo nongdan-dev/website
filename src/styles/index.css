@@ -9,17 +9,32 @@
     text-size-adjust: none;
   }
 
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer base {
+  html {
+    @apply leading-normal;
+  }
+
   body {
-    @apply text-base font-normal leading-normal text-gray-900;
+    @apply bg-white text-gray-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-balance leading-title;
   }
 
   p {
     @apply text-pretty;
-  }
-
-  input,
-  textarea {
-    font: inherit;
   }
 }
 
