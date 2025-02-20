@@ -1,6 +1,6 @@
-import AboutUs from '@/assets/images/png/about-us-1.png'
-import AboutUs2 from '@/assets/images/png/about-us-2.png'
-import Vector from '@/assets/images/png/bg-vector.png'
+import AboutUs from '@/assets/images/webp/about-us-1.webp'
+import AboutUs2 from '@/assets/images/webp/about-us-2.webp'
+import Vector from '@/assets/images/webp/bg-vector.webp'
 import Apple from '@/assets/svg/apple.svg'
 import BarChart from '@/assets/svg/bar-chart.svg'
 import Figma from '@/assets/svg/figma.svg'
@@ -14,7 +14,7 @@ import { Section } from '@/components/widget'
 function Clients() {
   return (
     <Section id='our-company'>
-      <Section.Title>
+      <Section.Title className='w-full max-w-[48rem]'>
         Nothing is impossible, when we come together
       </Section.Title>
       <p className='mt-4 w-[38rem] text-base font-normal'>
@@ -23,7 +23,6 @@ function Clients() {
         businesses and individuals.
       </p>
       <Section.Content id='grid-layout'>
-        {/* section1 */}
         <div className='flex flex-1 flex-col rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-xl'>
           <p className='text-7xl font-bold leading-none text-white'>12+</p>
           <p className='mb-8 mt-1 text-lg uppercase tracking-wider text-white'>
@@ -33,7 +32,6 @@ function Clients() {
             <img src={AboutUs} alt='' className='h-full' />
           </div>
         </div>
-        {/* section2 */}
         <div className='relative h-full overflow-hidden rounded-xl bg-white p-6 shadow-sm'>
           <div className='clip-wave absolute inset-0 rounded-xl'>
             <img src={Vector} alt='' className='bottom-0 right-0' />
@@ -69,21 +67,21 @@ function Clients() {
             </div>
           </div>
         </div>
-        {/* section3 */}
-        <div className='relative flex w-full flex-1 rounded-xl bg-slate-100'>
-          <img src={AboutUs2} alt='' className='w-full rounded-xl shadow-sm' />
-
+        <div
+          className='relative flex w-full flex-1 rounded-xl bg-slate-100 bg-cover bg-center'
+          style={{ backgroundImage: `url(${AboutUs2})` }}
+        >
           <div className='absolute right-4 top-4 rounded-xl bg-white px-6 py-3 shadow-md'>
-            <p className='text-center text-6xl font-bold leading-none text-gray-900'>
+            <p className='mb-1 text-center text-6xl font-semibold leading-none text-gray-900'>
               8
             </p>
-            <p className='text-center text-lg font-semibold uppercase text-gray-900'>
+            <p className='text-center text-lg font-normal uppercase text-gray-900'>
               SECTORS
             </p>
           </div>
         </div>
-        {/* section4 */}
-        <div className='flex flex-row justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+
+        <div className='flex flex-row justify-between rounded-xl border border-gray-200 px-6 shadow-sm'>
           <div className='flex items-center justify-center rounded-xl bg-white p-3'>
             <img src={BarChart} alt='' />
           </div>
@@ -96,7 +94,7 @@ function Clients() {
             </p>
           </div>
         </div>
-        <div className='flex flex-row justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+        <div className='flex flex-row justify-between rounded-xl border border-gray-200 px-6 shadow-sm'>
           <div className='flex flex-col items-start justify-center'>
             <p className='mb-1 text-5xl font-bold leading-none text-gray-900'>
               80%
@@ -109,7 +107,6 @@ function Clients() {
             <img src={WaveChart} alt='' />
           </div>
         </div>
-        {/* section6 */}
         <div className='flex cursor-pointer flex-col items-center justify-center bg-white text-center text-lg shadow-sm'>
           <div className='flex flex-col items-start'>
             <p className='text-xl'>Are you ready to</p>

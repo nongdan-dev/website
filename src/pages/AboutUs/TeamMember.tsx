@@ -1,7 +1,3 @@
-import React from 'react'
-
-import AboutUs from '@/assets/images/png/about-us-1.png'
-import { CheckCircle, Medal1st } from '@/components/icons'
 import { Section } from '@/components/widget'
 
 const teamMembers = [
@@ -11,7 +7,7 @@ const teamMembers = [
   {
     name: 'Durandana Croquetaigne',
     role: 'Product Manager',
-    image: '/durandana.jpg',
+    image: '',
   },
   { name: 'Emily Havanna', role: 'Product Designer', image: '' },
   { name: 'Alice Carey', role: 'UX Researcher', image: '' },
@@ -29,9 +25,9 @@ export const TeamMember = () => {
   return (
     <Section>
       <div className='w-full place-items-center text-center'>
-        <Section.Title>
+        <Section.Title className='w-full max-w-[56rem]'>
           Meet our team of <span className='text-blue-600'>creators</span>,
-          <span className='text-blue-600'>designers</span> and
+          <span className='text-blue-600'> designers</span> and
           <span className='text-blue-600'> problem solvers</span>
         </Section.Title>
       </div>
@@ -39,19 +35,19 @@ export const TeamMember = () => {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className='w-78 flex h-auto flex-col items-center rounded-lg bg-white p-4 text-center shadow-md'
+            className='flex w-full flex-col items-center rounded-lg bg-white text-center'
           >
-            <img
-              src={member.image}
-              alt={''}
-              className='w-78 h-75 mb-4 rounded-lg bg-slate-100 object-cover'
-            />
+            <div className='h-80 w-full bg-gray-400'>
+              <img src={member.image} alt='' />
+            </div>
 
-            <div className='w-full'>
-              <p className='text-lg font-semibold text-gray-900'>
+            <div className='mt-6 flex w-full flex-col items-start'>
+              <p className='mb-1.5 text-xl font-medium leading-none text-gray-900'>
                 {member.name}
               </p>
-              <p className='text-sm text-gray-600'>{member.role}</p>
+              <p className='text-base font-normal leading-none text-gray-500'>
+                {member.role}
+              </p>
             </div>
           </div>
         ))}
