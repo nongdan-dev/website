@@ -62,3 +62,39 @@ body {
     grid-area: b6;
   }
 }
+
+#our-company > #grid-layout {
+  @apply grid grid-cols-4 grid-rows-4 gap-6;
+  grid-template-columns: 1fr 1fr 0.2fr 0.8fr;
+  grid-template-areas:
+    'b1 b2 b3 b3'
+    'b1 b2 b3 b3'
+    'b1 b4 b4 b6'
+    'b1 b5 b5 b6';
+
+  & div:nth-child(1) {
+    grid-area: b1;
+  }
+  & div:nth-child(2) {
+    grid-area: b2;
+  }
+  & div:nth-child(3) {
+    grid-area: b3;
+  }
+  & div:nth-child(4) {
+    grid-area: b4;
+
+  }
+  & div:nth-child(5) {
+    grid-area: b5;
+  }
+  & div:nth-child(6) {
+    grid-area: b6;
+  } 
+}
+
+.clip-wave {
+  clip-path: path(
+    "M 0 0 Q 50% 70% 100% 0 L 100% 100% L 0 100% Z"
+  );
+}
