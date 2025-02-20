@@ -4,12 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+html {
   text-size-adjust: none;
 }
 
 body {
   @apply text-base font-normal leading-normal text-gray-900;
+}
+
+p {
+  @apply text-pretty;
 }
 
 .text-title {
