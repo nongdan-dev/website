@@ -1,31 +1,43 @@
-import { ReactElement, cloneElement, useId } from 'react'
+import { ReactElement, ReactNode, cloneElement, useId } from 'react'
 import { FieldValues, UseControllerProps, useController } from 'react-hook-form'
+import { twMerge } from 'tailwind-merge'
 
 export type FormFieldProps<T extends FieldValues> = Omit<
   UseControllerProps<T>,
   'control'
 > &
   Required<Pick<UseControllerProps<T>, 'control'>> & {
-    label?: string
+    label?: ReactNode
+    labelClassName?: string
     children: ReactElement
     required?: boolean
     onChangePropName?: string
+    className?: string
+    fieldId?: string
   }
 
 export function FormField<T extends FieldValues>({
   label,
+  labelClassName,
   children,
   required,
   onChangePropName = 'onChange',
+  className,
+  fieldId: propFieldId,
   ...props
 }: FormFieldProps<T>) {
-  const fieldId = useId()
+  let fieldId = useId()
   const { field, fieldState } = useController(props)
 
+  fieldId = propFieldId || fieldId
+
   return (
-    <div className='mb-6'>
+    <div className={twMerge('mb-6', className)}>
       {label && (
-        <label htmlFor={fieldId} className='mb-1 inline-block text-sm'>
+        <label
+          htmlFor={fieldId}
+          className={twMerge('mb-1 inline-block text-sm', labelClassName)}
+        >
           {label}{' '}
           <span aria-hidden='true' className='text-red-500'>
             {required && '*'}

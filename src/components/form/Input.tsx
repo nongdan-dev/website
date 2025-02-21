@@ -1,28 +1,10 @@
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 export type InputProps = ComponentProps<'input'> & {
   __invalid?: true
   __required?: true
   containerClassName?: string
-  addOn?: ReactNode
-  prefix?: ReactNode
-  suffix?: ReactNode
-}
-
-function Append(props: ComponentProps<'div'>) {
-  return (
-    <div
-      {...props}
-      aria-hidden='true'
-      className={twMerge(
-        'pointer-events-none absolute flex h-full w-9 items-center justify-center',
-        props.className,
-      )}
-    >
-      {props.children}
-    </div>
-  )
 }
 
 export function Input({
@@ -30,30 +12,22 @@ export function Input({
   __required,
   containerClassName,
   className,
-  addOn,
-  prefix,
-  suffix,
   ...props
 }: InputProps) {
   return (
-    <div className={twMerge('relative h-10', containerClassName)}>
-      {prefix && <Append className='left-0 top-0'>{prefix}</Append>}
+    <div className={twMerge('relative h-12', containerClassName)}>
       <input
         {...props}
         aria-required={__required}
         aria-invalid={__invalid}
         className={twMerge(
-          'block h-full w-full rounded-md border bg-white px-2 text-sm outline-0 transition-all focus:ring-2',
-          prefix && 'pl-9',
-          suffix && 'pr-9',
+          'block h-full w-full rounded-md border bg-white px-4 outline-0 transition-all focus:ring-2',
           __invalid
             ? 'border-red-500 hover:border-red-500 focus:border-red-500 focus:ring-red-500'
-            : 'border-gray-300 hover:border-indigo-500 focus:border-indigo-500 focus:ring-indigo-500',
+            : 'border-gray-300 hover:border-primary-500 focus:border-primary-500 focus:ring-primary-500',
           className,
         )}
       />
-      {suffix && <Append className='right-0 top-0'>{suffix}</Append>}
-      {addOn}
     </div>
   )
 }

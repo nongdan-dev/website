@@ -1,5 +1,6 @@
 import Flag from '@/assets/svg/flag.svg'
 import Logo from '@/assets/svg/logo.svg'
+import { Facebook, Github, LinkedIn, Slack, Twitter } from '@/components/icons'
 import { Link } from '@/components/ui'
 import { companyInfo } from '@/config/metadata'
 
@@ -8,28 +9,55 @@ function Footer() {
     <footer className='content-grid bor border-t border-gray-200 pt-20 text-lg'>
       <div className='col-content'>
         <div className='flex flex-row gap-16'>
-          <address className='flex w-1/3 flex-col gap-y-2 not-italic'>
-            <div aria-label='website logo' className='mb-4'>
-              <img src={Logo} alt='' className='h-6' />
+          <address className='w-[30rem] flex-shrink-0 not-italic'>
+            <img src={Logo} alt='website logo' className='mb-5 h-6' />
+            <div className='flex flex-col gap-1.5'>
+              <a
+                className='flex items-center gap-1.5'
+                href={`tel:${companyInfo.phone}`}
+                aria-label={`call us at ${companyInfo.phone}`}
+              >
+                <img src={Flag} alt='' className='h-5 rounded-sm' />
+                {companyInfo.phone}
+              </a>
+              <a
+                className='text-balance'
+                href={`https://maps.google.com/?q=vietnam`}
+                target='_blank'
+                aria-label={`visit us at ${companyInfo.location.address}`}
+              >
+                {companyInfo.location.address}
+              </a>
             </div>
-            <a
-              className='flex items-center gap-1.5'
-              href={`tel:${companyInfo.phone}`}
-              aria-label={`call us at ${companyInfo.phone}`}
-            >
-              <img src={Flag} alt='' className='h-5 rounded-sm' />
-              {companyInfo.phone}
-            </a>
-            <a
-              className='text-balance'
-              href={`https://maps.google.com/?q=vietnam`}
-              target='_blank'
-              aria-label={`visit us at ${companyInfo.location.address}`}
-            >
-              {companyInfo.location.address}
-            </a>
+            <ul aria-label='socials' className='mt-4 flex gap-3'>
+              <li aria-label='facebook'>
+                <a href={companyInfo.social.facebook} target='_blank'>
+                  <Facebook className='text-lg text-gray-400' />
+                </a>
+              </li>
+              <li aria-label='linked in'>
+                <a href={companyInfo.social.linkedin} target='_blank'>
+                  <LinkedIn className='text-lg text-gray-400' />
+                </a>
+              </li>
+              <li aria-label='twitter'>
+                <a href={companyInfo.social.twitter} target='_blank'>
+                  <Twitter className='text-lg text-gray-400' />
+                </a>
+              </li>
+              <li aria-label='github'>
+                <a href={companyInfo.social.github} target='_blank'>
+                  <Github className='text-lg text-gray-400' />
+                </a>
+              </li>
+              <li aria-label='slack'>
+                <a href={companyInfo.social.slack} target='_blank'>
+                  <Slack className='text-lg text-gray-400' />
+                </a>
+              </li>
+            </ul>
           </address>
-          <div className='grid w-2/3 grid-cols-3 gap-16'>
+          <div className='grid w-full grid-cols-3 gap-16'>
             <nav aria-label='Development'>
               <span aria-hidden className='font-bold'>
                 Development
@@ -52,14 +80,14 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     Tooling Development
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     API Integration
-                  </Link>
+                  </span>
                 </li>
               </ul>
             </nav>
@@ -69,14 +97,14 @@ function Footer() {
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     User Interface
-                  </Link>
+                  </span>
                 </li>
                 <li>
-                  <Link to='/coming-soon' className='inline-block py-1'>
+                  <span className='inline-block cursor-default py-1 text-gray-400'>
                     User Experience
-                  </Link>
+                  </span>
                 </li>
               </ul>
             </nav>

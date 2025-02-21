@@ -24,7 +24,7 @@ export default {
         header: spacing[20],
       },
       boxShadow: {
-        sm: '0px 2px 4px 0px rgba(0, 0, 0, 0.10)',
+        sm: '0px 2px 4px 0px rgba(0, 0, 0, 0.05)',
         md: '4px 4px 12px 0px rgba(0, 0, 0, 0.10)',
       },
       animation: {

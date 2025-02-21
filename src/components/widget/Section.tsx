@@ -12,13 +12,13 @@ type SectionCtx = {
 const SectionContext = createContext<SectionCtx | undefined>(undefined)
 
 export type SectionProps = ComponentProps<'section'>
-export type SubTitleProps = ChipProps
+type SubTitleProps = ChipProps
 
-export type TitleProps = Omit<ComponentProps<'h2'>, 'children'> & {
+type TitleProps = Omit<ComponentProps<'h2'>, 'children'> & {
   children: ((props: SectionCtx) => ReactNode) | ReactNode
 }
 
-export type ContentProps = Omit<ComponentProps<'div'>, 'children'> & {
+type ContentProps = Omit<ComponentProps<'div'>, 'children'> & {
   children: ((props: { contentClassName: string }) => ReactNode) | ReactNode
 }
 
@@ -37,7 +37,7 @@ export function Section({ className, ...props }: SectionProps) {
   )
 }
 
-export function SubTitle(props: SubTitleProps) {
+function SubTitle(props: SubTitleProps) {
   return (
     <Chip
       aria-hidden
@@ -49,7 +49,7 @@ export function SubTitle(props: SubTitleProps) {
   )
 }
 
-export function Title({ children, className, ...props }: TitleProps) {
+function Title({ children, className, ...props }: TitleProps) {
   const { titleId, titleClassName } = useContext(SectionContext)
 
   if (typeof children === 'function') {
@@ -63,7 +63,7 @@ export function Title({ children, className, ...props }: TitleProps) {
   )
 }
 
-export function Content({ children, className, ...props }: ContentProps) {
+function Content({ children, className, ...props }: ContentProps) {
   const contentClassName = 'mt-14'
 
   if (typeof children === 'function') {

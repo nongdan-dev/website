@@ -43,7 +43,7 @@ function OurWork() {
           'h-[8.25rem] cursor-pointer rounded-lg border p-4 text-left transition-all',
           isActive
             ? 'border-primary-500 bg-primary-500 shadow-md shadow-primary-200'
-            : 'border-gray-200 bg-white',
+            : 'border-gray-200 bg-white hover:bg-primary-100',
         )}
       >
         <span
@@ -57,7 +57,7 @@ function OurWork() {
         </span>
         <h3
           className={twMerge(
-            'mb-1 text-xl font-medium leading-title transition-colors',
+            'mb-1 text-xl font-medium transition-colors',
             isActive && 'text-white',
           )}
         >
@@ -76,7 +76,7 @@ function OurWork() {
   }
 
   return (
-    <Section id='why-choose-us'>
+    <Section>
       <div className='w-full place-items-center text-center'>
         <Section.SubTitle>
           <Sparks className='text-base' /> Our work
