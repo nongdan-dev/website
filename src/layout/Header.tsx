@@ -1,5 +1,6 @@
 import { throttle } from 'lodash'
 import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
+import { useLocation } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
@@ -71,6 +72,7 @@ function ServicesMenuContent() {
 
 function Header() {
   const { theme } = useTailwind()
+  const { pathname } = useLocation()
   const headerRef = useRef<HTMLElement>(null)
 
   const [showMobileMenu, setShowMobileMenu] = useState(false)
@@ -78,11 +80,20 @@ function Header() {
   const [scrollActive, setScrollActive] = useState(false)
 
   useEffect(() => {
+    if (pathname !== '/') {
+      return setScrollActive(true)
+    }
     toggleScrollActive()
     window.addEventListener('scroll', throttleToggleScrollActive)
     return () =>
       window.removeEventListener('scroll', throttleToggleScrollActive)
-  }, [])
+  }, [pathname])
+
+  useEffect(() => {
+    if (pathname === '/' && window.scrollY < remToPx(theme.height.header)) {
+      setScrollActive(showMobileMenu)
+    }
+  }, [pathname, showMobileMenu])
 
   const toggleScrollActive = () => {
     setScrollActive(window.scrollY >= remToPx(theme.height.header))
@@ -101,7 +112,8 @@ function Header() {
         <div
           className={twMerge(
             'content-grid relative h-header transition-colors',
-            activeHeaderStyle && 'bg-white/85 shadow-sm backdrop-blur-md',
+            activeHeaderStyle &&
+              'bg-white/85 shadow-sm shadow-black/10 backdrop-blur-md',
           )}
         >
           <div className='col-content flex flex-row items-center justify-between'>
