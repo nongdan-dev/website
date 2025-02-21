@@ -22,7 +22,7 @@ const projects = [
 ]
 const Projects: React.FC = () => {
   return (
-    <section className=''>
+    <section>
       <div className='col-content grid gap-6'>
         <div className=''>
           <Section.SubTitle>
