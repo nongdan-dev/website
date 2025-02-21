@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { SkipToMainContent } from '@/components/widget'
 
-import Footer from './Footer'
+// import Footer from './Footer'
 import Header from './Header'
 
 function Layout() {
@@ -24,7 +24,7 @@ function Layout() {
       >
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
