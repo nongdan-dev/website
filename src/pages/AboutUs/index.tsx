@@ -1,8 +1,7 @@
 import { Fragment } from 'react'
 
-import { CallToAction } from '@/components/widget'
+import { CallToAction, SectionAboutUs } from '@/components/widget'
 
-import Clients from './Clients'
 import Hero from './Hero'
 import { TeamMember } from './TeamMember'
 
@@ -10,7 +9,7 @@ function AboutUsPage() {
   return (
     <Fragment>
       <Hero />
-      <Clients />
+      <SectionAboutUs />
       <TeamMember />
       <CallToAction />
     </Fragment>

@@ -16,6 +16,8 @@
   }
 }
 
+/* --------------------------------------------- */
+
 @layer base {
   html {
     @apply leading-snug;
@@ -38,11 +40,15 @@
   }
 }
 
+/* --------------------------------------------- */
+
 @layer utilities {
   .text-title {
     @apply text-6xl font-bold leading-title;
   }
 }
+
+/* --------------------------------------------- */
 
 @layer layout {
   .content-grid {
