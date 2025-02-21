@@ -36,7 +36,7 @@ function Content({
       <Popover.Content
         sideOffset={16}
         className={twMerge(
-          'z-10 grid grid-cols-2 gap-20 rounded-b-lg bg-white/85 px-10 py-8 shadow-sm backdrop-blur-md data-[state=open]:animate-slideUpAndFade',
+          'z-10 grid grid-cols-2 gap-20 rounded-b-lg bg-white/85 px-10 py-8 shadow-sm shadow-black/10 backdrop-blur-md data-[state=open]:animate-slideUpAndFade',
           className,
         )}
         {...props}

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 import AboutUs from '@/assets/images/webp/about-us-1.webp'
 import AboutUs2 from '@/assets/images/webp/about-us-2.webp'
 import AboutUs3 from '@/assets/images/webp/about-us-3.webp'
@@ -9,11 +11,18 @@ import ChPlay from '@/assets/svg/google-play.svg'
 import WaveChart from '@/assets/svg/wave-chart.svg'
 import { ArrowRight } from '@/components/icons'
 import { Link } from '@/components/ui'
-import { Section } from '@/components/widget'
 
-function Clients() {
+import { Section } from './Section'
+
+export type SectionAboutUsProps = {
+  subtitle?: ReactNode
+  cellAction?: ReactNode
+}
+
+export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
   return (
     <Section id='about-us'>
+      {subtitle}
       <Section.Title>Nothing is impossible, when we are together</Section.Title>
       <p className='mt-4 w-1/2 text-lg'>
         Our team is a startup based in Ho Chi Minh City, Vietnam, specializing
@@ -21,7 +30,7 @@ function Clients() {
         businesses and individuals.
       </p>
       <Section.Content id='grid-layout'>
-        <div className='rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
+        <div className='overflow-clip rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
           <div className='mb-8 flex h-[6.9375rem] flex-col gap-1'>
             <h3 className='text-7xl font-semibold leading-none text-white'>
               12+
@@ -30,7 +39,7 @@ function Clients() {
               Years of experience
             </p>
           </div>
-          <img src={AboutUs} alt='' className='w-full' />
+          <img src={AboutUs} alt='' className='min-w-full max-w-[unset]' />
         </div>
         <div className='relative h-[18.75rem] overflow-clip rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='pointer-events-none absolute inset-0'>
@@ -92,20 +101,22 @@ function Clients() {
           </div>
         </div>
         <div className='flex items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
-          <div className='flex flex-col gap-1'>
-            <p className='text-lg'>Are you ready to</p>
-            <Link
-              to='/contact-us'
-              className='flex flex-row items-center gap-3 text-2xl font-semibold text-primary-500 hover:underline'
-            >
-              Build with us
-              <ArrowRight className='text-xl' />
-            </Link>
-          </div>
+          {cellAction ? (
+            cellAction
+          ) : (
+            <div className='flex flex-col gap-1'>
+              <p className='text-lg'>Are you ready to</p>
+              <Link
+                to='/contact-us'
+                className='flex flex-row items-center gap-3 text-2xl font-semibold text-primary-500 hover:underline'
+              >
+                Build with us
+                <ArrowRight className='text-xl' />
+              </Link>
+            </div>
+          )}
         </div>
       </Section.Content>
     </Section>
   )
 }
-
-export default Clients
