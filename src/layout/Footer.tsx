@@ -6,10 +6,10 @@ import { companyInfo } from '@/config/metadata'
 
 function Footer() {
   return (
-    <footer className='content-grid bor border-t border-gray-200 pt-20 text-lg'>
+    <footer className='content-grid border-t border-gray-200 pt-20 text-lg'>
       <div className='col-content'>
-        <div className='flex flex-row gap-16'>
-          <address className='w-[30rem] flex-shrink-0 not-italic'>
+        <div className='flex flex-row flex-wrap gap-16 lg:flex-nowrap'>
+          <address className='w-full flex-shrink-0 not-italic lg:w-[22rem] xl:w-[30rem]'>
             <img src={Logo} alt='website logo' className='mb-5 h-6' />
             <div className='flex flex-col gap-1.5'>
               <a
@@ -57,7 +57,7 @@ function Footer() {
               </li>
             </ul>
           </address>
-          <div className='grid w-full grid-cols-3 gap-16'>
+          <div className='grid w-full gap-16 min-[475px]:grid-cols-2 md:grid-cols-3'>
             <nav aria-label='Development'>
               <span aria-hidden className='font-bold'>
                 Development
