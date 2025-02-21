@@ -6,19 +6,21 @@ import { Input, Textarea } from '@/components/form'
 import { Section } from '@/components/widget'
 
 export default function ContactUs() {
-  const { handleSubmit, register, getValues } = useForm({
+  const { handleSubmit, register, reset } = useForm({
     defaultValues: {
       name: '',
       email: '',
       services: [],
       requirements: '',
     },
+    shouldUnregister: true,
   })
 
   const onSubmit = (data: any) => {
-    const selectedServices = getValues('services') || []
-    console.log('Form Data:', { ...data, services: selectedServices })
+    console.log('Form Data:', data)
+    reset()
   }
+
   return (
     <Section>
       <Section.SubTitle>Contact us</Section.SubTitle>
@@ -40,12 +42,21 @@ export default function ContactUs() {
             className='w-full max-w-xl bg-white'
           >
             <label className='mb-1 block text-sm font-medium'>Name</label>
-            <Input placeholder='Enter your name' required />
+            <Input
+              {...register('name')}
+              placeholder='Enter your name'
+              required
+            />
 
             <label className='mb-1 mt-6 block text-sm font-medium'>Email</label>
-            <Input placeholder='Enter your email address' required />
+            <Input
+              {...register('email')}
+              type='email'
+              placeholder='Enter your email address'
+              required
+            />
 
-            <label className='mb-3 mt-6 block text-sm font-medium'>
+            <label className='mb-3.5 mt-6 block text-sm font-medium'>
               Which services are you looking for?
             </label>
             <div className='grid grid-cols-2 gap-3'>
@@ -58,8 +69,16 @@ export default function ContactUs() {
                 'UX Research',
                 'Others',
               ].map(service => (
-                <label key={service} className='flex items-center space-x-2'>
-                  <input className='h-6 w-6' type='checkbox' value={service} />
+                <label
+                  key={service}
+                  className='flex h-6 items-center space-x-2'
+                >
+                  <Input
+                    {...register('services')}
+                    className='h-6 w-6'
+                    type='checkbox'
+                    value={service}
+                  />
                   <span className='text-sm font-normal text-gray-900'>
                     {service}
                   </span>
@@ -71,13 +90,14 @@ export default function ContactUs() {
               Requirements
             </label>
             <Textarea
+              {...register('requirements')}
+              className='h-32 w-full rounded-lg border border-gray-300 p-2 outline-none focus:ring-1 focus:ring-primary-500'
               placeholder='Share your requirements here....'
-              className='h-32 w-full rounded-md border border-gray-300 p-2 outline-none focus:ring-2 focus:ring-blue-500'
             />
 
             <button
               type='submit'
-              className='mt-6 flex items-center justify-center space-x-2 rounded-md bg-primary-500 px-6 py-3 text-white transition-all hover:bg-blue-700'
+              className='mt-6 flex items-center justify-center space-x-2 rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
             >
               <span className='text-base font-medium'>Send message</span>
               <img src={CusorArrow} />
