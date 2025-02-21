@@ -42,14 +42,6 @@
 
 /* --------------------------------------------- */
 
-@layer utilities {
-  .text-title {
-    @apply text-6xl font-bold leading-title;
-  }
-}
-
-/* --------------------------------------------- */
-
 @layer layout {
   .content-grid {
     --gap-x: theme('spacing.12');
@@ -73,7 +65,11 @@
       grid-template-columns: subgrid;
     }
   }
+}
 
+/* --------------------------------------------- */
+
+@layer components {
   #why-choose-us > #grid-layout {
     @apply grid grid-cols-5 grid-rows-4 gap-8;
     grid-template-areas:
@@ -128,5 +124,13 @@
     & > div:nth-child(6) {
       grid-area: b6;
     }
+  }
+}
+
+/* --------------------------------------------- */
+
+@layer utilities {
+  .text-title {
+    @apply text-6xl font-bold leading-title;
   }
 }
