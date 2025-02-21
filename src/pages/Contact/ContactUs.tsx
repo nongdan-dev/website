@@ -5,8 +5,25 @@ import CusorArrow from '@/assets/svg/cursorarrow.svg'
 import { Input, Textarea } from '@/components/form'
 import { Section } from '@/components/widget'
 
+interface FormValues {
+  name: string
+  email: string
+  services: string[]
+  requirements: string
+}
+
+const services = [
+  'Web Development',
+  'Mobile Development',
+  'Tooling Development',
+  'API Integration',
+  'UI Design',
+  'UX Research',
+  'Others',
+]
+
 export default function ContactUs() {
-  const { handleSubmit, register, reset } = useForm({
+  const { handleSubmit, register, reset } = useForm<FormValues>({
     defaultValues: {
       name: '',
       email: '',
@@ -16,7 +33,7 @@ export default function ContactUs() {
     shouldUnregister: true,
   })
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormValues) => {
     console.log('Form Data:', data)
     reset()
   }
@@ -36,7 +53,7 @@ export default function ContactUs() {
         help. Our team will get back to you within 24hrs.
       </p>
       <Section.Content className='grid grid-cols-2'>
-        <div className='flex flex-1'>
+        <div className='flex w-full flex-1'>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className='w-full max-w-xl bg-white'
@@ -60,15 +77,7 @@ export default function ContactUs() {
               Which services are you looking for?
             </label>
             <div className='grid grid-cols-2 gap-3'>
-              {[
-                'Web Development',
-                'Mobile Development',
-                'Tooling Development',
-                'API Integration',
-                'UI Design',
-                'UX Research',
-                'Others',
-              ].map(service => (
+              {services.map(service => (
                 <label
                   key={service}
                   className='flex h-6 items-center space-x-2'
@@ -105,14 +114,12 @@ export default function ContactUs() {
           </form>
         </div>
         <div className='flex flex-1'>
-          <div className='h-full w-full'>
-            <iframe
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4143.1550046811135!2d106.84146337528799!3d10.838145089314422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752126d447fbd5%3A0xa714c8e67c35f0b0!2sAnnam%20cuisine!5e1!3m2!1svi!2s!4v1740117986089!5m2!1svi!2s'
-              allowFullScreen
-              loading='lazy'
-              className='h-full w-full'
-            ></iframe>
-          </div>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4143.1550046811135!2d106.84146337528799!3d10.838145089314422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752126d447fbd5%3A0xa714c8e67c35f0b0!2sAnnam%20cuisine!5e1!3m2!1svi!2s!4v1740117986089!5m2!1svi!2s'
+            allowFullScreen
+            loading='lazy'
+            className='h-full w-full'
+          />
         </div>
       </Section.Content>
     </Section>
