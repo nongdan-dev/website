@@ -123,7 +123,7 @@ function Header() {
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMobileMenu(false)}
             >
-              <img src={Logo} alt='' className='w-36' />
+              <img src={Logo} alt='' className='w-32 md:w-36' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row gap-6'>
