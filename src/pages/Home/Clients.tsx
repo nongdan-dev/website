@@ -19,16 +19,16 @@ function Clients() {
           />
         </div>
         <div className='place-content-center place-items-center pb-4 sm:flex-1 lg:border-r lg:border-gray-200 lg:py-4'>
-          <img src={Broadflow} alt='Broadflow' className='h-8' />
+          <img src={Broadflow} alt='Broadflow' className='h-6 sm:h-8' />
         </div>
         <div className='place-content-center place-items-center pb-4 sm:flex-1 lg:border-r lg:border-gray-200 lg:py-4'>
-          <img src={Beings} alt='Beings' className='h-9' />
+          <img src={Beings} alt='Beings' className='h-6 sm:h-9' />
         </div>
         <div className='place-content-center place-items-center pb-4 sm:flex-1 lg:border-r lg:border-gray-200 lg:py-4'>
-          <img src={Chimera} alt='Chimera' className='h-9' />
+          <img src={Chimera} alt='Chimera' className='h-6 sm:h-9' />
         </div>
         <div className='place-content-center place-items-center pb-4 sm:flex-1 lg:py-4'>
-          <img src={Brekeke} alt='Brekeke' className='h-9' />
+          <img src={Brekeke} alt='Brekeke' className='h-6 sm:h-9' />
         </div>
       </div>
     </Section>

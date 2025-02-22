@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { Chip, ChipProps } from '@/components/ui'
 import { useContext } from '@/hooks/useContext'
+import useTailwind from '@/hooks/useTailwind'
 
 type SectionCtx = {
   titleId: string
@@ -24,7 +25,7 @@ type ContentProps = Omit<ComponentProps<'div'>, 'children'> & {
 
 export function Section({ className, ...props }: SectionProps) {
   const titleId = useId()
-  const titleClassName = 'text-title w-1/2'
+  const titleClassName = 'text-title md:w-1/2'
 
   return (
     <SectionContext.Provider value={{ titleId, titleClassName }}>
@@ -38,13 +39,15 @@ export function Section({ className, ...props }: SectionProps) {
 }
 
 function SubTitle(props: SubTitleProps) {
+  const { theme } = useTailwind()
+
   return (
     <Chip
       aria-hidden
       bordered
       size='medium'
       {...props}
-      className={twMerge('mb-2.5', props.className)}
+      className={twMerge('mb-2.5 text-xs md:text-base', props.className)}
     />
   )
 }

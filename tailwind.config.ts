@@ -17,6 +17,7 @@ export default {
       lineHeight: {
         title: '1.2',
       },
+
       maxWidth: {
         1440: '90rem',
       },
