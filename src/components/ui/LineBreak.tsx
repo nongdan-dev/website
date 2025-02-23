@@ -6,7 +6,7 @@ export function LineBreak(props: ComponentProps<'br'>) {
     <br
       {...props}
       aria-hidden='true'
-      className={twMerge('hidden lg:inline', props.className)}
+      className={twMerge('hidden xl:inline', props.className)}
     />
   )
 }
