@@ -131,6 +131,6 @@
 
 @layer utilities {
   .text-title {
-    @apply text-[32px] font-bold leading-title md:text-5xl lg:text-6xl;
+    @apply text-[2rem] font-bold leading-title md:text-5xl lg:text-6xl;
   }
 }
