@@ -24,13 +24,13 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
     <Section id='about-us'>
       {subtitle}
       <Section.Title>Nothing is impossible, when we are together</Section.Title>
-      <p className='mt-4 w-1/2 text-lg'>
+      <p className='mt-4 lg:w-1/2 lg:text-lg'>
         Our team is a startup based in Ho Chi Minh City, Vietnam, specializing
         in providing software development, maintenance and upgrade services for
         businesses and individuals.
       </p>
       <Section.Content id='grid-layout'>
-        <div className='overflow-clip rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
+        <div className='overflow-hidden rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
           <div className='mb-8 flex h-[6.9375rem] flex-col gap-1'>
             <h3 className='text-7xl font-semibold leading-none text-white'>
               12+
@@ -41,9 +41,9 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
           </div>
           <img src={AboutUs} alt='' className='min-w-full max-w-[unset]' />
         </div>
-        <div className='relative h-[18.75rem] overflow-clip rounded-xl border border-gray-200 p-6 shadow-sm'>
+        <div className='relative overflow-hidden rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='pointer-events-none absolute inset-0'>
-            <img src={AboutUs3} alt='' />
+            <img src={AboutUs3} alt='' className='w-full' />
           </div>
           <div className='relative z-10 flex h-full flex-col justify-between gap-0'>
             <div className='flex justify-between'>
@@ -72,7 +72,7 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
           </div>
         </div>
         <div
-          className='relative h-[18.75rem] rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
+          className='relative rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
           style={{ backgroundImage: `url(${AboutUs2})` }}
         >
           <div className='absolute right-6 top-6 rounded-xl bg-white px-6 py-3 shadow-md'>
@@ -82,7 +82,7 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
             <p className='text-center text-lg uppercase'>SECTORS</p>
           </div>
         </div>
-        <div className='flex h-[8.625rem] justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+        <div className='flex justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='flex-grow-0 self-center'>
             <img src={BarChart} alt='' />
           </div>
@@ -91,7 +91,7 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
             <p className='text-lg uppercase tracking-wider'>Active Clients</p>
           </div>
         </div>
-        <div className='flex h-[8.625rem] justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+        <div className='flex justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='flex h-20 flex-col justify-between'>
             <h3 className='text-5xl font-semibold'>80%</h3>
             <p className='text-lg uppercase tracking-wider'>Repeat clients</p>
