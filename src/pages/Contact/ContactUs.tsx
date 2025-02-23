@@ -1,16 +1,12 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import CusorArrow from '@/assets/svg/cursorarrow.svg'
 import { Input, Textarea } from '@/components/form'
+import { FormField } from '@/components/form/FormField'
+import { Send } from '@/components/icons'
 import { Section } from '@/components/widget'
-
-interface FormValues {
-  name: string
-  email: string
-  services: string[]
-  requirements: string
-}
 
 const services = [
   'Web Development',
@@ -22,15 +18,24 @@ const services = [
   'Others',
 ]
 
+const schema = z.object({
+  name: z.string().min(3, 'Name must be at least 3 characters'),
+  email: z.string().email('Invalid email address'),
+  services: z.array(z.string()).min(1, 'Select at least one service'),
+  requirements: z.string().optional(),
+})
+
+type FormValues = z.infer<typeof schema>
+
 export default function ContactUs() {
-  const { handleSubmit, register, reset } = useForm<FormValues>({
+  const { handleSubmit, control, reset } = useForm<FormValues>({
+    resolver: zodResolver(schema),
     defaultValues: {
       name: '',
       email: '',
       services: [],
       requirements: '',
     },
-    shouldUnregister: true,
   })
 
   const onSubmit = (data: FormValues) => {
@@ -58,58 +63,56 @@ export default function ContactUs() {
             onSubmit={handleSubmit(onSubmit)}
             className='w-full max-w-xl bg-white'
           >
-            <label className='mb-1 block text-sm font-medium'>Name</label>
-            <Input
-              {...register('name')}
-              placeholder='Enter your name'
+            <FormField control={control} name='name' label='Name' required>
+              <Input placeholder='Enter your name' />
+            </FormField>
+
+            <FormField control={control} name='email' label='Email' required>
+              <Input type='email' placeholder='Enter your email address' />
+            </FormField>
+
+            <FormField
+              control={control}
+              name='services'
+              label='Which services are you looking for?'
               required
-            />
+            >
+              <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
+                {services.map(service => (
+                  <div
+                    key={service}
+                    className='flex h-6 w-full items-center space-x-2 overflow-hidden'
+                  >
+                    <input
+                      type='checkbox'
+                      value={service}
+                      className='h-6 w-6 cursor-pointer bg-slate-200'
+                    />
+                    <span className='text-sm font-normal text-gray-900'>
+                      {service}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </FormField>
 
-            <label className='mb-1 mt-6 block text-sm font-medium'>Email</label>
-            <Input
-              {...register('email')}
-              type='email'
-              placeholder='Enter your email address'
-              required
-            />
-
-            <label className='mb-3.5 mt-6 block text-sm font-medium'>
-              Which services are you looking for?
-            </label>
-            <div className='grid grid-cols-2 gap-3'>
-              {services.map(service => (
-                <label
-                  key={service}
-                  className='flex h-6 items-center space-x-2'
-                >
-                  <Input
-                    {...register('services')}
-                    className='h-6 w-6'
-                    type='checkbox'
-                    value={service}
-                  />
-                  <span className='text-sm font-normal text-gray-900'>
-                    {service}
-                  </span>
-                </label>
-              ))}
-            </div>
-
-            <label className='mb-1 mt-6 block text-sm font-medium'>
-              Requirements
-            </label>
-            <Textarea
-              {...register('requirements')}
-              className='h-32 w-full rounded-lg border border-gray-300 p-2 outline-none focus:ring-1 focus:ring-primary-500'
-              placeholder='Share your requirements here....'
-            />
+            <FormField
+              control={control}
+              name='requirements'
+              label='Requirements'
+            >
+              <Textarea
+                className='h-32 w-full rounded-lg border border-gray-300 p-2 outline-none focus:ring-1 focus:ring-primary-500'
+                placeholder='Share your requirements here...'
+              />
+            </FormField>
 
             <button
               type='submit'
               className='mt-6 flex items-center justify-center space-x-2 rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
             >
               <span className='text-base font-medium'>Send message</span>
-              <img src={CusorArrow} />
+              <Send />
             </button>
           </form>
         </div>
