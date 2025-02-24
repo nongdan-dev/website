@@ -32,10 +32,10 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
       <Section.Content id='grid-layout'>
         <div className='flex flex-col gap-8 overflow-hidden rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
           <div className='flex flex-col gap-1'>
-            <h3 className='text-6xl font-semibold leading-none text-white xl:text-7xl'>
+            <h3 className='text-5xl font-semibold leading-none text-white md:text-6xl xl:text-7xl'>
               12+
             </h3>
-            <p className='text-lg uppercase tracking-wider text-white'>
+            <p className='text-sm uppercase tracking-wider text-white md:text-base xl:text-lg'>
               Years of experience
             </p>
           </div>
@@ -73,51 +73,59 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
               </div>
             </div>
             <div className='flex flex-col justify-between gap-1'>
-              <h3 className='text-4xl font-semibold leading-none xl:text-5xl'>
+              <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
                 400+
               </h3>
-              <p className='text-lg uppercase tracking-wider'>Projects</p>
+              <p className='text-sm uppercase tracking-wider md:text-base xl:text-lg'>
+                Projects
+              </p>
             </div>
           </div>
         </div>
 
         <div
-          className='relative rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
+          className='relative min-h-72 rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
           style={{ backgroundImage: `url(${AboutUs2})` }}
         >
           <div className='absolute right-6 top-6 flex flex-col gap-1 rounded-xl bg-white px-6 py-3 shadow-md'>
-            <h3 className='mb-0.5 text-center text-6xl font-semibold leading-none'>
+            <h3 className='text-center text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
               8
             </h3>
-            <p className='text-center text-lg uppercase'>SECTORS</p>
+            <p className='text-center text-sm uppercase md:text-base xl:text-lg'>
+              SECTORS
+            </p>
           </div>
         </div>
 
-        <div className='flex items-center justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+        <div className='flex items-center justify-between gap-6 rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='flex-grow-0 self-center'>
             <img src={BarChart} alt='' />
           </div>
           <div className='flex flex-col gap-1 text-right'>
-            <h3 className='text-4xl font-semibold leading-none xl:text-5xl'>
+            <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
               90+
             </h3>
-            <p className='text-lg uppercase tracking-wider'>Active Clients</p>
+            <p className='text-sm uppercase tracking-wider md:text-base xl:text-lg'>
+              Active Clients
+            </p>
           </div>
         </div>
 
-        <div className='flex items-center justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+        <div className='flex items-center justify-between gap-6 rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='flex flex-col gap-1'>
-            <h3 className='text-4xl font-semibold leading-none xl:text-5xl'>
+            <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
               80%
             </h3>
-            <p className='text-lg uppercase tracking-wider'>Repeat clients</p>
+            <p className='text-sm uppercase tracking-wider md:text-base xl:text-lg'>
+              Repeat clients
+            </p>
           </div>
           <div className='flex-grow-0 self-center'>
             <img src={WaveChart} alt='' />
           </div>
         </div>
 
-        <div className='flex items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
+        <div className='flex min-h-32 items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
           {cellAction ? (
             cellAction
           ) : (
