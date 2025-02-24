@@ -145,6 +145,25 @@
       grid-area: b6;
     }
   }
+  #dream-product > #grid-layout {
+    @apply grid grid-cols-5 grid-rows-2 gap-8;
+    grid-template-areas:
+      'b1 b1 b2 b2 b2'
+      'b3 b3 b3 b4 b4';
+
+    & > div:nth-child(1) {
+      grid-area: b1;
+    }
+    & > div:nth-child(2) {
+      grid-area: b2;
+    }
+    & > div:nth-child(3) {
+      grid-area: b3;
+    }
+    & > div:nth-child(4) {
+      grid-area: b4;
+    }
+  }
 }
 
 /* --------------------------------------------- */
