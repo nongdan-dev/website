@@ -24,7 +24,7 @@ type ContentProps = Omit<ComponentProps<'div'>, 'children'> & {
 
 export function Section({ className, ...props }: SectionProps) {
   const titleId = useId()
-  const titleClassName = 'text-title w-1/2'
+  const titleClassName = 'text-title w-full lg:w-3/4 xl:w-1/2'
 
   return (
     <SectionContext.Provider value={{ titleId, titleClassName }}>
@@ -44,7 +44,7 @@ function SubTitle(props: SubTitleProps) {
       bordered
       size='medium'
       {...props}
-      className={twMerge('mb-2.5', props.className)}
+      className={twMerge('mb-2.5 text-xs md:text-base', props.className)}
     />
   )
 }
@@ -64,7 +64,7 @@ function Title({ children, className, ...props }: TitleProps) {
 }
 
 function Content({ children, className, ...props }: ContentProps) {
-  const contentClassName = 'mt-14'
+  const contentClassName = 'mt-10 md:mt-14'
 
   if (typeof children === 'function') {
     return children({ contentClassName })

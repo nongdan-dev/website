@@ -40,7 +40,7 @@ function OurWork() {
         aria-pressed={isActive}
         onClick={() => setActiveIndex(idx)}
         className={twMerge(
-          'h-[8.25rem] cursor-pointer rounded-lg border p-4 text-left transition-all',
+          'h-32 cursor-pointer rounded-lg border p-4 text-left transition-all',
           isActive
             ? 'border-primary-500 bg-primary-500 shadow-md shadow-primary-200'
             : 'border-gray-200 bg-white hover:bg-primary-100',
@@ -83,12 +83,12 @@ function OurWork() {
         </Section.SubTitle>
         <Section.Title>We transform your idea into real product</Section.Title>
       </div>
-      <Section.Content className='grid grid-cols-[15rem_1fr] gap-12 rounded-xl bg-primary-50 p-12'>
-        <div className='flex flex-col gap-8'>
+      <Section.Content className='grid gap-12 rounded-xl bg-primary-50 p-12 xl:grid-cols-[15rem_1fr]'>
+        <div className='grid auto-cols-[theme(width[60])] grid-flow-col gap-8 overflow-auto xl:grid-rows-4'>
           {OUR_WORK.map(renderWork)}
           <Link
             to='/our-work'
-            className='flex h-[8.25rem] cursor-pointer place-content-center items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 text-center text-lg font-semibold underline shadow-md'
+            className='flex h-[8.25rem] flex-1 cursor-pointer place-content-center items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 text-center text-lg font-semibold underline shadow-md'
           >
             Explore our work
             <ArrowRight className='text-xl' />
@@ -98,7 +98,7 @@ function OurWork() {
           src={OUR_WORK[activeIndex].videoSrc}
           muted
           controls
-          className='h-full w-full rounded-lg bg-gray-950'
+          className='h-full min-h-80 w-full rounded-lg bg-gray-950'
         />
       </Section.Content>
     </Section>
