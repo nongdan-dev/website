@@ -56,7 +56,7 @@ export function FormField<T extends FieldValues>({
         <label
           htmlFor={fieldId}
           className={twMerge(
-            'mb-1 inline-block text-sm font-medium',
+            'mb-1.5 inline-block text-sm font-medium',
             labelClassName,
           )}
         >

@@ -10,18 +10,20 @@ import { Section } from '@/components/widget'
 
 const services = [
   'Web Development',
-  'Mobile Development',
-  'Tooling Development',
-  'API Integration',
   'UI Design',
+  'Mobile Development',
   'UX Research',
+  'Tooling Development',
   'Others',
+  'API Integration',
 ]
 
 const schema = z.object({
-  name: z.string().min(3, 'Name must be at least 3 characters'),
-  email: z.string().email('Invalid email address'),
-  services: z.array(z.string()).min(1, 'Select at least one service'),
+  name: z.string({ required_error: 'Name is required' }),
+  email: z
+    .string({ required_error: 'Email is required' })
+    .email('Invalid email address'),
+  services: z.array(z.string()).min(1, 'Please select at least one service'),
   requirements: z.string().optional(),
 })
 
@@ -31,10 +33,10 @@ export default function ContactUs() {
   const { handleSubmit, control } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      name: '',
-      email: '',
+      name: undefined,
+      email: undefined,
       services: [],
-      requirements: '',
+      requirements: undefined,
     },
   })
 
@@ -65,23 +67,21 @@ export default function ContactUs() {
             <FormField control={control} name='name' label='Name' required>
               <Input placeholder='Enter your name' />
             </FormField>
-
             <FormField control={control} name='email' label='Email' required>
               <Input placeholder='Enter your email address' />
             </FormField>
-
             <FormField
               control={control}
               name='services'
               label='Which services are you looking for?'
               required
             >
-              {({ field, id }) => (
+              {({ field }) => (
                 <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
                   {services.map(service => (
                     <div key={service} className='flex items-center space-x-2'>
                       <input
-                        id={id}
+                        id={service}
                         type='checkbox'
                         value={service}
                         className='h-6 w-6'
@@ -103,7 +103,6 @@ export default function ContactUs() {
                 </div>
               )}
             </FormField>
-
             <FormField
               control={control}
               name='requirements'
@@ -114,7 +113,6 @@ export default function ContactUs() {
                 placeholder='Share your requirements here...'
               />
             </FormField>
-
             <Button
               type='submit'
               className='mt-6 flex items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
@@ -131,7 +129,7 @@ export default function ContactUs() {
             loading='lazy'
             title='Nong dan dev location map'
             aria-label='Google Maps shows the location of Nong dan dev'
-            className='h-[24rem] w-full border-0 lg:h-full'
+            className='h-96 w-full rounded-md lg:h-full'
           />
         </div>
       </Section.Content>
