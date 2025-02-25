@@ -1,16 +1,15 @@
 import React from 'react'
 
-import Beings from '@/assets/images/png/Beings.png'
-import Brekeke from '@/assets/images/png/Brekeke.png'
-import Broadflow from '@/assets/images/png/broadflow (1).png'
-import Chimera from '@/assets/images/png/mag.png'
-import Olivia from '@/assets/images/png/Olivia1.png'
-import Readyflow from '@/assets/images/png/Relytics1.png'
-import Relytics from '@/assets/images/png/Relytics1.png'
+import Beings from '@/assets/images/project-thumbnails/Beings.webp'
+import Brekeke from '@/assets/images/project-thumbnails/Brekeke.webp'
+import Broadflow from '@/assets/images/project-thumbnails/Broadflow.webp'
+import Chimera from '@/assets/images/project-thumbnails/Chimera.webp'
+import Olivia from '@/assets/images/project-thumbnails/Olivia.webp'
+import Readyflow from '@/assets/images/project-thumbnails/Readyflow.webp'
+import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
 import { Flame } from '@/components/icons'
 import { Button, Link } from '@/components/ui'
-import { Section } from '@/components/widget'
-import ProjectCard from '@/components/widget/Project'
+import { ProjectCard, Section } from '@/components/widget'
 
 const projects = [
   { image: Brekeke, title: 'Brekeke', description: 'Network Communications' },
