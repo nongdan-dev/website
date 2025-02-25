@@ -63,7 +63,7 @@ const ProcessSection: React.FC = () => {
         </p>
       </div>
       <div className='mt-10 flex gap-8'>
-        <div className='grid w-1/2 gap-8'>
+        <div className='grid w-1/2'>
           {steps.map((step, index) => (
             <StepCard
               index={index}
