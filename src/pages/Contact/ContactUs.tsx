@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { Input, Textarea } from '@/components/form'
 import { FormField } from '@/components/form/FormField'
 import { Send } from '@/components/icons'
+import { Button } from '@/components/ui'
 import { Section } from '@/components/widget'
 
 const services = [
@@ -55,7 +56,7 @@ export default function ContactUs() {
         Let's discuss your ideas. The more specific you are, the faster we can
         help. Our team will get back to you within 24hrs.
       </p>
-      <Section.Content className='grid grid-cols-2'>
+      <Section.Content className='grid grid-cols-1 gap-y-10 lg:grid-cols-2'>
         <div className='flex w-full flex-1'>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -114,13 +115,13 @@ export default function ContactUs() {
               />
             </FormField>
 
-            <button
+            <Button
               type='submit'
-              className='mt-6 flex items-center justify-center space-x-2 rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
+              className='mt-6 flex items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
             >
               <span className='text-base font-medium'>Send message</span>
               <Send />
-            </button>
+            </Button>
           </form>
         </div>
         <div className='flex flex-1'>
@@ -128,7 +129,9 @@ export default function ContactUs() {
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4143.1550046811135!2d106.84146337528799!3d10.838145089314422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752126d447fbd5%3A0xa714c8e67c35f0b0!2sAnnam%20cuisine!5e1!3m2!1svi!2s!4v1740117986089!5m2!1svi!2s'
             allowFullScreen
             loading='lazy'
-            className='h-full w-full'
+            title='Nong dan dev location map'
+            aria-label='Google Maps shows the location of Nong dan dev'
+            className='h-[24rem] w-full border-0 lg:h-full'
           />
         </div>
       </Section.Content>
