@@ -10,6 +10,7 @@ import Relytics from '@/assets/images/png/Relytics1.png'
 import { Flame } from '@/components/icons'
 import { Button, Link } from '@/components/ui'
 import { Section } from '@/components/widget'
+import ProjectCard from '@/components/widget/Project'
 
 const projects = [
   { image: Brekeke, title: 'Brekeke', description: 'Network Communications' },
@@ -20,6 +21,7 @@ const projects = [
   { image: Chimera, title: 'Chimera', description: 'Medical Appointment' },
   { image: Olivia, title: 'Olivia', description: 'AI Chat Bot' },
 ]
+
 const Projects: React.FC = () => {
   return (
     <section>
@@ -50,18 +52,12 @@ const Projects: React.FC = () => {
         <h3 className='mb-5 text-2xl font-semibold'>What we have built</h3>
         <div className='grid grid-cols-3 gap-6'>
           {projects.map((project, index) => (
-            <div
+            <ProjectCard
               key={index}
-              className='flex flex-col gap-20 rounded-lg border border-gray-200 bg-gray-50 pl-10 pt-16 shadow-md'
-            >
-              <div className='grid gap-1'>
-                <h4 className='text-xl font-semibold'>{project.title}</h4>
-                <p className=''>{project.description}</p>
-              </div>
-              <div className='col-content z-10'>
-                <img src={project.image} alt={project.title} className='' />
-              </div>
-            </div>
+              image={project.image}
+              title={project.title}
+              description={project.description}
+            />
           ))}
         </div>
       </div>

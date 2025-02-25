@@ -9,6 +9,7 @@ import {
   Rocket,
 } from '@/components/icons'
 import { Window } from '@/components/icons/Window'
+import StepCard from '@/components/widget/StepCard'
 
 const ProcessSection: React.FC = () => {
   const steps = [
@@ -64,16 +65,12 @@ const ProcessSection: React.FC = () => {
       <div className='mt-10 flex gap-8'>
         <div className='grid w-1/2 gap-8'>
           {steps.map((step, index) => (
-            <div
+            <StepCard
               key={index}
-              className='grid gap-2 rounded-lg border border-gray-200 p-6 shadow-sm hover:border-blue-500 hover:shadow-md'
-            >
-              <div className='flex items-center gap-3'>
-                <div>{step.icon}</div>
-                <h3 className='text-lg font-semibold'>{step.title}</h3>
-              </div>
-              <p className='text-sm text-gray-600'>{step.description}</p>
-            </div>
+              icon={step.icon}
+              title={step.title}
+              description={step.description}
+            />
           ))}
         </div>
         <div className='flex w-auto'>
