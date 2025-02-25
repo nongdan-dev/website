@@ -69,6 +69,7 @@ const ProcessSection: React.FC = () => {
               index={index}
               key={index}
               icon={step.icon}
+              totalSteps={steps.length}
               title={step.title}
               description={step.description}
             />

@@ -64,11 +64,11 @@ const ProcessSection: React.FC = () => {
       </div>
       <div className='mt-10 flex gap-8'>
         <div className='grid w-1/2'>
-          <div className='absolute left-[-4px] h-full w-[4px] bg-transparent transition-all group-hover:bg-blue-400'></div>
           {steps.map((step, index) => (
             <StepCard
               index={index}
               key={index}
+              totalSteps={steps.length}
               icon={step.icon}
               title={step.title}
               description={step.description}
