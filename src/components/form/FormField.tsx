@@ -36,7 +36,10 @@ export function FormField<T extends FieldValues>({
       {label && (
         <label
           htmlFor={fieldId}
-          className={twMerge('mb-1 inline-block text-sm', labelClassName)}
+          className={twMerge(
+            'mb-1 inline-block text-sm font-medium',
+            labelClassName,
+          )}
         >
           {label}{' '}
           <span aria-hidden='true' className='text-red-500'>
