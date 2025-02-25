@@ -5,7 +5,7 @@ import Projects from './Projects'
 
 function WebDevelopment() {
   return (
-    <Section className='py-20'>
+    <Section>
       <Projects />
       <ProcessSection />
       <CallToAction />

@@ -15,10 +15,8 @@ const StepCard: React.FC<StepCardProps> = ({
 }) => {
   return (
     <div className='group relative flex flex-col items-center justify-center'>
-      {index !== 0 && (
-        <div className='flex h-[45px] w-[2px] bg-gray-100 group-hover:bg-blue-500'></div>
-      )}
-      <div className='grid gap-2 rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md group-hover:border-blue-500'>
+      {index !== 0 && <div className='flex h-[45px] w-[2px] bg-gray-100'></div>}
+      <div className='grid gap-2 rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md'>
         <div className='flex items-center gap-3'>
           <div>{icon}</div>
           <h3 className='text-lg font-semibold'>{title}</h3>

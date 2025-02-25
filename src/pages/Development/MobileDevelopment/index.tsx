@@ -6,7 +6,7 @@ import Projects from './Projects'
 
 function MobileDevelopment() {
   return (
-    <Section className='py-20'>
+    <Section>
       <Hero />
       <Projects />
       <ProcessSection />
