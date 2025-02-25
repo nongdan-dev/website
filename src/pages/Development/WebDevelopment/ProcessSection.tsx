@@ -66,6 +66,7 @@ const ProcessSection: React.FC = () => {
         <div className='grid w-1/2 gap-8'>
           {steps.map((step, index) => (
             <StepCard
+              index={index}
               key={index}
               icon={step.icon}
               title={step.title}
