@@ -1,5 +1,11 @@
+import { omit } from 'lodash'
 import { ReactElement, ReactNode, cloneElement, useId } from 'react'
-import { FieldValues, UseControllerProps, useController } from 'react-hook-form'
+import {
+  ControllerRenderProps,
+  FieldValues,
+  UseControllerProps,
+  useController,
+} from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 
 export type FormFieldProps<T extends FieldValues> = Omit<
@@ -9,12 +15,19 @@ export type FormFieldProps<T extends FieldValues> = Omit<
   Required<Pick<UseControllerProps<T>, 'control'>> & {
     label?: ReactNode
     labelClassName?: string
-    children: ReactElement
+    children: ReactElement | ((props: FieldProps) => ReactElement)
     required?: boolean
     onChangePropName?: string
     className?: string
     fieldId?: string
   }
+
+type FieldProps = {
+  field: ControllerRenderProps<any, any>
+  id: string
+  __required?: boolean
+  __invalid: boolean
+}
 
 export function FormField<T extends FieldValues>({
   label,
@@ -27,9 +40,15 @@ export function FormField<T extends FieldValues>({
   ...props
 }: FormFieldProps<T>) {
   let fieldId = useId()
+  fieldId = propFieldId || fieldId
   const { field, fieldState } = useController(props)
 
-  fieldId = propFieldId || fieldId
+  const p: FieldProps = {
+    field,
+    id: fieldId,
+    __required: required,
+    __invalid: !!fieldState.error,
+  }
 
   return (
     <div className={twMerge('mb-6', className)}>
@@ -47,12 +66,12 @@ export function FormField<T extends FieldValues>({
           </span>
         </label>
       )}
-      {cloneElement(children, {
-        [onChangePropName]: field.onChange,
-        id: fieldId,
-        __required: required,
-        __invalid: !!fieldState.error,
-      })}
+      {typeof children === 'function'
+        ? children(p)
+        : cloneElement(children, {
+            [onChangePropName]: field.onChange,
+            ...omit(p, 'field'),
+          })}
       {!!fieldState.error && (
         <span role='alert' className='mt-1.5 inline-block text-sm text-red-500'>
           {fieldState.error.message}
