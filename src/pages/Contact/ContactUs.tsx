@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -28,7 +27,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>
 
 export default function ContactUs() {
-  const { handleSubmit, control, reset } = useForm<FormValues>({
+  const { handleSubmit, control } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
       name: '',
@@ -40,7 +39,6 @@ export default function ContactUs() {
 
   const onSubmit = (data: FormValues) => {
     console.log('Form Data:', data)
-    reset()
   }
 
   return (
@@ -49,7 +47,7 @@ export default function ContactUs() {
       <Section.Title
         children={({ titleId, titleClassName }) => (
           <h1 id={titleId} className={titleClassName}>
-            Let's build an awesome project together{' '}
+            Let's build an awesome project together
           </h1>
         )}
       />
@@ -68,7 +66,7 @@ export default function ContactUs() {
             </FormField>
 
             <FormField control={control} name='email' label='Email' required>
-              <Input type='email' placeholder='Enter your email address' />
+              <Input placeholder='Enter your email address' />
             </FormField>
 
             <FormField
@@ -77,23 +75,32 @@ export default function ContactUs() {
               label='Which services are you looking for?'
               required
             >
-              <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
-                {services.map(service => (
-                  <div
-                    key={service}
-                    className='flex h-6 w-full items-center space-x-2 overflow-hidden'
-                  >
-                    <input
-                      type='checkbox'
-                      value={service}
-                      className='h-6 w-6 cursor-pointer bg-slate-200'
-                    />
-                    <span className='text-sm font-normal text-gray-900'>
-                      {service}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {({ field, id }) => (
+                <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
+                  {services.map(service => (
+                    <div key={service} className='flex items-center space-x-2'>
+                      <input
+                        id={id}
+                        type='checkbox'
+                        value={service}
+                        className='h-6 w-6'
+                        onChange={e => {
+                          e.target.checked
+                            ? field.onChange([...field.value, service])
+                            : field.onChange(
+                                field.value?.filter(
+                                  (value: string) => value !== service,
+                                ),
+                              )
+                        }}
+                      />
+                      <label htmlFor={service} className='text-sm leading-none'>
+                        {service}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
             </FormField>
 
             <FormField

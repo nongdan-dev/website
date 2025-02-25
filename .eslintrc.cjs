@@ -14,5 +14,6 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     'react-hooks/exhaustive-deps': 'off',
     'jsx-a11y/media-has-caption': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 }
