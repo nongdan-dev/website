@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Beings from '@/assets/images/client-logos/beings.png'
-import Brekeke from '@/assets/images/client-logos/brekeke.png'
+import Beings from '@/assets/images/client-logos/beings.webp'
+import Brekeke from '@/assets/images/client-logos/brekeke.webp'
 import DreamProduct1 from '@/assets/images/webp/dream-product-1.webp'
 import DreamProduct2 from '@/assets/images/webp/dream-product-2.webp'
 import { Section } from '@/components/widget'
@@ -17,13 +17,9 @@ export default function DreamProduct() {
           </h2>
         )}
       />
-      {/* <p className='mt-4 w-1/2 text-lg'>
-        Let's discuss your ideas. The more specific you are, the faster we can
-        help. Our team will get back to you within 24hrs.
-      </p> */}
       <Section.Content className='flex flex-col'>
-        <div className='flex flex-col gap-x-8 gap-y-5 lg:flex-row'>
-          <div className='flex h-[300px] w-[1/3] justify-end rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-[3.75rem] shadow-sm'>
+        <div className='flex flex-col items-center gap-x-8 gap-y-5 lg:flex-row'>
+          <div className='flex h-[300px] w-[1/3] max-w-[500px] justify-end rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-[3.75rem] shadow-sm'>
             <img src={DreamProduct1} alt='' className='flex-1' />
           </div>
 
@@ -48,7 +44,7 @@ export default function DreamProduct() {
           </div>
         </div>
 
-        <div className='mt-[3rem] flex flex-col-reverse gap-x-8 gap-y-5 xl:flex-row'>
+        <div className='mt-[3rem] flex flex-col-reverse items-center gap-x-8 gap-y-5 lg:flex-row'>
           <div className='flex w-[2/3] flex-1 flex-col justify-center'>
             <div>
               <img src={Beings} alt='' className='h-10' />
@@ -71,7 +67,7 @@ export default function DreamProduct() {
             </p>
           </div>
 
-          <div className='flex h-[300px] w-[1/3] justify-end overflow-hidden rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-[3.75rem] shadow-sm'>
+          <div className='flex h-[300px] w-[1/3] max-w-[500px] justify-end overflow-hidden rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-[3.75rem] shadow-sm'>
             <img src={DreamProduct2} alt='' className='-mb-1 -mr-1 flex-1' />
           </div>
         </div>
