@@ -47,7 +47,7 @@ function MobileDevelopment() {
             </h1>
           )}
         />
-        <p className='mt-4 w-1/2 text-lg'>
+        <p className='mt-4 w-full text-lg md:w-1/2'>
           Our expertise includes top mobile development service which is
           well-designed, practical and cross-platform, bringing seamless mobile
           apps experiences for digital users on any device.
