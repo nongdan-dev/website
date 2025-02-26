@@ -32,7 +32,7 @@ function WebDevelopment() {
             </h1>
           )}
         />
-        <p className='mt-4 w-1/2 text-lg'>
+        <p className='mt-4 w-full text-lg md:w-1/2'>
           We design and build apps for both startups and established businesses.
           You've got the vision. Now you need an expert partner focusing on
           delivering values to your business and users.
