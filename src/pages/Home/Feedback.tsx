@@ -1,4 +1,4 @@
-import Broadflow from '@/assets/images/client-logos/broadflow.png'
+import Broadflow from '@/assets/images/client-logos/broadflow.webp'
 import { Orbits } from '@/components/icons'
 import { Divider } from '@/components/ui'
 import { Section } from '@/components/widget'
