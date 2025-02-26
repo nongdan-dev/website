@@ -2,8 +2,6 @@ import { Fragment } from 'react/jsx-runtime'
 
 import Cody from '@/assets/images//project-thumbnails/Cody.webp'
 import Whuups from '@/assets/images//project-thumbnails/Whuups.webp'
-import Beings from '@/assets/images/project-thumbnails/Beings.webp'
-import Brekeke from '@/assets/images/project-thumbnails/Brekeke.webp'
 import Broadflow from '@/assets/images/project-thumbnails/Broadflow.webp'
 import Chimera from '@/assets/images/project-thumbnails/Chimera.webp'
 import Olivia from '@/assets/images/project-thumbnails/Olivia.webp'
@@ -18,7 +16,7 @@ const PROJECTS = [
     description: 'Chat App',
   },
   {
-    image: Whuups,
+    image: Cody,
     title: 'Cody',
     description: 'Language Learning',
   },
