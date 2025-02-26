@@ -32,7 +32,7 @@ function WebDevelopment() {
             </h1>
           )}
         />
-        <p className='mt-4 w-full text-lg md:w-1/2'>
+        <p className='mt-4 w-full text-lg lg:w-1/2'>
           We design and build apps for both startups and established businesses.
           You've got the vision. Now you need an expert partner focusing on
           delivering values to your business and users.
@@ -43,7 +43,9 @@ function WebDevelopment() {
           </Link>
         </Button>
         <Section.Content>
-          <h2 className='text-title !text-3xl'>What we have built</h2>
+          <h2 className='text-title !text-2xl sm:!text-3xl'>
+            What we have built
+          </h2>
           <div className='mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
             {PROJECTS.map(project => (
               <ProjectCard key={project.title} {...project} />
