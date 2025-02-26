@@ -1,46 +1,47 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { Input, Textarea } from '@/components/form'
 import { FormField } from '@/components/form/FormField'
 import { Send } from '@/components/icons'
+import { Button } from '@/components/ui'
 import { Section } from '@/components/widget'
 
 const services = [
   'Web Development',
-  'Mobile Development',
-  'Tooling Development',
-  'API Integration',
   'UI Design',
+  'Mobile Development',
   'UX Research',
+  'Tooling Development',
   'Others',
+  'API Integration',
 ]
 
 const schema = z.object({
-  name: z.string().min(3, 'Name must be at least 3 characters'),
-  email: z.string().email('Invalid email address'),
-  services: z.array(z.string()).min(1, 'Select at least one service'),
+  name: z.string({ required_error: 'Name is required' }),
+  email: z
+    .string({ required_error: 'Email is required' })
+    .email('Invalid email address'),
+  services: z.array(z.string()).min(1, 'Please select at least one service'),
   requirements: z.string().optional(),
 })
 
 type FormValues = z.infer<typeof schema>
 
 export default function ContactUs() {
-  const { handleSubmit, control, reset } = useForm<FormValues>({
+  const { handleSubmit, control } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      name: '',
-      email: '',
+      name: undefined,
+      email: undefined,
       services: [],
-      requirements: '',
+      requirements: undefined,
     },
   })
 
   const onSubmit = (data: FormValues) => {
     console.log('Form Data:', data)
-    reset()
   }
 
   return (
@@ -49,7 +50,7 @@ export default function ContactUs() {
       <Section.Title
         children={({ titleId, titleClassName }) => (
           <h1 id={titleId} className={titleClassName}>
-            Let's build an awesome project together{' '}
+            Let's build an awesome project together
           </h1>
         )}
       />
@@ -57,7 +58,7 @@ export default function ContactUs() {
         Let's discuss your ideas. The more specific you are, the faster we can
         help. Our team will get back to you within 24hrs.
       </p>
-      <Section.Content className='grid grid-cols-2'>
+      <Section.Content className='grid grid-cols-1 gap-y-10 lg:grid-cols-2'>
         <div className='flex w-full flex-1'>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -66,36 +67,42 @@ export default function ContactUs() {
             <FormField control={control} name='name' label='Name' required>
               <Input placeholder='Enter your name' />
             </FormField>
-
             <FormField control={control} name='email' label='Email' required>
-              <Input type='email' placeholder='Enter your email address' />
+              <Input placeholder='Enter your email address' />
             </FormField>
-
             <FormField
               control={control}
               name='services'
               label='Which services are you looking for?'
               required
             >
-              <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
-                {services.map(service => (
-                  <div
-                    key={service}
-                    className='flex h-6 w-full items-center space-x-2 overflow-hidden'
-                  >
-                    <input
-                      type='checkbox'
-                      value={service}
-                      className='h-6 w-6 cursor-pointer bg-slate-200'
-                    />
-                    <span className='text-sm font-normal text-gray-900'>
-                      {service}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {({ field }) => (
+                <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
+                  {services.map(service => (
+                    <div key={service} className='flex items-center space-x-2'>
+                      <input
+                        id={service}
+                        type='checkbox'
+                        value={service}
+                        className='h-6 w-6'
+                        onChange={e => {
+                          e.target.checked
+                            ? field.onChange([...field.value, service])
+                            : field.onChange(
+                                field.value?.filter(
+                                  (value: string) => value !== service,
+                                ),
+                              )
+                        }}
+                      />
+                      <label htmlFor={service} className='text-sm leading-none'>
+                        {service}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
             </FormField>
-
             <FormField
               control={control}
               name='requirements'
@@ -106,14 +113,13 @@ export default function ContactUs() {
                 placeholder='Share your requirements here...'
               />
             </FormField>
-
-            <button
+            <Button
               type='submit'
-              className='mt-6 flex items-center justify-center space-x-2 rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
+              className='mt-6 flex items-center justify-center rounded-lg bg-primary-500 px-6 py-3 text-white transition-all hover:bg-primary-700'
             >
               <span className='text-base font-medium'>Send message</span>
               <Send />
-            </button>
+            </Button>
           </form>
         </div>
         <div className='flex flex-1'>
@@ -121,7 +127,9 @@ export default function ContactUs() {
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4143.1550046811135!2d106.84146337528799!3d10.838145089314422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752126d447fbd5%3A0xa714c8e67c35f0b0!2sAnnam%20cuisine!5e1!3m2!1svi!2s!4v1740117986089!5m2!1svi!2s'
             allowFullScreen
             loading='lazy'
-            className='h-full w-full'
+            title='Nong dan dev location map'
+            aria-label='Google Maps shows the location of Nong dan dev'
+            className='h-96 w-full rounded-md lg:h-full'
           />
         </div>
       </Section.Content>

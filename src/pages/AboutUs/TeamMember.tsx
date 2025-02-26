@@ -1,15 +1,11 @@
-import { LineBreak } from '@/components/ui'
 import { Section } from '@/components/widget'
 
 export const TeamMember = () => {
   return (
     <Section>
       <div className='w-full place-items-center text-center'>
-        <Section.Title className='w-4/5'>
-          Meet our team of <span className='text-primary-500'>creators</span>,
-          <LineBreak />
-          <span className='text-primary-500'> designers</span> and
-          <span className='text-primary-500'> problem solvers</span>
+        <Section.Title className=''>
+          Meet our beautiful team members
         </Section.Title>
       </div>
       <Section.Content className='grid grid-cols-4 gap-8'>

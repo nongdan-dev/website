@@ -30,17 +30,24 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
         businesses and individuals.
       </p>
       <Section.Content id='grid-layout'>
-        <div className='overflow-hidden rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
-          <div className='mb-8 flex h-[6.9375rem] flex-col gap-1'>
-            <h3 className='text-7xl font-semibold leading-none text-white'>
+        <div className='flex flex-col gap-8 overflow-hidden rounded-xl bg-gradient-to-b from-primary-400 to-primary-600 pl-8 pt-8 shadow-sm'>
+          <div className='flex flex-col gap-1'>
+            <h3 className='text-5xl font-semibold leading-none text-white md:text-6xl xl:text-7xl'>
               12+
             </h3>
-            <p className='text-lg uppercase tracking-wider text-white'>
+            <p className='text-sm uppercase tracking-wider text-white md:text-base xl:text-lg'>
               Years of experience
             </p>
           </div>
-          <img src={AboutUs} alt='' className='min-w-full max-w-[unset]' />
+          <div className='flex-1'>
+            <img
+              src={AboutUs}
+              alt=''
+              className='min-h-full min-w-full max-w-[unset]'
+            />
+          </div>
         </div>
+
         <div className='relative overflow-hidden rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='pointer-events-none absolute inset-0'>
             <img src={AboutUs3} alt='' className='w-full' />
@@ -65,42 +72,60 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
                 </div>
               </div>
             </div>
-            <div className='flex h-20 flex-col justify-between'>
-              <h3 className='text-5xl font-semibold'>400+</h3>
-              <p className='text-lg uppercase tracking-wider'>Projects</p>
+            <div className='flex flex-col justify-between gap-1'>
+              <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
+                400+
+              </h3>
+              <p className='text-sm uppercase tracking-wider md:text-base xl:text-lg'>
+                Projects
+              </p>
             </div>
           </div>
         </div>
+
         <div
-          className='relative rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
+          className='relative min-h-72 rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
           style={{ backgroundImage: `url(${AboutUs2})` }}
         >
-          <div className='absolute right-6 top-6 rounded-xl bg-white px-6 py-3 shadow-md'>
-            <h3 className='mb-0.5 text-center text-6xl font-semibold leading-none'>
+          <div className='absolute right-6 top-6 flex flex-col gap-1 rounded-xl bg-white px-6 py-3 shadow-md'>
+            <h3 className='text-center text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
               8
             </h3>
-            <p className='text-center text-lg uppercase'>SECTORS</p>
+            <p className='text-center text-sm uppercase md:text-base xl:text-lg'>
+              SECTORS
+            </p>
           </div>
         </div>
-        <div className='flex justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
+
+        <div className='flex items-center justify-between gap-6 rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='flex-grow-0 self-center'>
             <img src={BarChart} alt='' />
           </div>
-          <div className='flex h-20 flex-col justify-between text-right'>
-            <h3 className='text-5xl font-semibold'>90+</h3>
-            <p className='text-lg uppercase tracking-wider'>Active Clients</p>
+          <div className='flex flex-col gap-1 text-right'>
+            <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
+              90+
+            </h3>
+            <p className='text-sm uppercase tracking-wider md:text-base xl:text-lg'>
+              Active Clients
+            </p>
           </div>
         </div>
-        <div className='flex justify-between rounded-xl border border-gray-200 p-6 shadow-sm'>
-          <div className='flex h-20 flex-col justify-between'>
-            <h3 className='text-5xl font-semibold'>80%</h3>
-            <p className='text-lg uppercase tracking-wider'>Repeat clients</p>
+
+        <div className='flex items-center justify-between gap-6 rounded-xl border border-gray-200 p-6 shadow-sm'>
+          <div className='flex flex-col gap-1'>
+            <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
+              80%
+            </h3>
+            <p className='text-sm uppercase tracking-wider md:text-base xl:text-lg'>
+              Repeat clients
+            </p>
           </div>
           <div className='flex-grow-0 self-center'>
             <img src={WaveChart} alt='' />
           </div>
         </div>
-        <div className='flex items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
+
+        <div className='flex min-h-32 items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
           {cellAction ? (
             cellAction
           ) : (
