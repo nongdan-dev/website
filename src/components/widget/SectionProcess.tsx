@@ -83,8 +83,8 @@ export function SectionProcess() {
         We build secure, scalable solutions tailored to your needs, ensuring a
         seamless launch and long-term success.
       </p>
-      <Section.Content className='grid grid-cols-2 gap-8'>
-        <div className='flex flex-col gap-8'>
+      <Section.Content className='grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-1 lg:grid-cols-2'>
+        <div className='flex flex-col gap-6 sm:gap-8'>
           {STEPS.map((step, index) => (
             <Step
               key={index}

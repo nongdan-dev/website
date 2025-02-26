@@ -59,7 +59,7 @@ function MobileDevelopment() {
         </Button>
         <Section.Content>
           <h2 className='text-title !text-3xl'>What we have built</h2>
-          <div className='mt-6 grid grid-cols-3 gap-8'>
+          <div className='mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
             {PROJECTS.map(project => (
               <ProjectCard key={project.title} {...project} />
             ))}
