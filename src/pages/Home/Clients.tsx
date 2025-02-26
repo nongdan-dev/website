@@ -1,7 +1,7 @@
-import Beings from '@/assets/images/client-logos/beings.png'
-import Brekeke from '@/assets/images/client-logos/brekeke.png'
-import Broadflow from '@/assets/images/client-logos/broadflow.png'
-import Chimera from '@/assets/images/client-logos/chimera.png'
+import Beings from '@/assets/images/client-logos/beings.webp'
+import Brekeke from '@/assets/images/client-logos/brekeke.webp'
+import Broadflow from '@/assets/images/client-logos/broadflow.webp'
+import Chimera from '@/assets/images/client-logos/chimera.webp'
 import { LineBreak } from '@/components/ui'
 import { Section } from '@/components/widget'
 
