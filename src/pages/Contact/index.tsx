@@ -1,5 +1,13 @@
+import { Fragment } from 'react/jsx-runtime'
+
+import ContactUs from './ContactUs'
+
 function ContactPage() {
-  return <div>contact</div>
+  return (
+    <Fragment>
+      <ContactUs />
+    </Fragment>
+  )
 }
 
 export default ContactPage
