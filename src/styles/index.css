@@ -76,7 +76,7 @@
 
 @layer components {
   #why-choose-us > #grid-layout {
-    @apply grid grid-cols-5 gap-8 sm:gap-4 md:gap-6;
+    @apply grid grid-cols-5 gap-6 md:gap-8;
     grid-template-areas:
       'b1 b1 b1 b2 b2'
       'b1 b1 b1 b3 b3'
