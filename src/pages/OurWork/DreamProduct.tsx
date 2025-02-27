@@ -1,9 +1,7 @@
-import React from 'react'
-
-import Beings from '@/assets/images/client-logos/beings.webp'
-import Brekeke from '@/assets/images/client-logos/brekeke.webp'
-import DreamProduct1 from '@/assets/images/webp/dream-product-1.webp'
-import DreamProduct2 from '@/assets/images/webp/dream-product-2.webp'
+import BeingsLogo from '@/assets/images/client-logos/beings.webp'
+import BrekekeLogo from '@/assets/images/client-logos/brekeke.webp'
+import BeingsThumbnail from '@/assets/images/project-thumbnails/Beings.webp'
+import BrekekeThumbnail from '@/assets/images/project-thumbnails/Brekeke.webp'
 import { Section } from '@/components/widget'
 
 export default function DreamProduct() {
@@ -21,12 +19,12 @@ export default function DreamProduct() {
         <div className='flex flex-col items-center gap-x-8 gap-y-5 lg:flex-row'>
           <div className='flex h-[300px] w-full flex-1 items-center justify-center rounded-lg bg-[#6CCCE1] lg:max-w-[500px] lg:bg-white'>
             <div className='flex h-[300px] max-w-[500px] justify-end rounded-lg bg-[#6CCCE1] pt-[3.75rem] lg:w-[1/3] lg:border lg:border-gray-200 lg:pl-10 lg:shadow-sm'>
-              <img src={DreamProduct1} alt='' className='flex-1' />
+              <img src={BrekekeThumbnail} alt='' className='flex-1' />
             </div>
           </div>
           <div className='flex w-[2/3] flex-1 flex-col justify-center'>
             <div>
-              <img src={Brekeke} alt='' className='h-10' />
+              <img src={BrekekeLogo} alt='' className='h-10' />
             </div>
             <p className='mb-2 mt-6'>
               <span className='text-primary-500'> Brekeke Software, Inc.</span>
@@ -48,7 +46,7 @@ export default function DreamProduct() {
         <div className='mt-[3rem] flex flex-col-reverse items-center gap-x-8 gap-y-5 lg:flex-row'>
           <div className='flex w-[2/3] flex-1 flex-col justify-center'>
             <div>
-              <img src={Beings} alt='' className='h-10' />
+              <img src={BeingsLogo} alt='' className='h-10' />
             </div>
             <p className='mb-2 mt-6'>
               <span className='text-primary-500'> Beings</span>
@@ -69,7 +67,11 @@ export default function DreamProduct() {
           </div>
           <div className='flex h-[300px] w-full flex-1 items-center justify-center rounded-lg bg-[#4971D1] lg:max-w-[500px] lg:bg-white'>
             <div className='flex h-[300px] max-w-[500px] justify-end overflow-hidden bg-[#4971D1] pt-[3.75rem] lg:w-[1/3] lg:rounded-lg lg:border lg:border-gray-200 lg:pl-10 lg:shadow-sm'>
-              <img src={DreamProduct2} alt='' className='-mb-1 -mr-1 flex-1' />
+              <img
+                src={BeingsThumbnail}
+                alt=''
+                className='-mb-1 -mr-1 flex-1'
+              />
             </div>
           </div>
         </div>
