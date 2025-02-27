@@ -5,8 +5,8 @@ import { Section } from './Section'
 
 export function CallToAction() {
   return (
-    <Section className='lg:-mx-[calc((100vw-100%)/2)] lg:pt-0'>
-      <div className='relative place-items-center overflow-clip rounded-xl bg-gradient-to-b from-primary-500 from-40% to-primary-600 py-20 text-center text-primary-50'>
+    <Section className='pt-0 lg:pt-12'>
+      <div className='relative -mx-[calc((100vw-100%)/2)] place-items-center overflow-clip rounded-xl bg-gradient-to-b from-primary-500 from-40% to-primary-600 py-20 text-center text-primary-50 lg:mx-auto lg:w-full'>
         <Orbits className='pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-[35deg] text-[56.25rem] text-primary-100/20' />
         <Section.Title className='relative z-10 w-full px-6 sm:text-4xl lg:text-5xl'>
           We'd love to work with you
