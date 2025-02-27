@@ -6,7 +6,7 @@ import { Section } from '@/components/widget'
 
 export default function DreamProduct() {
   return (
-    <Section className='border-b-2 border-gray-100' id='dream-product'>
+    <Section>
       <Section.SubTitle>Our work</Section.SubTitle>
       <Section.Title
         children={({ titleId, titleClassName }) => (
