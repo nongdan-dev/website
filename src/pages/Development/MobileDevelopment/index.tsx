@@ -47,7 +47,7 @@ function MobileDevelopment() {
             </h1>
           )}
         />
-        <p className='mt-4 w-1/2 text-lg'>
+        <p className='mt-4 w-full text-lg lg:w-1/2'>
           Our expertise includes top mobile development service which is
           well-designed, practical and cross-platform, bringing seamless mobile
           apps experiences for digital users on any device.
@@ -58,8 +58,10 @@ function MobileDevelopment() {
           </Link>
         </Button>
         <Section.Content>
-          <h2 className='text-title !text-3xl'>What we have built</h2>
-          <div className='mt-6 grid grid-cols-3 gap-8'>
+          <h2 className='text-title !text-2xl sm:!text-3xl'>
+            What we have built
+          </h2>
+          <div className='mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
             {PROJECTS.map(project => (
               <ProjectCard key={project.title} {...project} />
             ))}

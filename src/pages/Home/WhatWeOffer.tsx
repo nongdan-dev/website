@@ -11,7 +11,7 @@ function WhatWeOffer() {
         <Flame className='text-base' /> What we offer
       </Section.SubTitle>
       <Section.Title>Technology solutions for every need</Section.Title>
-      <Section.Content className='grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10'>
+      <Section.Content className='grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3'>
         <div className='rounded-xl border border-gray-200 shadow-sm'>
           <img src={WhatWeOffer1} alt='' />
           <div className='px-6 py-8'>

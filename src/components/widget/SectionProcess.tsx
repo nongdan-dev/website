@@ -83,8 +83,8 @@ export function SectionProcess() {
         We build secure, scalable solutions tailored to your needs, ensuring a
         seamless launch and long-term success.
       </p>
-      <Section.Content className='grid grid-cols-2 gap-8'>
-        <div className='flex flex-col gap-8'>
+      <Section.Content className='grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2'>
+        <div className='flex flex-col gap-6 sm:gap-8'>
           {STEPS.map((step, index) => (
             <Step
               key={index}
@@ -95,7 +95,11 @@ export function SectionProcess() {
             />
           ))}
         </div>
-        <img src={Development} alt='' className='w-full rounded-lg shadow-lg' />
+        <img
+          src={Development}
+          alt=''
+          className='hidden h-full w-full rounded-lg object-cover shadow-lg md:block'
+        />
       </Section.Content>
     </Section>
   )

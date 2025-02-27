@@ -57,7 +57,10 @@ function Footer() {
               </li>
             </ul>
           </address>
-          <div className='grid w-full grid-cols-2 gap-16 md:grid-cols-3'>
+          <div
+            id='footer-nav'
+            className='grid w-full grid-cols-2 gap-16 md:grid-cols-3'
+          >
             <nav aria-label='Development'>
               <span aria-hidden className='font-bold'>
                 Development

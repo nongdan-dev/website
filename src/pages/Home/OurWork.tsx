@@ -83,8 +83,8 @@ function OurWork() {
         </Section.SubTitle>
         <Section.Title>We transform your idea into real product</Section.Title>
       </div>
-      <Section.Content className='grid gap-12 rounded-xl bg-primary-50 p-12 xl:grid-cols-[15rem_1fr]'>
-        <div className='grid auto-cols-[theme(width[60])] grid-flow-col gap-8 overflow-auto xl:grid-rows-4'>
+      <Section.Content className='grid gap-6 rounded-xl bg-primary-50 p-6 md:p-12 lg:gap-12 xl:grid-cols-[15rem_1fr]'>
+        <div className='grid auto-cols-[theme(width[60])] grid-flow-col gap-6 overflow-auto lg:gap-8 xl:grid-rows-4'>
           {OUR_WORK.map(renderWork)}
           <Link
             to='/our-work'

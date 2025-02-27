@@ -36,8 +36,9 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
 
   const handleScrollToSection: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault()
-    const id = (e.target as HTMLAnchorElement).hash.replace('#', '')
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    document
+      .querySelector('#footer-nav')
+      ?.scrollIntoView({ behavior: 'smooth' })
     onClose()
   }
 
@@ -45,7 +46,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
     <div
       aria-hidden={!visible}
       className={twMerge(
-        'fixed inset-0 top-20 z-10 flex flex-col justify-between bg-white/90 backdrop-blur-md transition-transform duration-200 lg:hidden',
+        'fixed inset-0 top-20 z-10 flex flex-col justify-between bg-white/95 backdrop-blur-md transition-transform duration-200 lg:hidden',
         !visible ? 'translate-x-full' : 'translate-x-0',
       )}
     >
