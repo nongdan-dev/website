@@ -46,6 +46,10 @@
   .content-grid {
     --gap-x: theme('spacing.12');
 
+    @media (max-width: 768px) {
+      --gap-x: theme('spacing.4');
+    }
+
     display: grid;
     grid-template-columns:
       [full-width-start] minmax(var(--gap-x), 1fr)
@@ -71,7 +75,7 @@
 
 @layer components {
   #why-choose-us > #grid-layout {
-    @apply grid grid-cols-5 gap-8;
+    @apply grid grid-cols-5 gap-8 md:gap-6 sm:gap-4;
     grid-template-areas:
       'b1 b1 b1 b2 b2'
       'b1 b1 b1 b3 b3'
@@ -86,7 +90,6 @@
         'b4 b5'
         'b6 b6';
     }
-
     @media (width < 768px) {
       grid-template-columns: 1fr;
       grid-template-areas:
@@ -96,6 +99,7 @@
         'b4'
         'b5'
         'b6';
+        
     }
 
     & > div:nth-child(1) {
@@ -119,7 +123,7 @@
   }
 
   #about-us > #grid-layout {
-    @apply grid grid-cols-9 gap-6;
+    @apply grid grid-cols-9 gap-6 md:gap-6 sm:gap-4;
     grid-template-areas:
       'b1 b1 b1 b2 b2 b2 b3 b3 b3'
       'b1 b1 b1 b2 b2 b2 b3 b3 b3'
