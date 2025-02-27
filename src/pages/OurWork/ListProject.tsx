@@ -5,7 +5,7 @@ import Chimera from '@/assets/images/project-thumbnails/Chimera.webp'
 import Olivia from '@/assets/images/project-thumbnails/Olivia.webp'
 import Readyflow from '@/assets/images/project-thumbnails/Readyflow.webp'
 import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
-import { ProjectCard, Section } from '@/components/widget'
+import { ProjectCard } from '@/components/widget'
 
 const PROJECTS = [
   {
@@ -47,12 +47,10 @@ const PROJECTS = [
 
 export const ListProject = () => {
   return (
-    <Section className='pt-12'>
-      <div className='grid-col-1 mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-        {PROJECTS.map(project => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-      </div>
-    </Section>
+    <div className='mt-6 grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3'>
+      {PROJECTS.map(project => (
+        <ProjectCard key={project.title} {...project} />
+      ))}
+    </div>
   )
 }
