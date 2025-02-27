@@ -113,7 +113,7 @@ function Header() {
           className={twMerge(
             'content-grid relative h-header transition-colors',
             activeHeaderStyle &&
-              'bg-white/85 shadow-sm shadow-black/10 backdrop-blur-md',
+              'bg-white/95 shadow-sm shadow-black/10 backdrop-blur-md',
           )}
         >
           <div className='col-content flex flex-row items-center justify-between'>
