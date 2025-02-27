@@ -1,5 +1,3 @@
-import { Fragment } from 'react/jsx-runtime'
-
 import Cody from '@/assets/images//project-thumbnails/Cody.webp'
 import Whuups from '@/assets/images//project-thumbnails/Whuups.webp'
 import Broadflow from '@/assets/images/project-thumbnails/Broadflow.webp'
@@ -49,14 +47,12 @@ const PROJECTS = [
 
 export const ListProject = () => {
   return (
-    <Section className='border-t-2 border-gray-100 pb-20 pt-6'>
-      <Section.Content>
-        <div className='grid-col-1 mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          {PROJECTS.map(project => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </div>
-      </Section.Content>
+    <Section className='pt-12'>
+      <div className='grid-col-1 mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        {PROJECTS.map(project => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
+      </div>
     </Section>
   )
 }

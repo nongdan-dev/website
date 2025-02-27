@@ -8,7 +8,7 @@ import { Section } from '@/components/widget'
 
 export default function DreamProduct() {
   return (
-    <Section id='dream-product'>
+    <Section className='border-b-2 border-gray-100' id='dream-product'>
       <Section.SubTitle>Our work</Section.SubTitle>
       <Section.Title
         children={({ titleId, titleClassName }) => (
@@ -19,10 +19,11 @@ export default function DreamProduct() {
       />
       <Section.Content className='flex flex-col'>
         <div className='flex flex-col items-center gap-x-8 gap-y-5 lg:flex-row'>
-          <div className='flex h-[300px] w-[1/3] max-w-[500px] justify-end rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-[3.75rem] shadow-sm'>
-            <img src={DreamProduct1} alt='' className='flex-1' />
+          <div className='flex h-[300px] w-full flex-1 items-center justify-center rounded-lg bg-[#6CCCE1] lg:max-w-[500px] lg:bg-white'>
+            <div className='flex h-[300px] max-w-[500px] justify-end rounded-lg bg-[#6CCCE1] pt-[3.75rem] lg:w-[1/3] lg:border lg:border-gray-200 lg:pl-10 lg:shadow-sm'>
+              <img src={DreamProduct1} alt='' className='flex-1' />
+            </div>
           </div>
-
           <div className='flex w-[2/3] flex-1 flex-col justify-center'>
             <div>
               <img src={Brekeke} alt='' className='h-10' />
@@ -66,9 +67,10 @@ export default function DreamProduct() {
               ipsam magnam? Similique
             </p>
           </div>
-
-          <div className='flex h-[300px] w-[1/3] max-w-[500px] justify-end overflow-hidden rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-[3.75rem] shadow-sm'>
-            <img src={DreamProduct2} alt='' className='-mb-1 -mr-1 flex-1' />
+          <div className='flex h-[300px] w-full flex-1 items-center justify-center rounded-lg bg-[#4971D1] lg:max-w-[500px] lg:bg-white'>
+            <div className='flex h-[300px] max-w-[500px] justify-end overflow-hidden bg-[#4971D1] pt-[3.75rem] lg:w-[1/3] lg:rounded-lg lg:border lg:border-gray-200 lg:pl-10 lg:shadow-sm'>
+              <img src={DreamProduct2} alt='' className='-mb-1 -mr-1 flex-1' />
+            </div>
           </div>
         </div>
       </Section.Content>
