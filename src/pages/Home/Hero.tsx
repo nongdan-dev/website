@@ -25,11 +25,14 @@ function Hero() {
           </Button>
         </div>
       </div>
-      <div aria-hidden className='col-content z-10 mt-24 place-items-center'>
+      <div
+        aria-hidden
+        className='col-content z-10 mt-16 place-items-center md:mt-24'
+      >
         <img
           src={HeroImg}
           alt=''
-          className='w-[200%] max-w-[unset] sm:w-auto sm:max-w-full'
+          className='w-[170%] max-w-[unset] sm:w-auto sm:max-w-full'
         />
       </div>
     </section>
