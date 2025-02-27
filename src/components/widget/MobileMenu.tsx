@@ -36,7 +36,8 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
 
   const handleScrollToSection: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault()
-    const id = (e.target as HTMLAnchorElement).hash.replace('#', '')
+    let id = (e.target as HTMLAnchorElement).hash.replace('#', '')
+    if (id === 'services') id = 'footer'
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     onClose()
   }
