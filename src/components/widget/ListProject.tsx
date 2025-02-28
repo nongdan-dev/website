@@ -6,7 +6,7 @@ type Project = {
 
 export const ListProject = ({ projects }: { projects: Project[] }) => {
   return (
-    <div className='content-grid list-project-grid mt-6'>
+    <div className='max-[500px]:grid-cols-1 grid grid-cols-2 gap-6 md:gap-8 lg:grid-cols-3'>
       {projects.map(({ title, description, image }) => (
         <div
           key={title}
