@@ -1,12 +1,14 @@
 import { twMerge } from 'tailwind-merge'
+import theme from 'tailwindcss/defaultTheme'
 
 import { Button, Link } from '@/components/ui'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { Orbits } from '../icons'
 import { Section } from './Section'
 
 export function SectionCTA() {
-  const matches = false
+  const matches = useMediaQuery(`(max-width: ${theme.screens.lg})`)
 
   return (
     <Section
