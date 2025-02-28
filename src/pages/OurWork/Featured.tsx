@@ -2,16 +2,17 @@ import BeingsLogo from '@/assets/images/client-logos/beings.webp'
 import BrekekeLogo from '@/assets/images/client-logos/brekeke.webp'
 import BeingsThumbnail from '@/assets/images/project-thumbnails/Beings.webp'
 import BrekekeThumbnail from '@/assets/images/project-thumbnails/Brekeke.webp'
+import { Section } from '@/components/widget'
 
 export default function DreamProduct() {
   return (
-    <div className='flex flex-col gap-12'>
-      <div className='flex flex-wrap items-center gap-10'>
-        <div className='h-[18.75rem] w-[31.25rem] overflow-clip rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-14 shadow-sm'>
+    <Section className='py-0' id='dream-product'>
+      <Section.Content id='grid-layout'>
+        <div className='img-limited-size flex flex-1 overflow-clip rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-14 shadow-sm'>
           <img src={BrekekeThumbnail} alt='' className='w-full' />
         </div>
-        <div className='flex-1 text-lg'>
-          <img src={BrekekeLogo} alt='' className='mb-4 h-10' />
+        <div className='flex flex-1 flex-col justify-center text-lg'>
+          <img src={BrekekeLogo} alt='' className='mb-4 h-10 w-fit' />
           <p className='mb-2'>
             <span className='text-primary-500'>Brekeke Software, Inc. </span>
             is an industry-leading developer of SIP(Session Initiation Protocol)
@@ -26,11 +27,9 @@ export default function DreamProduct() {
             number of SIP applications and SIP telephony networks.
           </p>
         </div>
-      </div>
 
-      <div className='flex flex-wrap items-center gap-10'>
-        <div className='flex-1 text-lg'>
-          <img src={BeingsLogo} alt='' className='mb-4 h-10' />
+        <div className='flex flex-1 flex-col justify-center text-lg'>
+          <img src={BeingsLogo} alt='' className='mb-4 h-10 w-fit' />
           <p className='mb-2'>
             <span className='text-primary-500'>Beings </span>
             is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -48,10 +47,10 @@ export default function DreamProduct() {
             magnam? Similique
           </p>
         </div>
-        <div className='h-[18.75rem] w-[31.25rem] overflow-clip rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-14 shadow-sm'>
+        <div className='img-limited-size flex flex-1 overflow-clip rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-14 shadow-sm'>
           <img src={BeingsThumbnail} alt='' className='w-full' />
         </div>
-      </div>
-    </div>
+      </Section.Content>
+    </Section>
   )
 }
