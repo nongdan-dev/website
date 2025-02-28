@@ -2,16 +2,15 @@ import BeingsLogo from '@/assets/images/client-logos/beings.webp'
 import BrekekeLogo from '@/assets/images/client-logos/brekeke.webp'
 import BeingsThumbnail from '@/assets/images/project-thumbnails/Beings.webp'
 import BrekekeThumbnail from '@/assets/images/project-thumbnails/Brekeke.webp'
-import { Section } from '@/components/widget'
 
 export default function DreamProduct() {
   return (
-    <Section className='py-0' id='dream-product'>
-      <Section.Content id='grid-layout'>
-        <div className='img-limited-size flex flex-1 overflow-clip rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-14 shadow-sm'>
+    <div className='flex flex-col gap-14 xl:gap-12'>
+      <div className='grid items-center gap-6 lg:grid-cols-[31.25rem,1fr] lg:gap-10'>
+        <div className='overflow-clip rounded-lg border border-gray-200 bg-[#6CCCE1] pl-10 pt-14 shadow-sm'>
           <img src={BrekekeThumbnail} alt='' className='w-full' />
         </div>
-        <div className='flex flex-1 flex-col justify-center text-lg'>
+        <div className='flex-col justify-center md:text-lg'>
           <img src={BrekekeLogo} alt='' className='mb-4 h-10 w-fit' />
           <p className='mb-2'>
             <span className='text-primary-500'>Brekeke Software, Inc. </span>
@@ -27,8 +26,10 @@ export default function DreamProduct() {
             number of SIP applications and SIP telephony networks.
           </p>
         </div>
+      </div>
 
-        <div className='flex flex-1 flex-col justify-center text-lg'>
+      <div className='grid items-center gap-6 lg:grid-cols-[1fr,31.25rem] lg:gap-10'>
+        <div className='order-last flex-col justify-center md:text-lg lg:order-none'>
           <img src={BeingsLogo} alt='' className='mb-4 h-10 w-fit' />
           <p className='mb-2'>
             <span className='text-primary-500'>Beings </span>
@@ -47,10 +48,10 @@ export default function DreamProduct() {
             magnam? Similique
           </p>
         </div>
-        <div className='img-limited-size flex flex-1 overflow-clip rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-14 shadow-sm'>
+        <div className='overflow-clip rounded-lg border border-gray-200 bg-[#4971D1] pl-10 pt-14 shadow-sm'>
           <img src={BeingsThumbnail} alt='' className='w-full' />
         </div>
-      </Section.Content>
-    </Section>
+      </div>
+    </div>
   )
 }
