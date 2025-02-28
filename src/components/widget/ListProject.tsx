@@ -1,28 +1,26 @@
-import { ProjectCard, Section } from '@/components/widget'
-
 type Project = {
   image: string
   title: string
   description: string
 }
 
-type ListProjectProps = {
-  title?: string
-  projects: Project[]
-}
-
-export const ListProject: React.FC<ListProjectProps> = ({
-  title,
-  projects,
-}) => {
+export const ListProject = ({ projects }: { projects: Project[] }) => {
   return (
-    <div>
-      {title && <h2 className='text-title !text-2xl sm:!text-3xl'>{title}</h2>}
-      <div className='content-grid list-project-grid mt-6'>
-        {projects.map(project => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-      </div>
+    <div className='content-grid list-project-grid mt-6'>
+      {projects.map(({ title, description, image }) => (
+        <div
+          key={title}
+          className='flex flex-col rounded-lg border border-gray-200 bg-gray-50 shadow-sm shadow-black/5'
+        >
+          <div className='mb-4 flex flex-col gap-1 p-10'>
+            <p className='text-xl font-medium md:text-2xl'>{title}</p>
+            <p className='truncate md:text-lg'>{description}</p>
+          </div>
+          <div className='col-content z-10 pl-10'>
+            <img src={image} alt='' />
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

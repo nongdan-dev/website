@@ -43,7 +43,10 @@ function WebDevelopment() {
           </Link>
         </Button>
         <Section.Content>
-          <ListProject title='What we have built' projects={PROJECTS} />
+          <h2 className='text-title !text-2xl sm:!text-3xl'>
+            What we have built
+          </h2>
+          <ListProject projects={PROJECTS} />
         </Section.Content>
       </Section>
       <SectionProcess />
