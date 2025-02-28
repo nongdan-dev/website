@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   MobileMenuTrigger,
 } from '@/components/widget'
-import useTailwind from '@/hooks/useTailwind'
+import { useTailwind } from '@/hooks'
 import { remToPx } from '@/utils/style'
 
 function ServicesMenuContent() {

@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react'
 
-function useLockScroll() {
+export function useLockScroll() {
   const scrollPosition = useRef({ top: 0, left: 0 })
 
   const handleWheel = useCallback((e: WheelEvent | TouchEvent) => {
