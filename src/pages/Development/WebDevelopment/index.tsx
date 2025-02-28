@@ -8,7 +8,7 @@ import Olivia from '@/assets/images/project-thumbnails/Olivia.webp'
 import Readyflow from '@/assets/images/project-thumbnails/Readyflow.webp'
 import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
 import { Button, Link } from '@/components/ui'
-import { CallToAction, Section, SectionProcess } from '@/components/widget'
+import { SectionCTA, Section, SectionProcess } from '@/components/widget'
 import { ListProject } from '@/components/widget/ListProject'
 
 const PROJECTS = [
@@ -50,7 +50,7 @@ function WebDevelopment() {
         </Section.Content>
       </Section>
       <SectionProcess />
-      <CallToAction />
+      <SectionCTA />
     </Fragment>
   )
 }

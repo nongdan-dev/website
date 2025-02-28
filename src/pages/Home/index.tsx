@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ArrowRight, Star } from '@/components/icons'
-import { CallToAction, Section, SectionAboutUs } from '@/components/widget'
+import { SectionCTA, Section, SectionAboutUs } from '@/components/widget'
 
 import Clients from './Clients'
 import Feedback from './Feedback'
@@ -39,7 +39,7 @@ function HomePage() {
           </div>
         }
       />
-      <CallToAction />
+      <SectionCTA />
     </Fragment>
   )
 }

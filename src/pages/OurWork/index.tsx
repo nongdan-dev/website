@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
 
 import { Divider } from '@/components/ui'
-import { CallToAction, Section } from '@/components/widget'
+import { SectionCTA, Section } from '@/components/widget'
 
 import { ListProject } from '../../components/widget/ListProject'
 import { PROJECTS } from './DataListProject'
@@ -25,7 +25,7 @@ function OurWorkPage() {
           <ListProject projects={PROJECTS} />
         </Section.Content>
       </Section>
-      <CallToAction />
+      <SectionCTA />
     </Fragment>
   )
 }
