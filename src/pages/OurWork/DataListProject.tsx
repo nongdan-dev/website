@@ -5,9 +5,8 @@ import Chimera from '@/assets/images/project-thumbnails/Chimera.webp'
 import Olivia from '@/assets/images/project-thumbnails/Olivia.webp'
 import Readyflow from '@/assets/images/project-thumbnails/Readyflow.webp'
 import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
-import { ProjectCard } from '@/components/widget'
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     image: Whuups,
     title: 'Whuups',
@@ -44,13 +43,3 @@ const PROJECTS = [
     description: 'AI Chat Bot',
   },
 ]
-
-export const ListProject = () => {
-  return (
-    <div className='mt-6 grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3'>
-      {PROJECTS.map(project => (
-        <ProjectCard key={project.title} {...project} />
-      ))}
-    </div>
-  )
-}

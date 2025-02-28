@@ -3,8 +3,9 @@ import { Fragment } from 'react/jsx-runtime'
 import { Divider } from '@/components/ui'
 import { CallToAction, Section } from '@/components/widget'
 
+import { ListProject } from '../../components/widget/ListProject'
+import { PROJECTS } from './DataListProject'
 import Featured from './Featured'
-import { ListProject } from './ListProject'
 
 function OurWorkPage() {
   return (
@@ -21,7 +22,7 @@ function OurWorkPage() {
         <Section.Content>
           <Featured />
           <Divider className='my-16' />
-          <ListProject />
+          <ListProject projects={PROJECTS} />
         </Section.Content>
       </Section>
       <CallToAction />

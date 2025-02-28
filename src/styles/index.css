@@ -180,3 +180,20 @@
     @apply text-4xl font-bold leading-title md:text-5xl lg:text-6xl;
   }
 }
+
+@layer layout {
+  .list-project-grid {
+    display: grid;
+    gap: theme('spacing.8');
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+
+    @media (width < 900px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (width < 500px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
+

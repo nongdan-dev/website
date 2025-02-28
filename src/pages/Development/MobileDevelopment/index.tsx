@@ -1,16 +1,12 @@
 import { Fragment } from 'react'
 
-import Cody from '@/assets/images//project-thumbnails/Cody.webp'
-import Whuups from '@/assets/images//project-thumbnails/Whuups.webp'
 import Beings from '@/assets/images/project-thumbnails/Beings.webp'
 import Brekeke from '@/assets/images/project-thumbnails/Brekeke.webp'
+import Cody from '@/assets/images/project-thumbnails/Cody.webp'
+import Whuups from '@/assets/images/project-thumbnails/Whuups.webp'
 import { Button, Link } from '@/components/ui'
-import {
-  CallToAction,
-  ProjectCard,
-  Section,
-  SectionProcess,
-} from '@/components/widget'
+import { CallToAction, Section, SectionProcess } from '@/components/widget'
+import { ListProject } from '@/components/widget/ListProject'
 
 const PROJECTS = [
   {
@@ -58,14 +54,7 @@ function MobileDevelopment() {
           </Link>
         </Button>
         <Section.Content>
-          <h2 className='text-title !text-2xl sm:!text-3xl'>
-            What we have built
-          </h2>
-          <div className='mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
-            {PROJECTS.map(project => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
+          <ListProject title='What we have built' projects={PROJECTS} />
         </Section.Content>
       </Section>
       <SectionProcess />
