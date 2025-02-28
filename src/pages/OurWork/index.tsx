@@ -8,7 +8,7 @@ import Olivia from '@/assets/images/project-thumbnails/Olivia.webp'
 import Readyflow from '@/assets/images/project-thumbnails/Readyflow.webp'
 import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
 import { Divider } from '@/components/ui'
-import { CallToAction, Section, ListProject } from '@/components/widget'
+import { SectionCTA, Section, ListProject } from '@/components/widget'
 
 import Featured from './Featured'
 
@@ -68,7 +68,7 @@ function OurWorkPage() {
           <ListProject projects={PROJECTS} />
         </Section.Content>
       </Section>
-      <CallToAction />
+      <SectionCTA />
     </Fragment>
   )
 }

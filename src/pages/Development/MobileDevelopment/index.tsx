@@ -5,7 +5,7 @@ import Brekeke from '@/assets/images/project-thumbnails/Brekeke.webp'
 import Cody from '@/assets/images/project-thumbnails/Cody.webp'
 import Whuups from '@/assets/images/project-thumbnails/Whuups.webp'
 import { Button, Link } from '@/components/ui'
-import { CallToAction, Section, SectionProcess } from '@/components/widget'
+import { SectionCTA, Section, SectionProcess } from '@/components/widget'
 import { ListProject } from '@/components/widget/ListProject'
 
 const PROJECTS = [
@@ -61,7 +61,7 @@ function MobileDevelopment() {
         </Section.Content>
       </Section>
       <SectionProcess />
-      <CallToAction />
+      <SectionCTA />
     </Fragment>
   )
 }

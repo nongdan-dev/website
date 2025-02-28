@@ -2,7 +2,7 @@ import { MouseEventHandler, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
-import useLockScroll from '@/hooks/useLockScroll'
+import { useLockScroll } from '@/hooks'
 
 import { Button } from '../ui'
 

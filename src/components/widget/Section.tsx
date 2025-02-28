@@ -2,7 +2,7 @@ import { ComponentProps, ReactNode, useId, createContext } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Chip, ChipProps } from '@/components/ui'
-import { useContext } from '@/hooks/useContext'
+import { useContext } from '@/hooks'
 
 type SectionCtx = {
   titleId: string
