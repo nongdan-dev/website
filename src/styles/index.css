@@ -66,7 +66,7 @@
       grid-template-columns: subgrid;
     }
 
-    @media (width < 768px) {
+    @media (width < theme('screens.md')) {
       --content-grid-gap: theme('spacing.6');
     }
   }
@@ -83,7 +83,7 @@
       'b4 b4 b6 b6 b6'
       'b5 b5 b6 b6 b6';
 
-    @media (width < 1024px) {
+    @media (width < theme('screens.lg')) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         'b1 b1'
@@ -91,7 +91,7 @@
         'b4 b5'
         'b6 b6';
     }
-    @media (width < 768px) {
+    @media (width < theme('screens.md')) {
       grid-template-columns: 1fr;
       grid-template-areas:
         'b1 '
@@ -130,7 +130,7 @@
       'b1 b1 b1 b4 b4 b4 b4 b6 b6'
       'b1 b1 b1 b5 b5 b5 b5 b6 b6';
 
-    @media (width < 1280px) {
+    @media (width < theme('screens.xl')) {
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(2, 300px);
       grid-template-areas:
@@ -140,7 +140,7 @@
         'b5 b5 b5 b6 b6 b6';
     }
 
-    @media (width < 768px) {
+    @media (width < theme('screens.md')) {
       grid-template-columns: 1fr;
       grid-template-rows: none;
       grid-template-areas:
@@ -181,18 +181,4 @@
   }
 }
 
-@layer layout {
-  .list-project-grid {
-    display: grid;
-    gap: theme('spacing.8');
-    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    @media (width < 900px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media (width < 500px) {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-  }
-}
