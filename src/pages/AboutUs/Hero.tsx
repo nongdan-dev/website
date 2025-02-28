@@ -13,7 +13,7 @@ function Hero() {
           </h1>
         )}
       />
-      <p className='mt-4 w-1/2 text-lg'>
+      <p className='mt-4 w-full text-lg lg:w-1/2'>
         The name "nongdan" meaning farmers, are also a characteristic part of
         Vietnam, with a simple and hard-working personality
       </p>
