@@ -44,10 +44,7 @@ function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className='w-full max-w-xl bg-white'
-    >
+    <form onSubmit={handleSubmit(onSubmit)}>
       <FormField control={control} name='name' label='Name' required>
         <Input placeholder='Enter your name' />
       </FormField>
@@ -61,7 +58,7 @@ function ContactForm() {
         required
       >
         {({ field }) => (
-          <div className='mt-3 grid grid-cols-2 gap-x-4 gap-y-3'>
+          <div className='mt-3 grid gap-x-4 gap-y-3 sm:grid-cols-2'>
             {services.map(service => (
               <div key={service} className='flex items-center space-x-2'>
                 <input
