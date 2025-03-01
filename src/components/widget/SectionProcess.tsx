@@ -61,14 +61,14 @@ export function SectionProcess() {
         We build secure, scalable solutions tailored to your needs, ensuring a
         seamless launch and long-term success.
       </p>
-      <Section.Content className='grid gap-6 sm:gap-8 md:grid-cols-2'>
-        <div className='space-y-8'>
+      <Section.Content className='grid gap-6 sm:gap-8 lg:grid-cols-2'>
+        <div className='space-y-6 md:space-y-8'>
           {STEPS.map(({ Icon, title, description }, index, self) => (
             <div
               key={index}
               className={twMerge(
                 'relative flex flex-col gap-2 rounded-lg border p-6',
-                'after:absolute after:-bottom-[calc(theme(spacing.8)+1px)] after:left-1/2 after:h-8 after:w-px after:-translate-x-1/2 after:bg-gray-200 after:content-[""]',
+                'after:absolute after:-bottom-[calc(theme(spacing.6)+1px)] after:left-1/2 after:h-6 after:w-px after:-translate-x-1/2 after:bg-gray-200 after:content-[""] md:after:-bottom-[calc(theme(spacing.8)+1px)] md:after:h-8',
                 index + 1 === self.length
                   ? 'border-primary-500 after:content-none'
                   : 'border-gray-200',
@@ -79,14 +79,14 @@ export function SectionProcess() {
                 <Icon className='text-3xl text-primary-500' />
                 <p className='text-2xl font-medium'>{title}</p>
               </div>
-              <p className='md:text-lg'>{description}</p>
+              <p className='lg:text-lg'>{description}</p>
             </div>
           ))}
         </div>
         <img
           src={Development}
           alt=''
-          className='hidden h-full w-full rounded-lg object-cover shadow-lg md:block'
+          className='hidden h-full w-full rounded-lg object-cover shadow-lg lg:block'
         />
       </Section.Content>
     </Section>
