@@ -51,28 +51,6 @@ const STEPS = [
   },
 ]
 
-function Step({
-  title,
-  description,
-  Icon,
-  isActive,
-}: (typeof STEPS)[number] & { isActive: boolean }) {
-  return (
-    <div
-      className={twMerge(
-        'flex flex-col gap-2 rounded-lg border p-6',
-        isActive ? 'border-primary-500' : 'border-gray-200',
-      )}
-    >
-      <div className='flex items-center gap-2'>
-        <Icon className='text-3xl text-primary-500' />
-        <p className='text-2xl font-medium'>{title}</p>
-      </div>
-      <p className=''>{description}</p>
-    </div>
-  )
-}
-
 export function SectionProcess() {
   return (
     <Section>
@@ -83,16 +61,26 @@ export function SectionProcess() {
         We build secure, scalable solutions tailored to your needs, ensuring a
         seamless launch and long-term success.
       </p>
-      <Section.Content className='grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2'>
-        <div className='flex flex-col gap-6 sm:gap-8'>
-          {STEPS.map((step, index) => (
-            <Step
+      <Section.Content className='grid gap-6 sm:gap-8 md:grid-cols-2'>
+        <div className='space-y-8'>
+          {STEPS.map(({ Icon, title, description }, index, self) => (
+            <div
               key={index}
-              Icon={step.Icon}
-              title={step.title}
-              description={step.description}
-              isActive={index + 1 === STEPS.length}
-            />
+              className={twMerge(
+                'relative flex flex-col gap-2 rounded-lg border p-6',
+                'after:absolute after:-bottom-[calc(theme(spacing.8)+1px)] after:left-1/2 after:h-8 after:w-px after:-translate-x-1/2 after:bg-gray-200 after:content-[""]',
+                index + 1 === self.length
+                  ? 'border-primary-500 after:content-none'
+                  : 'border-gray-200',
+                index + 2 === self.length && 'after:bg-primary-500',
+              )}
+            >
+              <div className='flex items-center gap-2'>
+                <Icon className='text-3xl text-primary-500' />
+                <p className='text-2xl font-medium'>{title}</p>
+              </div>
+              <p className='md:text-lg'>{description}</p>
+            </div>
           ))}
         </div>
         <img
