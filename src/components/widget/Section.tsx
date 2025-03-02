@@ -2,7 +2,7 @@ import { ComponentProps, ReactNode, useId, createContext } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Chip, ChipProps } from '@/components/ui'
-import { useContext } from '@/hooks'
+import { useContext, useMediaQuery, useTailwind } from '@/hooks'
 
 type SectionCtx = {
   titleId: string
@@ -38,13 +38,16 @@ export function Section({ className, ...props }: SectionProps) {
 }
 
 function SubTitle(props: SubTitleProps) {
+  const { theme } = useTailwind()
+  const isBelowMd = useMediaQuery(`(width < ${theme.screens.md})`)
+
   return (
     <Chip
       aria-hidden
       bordered
-      size='medium'
+      size={isBelowMd ? 'small' : 'medium'}
       {...props}
-      className={twMerge('mb-2.5 text-xs md:text-base', props.className)}
+      className={twMerge('mb-2.5', props.className)}
     />
   )
 }
