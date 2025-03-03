@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Input, Textarea } from '@/components/form'
+import { Input, Textarea, Checkbox } from '@/components/form'
 import { FormField } from '@/components/form/FormField'
 import { Send } from '@/components/icons'
 import { Button } from '@/components/ui'
@@ -60,26 +60,20 @@ function ContactForm() {
         {({ field }) => (
           <div className='mt-3 grid gap-x-4 gap-y-3 sm:grid-cols-2'>
             {services.map(service => (
-              <div key={service} className='flex items-center space-x-2'>
-                <input
-                  id={service}
-                  type='checkbox'
-                  value={service}
-                  className='h-6 w-6'
-                  onChange={e => {
-                    e.target.checked
-                      ? field.onChange([...field.value, service])
-                      : field.onChange(
-                          field.value?.filter(
-                            (value: string) => value !== service,
-                          ),
-                        )
-                  }}
-                />
-                <label htmlFor={service} className='text-sm leading-none'>
-                  {service}
-                </label>
-              </div>
+              <Checkbox
+                key={service}
+                label={service}
+                checked={field.value.includes(service)}
+                onCheckedChange={checked => {
+                  checked
+                    ? field.onChange([...field.value, service])
+                    : field.onChange(
+                        field.value.filter(
+                          (value: string) => value !== service,
+                        ),
+                      )
+                }}
+              />
             ))}
           </div>
         )}

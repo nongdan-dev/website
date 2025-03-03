@@ -1,4 +1,5 @@
 export { ArrowRight } from './ArrowRight'
+export { Check } from './Check'
 export { CheckCircle } from './CheckCircle'
 export { ChevronDown } from './ChevronDown'
 export { Computer } from './Computer'
