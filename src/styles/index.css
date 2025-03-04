@@ -131,13 +131,12 @@
       'b1 b1 b1 b5 b5 b5 b5 b6 b6';
 
     @media (width < theme('screens.xl')) {
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(2, 300px);
+      grid-template-columns: repeat(8, 1fr);
       grid-template-areas:
-        'b1 b1 b1 b2 b2 b2'
-        'b1 b1 b1 b3 b3 b3'
-        'b4 b4 b4 b6 b6 b6'
-        'b5 b5 b5 b6 b6 b6';
+        'b1 b1 b1 b1 b2 b2 b2 b2'
+        'b1 b1 b1 b1 b3 b3 b3 b3'
+        'b4 b4 b4 b4 b4 b6 b6 b6'
+        'b5 b5 b5 b5 b5 b6 b6 b6';
     }
 
     @media (width < theme('screens.md')) {
@@ -180,5 +179,3 @@
     @apply text-4xl font-bold leading-title md:text-5xl lg:text-6xl;
   }
 }
-
-

@@ -82,7 +82,6 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
             </div>
           </div>
         </div>
-
         <div
           className='relative min-h-72 rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
           style={{ backgroundImage: `url(${AboutUs2})` }}
@@ -96,9 +95,8 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
             </p>
           </div>
         </div>
-
         <div className='flex items-center justify-between gap-6 rounded-xl border border-gray-200 p-6 shadow-sm'>
-          <div className='flex-grow-0 self-center'>
+          <div className='h-[5.625rem] flex-grow-0 place-content-center'>
             <img src={BarChart} alt='' />
           </div>
           <div className='flex flex-col gap-1 text-right'>
@@ -110,7 +108,6 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
             </p>
           </div>
         </div>
-
         <div className='flex items-center justify-between gap-6 rounded-xl border border-gray-200 p-6 shadow-sm'>
           <div className='flex flex-col gap-1'>
             <h3 className='text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>
@@ -120,11 +117,10 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
               Repeat clients
             </p>
           </div>
-          <div className='flex-grow-0 self-center'>
+          <div className='h-[5.625rem] flex-grow-0 place-content-center'>
             <img src={WaveChart} alt='' />
           </div>
         </div>
-
         <div className='flex min-h-32 items-center justify-center rounded-xl border border-gray-200 shadow-sm'>
           {cellAction ? (
             cellAction
