@@ -22,7 +22,7 @@ export default function ContactUs() {
       <Section.Content className='grid gap-14 lg:grid-cols-2'>
         <ContactForm />
         <iframe
-          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2199.2784372697033!2d106.84433090321284!3d10.836657442334598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752126d447fbd5%3A0xa714c8e67c35f0b0!2sAnnam%20cuisine!5e0!3m2!1sen!2s!4v1740746756579!5m2!1sen!2s'
+          src='https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2010.4991297077313!2d106.8260736006245!3d10.815714998500919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ4JzU2LjYiTiAxMDbCsDQ5JzM3LjMiRQ!5e1!3m2!1sen!2s!4v1741695619118!5m2!1sen!2s'
           allowFullScreen
           loading='lazy'
           title='our HQ location'
