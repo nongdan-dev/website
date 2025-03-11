@@ -3,7 +3,7 @@ export const companyInfo = {
   phone: '(+84) 35 664 5211',
   location: {
     address:
-      'T12-05, The Manhattan, Vinhomes Grand Park, Ho Chi Minh city, Vietnam',
+      '08, N20 street, Truong Thanh ward, Thu Duc city, Ho Chi Minh city, Vietnam',
   },
   social: {
     facebook: 'https://www.facebook.com/',
