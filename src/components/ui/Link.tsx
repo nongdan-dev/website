@@ -1,4 +1,5 @@
 
+"use client"
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
