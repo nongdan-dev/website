@@ -1,33 +1,39 @@
+'use client'
+
 import Flag from '@/assets/svg/flag.svg'
 import Logo from '@/assets/svg/logo.svg'
-import { Facebook, Github, LinkedIn, Slack, Twitter } from '@/components/icons'
-import { Link } from '@/components/ui'
+
 import { companyInfo } from '@/config/metadata'
+import { Facebook, LinkedIn, Twitter, Github, Slack } from '@/components/icons'
+import Image from 'next/image'
+import { Link } from '@/components/ui'
 
 function Footer() {
   return (
-    <footer className='content-grid border-t border-gray-200 pt-20 text-lg'>
+    <footer className='content-grid col-full-width border-t border-gray-200 pt-20 text-lg'>
       <div className='col-content'>
         <div className='flex flex-row flex-wrap gap-8 lg:flex-nowrap lg:gap-16'>
           <address className='w-full flex-shrink-0 border-b border-gray-200 pb-8 not-italic lg:w-[22rem] lg:border-none lg:pb-0 xl:w-[30rem]'>
-            <img src={Logo} alt='website logo' className='mb-5 h-6' />
+              <Image src={Logo} alt='website logo' className='mb-5 h-6' />
             <div className='flex flex-col gap-1.5'>
-              <a
-                className='flex items-center gap-1.5'
+              <Link
                 href={`tel:${companyInfo.phone}`}
+                className='flex items-center gap-1.5'
                 aria-label={`call us at ${companyInfo.phone}`}
               >
-                <img src={Flag} alt='' className='h-5 rounded-sm' />
+                               <Image src={Flag} alt='' className='h-5 rounded-sm' />
+
                 {companyInfo.phone}
-              </a>
-              <a
+              </Link>
+              <Link
+                href='https://maps.google.com/?q=vietnam'
                 className='text-balance'
-                href={`https://maps.google.com/?q=vietnam`}
                 target='_blank'
+                rel='noopener noreferrer'
                 aria-label={`visit us at ${companyInfo.location.address}`}
               >
                 {companyInfo.location.address}
-              </a>
+              </Link>
             </div>
             <ul aria-label='socials' className='mt-4 flex gap-3'>
               <li aria-label='facebook'>
@@ -68,7 +74,7 @@ function Footer() {
               <ul className='mt-3'>
                 <li>
                   <Link
-                    to='/development/web-development'
+                    href='/development/web-development'
                     className='inline-block py-1'
                   >
                     Web Development
@@ -76,7 +82,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link
-                    to='/development/mobile-development'
+                    href='/development/mobile-development'
                     className='inline-block py-1'
                   >
                     Mobile Development
@@ -117,17 +123,17 @@ function Footer() {
               </span>
               <ul className='mt-3'>
                 <li>
-                  <Link to='/about-us' className='inline-block py-1'>
+                  <Link href='/about-us' className='inline-block py-1 '>
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to='/our-work' className='inline-block py-1'>
+                  <Link href='/our-work' className='inline-block py-1 '>
                     Our Work
                   </Link>
                 </li>
                 <li>
-                  <Link to='/contact-us' className='inline-block py-1'>
+                  <Link href='/contact-us' className='inline-block py-1 '>
                     Contact Us
                   </Link>
                 </li>

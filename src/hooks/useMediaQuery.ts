@@ -1,19 +1,23 @@
-import { useLayoutEffect, useState } from 'react'
+'use client'
 
-const getMatches = (query: string) => {
-  return window.matchMedia(query).matches
-}
+import { useEffect, useState } from 'react'
 
 export function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(() => getMatches(query))
+  const [matches, setMatches] = useState(false)
 
-  const handleChange = () => {
-    setMatches(getMatches(query))
-  }
+  useEffect(() => {
+    if (typeof window === 'undefined') return
 
-  useLayoutEffect(() => {
     const media = window.matchMedia(query)
+
+    const handleChange = () => {
+      setMatches(media.matches)
+    }
+
+    setMatches(media.matches)
+
     media.addEventListener('change', handleChange)
+
     return () => media.removeEventListener('change', handleChange)
   }, [query])
 

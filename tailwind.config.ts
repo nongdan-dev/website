@@ -1,28 +1,21 @@
-import { fontFamily, spacing } from 'tailwindcss/defaultTheme'
-
 import type { Config } from 'tailwindcss'
-
-import { generateColors, generateFontSizes } from './src/utils/style'
+import { colors } from './src/config/colors'
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Matter', ...fontFamily.sans],
-        serif: ['Garamond', ...fontFamily.serif],
+      colors: {
+        ...colors,
       },
-      colors: generateColors(),
-      fontSize: generateFontSizes(),
       lineHeight: {
         title: '1.2',
       },
-
       maxWidth: {
-        1440: '90rem',
+        '1440': '90rem',
       },
       spacing: {
-        header: spacing[20],
+        'header': '5rem', 
       },
       boxShadow: {
         sm: '0px 2px 4px 0px rgba(0, 0, 0, 0.05)',

@@ -1,5 +1,7 @@
+import Image, { StaticImageData } from 'next/image'
+
 type Project = {
-  image: string
+  image: StaticImageData
   title: string
   description: string
 }
@@ -17,7 +19,7 @@ export const ListProject = ({ projects }: { projects: Project[] }) => {
             <p className='truncate md:text-lg'>{description}</p>
           </div>
           <div className='col-content z-10 pl-10'>
-            <img src={image} alt='' />
+            <Image src={image} alt={title} width={300} height={200} style={{ width: '100%', height: 'auto' }} />
           </div>
         </div>
       ))}

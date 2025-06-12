@@ -1,4 +1,5 @@
 import { twMerge } from 'tailwind-merge'
+import Image from 'next/image'
 
 import Development from '@/assets/images/webp/development.webp'
 import {
@@ -10,7 +11,7 @@ import {
   Dashboard,
 } from '@/components/icons'
 
-import { Section } from './Section'
+import { Section, Title, Content } from './Section'
 
 const STEPS = [
   {
@@ -54,15 +55,14 @@ const STEPS = [
 export function SectionProcess() {
   return (
     <Section>
-      <Section.Title>
-        Smart development and modern tech from idea to launch
-      </Section.Title>
-      <p className='mt-4 lg:w-1/2 lg:text-lg'>
+      <Title> Smart development and modern tech from idea to launch
+</Title>
+      <p className='mt-4 text-lg lg:w-1/2'>
         We build secure, scalable solutions tailored to your needs, ensuring a
         seamless launch and long-term success.
       </p>
-      <Section.Content className='grid gap-6 sm:gap-8 lg:grid-cols-2'>
-        <div className='space-y-6 md:space-y-8'>
+      <Content className='grid gap-6 sm:gap-8 lg:grid-cols-2'>
+        <div className='space-y-6 md:space-y-8 '>
           {STEPS.map(({ Icon, title, description }, index, self) => (
             <div
               key={index}
@@ -83,12 +83,12 @@ export function SectionProcess() {
             </div>
           ))}
         </div>
-        <img
+        <Image
           src={Development}
           alt=''
           className='hidden h-full w-full rounded-lg object-cover shadow-lg lg:block'
         />
-      </Section.Content>
+      </Content>
     </Section>
   )
 }

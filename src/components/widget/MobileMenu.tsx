@@ -1,10 +1,12 @@
+"use client"
+
 import { MouseEventHandler, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import { useLockScroll } from '@/hooks'
 
 import { Button } from '../ui'
+import Link from 'next/link'
 
 export type MobileMenuProps = {
   visible: boolean
@@ -58,7 +60,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
           <ul>
             <li>
               <Link
-                to='#services'
+                href='#services'
                 className='block py-4 text-center text-lg font-medium'
                 onClick={handleScrollToSection}
               >
@@ -67,7 +69,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             </li>
             <li>
               <Link
-                to='/our-work'
+                href='/our-work'
                 className='block py-4 text-center text-lg font-medium'
                 onClick={onClose}
               >
@@ -76,7 +78,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             </li>
             <li>
               <Link
-                to='/about-us'
+                href='/about-us'
                 className='block py-4 text-center text-lg font-medium'
                 onClick={onClose}
               >
@@ -86,7 +88,7 @@ export function MobileMenu({ visible, onClose }: MobileMenuProps) {
             <li>
               <span className='block py-4 text-center text-lg font-medium'>
                 <Button asChild>
-                  <Link to='/contact-us' onClick={onClose}>
+                  <Link href='/contact-us' onClick={onClose}>
                     Contact us
                   </Link>
                 </Button>
