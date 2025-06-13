@@ -13,7 +13,6 @@ export function Portal({ children, container }: PortalProps) {
   const [defaultContainer, setDefaultContainer] = useState<Element | null>(null)
 
   useEffect(() => {
-    // Only runs on client
     let el = document.querySelector('#portal')
     if (!el) {
       el = document.createElement('div')
