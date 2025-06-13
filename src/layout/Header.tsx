@@ -77,7 +77,7 @@ function ServicesMenuContent() {
 function Header() {
   const { theme } = useTailwind()
   const pathname = usePathname()
-  const headerRef = useRef<HTMLElement | null>(null)
+  const headerRef = useRef<HTMLElement>(null)
 
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [dropdownActive, setDropdownActive] = useState(false)

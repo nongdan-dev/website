@@ -6,8 +6,8 @@ import { ChevronDown } from '../icons'
 
 export type DropdownMenuProps = Popover.PopoverProps
 export type TriggerProps = Popover.PopoverTriggerProps
-export type ContentProps = Popover.PopoverContentProps & {
-  containerRef?: RefObject<HTMLElement>
+type ContentProps = Popover.PopoverContentProps & {
+  containerRef?: RefObject<HTMLElement | null>
 }
 
 export function DropdownMenu(props: DropdownMenuProps) {

@@ -4,17 +4,17 @@ import '@/styles/index.css'
 import Header from '@/layout/Header'
 import Footer from '@/layout/Footer'
 
-import { Inter } from 'next/font/google'
+import {  Inter } from 'next/font/google'
 
 const inter = Inter({
-  subsets: ['latin', 'vietnamese'],
-  display: 'swap',
-  variable: '--font-sans',
+  variable: '--font-inter',
+  subsets: ['latin'],
 })
+
+
 export const metadata: Metadata = {
   title: 'Nongdandev',
-  description: 'Giải pháp công nghệ cho nông nghiệp hiện đại',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://nongdandev.com'),
+  description: 'Technology solutions for modern agriculture',
 }
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
     <body className={`${inter.className} antialiased`}>
       <Providers>
         <Header />
