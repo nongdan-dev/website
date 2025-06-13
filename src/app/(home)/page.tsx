@@ -6,7 +6,7 @@ import { SectionCTA, SectionAboutUs,SubTitle } from '@/components/widget'
 
 import Clients from './clients'
 import Feedback from './feedback'
-import Hero from './Hero'
+import Hero from './Hero1'
 import OurWork from './OurWork'
 import WhatWeOffer from './WhatWeOffer'
 import WhyChooseUs from './WhyChooseUs'
