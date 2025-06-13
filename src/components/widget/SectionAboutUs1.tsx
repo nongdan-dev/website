@@ -11,7 +11,7 @@ import ChPlay from '@/assets/svg/google-play.svg'
 import WaveChart from '@/assets/svg/wave-chart.svg'
 import { ArrowRight } from '@/components/icons'
 
-import { Content, Section, Title } from './Section'
+import { Content, Section, Title } from './Section1'
 import Image from 'next/image'
 import Link from 'next/link'
 

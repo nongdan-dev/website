@@ -1,7 +1,7 @@
 import { LineBreak } from '@/components/ui'
-import { Section, SubTitle, Title, Content } from '@/components/widget/Section'
+import { Section, SubTitle, Title, Content } from '@/components/widget/Section1'
 
-import ContactForm from './ContactForm'
+import ContactForm from './ContactForm1'
 
 export default function ContactUs() {
   return (

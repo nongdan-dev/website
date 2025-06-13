@@ -5,7 +5,7 @@ import { Button } from '@/components/ui'
 import { useTailwind } from '@/hooks/useTailwind'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { Orbits } from '../icons'
-import { Section, Title, Content } from './Section'
+import { Section, Title, Content } from './Section1'
 import Link from 'next/link'
 
 export function SectionCTA() {

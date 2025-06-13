@@ -10,7 +10,7 @@ import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
 import { Divider } from '@/components/ui'
 import { SectionCTA, Section, ListProject, SubTitle, Title, Content } from '@/components/widget'
 
-import Featured from './Featured'
+import Featured from './Featured1'
 
 const PROJECTS = [
   {

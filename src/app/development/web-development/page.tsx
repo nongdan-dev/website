@@ -9,7 +9,7 @@ import Readyflow from '@/assets/images/project-thumbnails/Readyflow.webp'
 import Relytics from '@/assets/images/project-thumbnails/Relytics.webp'
 import { Button } from '@/components/ui'
 import { SectionCTA, Section, SectionProcess, Content, SubTitle, Title } from '@/components/widget'
-import { ListProject } from '@/components/widget/ListProject'
+import { ListProject } from '@/components/widget/ListProject1'
 import Link from 'next/link'
 
 const PROJECTS = [
