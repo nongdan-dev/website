@@ -9,7 +9,7 @@ import Feedback from './feedback'
 import Hero from './hero'
 import OurWork from './our-work'
 import WhatWeOffer from './what-we-offer'
-import WhyChooseUs from './WhyChooseUs'
+import WhyChooseUs from './Why1ChooseUs'
 
 function HomePage() {
   return (
