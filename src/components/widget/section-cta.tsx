@@ -2,8 +2,8 @@
 
 import { twMerge } from 'tailwind-merge'
 import { Button } from '@/components/ui'
-import { useTailwind } from '@/hooks/useTailwind1'
-import { useMediaQuery } from '@/hooks/useMediaQuery1'
+import { useTailwind } from '@/hooks/use-tailwind'
+import { useMediaQuery } from '@/hooks/use-media-query'
 import { Orbits } from '../icons'
 import { Section, Title, Content } from './section'
 import Link from 'next/link'
