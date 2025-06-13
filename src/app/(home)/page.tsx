@@ -5,7 +5,7 @@ import { ArrowRight, Star } from '@/components/icons'
 import { SectionCTA, SectionAboutUs,SubTitle } from '@/components/widget'
 
 import Clients from './clients'
-import Feedback from './Feedback'
+import Feedback from './feedback1'
 import Hero from './Hero'
 import OurWork from './OurWork'
 import WhatWeOffer from './WhatWeOffer'
