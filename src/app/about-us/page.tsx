@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import { SectionAboutUs, SectionCTA } from '@/components/widget'
 
-import Hero from './Hero'
+import Hero from './Hero1'
 import { TeamMember } from './TeamMember'
 
 function AboutUsPage() {
