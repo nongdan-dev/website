@@ -2,7 +2,7 @@
 
 import Layout from '@/assets/svg/layout.svg'
 import Users from '@/assets/svg/users.svg'
-import { Section, SubTitle, Title, Content } from '@/components/widget/Section1'
+import { Section, SubTitle, Title, Content } from '@/components/widget/section'
 import Image from 'next/image'
 
 export default function AboutUsHero() {

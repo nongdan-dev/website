@@ -2,7 +2,7 @@ import Image from 'next/image'
 import WhyChooseUs1 from '@/assets/images/webp/why-choose-us-1.webp'
 import WhyChooseUs2 from '@/assets/images/webp/why-choose-us-2.webp'
 import { CheckCircle, Medal1st } from '@/components/icons'
-import { Section, SubTitle, Title, Content } from '@/components/widget/Section1'
+import { Section, SubTitle, Title, Content } from '@/components/widget/section'
 
 function WhyChooseUs() {
   return (
