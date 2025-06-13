@@ -6,7 +6,7 @@ import Cody from '@/assets/images/project-thumbnails/Cody.webp'
 import Whuups from '@/assets/images/project-thumbnails/Whuups.webp'
 import { Button } from '@/components/ui'
 import { SectionCTA, Section, SectionProcess, SubTitle, Title, Content } from '@/components/widget'
-import { ListProject } from '@/components/widget/ListProject1'
+import { ListProject } from '@/components/widget/list-project'
 import Link from 'next/link'
 
 const PROJECTS = [
