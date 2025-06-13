@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { SectionAboutUs, SectionCTA } from '@/components/widget'
 
 import Hero from './hero'
-import { TeamMember } from './Team1Member'
+import { TeamMember } from './team-member'
 
 function AboutUsPage() {
   return (
