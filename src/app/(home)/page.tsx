@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Star } from '@/components/icons'
 import { SectionCTA, SectionAboutUs,SubTitle } from '@/components/widget'
 
-import Clients from './Clients'
+import Clients from './clients'
 import Feedback from './Feedback'
 import Hero from './Hero'
 import OurWork from './OurWork'
