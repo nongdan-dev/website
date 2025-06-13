@@ -8,7 +8,7 @@ import Clients from './clients'
 import Feedback from './feedback'
 import Hero from './hero'
 import OurWork from './our-work'
-import WhatWeOffer from './WhatWeOffer'
+import WhatWeOffer from './WhatWeOffer1'
 import WhyChooseUs from './WhyChooseUs'
 
 function HomePage() {
