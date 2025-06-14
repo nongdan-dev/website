@@ -39,10 +39,7 @@ function Clients() {
               <Image
                 src={client.logo}
                 alt={client.alt}
-                fill
-                className='object-contain object-center'
-                sizes='(max-width: 768px) 50vw, 200px'
-                priority
+                className='h-6 sm:h-8 w-full'
               />
             </div>
           </div>
