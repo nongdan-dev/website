@@ -39,7 +39,7 @@ function Clients() {
               <Image
                 src={client.logo}
                 alt={client.alt}
-                className='h-6 sm:h-8 w-full'
+                className='h-6 w-full sm:h-8'
               />
             </div>
           </div>

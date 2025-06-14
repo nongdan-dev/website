@@ -1,8 +1,9 @@
+import Image from 'next/image'
+
 import BeingsLogo from '@/assets/images/client-logos/beings.webp'
 import BrekekeLogo from '@/assets/images/client-logos/brekeke.webp'
 import BeingsThumbnail from '@/assets/images/project-thumbnails/Beings.webp'
 import BrekekeThumbnail from '@/assets/images/project-thumbnails/Brekeke.webp'
-import Image from 'next/image'
 
 export default function DreamProduct() {
   return (
