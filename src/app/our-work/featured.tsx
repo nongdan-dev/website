@@ -1,103 +1,105 @@
-import Image, { StaticImageData } from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
+
 import BeingsLogo from '@/assets/images/client-logos/beings.webp'
 import BrekekeLogo from '@/assets/images/client-logos/brekeke.webp'
 import BeingsThumbnail from '@/assets/images/project-thumbnails/Beings.webp'
 import BrekekeThumbnail from '@/assets/images/project-thumbnails/Brekeke.webp'
 
-interface ProjectCardProps {
+type Project = {
+  id: string
   logo: StaticImageData
-  logoAlt: string
   thumbnail: StaticImageData
-  thumbnailAlt: string
-  title: string
+  companyName: string
+  highlightColor: string
   description: string[]
-  backgroundColor: string
-  reverse?: boolean
+  reverseLayout?: boolean
 }
 
-const ProjectCard = ({
-  logo,
-  logoAlt,
-  thumbnail,
-  thumbnailAlt,
-  title,
-  description,
-  backgroundColor,
-  reverse = false,
-}: ProjectCardProps) => {
-  return (
-    <div className={`grid items-center gap-6 lg:grid-cols-[${reverse ? '1fr,31.25rem' : '31.25rem,1fr'}] lg:gap-10`}>
-      {!reverse && (
-        <div className={`overflow-clip rounded-lg border border-gray-200 ${backgroundColor} pl-10 pt-14 shadow-sm`}>
-          <Image src={thumbnail} alt={thumbnailAlt} className='w-full' priority />
-        </div>
-      )}
-      
-      <div className={`flex-col justify-center md:text-lg ${reverse ? 'order-last lg:order-none' : ''}`}>
-        <Image 
-          src={logo} 
-          alt={logoAlt} 
-          className='mb-4 h-10 w-fit' 
-          width={160}
-          height={40}
-          priority
-        />
-        {description.map((paragraph, index) => (
-          <p key={index} className={index < description.length - 1 ? 'mb-2' : ''}>
-            {index === 0 ? (
-              <>
-                <span className='text-primary-500'>{title} </span>
-                {paragraph.replace(title, '').trimStart()}
-              </>
-            ) : (
-              paragraph
-            )}
-          </p>
-        ))}
-      </div>
+const projects: Project[] = [
+  {
+    id: 'brekeke',
+    logo: BrekekeLogo,
+    thumbnail: BrekekeThumbnail,
+    companyName: 'Brekeke Software, Inc.',
+    highlightColor: '#6CCCE1',
+    description: [
+      'is an industry-leading developer of SIP (Session Initiation Protocol) software products for IP (Internet Protocol) network communications.',
+      'Our products set such a high standard in quality and reliability that they are deployed as mission-critical communication platforms for healthcare systems, military and emergency communication systems, mass-communication environments (such as call centers and financial institutions) and SIP telephony platforms for a large number of SIP applications and SIP telephony networks.',
+    ],
+  },
+  {
+    id: 'beings',
+    logo: BeingsLogo,
+    thumbnail: BeingsThumbnail,
+    companyName: 'Beings',
+    highlightColor: '#4971D1',
+    reverseLayout: true,
+    description: [
+      'is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati repellendus, vitae, ea numquam animi saepe ducimus Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, deserunt! Iure dolore, beatae asperiores illum nulla iusto autem, voluptatum facere voluptate a, ex vel eius consequatur quasi. Numquam hic accusantium sunt! Vero impedit qui at quibusdam illum dolore. Labore quia quas ratione animi ab exercitationem molestiae non totam consequuntur beatae eius quibusdam amet rem quis nisi sit debitis minima obcaecati alias tempore, recusandae doloribus ipsam magnam? Similique',
+    ],
+  },
+]
 
-      {reverse && (
-        <div className={`overflow-clip rounded-lg border border-gray-200 ${backgroundColor} pl-10 pt-14 shadow-sm`}>
-          <Image src={thumbnail} alt={thumbnailAlt} className='w-full' priority />
-        </div>
+function ProjectCard({ project }: { project: Project }) {
+  const imageContainer = (
+    <div
+      className='overflow-clip rounded-lg border border-gray-200 pl-10 pt-14 shadow-sm'
+      style={{ backgroundColor: project.highlightColor }}
+    >
+      <Image
+        src={project.thumbnail}
+        alt={`${project.companyName} project thumbnail`}
+        className='w-full'
+        priority
+        sizes='(max-width: 1024px) 100vw, 31.25rem'
+      />
+    </div>
+  )
+
+  const content = (
+    <div className='flex-col justify-center md:text-lg'>
+      <Image
+        src={project.logo}
+        alt={`${project.companyName} logo`}
+        className='mb-4 h-10 w-fit'
+        priority
+      />
+      {project.description.map((paragraph, index) => (
+        <p key={index} className={index === 0 ? 'mb-2' : ''}>
+          {index === 0 && (
+            <span className='text-primary-500'>{project.companyName} </span>
+          )}
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  )
+
+  return (
+    <div
+      className={`grid items-center gap-6 lg:grid-cols-[${project.reverseLayout ? '1fr,31.25rem' : '31.25rem,1fr'}] lg:gap-10`}
+    >
+      {project.reverseLayout ? (
+        <>
+          {content}
+          {imageContainer}
+        </>
+      ) : (
+        <>
+          {imageContainer}
+          {content}
+        </>
       )}
     </div>
   )
 }
 
 export default function FeaturedProjects() {
-  const projects: ProjectCardProps[] = [
-    {
-      logo: BrekekeLogo,
-      logoAlt: 'Brekeke Software Logo',
-      thumbnail: BrekekeThumbnail,
-      thumbnailAlt: 'Brekeke Software Project',
-      title: 'Brekeke Software, Inc.',
-      description: [
-        'is an industry-leading developer of SIP(Session Initiation Protocol) software products for IP (Internet Protocol) network communications.',
-        'Our products set such a high standard in quality and reliability that they are deployed as mission-critical communication platforms for healthcare systems, military and emergency communication systems, mass-communication environments (such as call centers and financial institutions) and SIP telephony platforms for a large number of SIP applications and SIP telephony networks.'
-      ],
-      backgroundColor: 'bg-[#6CCCE1]'
-    },
-    {
-      logo: BeingsLogo,
-      logoAlt: 'Beings Logo',
-      thumbnail: BeingsThumbnail,
-      thumbnailAlt: 'Beings Project',
-      title: 'Beings',
-      description: [
-        'is a leading innovator in the field of digital transformation, specializing in creating cutting-edge solutions that bridge the gap between technology and human needs.',
-        'Our team of experts is dedicated to developing intuitive, user-centric applications that solve real-world problems. With a focus on quality and innovation, we deliver products that not only meet but exceed our clients\' expectations.'
-      ],
-      backgroundColor: 'bg-[#4971D1]',
-      reverse: true
-    }
-  ]
-
   return (
     <div className='flex flex-col gap-14 xl:gap-12'>
-      {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+      {projects.map(project => (
+        <ProjectCard key={project.id} project={project} />
       ))}
     </div>
   )

@@ -8,8 +8,8 @@ export default function ContactUs() {
     <Section className='pt-[calc(theme(spacing.header)*2)]'>
       <SubTitle>Contact us</SubTitle>
       <Title asChild>
-          <h1>Let's build an awesome project together</h1>
-        </Title>
+        <h1>Let's build an awesome project together</h1>
+      </Title>
       <p className='mt-4 w-full text-lg lg:w-1/2'>
         Let's discuss your ideas. The more specific you are, the faster we can
         help. <LineBreak />

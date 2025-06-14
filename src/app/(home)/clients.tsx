@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+
 import Beings from '@/assets/images/client-logos/beings.webp'
 import Brekeke from '@/assets/images/client-logos/brekeke.webp'
 import Broadflow from '@/assets/images/client-logos/broadflow.webp'
@@ -28,14 +29,11 @@ function Clients() {
             )}
           />
         </div>
-        
+
         {clients.map((client, index) => (
-          <div 
+          <div
             key={client.alt}
-            className={`
-              place-content-center place-items-center pb-4 sm:flex-1 lg:py-4
-              ${index < clients.length - 1 ? 'lg:border-r lg:border-gray-200' : ''}
-            `}
+            className={`place-content-center place-items-center pb-4 sm:flex-1 lg:py-4 ${index < clients.length - 1 ? 'lg:border-r lg:border-gray-200' : ''} `}
           >
             <div className={`relative ${client.className}`}>
               <Image

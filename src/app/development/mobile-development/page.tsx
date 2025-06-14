@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Fragment } from 'react'
 
 import Beings from '@/assets/images/project-thumbnails/Beings.webp'
@@ -5,9 +6,15 @@ import Brekeke from '@/assets/images/project-thumbnails/Brekeke.webp'
 import Cody from '@/assets/images/project-thumbnails/Cody.webp'
 import Whuups from '@/assets/images/project-thumbnails/Whuups.webp'
 import { Button } from '@/components/ui'
-import { SectionCTA, Section, SectionProcess, SubTitle, Title, Content } from '@/components/widget'
+import {
+  SectionCTA,
+  Section,
+  SectionProcess,
+  SubTitle,
+  Title,
+  Content,
+} from '@/components/widget'
 import { ListProject } from '@/components/widget/list-project'
-import Link from 'next/link'
 
 const PROJECTS = [
   {
@@ -46,12 +53,10 @@ function MobileDevelopment() {
           apps experiences for digital users on any device.
         </p>
         <Button asChild className='mt-6'>
-          <Link href='/contact-us'>
-            Let's build
-          </Link>
+          <Link href='/contact-us'>Let's build</Link>
         </Button>
         <Content>
-          <h2 className='text-title !text-2xl sm:!text-3xl'>
+          <h2 className='text-title mb-6 !text-2xl sm:!text-3xl'>
             What we have built
           </h2>
           <ListProject projects={PROJECTS} />

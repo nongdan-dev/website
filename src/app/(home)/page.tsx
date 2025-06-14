@@ -1,8 +1,8 @@
-import { Fragment } from 'react'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 import { ArrowRight, Star } from '@/components/icons'
-import { SectionCTA, SectionAboutUs,SubTitle } from '@/components/widget'
+import { SectionCTA, SectionAboutUs, SubTitle } from '@/components/widget'
 
 import Clients from './clients'
 import Feedback from './feedback'

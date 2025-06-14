@@ -1,5 +1,12 @@
-"use client"
-import { ComponentProps, ReactNode, useId, createContext, useContext, isValidElement, cloneElement } from 'react'
+'use client'
+
+import {
+  ComponentProps,
+  ReactNode,
+  useId,
+  createContext,
+  useContext,
+} from 'react'
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -62,21 +69,24 @@ export function SubTitle({ className, ...props }: SubTitleProps) {
 
 export function Title({ children, className, asChild, ...props }: TitleProps) {
   const context = useContext(SectionContext)
-  
+
   if (!context) {
     throw new Error('Title must be used within a Section component')
   }
-  
+
   const { titleId, titleClassName } = context
 
   if (typeof children === 'function') {
     return children({ titleId, titleClassName } as SectionCtx)
   }
 
-  if (asChild && React.isValidElement<{ className?: string; id?: string }>(children)) {
+  if (
+    asChild &&
+    React.isValidElement<{ className?: string; id?: string }>(children)
+  ) {
     return React.cloneElement(children, {
       id: titleId,
-      className: twMerge(titleClassName, className, children.props.className)
+      className: twMerge(titleClassName, className, children.props.className),
     } as React.HTMLAttributes<HTMLElement>)
   }
 
@@ -101,11 +111,9 @@ export function Content({ children, className, ...props }: ContentProps) {
   )
 }
 
-
 export default {
   Section,
   SubTitle,
   Title,
   Content,
 }
-

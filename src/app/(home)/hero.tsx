@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
+
 import HeroImg from '@/assets/images/webp/hero.webp'
 import { Orbits } from '@/components/icons'
 import { Button } from '@/components/ui'
-import Link from 'next/link'
 
 function Hero() {
   return (
@@ -18,14 +19,10 @@ function Hero() {
         </p>
         <div className='mt-6 flex flex-wrap gap-3 md:gap-4'>
           <Button asChild>
-            <Link  href='/contact-us'>
-              Let's build with us
-            </Link>
+            <Link href='/contact-us'>Let's build with us</Link>
           </Button>
           <Button tone='light' asChild>
-            <Link  href='/our-work'>
-              Explore our work
-            </Link>
+            <Link href='/our-work'>Explore our work</Link>
           </Button>
         </div>
       </div>
@@ -33,7 +30,6 @@ function Hero() {
         aria-hidden
         className='col-content z-10 mt-16 place-items-center md:mt-24'
       >
-
         <Image
           src={HeroImg}
           alt=''
@@ -45,4 +41,3 @@ function Hero() {
 }
 
 export default Hero
-

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import { ReactNode } from 'react'
 
 import AboutUs from '@/assets/images/webp/about-us-1.webp'
@@ -12,8 +14,6 @@ import WaveChart from '@/assets/svg/wave-chart.svg'
 import { ArrowRight } from '@/components/icons'
 
 import { Content, Section, Title } from './section'
-import Image from 'next/image'
-import Link from 'next/link'
 
 export type SectionAboutUsProps = {
   subtitle?: ReactNode
@@ -84,8 +84,8 @@ export function SectionAboutUs({ subtitle, cellAction }: SectionAboutUsProps) {
           </div>
         </div>
         <div
-          className='relative min-h-72 rounded-xl border border-gray-200 bg-cover bg-center shadow-sm'
-          style={{ backgroundImage: `url(${AboutUs2})` }}
+          className='relative min-h-72 rounded-xl border border-gray-200 bg-cover bg-center bg-no-repeat shadow-sm'
+          style={{ backgroundImage: `url(${AboutUs2.src})` }}
         >
           <div className='absolute right-6 top-6 flex flex-col gap-1 rounded-xl bg-white px-6 py-3 shadow-md'>
             <h3 className='text-center text-3xl font-semibold leading-none md:text-4xl xl:text-5xl'>

@@ -1,16 +1,20 @@
 'use client'
 
+import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+
 import { Button } from '@/components/ui'
-import { useTailwind } from '@/hooks/use-tailwind'
 import { useMediaQuery } from '@/hooks/use-media-query'
+import { useTailwind } from '@/hooks/use-tailwind'
+
 import { Orbits } from '../icons'
 import { Section, Title, Content } from './section'
-import Link from 'next/link'
 
 export function SectionCTA() {
   const { theme } = useTailwind()
-  const matches = useMediaQuery(theme ? `(max-width: ${theme.screens.lg})` : '(max-width: 1024px)')
+  const matches = useMediaQuery(
+    theme ? `(max-width: ${theme.screens.lg})` : '(max-width: 1024px)',
+  )
 
   return (
     <Section

@@ -43,7 +43,7 @@
 @layer layout {
   .content-grid {
     --content-grid-gap: theme('spacing.12');
-    --content-grid-max-width: 90rem; 
+    --content-grid-max-width: 90rem;
 
     display: grid;
     grid-template-columns:

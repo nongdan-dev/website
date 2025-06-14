@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import WhyChooseUs1 from '@/assets/images/webp/why-choose-us-1.webp'
 import WhyChooseUs2 from '@/assets/images/webp/why-choose-us-2.webp'
 import { CheckCircle, Medal1st } from '@/components/icons'
@@ -18,11 +19,8 @@ function WhyChooseUs() {
           <div className='relative w-full'>
             <Image
               src={WhyChooseUs1}
-              alt='Modern Technology'
-              className='mx-auto w-full max-w-md object-cover md:w-3/4 xl:w-full'
-              width={400}
-              height={300}
-              priority
+              alt=''
+              className='place-self-center md:w-3/4 xl:w-full'
             />
           </div>
           <div className='mt-8 flex flex-col gap-2.5 text-center'>
@@ -84,10 +82,7 @@ function WhyChooseUs() {
             <Image
               src={WhyChooseUs2}
               alt='Fast Deployment'
-              className='mx-auto w-full max-w-md object-cover md:w-3/4 xl:w-full'
-              width={400}
-              height={300}
-              priority
+              className='place-self-center md:w-3/4 xl:w-full'
             />
           </div>
           <div className='mt-8 flex flex-col gap-2.5 text-center'>

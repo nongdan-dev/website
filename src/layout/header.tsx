@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
 import { throttle } from 'lodash'
-
-import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
@@ -15,7 +15,6 @@ import {
 } from '@/components/widget'
 import { useTailwind } from '@/hooks'
 import { remToPx } from '@/utils/style'
-import Image from 'next/image'
 
 function ServicesMenuContent() {
   return (
@@ -28,7 +27,7 @@ function ServicesMenuContent() {
           <li>
             <Link
               href='/development/web-development'
-              className='inline-block py-1 '
+              className='inline-block py-1'
             >
               Web Development
             </Link>
@@ -36,7 +35,7 @@ function ServicesMenuContent() {
           <li>
             <Link
               href='/development/mobile-development'
-              className='inline-block py-1 '
+              className='inline-block py-1'
             >
               Mobile Development
             </Link>
@@ -94,14 +93,14 @@ function Header() {
   }, [pathname])
 
   useEffect(() => {
-    const headerHeight = theme?.height?.header || '5rem'; 
+    const headerHeight = theme?.height?.header || '5rem'
     if (pathname === '/' && window.scrollY < remToPx(headerHeight)) {
       setScrollActive(showMobileMenu)
     }
   }, [pathname, showMobileMenu, theme?.height?.header])
 
   const toggleScrollActive = () => {
-    const headerHeight = theme?.height?.header || '5rem'; 
+    const headerHeight = theme?.height?.header || '5rem'
     setScrollActive(window.scrollY >= remToPx(headerHeight))
   }
 
@@ -144,21 +143,19 @@ function Header() {
                   </DropdownMenu>
                 </li>
                 <li>
-                  <Link href='/our-work' className='flex h-full items-center '>
+                  <Link href='/our-work' className='flex h-full items-center'>
                     Our work
                   </Link>
                 </li>
                 <li>
-                  <Link href='/about-us' className='flex h-full items-center '>
+                  <Link href='/about-us' className='flex h-full items-center'>
                     About us
                   </Link>
                 </li>
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
                     <Button asChild>
-                      <Link  href='/contact-us'>
-                        Build with us
-                      </Link>
+                      <Link href='/contact-us'>Build with us</Link>
                     </Button>
                   </span>
                 </li>

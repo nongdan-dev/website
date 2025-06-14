@@ -1,9 +1,11 @@
-"use client"
+'use client'
+
+import Link from 'next/link'
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
+
 import { ArrowRight, Sparks } from '@/components/icons'
 import { Section, SubTitle, Title } from '@/components/widget'
-import Link from 'next/link'
 
 const BEINGS_VIDEO = '/videos/Beings.mp4'
 const CHIMERA_VIDEO = '/videos/Chimera.mp4'
@@ -78,7 +80,7 @@ function OurWork() {
 
   return (
     <Section>
-      <div className='w-full place-items-center text-center'>
+      <div className='mb-10 w-full place-items-center text-center md:mb-16'>
         <SubTitle>
           <Sparks className='text-base' /> Our work
         </SubTitle>

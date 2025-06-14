@@ -1,5 +1,5 @@
+'use client'
 
-"use client"
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
@@ -24,8 +24,8 @@ export function Link({
   const isActive = exact
     ? pathname === href
     : typeof href === 'string'
-    ? pathname.startsWith(href)
-    : pathname === href?.pathname
+      ? pathname.startsWith(href)
+      : pathname === href?.pathname
 
   return (
     <NextLink
@@ -34,11 +34,9 @@ export function Link({
         !noHover &&
           'transition-colors hover:text-primary-500 focus-visible:text-primary-500',
         isActive && activeClassName,
-        className
+        className,
       )}
       {...props}
     />
   )
 }
-
-

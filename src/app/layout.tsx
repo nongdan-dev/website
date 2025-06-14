@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Providers } from './providers'
-import '@/styles/index.css'
-import Header from '@/layout/header'
-import Footer from '@/layout/footer'
+import { Inter } from 'next/font/google'
 
-import {  Inter } from 'next/font/google'
+import Footer from '@/layout/footer'
+import Header from '@/layout/header'
+import '@/styles/index.css'
+
+import { Providers } from './providers'
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 })
-
 
 export const metadata: Metadata = {
   title: 'Nongdandev',
@@ -23,17 +23,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-    <body className={`${inter.className} antialiased`}>
-      <Providers>
-        <Header />
-        <main className='content-grid'>
-          {children}
-        </main>
-        <Footer />
-      </Providers>
-    </body>
-  </html>
-
+    <html lang='en' className={inter.variable} suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
+        <Providers>
+          <Header />
+          <main className='content-grid'>{children}</main>
+          <Footer />
+        </Providers>
+      </body>
+    </html>
   )
 }

@@ -8,7 +8,14 @@ import Olivia from '@/assets/images/project-thumbnails/olivia.webp'
 import Readyflow from '@/assets/images/project-thumbnails/ready-flow.webp'
 import Relytics from '@/assets/images/project-thumbnails/relytics.webp'
 import { Divider } from '@/components/ui'
-import { SectionCTA, Section, ListProject, SubTitle, Title, Content } from '@/components/widget'
+import {
+  SectionCTA,
+  Section,
+  ListProject,
+  SubTitle,
+  Title,
+  Content,
+} from '@/components/widget'
 
 import Featured from './featured'
 

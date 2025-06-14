@@ -8,7 +8,7 @@ type Project = {
 
 export const ListProject = ({ projects }: { projects: Project[] }) => {
   return (
-    <div className='max-[500px]:grid-cols-1 grid grid-cols-2 gap-6 md:gap-8 lg:grid-cols-3'>
+    <div className='grid grid-cols-2 gap-6 max-[500px]:grid-cols-1 md:gap-8 lg:grid-cols-3'>
       {projects.map(({ title, description, image }) => (
         <div
           key={title}
@@ -19,7 +19,13 @@ export const ListProject = ({ projects }: { projects: Project[] }) => {
             <p className='truncate md:text-lg'>{description}</p>
           </div>
           <div className='col-content z-10 pl-10'>
-            <Image src={image} alt={title} width={300} height={200} style={{ width: '100%', height: 'auto' }} />
+            <Image
+              src={image}
+              alt={title}
+              width={300}
+              height={200}
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         </div>
       ))}

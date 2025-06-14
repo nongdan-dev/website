@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+
 import Broadflow from '@/assets/images/client-logos/broadflow.webp'
 import { Orbits } from '@/components/icons'
 import { Divider } from '@/components/ui'
@@ -20,11 +21,8 @@ function Feedback() {
           <div className='relative hidden h-11 w-auto sm:block'>
             <Image
               src={Broadflow}
-              alt='Broadflow logo'
-              fill
-              className='object-contain object-left'
-              sizes='(max-width: 640px) 100px, 150px'
-              priority
+              alt='broadflow logo'
+              className='hidden h-11 w-full sm:block'
             />
           </div>
           <Divider

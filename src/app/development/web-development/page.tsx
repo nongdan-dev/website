@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Fragment } from 'react'
 
 import Beings from '@/assets/images/project-thumbnails/beings.webp'
@@ -8,9 +9,15 @@ import Olivia from '@/assets/images/project-thumbnails/olivia.webp'
 import Readyflow from '@/assets/images/project-thumbnails/ready-flow.webp'
 import Relytics from '@/assets/images/project-thumbnails/relytics.webp'
 import { Button } from '@/components/ui'
-import { SectionCTA, Section, SectionProcess, Content, SubTitle, Title } from '@/components/widget'
+import {
+  SectionCTA,
+  Section,
+  SectionProcess,
+  Content,
+  SubTitle,
+  Title,
+} from '@/components/widget'
 import { ListProject } from '@/components/widget/list-project'
-import Link from 'next/link'
 
 const PROJECTS = [
   { image: Brekeke, title: 'Brekeke', description: 'Network Communications' },
@@ -35,12 +42,10 @@ function WebDevelopment() {
           delivering values to your business and users.
         </p>
         <Button asChild className='mt-6'>
-          <Link href='/contact-us'>
-            Let's build
-          </Link>
+          <Link href='/contact-us'>Let's build</Link>
         </Button>
         <Content>
-          <h2 className='text-title !text-2xl sm:!text-3xl'>
+          <h2 className='text-title mb-6 !text-2xl sm:!text-3xl'>
             What we have built
           </h2>
           <ListProject projects={PROJECTS} />

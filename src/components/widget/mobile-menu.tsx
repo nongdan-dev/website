@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
+import Link from 'next/link'
 import { MouseEventHandler, useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { useLockScroll } from '@/hooks'
 
 import { Button } from '../ui'
-import Link from 'next/link'
 
 export type MobileMenuProps = {
   visible: boolean

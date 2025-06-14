@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+
 import { colors } from './src/config/colors'
 
 export default {
@@ -15,7 +16,7 @@ export default {
         '1440': '90rem',
       },
       spacing: {
-        'header': '5rem', 
+        header: '5rem',
       },
       boxShadow: {
         sm: '0px 2px 4px 0px rgba(0, 0, 0, 0.05)',

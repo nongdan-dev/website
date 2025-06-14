@@ -4,9 +4,7 @@ export const TeamMember = () => {
   return (
     <Section>
       <div className='w-full place-items-center text-center'>
-        <Title className=''>
-          Meet our beautiful team members
-        </Title>
+        <Title className=''>Meet our beautiful team members</Title>
       </div>
       <Content className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         {Array.from({ length: 12 }).map((_, idx) => (
