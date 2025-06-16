@@ -1,21 +1,33 @@
-import { ReactNode } from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-export type PortalProps = {
-  children: ReactNode
+type PortalProps = {
+  children: React.ReactNode
   container?: Element
 }
 
 export function Portal({ children, container }: PortalProps) {
-  const getContainer = () => {
-    const c = document.querySelector('#portal')
-    if (c) return c
+  const [mounted, setMounted] = useState(false)
+  const [defaultContainer, setDefaultContainer] = useState<Element | null>(null)
 
-    const div = document.createElement('div')
-    div.id = 'portal'
-    document.body.appendChild(div)
-    return div
-  }
+  useEffect(() => {
+    let el = document.querySelector('#portal')
+    if (!el) {
+      el = document.createElement('div')
+      el.id = 'portal'
+      document.body.appendChild(el)
+    }
 
-  return createPortal(children, container || getContainer())
+    setDefaultContainer(el)
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  const targetContainer = container || defaultContainer
+  if (!targetContainer) return null
+
+  return createPortal(children, targetContainer)
 }

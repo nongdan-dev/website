@@ -1,10 +1,13 @@
+'use client'
+
 import { throttle } from 'lodash'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
-import { useLocation } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
-import { Button, Portal, Link, NavLink } from '@/components/ui'
+import { Button, Link, Portal } from '@/components/ui'
 import {
   MobileMenu,
   DropdownMenu,
@@ -22,20 +25,20 @@ function ServicesMenuContent() {
         </span>
         <ul className='mt-3'>
           <li>
-            <NavLink
-              to='/development/web-development'
+            <Link
+              href='/development/web-development'
               className='inline-block py-1'
             >
               Web Development
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink
-              to='/development/mobile-development'
+            <Link
+              href='/development/mobile-development'
               className='inline-block py-1'
             >
               Mobile Development
-            </NavLink>
+            </Link>
           </li>
           <li>
             <span className='inline-block cursor-default py-1 text-gray-400'>
@@ -72,7 +75,7 @@ function ServicesMenuContent() {
 
 function Header() {
   const { theme } = useTailwind()
-  const { pathname } = useLocation()
+  const pathname = usePathname()
   const headerRef = useRef<HTMLElement>(null)
 
   const [showMobileMenu, setShowMobileMenu] = useState(false)
@@ -90,13 +93,15 @@ function Header() {
   }, [pathname])
 
   useEffect(() => {
-    if (pathname === '/' && window.scrollY < remToPx(theme.height.header)) {
+    const headerHeight = theme?.height?.header || '5rem'
+    if (pathname === '/' && window.scrollY < remToPx(headerHeight)) {
       setScrollActive(showMobileMenu)
     }
-  }, [pathname, showMobileMenu])
+  }, [pathname, showMobileMenu, theme?.height?.header])
 
   const toggleScrollActive = () => {
-    setScrollActive(window.scrollY >= remToPx(theme.height.header))
+    const headerHeight = theme?.height?.header || '5rem'
+    setScrollActive(window.scrollY >= remToPx(headerHeight))
   }
 
   const throttleToggleScrollActive = useCallback(
@@ -118,12 +123,12 @@ function Header() {
         >
           <div className='col-content flex flex-row items-center justify-between'>
             <Link
-              to='/'
+              href='/'
               className='self-center'
               aria-label='nongdan.dev homepage'
               onClick={() => setShowMobileMenu(false)}
             >
-              <img src={Logo} alt='' className='w-32 md:w-36' />
+              <Image src={Logo} alt='' className='w-32 md:w-36' />
             </Link>
             <nav aria-label='main' className='hidden lg:block'>
               <ul className='flex h-full flex-row gap-6'>
@@ -138,21 +143,19 @@ function Header() {
                   </DropdownMenu>
                 </li>
                 <li>
-                  <NavLink to='/our-work' className='flex h-full items-center'>
+                  <Link href='/our-work' className='flex h-full items-center'>
                     Our work
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to='/about-us' className='flex h-full items-center'>
+                  <Link href='/about-us' className='flex h-full items-center'>
                     About us
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
                     <Button asChild>
-                      <Link noHover to='/contact-us'>
-                        Build with us
-                      </Link>
+                      <Link href='/contact-us'>Build with us</Link>
                     </Button>
                   </span>
                 </li>
