@@ -1,15 +1,21 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 
 import Footer from '@/layout/footer'
 import Header from '@/layout/header'
 import '@/styles/index.css'
-
-import { Providers } from './providers'
+import cn from '@/utils/cn'
 
 const inter = Inter({
-  variable: '--font-inter',
   subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -23,13 +29,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={inter.variable} suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
-        <Providers>
-          <Header />
-          <main className='content-grid'>{children}</main>
-          <Footer />
-        </Providers>
+    <html lang='en' suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`}
+      >
+        <Header />
+        <main className='content-grid'>{children}</main>
+        <Footer />
       </body>
     </html>
   )
