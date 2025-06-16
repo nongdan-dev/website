@@ -3,11 +3,6 @@ const nextConfig = {
   trailingSlash: false,
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-      },
-    ],
   },
   eslint: {
     ignoreDuringBuilds: true,
