@@ -20,6 +20,9 @@ const robotoSlab = Roboto_Slab({
 export const metadata: Metadata = {
   title: 'Nongdandev',
   description: 'Technology solutions for modern agriculture',
+  icons: {
+    icon: '/favicon-new.ico',
+  },
 }
 
 export default function RootLayout({
