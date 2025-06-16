@@ -3,7 +3,10 @@ SHELL := /bin/bash
 default:
 	npm i \
 	&& npm run build \
-	&& mv dist nongdan-dev \
+	&& make upload;
+
+upload:
+	mv out nongdan-dev \
 	&& zip -vr nongdan-dev.zip nongdan-dev \
 	&& ssh nam "rm -rf /var/www/nongdan-dev*" \
 	&& scp nongdan-dev.zip nam:/var/www \

@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { Fragment } from 'react'
 
-import Beings from '@/assets/images/project-thumbnails/Beings.webp'
-import Brekeke from '@/assets/images/project-thumbnails/Brekeke.webp'
-import Cody from '@/assets/images/project-thumbnails/Cody.webp'
-import Whuups from '@/assets/images/project-thumbnails/Whuups.webp'
+import Beings from '@/assets/images/project-thumbnails/beings.webp'
+import Brekeke from '@/assets/images/project-thumbnails/brekeke.webp'
+import Cody from '@/assets/images/project-thumbnails/cody.webp'
+import Whuups from '@/assets/images/project-thumbnails/whuups.webp'
 import { Button } from '@/components/ui'
 import {
   SectionCTA,
