@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)'],
-        serif: ['var(--font-roboto-mono)'],
+        serif: ['var(--font-roboto-slab)'],
       },
       colors: {
         ...colors,

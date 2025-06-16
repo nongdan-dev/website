@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter, Roboto_Mono } from 'next/font/google'
+import { Inter, Roboto_Slab } from 'next/font/google'
 
 import Footer from '@/layout/footer'
 import Header from '@/layout/header'
 import '@/styles/index.css'
-import cn from '@/utils/cn'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,9 +11,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const robotoMono = Roboto_Mono({
+const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
-  variable: '--font-roboto-mono',
+  variable: '--font-roboto-slab',
   display: 'swap',
 })
 
@@ -31,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${robotoSlab.variable} font-sans antialiased`}
       >
         <Header />
         <main className='content-grid'>{children}</main>
