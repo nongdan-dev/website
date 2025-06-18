@@ -3,12 +3,6 @@ const nextConfig = {
   trailingSlash: false,
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-      },
-    ],
   },
   eslint: {
     ignoreDuringBuilds: true,

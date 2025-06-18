@@ -1,0 +1,130 @@
+#hero-section #grid-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.75rem;
+  grid-template-areas: 'b1 b1 b1 b2 b2 b2 b2 b2 b2 b3 b3 b3';
+  width: 100%;
+  max-width: 100%;
+}
+
+#hero-section #grid-layout > div:nth-child(1) {
+  grid-area: b1;
+}
+
+#hero-section #grid-layout > div:nth-child(2) {
+  grid-area: b2;
+}
+
+#hero-section #grid-layout > div:nth-child(3) {
+  grid-area: b3;
+}
+
+@media (max-width: 1023px) {
+  #hero-section #grid-layout {
+    display: block;
+  }
+
+  #hero-section #grid-layout > div {
+    margin-bottom: 1.5rem;
+  }
+
+  #hero-section #grid-layout > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#why-choose-us > #grid-layout {
+  @apply grid grid-cols-5 gap-6 md:gap-8;
+  grid-template-areas:
+    'b1 b1 b1 b2 b2'
+    'b1 b1 b1 b3 b3'
+    'b4 b4 b6 b6 b6'
+    'b5 b5 b6 b6 b6';
+
+  @media (width < theme('screens.lg')) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'b1 b1'
+      'b2 b3'
+      'b4 b5'
+      'b6 b6';
+  }
+  @media (width < theme('screens.md')) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'b1 '
+      'b2'
+      'b3'
+      'b4'
+      'b5'
+      'b6';
+  }
+
+  & > div:nth-child(1) {
+    grid-area: b1;
+  }
+  & > div:nth-child(2) {
+    grid-area: b2;
+  }
+  & > div:nth-child(3) {
+    grid-area: b3;
+  }
+  & > div:nth-child(4) {
+    grid-area: b4;
+  }
+  & > div:nth-child(5) {
+    grid-area: b5;
+  }
+  & > div:nth-child(6) {
+    grid-area: b6;
+  }
+}
+
+#about-us > #grid-layout {
+  @apply grid grid-cols-9 gap-6;
+  grid-template-areas:
+    'b1 b1 b1 b2 b2 b2 b3 b3 b3'
+    'b1 b1 b1 b2 b2 b2 b3 b3 b3'
+    'b1 b1 b1 b4 b4 b4 b4 b6 b6'
+    'b1 b1 b1 b5 b5 b5 b5 b6 b6';
+
+  @media (width < theme('screens.xl')) {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      'b1 b1 b1 b1 b2 b2 b2 b2'
+      'b1 b1 b1 b1 b3 b3 b3 b3'
+      'b4 b4 b4 b4 b4 b6 b6 b6'
+      'b5 b5 b5 b5 b5 b6 b6 b6';
+  }
+
+  @media (width < theme('screens.md')) {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      'b1'
+      'b2'
+      'b3'
+      'b4'
+      'b5'
+      'b6';
+  }
+
+  & > div:nth-child(1) {
+    grid-area: b1;
+  }
+  & > div:nth-child(2) {
+    grid-area: b2;
+  }
+  & > div:nth-child(3) {
+    grid-area: b3;
+  }
+  & > div:nth-child(4) {
+    grid-area: b4;
+  }
+  & > div:nth-child(5) {
+    grid-area: b5;
+  }
+  & > div:nth-child(6) {
+    grid-area: b6;
+  }
+}

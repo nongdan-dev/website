@@ -1,0 +1,279 @@
+[data-rehype-pretty-code-figure] pre {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  overflow-x: auto;
+}
+
+[data-rehype-pretty-code-figure] code {
+  border: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 2;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  [data-rehype-pretty-code-figure] code {
+    font-size: 1rem;
+  }
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: #6b7280;
+  user-select: none;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  background: rgba(200, 200, 255, 0.1);
+  border-left-color: #60a5fa;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  border-radius: 0.25rem;
+  background-color: rgba(82, 82, 91, 0.5);
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+  padding: 0.1em 0.2em;
+}
+
+[data-rehype-pretty-code-figure] [data-chars-id] {
+  border-bottom: 2px solid;
+  padding: 0.25em;
+  box-shadow: none;
+}
+
+.subheading-anchor {
+  text-decoration: none;
+}
+
+.subheading-anchor:hover {
+  text-decoration: underline;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-base-300);
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin: 1.75rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-base-200);
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.875rem;
+}
+
+.prose h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.prose h5 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.prose h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  margin: 0.875rem 0 0.5rem;
+}
+
+/* Base styles for content */
+.prose p,
+.prose pre,
+.prose blockquote {
+  margin: 1rem 0;
+}
+
+/* List styles */
+.prose ul,
+.prose ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+/* Unordered list - chỉ áp dụng cho .prose chính, không phải TOC */
+.prose:not(.toc-container) ul {
+  list-style-type: none;
+}
+
+.prose:not(.toc-container) ul > li::before {
+  content: '•';
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+}
+
+/* Ordered list */
+.prose ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.prose ol > li {
+  padding-left: 0.5rem;
+}
+
+/* Nested lists */
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.prose pre {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin: 1.25rem 0;
+  font-style: italic;
+}
+
+.prose a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: var(--color-primary-focus);
+  text-decoration: underline;
+}
+
+/* Table of Contents Styles */
+.toc-container {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Ẩn dấu chấm tròn cho các mục cấp 3 và cấp 4 */
+.toc-container .toc-item.level-3,
+.toc-container .toc-item.level-4 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc-container .toc-item.level-3::before,
+.toc-container .toc-item.level-4::before {
+  display: none;
+}
+
+.toc-container .toc-item,
+.toc-container .toc-item p,
+.toc-container .toc-item ul,
+.toc-container .toc-item ol,
+.toc-container .toc-item li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.toc-container .toc-item a {
+  display: block;
+  padding: 0.125rem 0;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+}
+
+.toc-container .toc-item a:hover {
+  color: var(--color-primary);
+}
+
+.toc-container .toc-item.level-2 {
+  margin: 0.125rem 0;
+}
+
+.toc-container .toc-item.level-3 {
+  margin: 0.0625rem 0 0.0625rem 0.75rem;
+}
+
+.toc-container .toc-item.level-4 {
+  margin: 0.0625rem 0 0.0625rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .toc-container {
+    padding-left: 8px;
+  }
+
+  .toc-container .toc-item.level-3 {
+    margin-left: 0.5rem;
+  }
+
+  .toc-container .toc-item.level-4 {
+    margin-left: 0.75rem;
+  }
+}
+
+.toc-container .toc-item .mr-1 {
+  margin-right: 0.25rem;
+  display: inline-block;
+}
+
+.toc-container .prose {
+  margin: 0;
+  padding: 0;
+}
+
+.toc-container .prose p,
+.toc-container .prose ul,
+.toc-container .prose ol,
+.toc-container .prose li {
+  margin: 0;
+  padding: 0;
+}

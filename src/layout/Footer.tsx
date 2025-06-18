@@ -6,7 +6,7 @@ import Flag from '@/assets/svg/flag.svg'
 import Logo from '@/assets/svg/logo.svg'
 import { Facebook, LinkedIn, Twitter, Github, Slack } from '@/components/icons'
 import { Link } from '@/components/ui'
-import { companyInfo } from '@/config/metadata'
+import { siteConfig } from '@/config/site'
 
 function Footer() {
   return (
@@ -17,47 +17,67 @@ function Footer() {
             <Image src={Logo} alt='website logo' className='mb-5 h-6' />
             <div className='flex flex-col gap-1.5'>
               <Link
-                href={`tel:${companyInfo.phone}`}
+                href={`tel:${siteConfig.contact.phone}`}
                 className='flex items-center gap-1.5'
-                aria-label={`call us at ${companyInfo.phone}`}
+                aria-label={`call us at ${siteConfig.contact.phone}`}
               >
                 <Image src={Flag} alt='' className='h-5 rounded-sm' />
 
-                {companyInfo.phone}
+                {siteConfig.contact.phone}
               </Link>
               <Link
                 href='https://maps.google.com/?q=vietnam'
                 className='text-balance'
                 target='_blank'
                 rel='noopener noreferrer'
-                aria-label={`visit us at ${companyInfo.location.address}`}
+                aria-label={`visit us at ${siteConfig.contact.location}`}
               >
-                {companyInfo.location.address}
+                {siteConfig.contact.location}
               </Link>
             </div>
             <ul aria-label='socials' className='mt-4 flex gap-3'>
               <li aria-label='facebook'>
-                <a href={companyInfo.social.facebook} target='_blank'>
+                <a
+                  href={siteConfig.social.facebook}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <Facebook className='text-lg text-gray-400' />
                 </a>
               </li>
               <li aria-label='linked in'>
-                <a href={companyInfo.social.linkedin} target='_blank'>
+                <a
+                  href={siteConfig.social.linkedin}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <LinkedIn className='text-lg text-gray-400' />
                 </a>
               </li>
               <li aria-label='twitter'>
-                <a href={companyInfo.social.twitter} target='_blank'>
+                <a
+                  href={siteConfig.social.twitter}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <Twitter className='text-lg text-gray-400' />
                 </a>
               </li>
               <li aria-label='github'>
-                <a href={companyInfo.social.github} target='_blank'>
+                <a
+                  href={siteConfig.social.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <Github className='text-lg text-gray-400' />
                 </a>
               </li>
               <li aria-label='slack'>
-                <a href={companyInfo.social.slack} target='_blank'>
+                <a
+                  href={siteConfig.social.slack}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <Slack className='text-lg text-gray-400' />
                 </a>
               </li>
