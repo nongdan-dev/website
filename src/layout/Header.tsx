@@ -152,6 +152,11 @@ function Header() {
                     About us
                   </Link>
                 </li>
+                <li>
+                  <Link href='/blog' className='flex h-full items-center'>
+                    Blog
+                  </Link>
+                </li>
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
                     <Button asChild>

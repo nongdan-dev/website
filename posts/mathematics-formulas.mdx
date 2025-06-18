@@ -1,0 +1,89 @@
+---
+title: 'Mathematics and Formulas in Computer Science'
+description:
+  'A collection of important mathematical formulas in computer science and programming, presented
+  using KaTeX.'
+date: 2025-06-07
+tags: ['mathematics', 'formulas', 'computer science']
+published: true
+---
+
+# Mathematics and Formulas in Computer Science
+
+### Linear Algebra
+
+#### Matrices and Determinants
+
+- **Matrix Multiplication**: $$(AB)_{ij} = \sum_{k=1}^{n} A_{ik}B_{kj}$$
+
+- **2x2 Determinant**: $$\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$$
+
+#### Eigenvalues and Eigenvectors
+
+For a matrix $A$, a non-zero vector $\mathbf{v}$ is an eigenvector if:
+$$A\mathbf{v} = \lambda\mathbf{v}$$
+
+### Calculus
+
+#### Basic Derivatives
+
+- $$\frac{d}{dx}x^n = nx^{n-1}$$
+- $$\frac{d}{dx}e^x = e^x$$
+- $$\frac{d}{dx}\ln(x) = \frac{1}{x}$$
+
+#### Integrals
+
+- $$\int x^n dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)$$
+- $$\int e^x dx = e^x + C$$
+- $$\int \frac{1}{x} dx = \ln|x| + C$$
+
+### Probability and Statistics
+
+#### Probability Formulas
+
+- **Conditional Probability**: $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+- **Bayes' Theorem**: $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+#### Probability Distributions
+
+- **Normal Distribution**:
+  $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+### Graph Theory
+
+#### Euler's Formula for Planar Graphs
+
+$$V - E + F = 2$$
+
+Where:
+
+- $V$: number of vertices
+- $E$: number of edges
+- $F$: number of faces
+
+### Cryptography
+
+#### RSA Encryption
+
+1. Choose two large prime numbers $p$ and $q$
+2. Calculate $n = p \times q$
+3. Calculate $\phi(n) = (p-1)(q-1)$
+4. Choose $e$ such that $1 < e < \phi(n)$ and $\gcd(e, \phi(n)) = 1$
+5. Find $d$ such that $d \times e \equiv 1 \pmod{\phi(n)}$
+
+Public key: $(e, n)$ Private key: $(d, n)$
+
+### Artificial Intelligence
+
+#### Sigmoid Activation Function
+
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+
+#### Cross-Entropy Loss Function
+
+$$L = -\frac{1}{N}\sum_{i=1}^{N} [y_i \log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)]$$
+
+### Conclusion
+
+Mathematical formulas form the foundation of computer science and programming. Understanding these
+concepts is crucial for developing algorithms and solving complex problems in the field.
