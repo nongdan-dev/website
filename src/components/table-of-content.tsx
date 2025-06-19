@@ -103,7 +103,9 @@ export function TableOfContents({
       className={`toc-container sticky top-24 overflow-hidden rounded-lg border border-gray-200 bg-white pl-4 shadow-sm ${className}`}
       aria-label={'In this article'}
     >
-      <h2 className='text-base font-semibold text-gray-800'>In this article</h2>
+      <span className='block pb-3 pl-2 pt-6 text-[1.875rem] font-semibold text-gray-800'>
+        In this article
+      </span>
 
       <div className='overflow-y-auto overscroll-contain' style={{ maxHeight }}>
         <ul className=''>

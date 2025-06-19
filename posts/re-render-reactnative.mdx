@@ -31,20 +31,19 @@ const MyComponent = memo(({ data }) => {
 })
 ```
 
-````
-
 #### PureComponent
+
 For class components, PureComponent automatically checks for state and prop changes to avoid redundant re-renders.
 
 ```tsx
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
 
 class MyComponent extends PureComponent {
   render() {
-    return <Text>{this.props.data}</Text>;
+    return <Text>{this.props.data}</Text>
   }
 }
-````
+```
 
 #### useCallback
 

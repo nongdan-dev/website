@@ -7,7 +7,7 @@ import { defineConfig, defineCollection, s } from 'velite'
 
 const posts = defineCollection({
   name: 'Post',
-  pattern: 'blog/**/*.mdx',
+  pattern: '**/*.mdx',
   schema: s
     .object({
       slug: s.path(),
@@ -18,10 +18,17 @@ const posts = defineCollection({
       tags: s.array(s.string()).optional(),
       body: s.mdx(),
     })
-    .transform(data => ({
-      ...data,
-      slugAsParams: data.slug.split('/').slice(1).join('/'),
-    })),
+    .transform(data => {
+      const slugWithoutExt = data.slug.replace(/\.mdx$/, '')
+      const slugParts = slugWithoutExt.split('/')
+      const slugAsParams = slugParts[slugParts.length - 1]
+
+      return {
+        ...data,
+        slug: slugWithoutExt,
+        slugAsParams,
+      }
+    }),
 })
 
 export default defineConfig({
