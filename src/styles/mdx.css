@@ -239,9 +239,15 @@
   color: var(--color-primary);
 }
 
-.toc-container .toc-item.level-2 { margin: 0.125rem 0; }
-.toc-container .toc-item.level-3 { margin: 0.0625rem 0 0.0625rem 0.5rem; }
-.toc-container .toc-item.level-4 { margin: 0.0625rem 0 0.0625rem 0.75rem; }
+.toc-container .toc-item.level-2 {
+  margin: 0.125rem 0;
+}
+.toc-container .toc-item.level-3 {
+  margin: 0.0625rem 0 0.0625rem 0.5rem;
+}
+.toc-container .toc-item.level-4 {
+  margin: 0.0625rem 0 0.0625rem 0.75rem;
+}
 
 .toc-container .toc-item.level-3,
 .toc-container .toc-item.level-4,
