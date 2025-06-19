@@ -107,7 +107,10 @@ export function TableOfContents({
         In this article
       </span>
 
-      <div className='overflow-y-auto overscroll-contain' style={{ maxHeight }}>
+      <div
+        className='overflow-y-auto overscroll-contain pb-6'
+        style={{ maxHeight }}
+      >
         <ul className=''>
           {headingTree.map(heading => renderHeading(heading))}
         </ul>
