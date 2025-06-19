@@ -59,14 +59,13 @@ export function getLocalizedTagUrl(tag: string) {
   return `/tags/${slug(tag)}`
 }
 
-export default function extractAllH3Variants(compiledMDX: string) {
-  const matches = compiledMDX.match(/(h[1-6]),{id:"[^"]+",children:.*?\}\)}/gm)
-
-  const result = matches?.map(match => ({
-    level: match.match(/(h[1-6])/)?.[1] ?? '',
-    id: match.match(/id:"([^"]+)"/)?.[1] ?? '',
-    text: match.match(/children:"([^"]+)"/)?.[1] ?? '',
-  }))
-
-  return result?.filter(item => item.id && item.text) || []
+const re = /(h[1-6]),\{id:"([^"]+)",children:.*?children:"([^"]+)"\}\)\}/gm
+export default function extractToc(c: string) {
+  return Array.from(c.matchAll(re))
+    .map(([, level, id, text]) => ({
+      level,
+      id,
+      text,
+    }))
+    .filter(item => item.id && item.text)
 }

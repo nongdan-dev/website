@@ -7,7 +7,7 @@ import { MDXContent } from '@/components/mdx-components'
 import { TableOfContents } from '@/components/table-of-content'
 import { Tag } from '@/components/tag'
 import { siteConfig } from '@/config/site'
-import extractAllH3Variants, { sortPosts } from '@/lib/utils'
+import extractToc, { sortPosts } from '@/lib/utils'
 import '@/styles/components.css'
 import '@/styles/mdx.css'
 
@@ -74,7 +74,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params)
   const A = JSON.stringify(post ? post.body : '')
   const B = JSON.parse(A)
-  const h3Headings = extractAllH3Variants(B)
+  const toc = extractToc(B)
 
   const PostsArticle = sortPosts(
     posts.filter(
@@ -103,7 +103,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <div id='hero-section' className='col-content prose dark:prose-invert'>
         <div id='grid-layout' className='mb-10 gap-4 space-y-6'>
           <div className=''>
-            <TableOfContents headings={h3Headings} className='' />
+            <TableOfContents headings={toc} className='' />
           </div>
 
           <div className='flex flex-col'>
