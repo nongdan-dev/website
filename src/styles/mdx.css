@@ -154,29 +154,11 @@
   padding-left: 0.5rem;
 }
 
-.prose ul,
-.prose ol {
-  margin: 0.5rem 0;
-  padding-left: 1.25rem;
-}
-
 .prose ul ul,
 .prose ol ol,
 .prose ul ol,
 .prose ol ul {
-  margin: 0.125rem 0 0.125rem 0.5rem;
-  padding-left: 1rem;
-}
-
-.prose ul > li {
-  position: relative;
-  padding-left: 0.5rem;
-}
-
-.prose ul > li::before {
-  content: '-';
-  position: absolute;
-  left: -0.75rem;
+  margin: 0.5rem 0 0.5rem 1rem;
 }
 
 .prose pre {
