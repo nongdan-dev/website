@@ -48,43 +48,43 @@ export default async function TagPage({ params }: TagPageProps) {
           </div>
         </div>
 
-        <div className='mt-8 grid grid-cols-12 gap-3'>
+        <div className='mt-8'>
           <div className='col-span-12 col-start-1 sm:col-span-8'>
             {displayPosts.length > 0 ? (
               <ul className='flex flex-col gap-4'>
-                {displayPosts.map(post => {
-                  const { slug, date, title, description, tags } = post
-                  return (
-                    <article key={post.slug} className='mb-4'>
-                      <PostItem
-                        slug={post.slug}
-                        date={date}
-                        title={title}
-                        description={description}
-                        tags={tags}
-                      />
-                    </article>
-                  )
-                })}
+                <div className='grid grid-cols-2 gap-6 max-[500px]:grid-cols-1 md:gap-8 lg:grid-cols-3'>
+                  {displayPosts.map(post => {
+                    const { date, title, tags } = post
+                    return (
+                      <article key={post.slug} className='mb-4'>
+                        <PostItem
+                          slug={post.slug}
+                          date={date}
+                          title={title}
+                          tags={tags}
+                          image={post.image}
+                        />
+                      </article>
+                    )
+                  })}
+                </div>
               </ul>
             ) : (
               <p className='mt-4 text-center'>Nothing to see here yet.</p>
             )}
           </div>
 
-          <div className='col-span-12 row-start-3 h-fit border shadow sm:col-span-4 sm:col-start-9 sm:row-start-1'>
-            <div className='p-4'>
-              <h2 className='mb-2 text-lg font-bold'>Tags</h2>
-              <div className='flex flex-wrap gap-2'>
-                {sortedTags?.map(t => (
-                  <Tag
-                    tag={t}
-                    key={t}
-                    count={tags[t]}
-                    current={slug(t).toLowerCase() === tag.toLowerCase()}
-                  />
-                ))}
-              </div>
+          <div className='my-4 h-fit'>
+            <h2 className='mb-2 text-lg font-bold'>Tags</h2>
+            <div className='flex flex-wrap gap-4'>
+              {sortedTags?.map(t => (
+                <Tag
+                  tag={t}
+                  key={t}
+                  count={tags[t]}
+                  current={slug(t).toLowerCase() === tag.toLowerCase()}
+                />
+              ))}
             </div>
           </div>
         </div>

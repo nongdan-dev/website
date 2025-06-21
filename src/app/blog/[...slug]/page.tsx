@@ -101,9 +101,9 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <div className='content-grid col-full-width pt-20'>
       <div id='hero-section' className='col-content prose dark:prose-invert'>
-        <div id='grid-layout' className='mb-10 gap-4 space-y-6'>
-          <div className=''>
-            <TableOfContents headings={toc} className='' />
+        <div id='grid-layout' className='mb-10 grid grid-cols-1 gap-6'>
+          <div className='self-start lg:sticky lg:top-24'>
+            <TableOfContents headings={toc} />
           </div>
 
           <div className='flex flex-col'>
@@ -120,7 +120,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <MDXContent code={post.body} />
           </div>
 
-          <div className='mb-6'>
+          <div className='self-start lg:sticky lg:top-24'>
             <div className='flex w-full flex-col rounded-xl bg-green-400 p-6 shadow-xl'>
               <span className='text-xl font-semibold leading-tight text-slate-900'>
                 Sign up for Nongdandev

@@ -6,7 +6,7 @@ import { QueryPagination } from '@/components/query-pagination'
 import { Tag } from '@/components/tag'
 import { getAllTags, sortPosts, sortTagsByCount } from '@/lib/utils'
 
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 6
 
 interface BlogPageProps {
   searchParams: {
@@ -48,52 +48,43 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </div>
         </div>
 
-        <div className='mt-8 grid grid-cols-1 gap-6 lg:grid-cols-12'>
-          <div className='pb-8 lg:col-span-8'>
-            {displayPosts.length > 0 ? (
-              <>
-                <ul className='flex flex-col gap-4'>
+        <div className='mt-8'>
+          <h2 className='mb-2 text-2xl font-bold'>Choose Category</h2>
+          <div className='mb-10 flex flex-wrap gap-4'>
+            {sortedTags.map(tag => (
+              <Tag key={tag} tag={tag} count={tags[tag]} />
+            ))}
+          </div>
+          {displayPosts.length > 0 ? (
+            <>
+              <ul className='flex flex-col gap-4'>
+                <div className='grid grid-cols-2 gap-6 max-[500px]:grid-cols-1 md:gap-8 lg:grid-cols-3'>
                   {displayPosts.map(post => {
-                    const { slug, date, title, description, tags } = post
+                    const { slug, date, title, tags } = post
                     return (
                       <li key={slug}>
                         <PostItem
                           slug={slug}
                           date={date}
                           title={title}
-                          description={description}
                           tags={tags}
+                          image={post.image}
                         />
                       </li>
                     )
                   })}
-                </ul>
-                <div className='mt-8 flex justify-end'>
-                  <QueryPagination
-                    totalPages={totalPages}
-                    currentPage={currentPage}
-                  />
                 </div>
-              </>
-            ) : (
-              <p className='mt-4 text-center text-lg'>
-                Nothing to see here yet.
-              </p>
-            )}
-          </div>
-
-          <div className='lg:col-span-4'>
-            <div className='border shadow-sm'>
-              <div className='p-4'>
-                <h2 className='mb-2 text-lg font-bold'>Tags</h2>
-                <div className='flex flex-wrap gap-2'>
-                  {sortedTags.map(tag => (
-                    <Tag key={tag} tag={tag} count={tags[tag]} />
-                  ))}
-                </div>
+              </ul>
+              <div className='flex justify-end'>
+                <QueryPagination
+                  totalPages={totalPages}
+                  currentPage={currentPage}
+                />
               </div>
-            </div>
-          </div>
+            </>
+          ) : (
+            <p className='mt-4 text-center text-lg'>Nothing to see here yet.</p>
+          )}
         </div>
       </div>
     </div>

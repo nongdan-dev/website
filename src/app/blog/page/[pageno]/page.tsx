@@ -7,7 +7,7 @@ import Body from './body'
 
 export async function generateStaticParams() {
   const sortedPosts = sortPosts(posts.filter(post => post.published))
-  const postsPerPage = 5
+  const postsPerPage = 6
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage)
 
   return Array.from({ length: totalPages }, (_, i) => ({
@@ -23,7 +23,7 @@ export default async function BlogPage({
   const { pageno } = await params
 
   const currentPage = Number(pageno ?? 1)
-  const postsPerPage = 5
+  const postsPerPage = 6
   const sortedPosts = sortPosts(posts.filter(post => post.published))
 
   const displayPosts = sortedPosts.slice(

@@ -100,7 +100,7 @@ export function TableOfContents({
 
   return (
     <nav
-      className={`toc-container sticky top-24 overflow-hidden rounded-lg border border-gray-200 bg-white pl-4 shadow-sm ${className}`}
+      className={`toc-container overflow-hidden rounded-lg border border-gray-200 bg-white pl-4 shadow-sm ${className}`}
       aria-label={'In this article'}
     >
       <span className='block pb-3 pl-2 pt-6 text-[1.875rem] font-semibold text-gray-800'>

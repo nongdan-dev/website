@@ -27,6 +27,7 @@
     "rehype-katex": "^7.0.1",
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^6.0.0",
+    "sticky-sidebar": "^3.3.1",
     "tailwind-merge": "3.3.1",
     "tailwindcss": "3.4.1",
     "zod": "3.25.64"
