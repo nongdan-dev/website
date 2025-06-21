@@ -21,7 +21,7 @@ export default function Related({ posts }: RelatedProps) {
           {sortedPosts.slice(0, 4).map(post => (
             <article
               key={post.slug}
-              className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-200 dark:border-gray-700 dark:bg-gray-800'
+              className='group flex h-full cursor-pointer flex-col overflow-hidden rounded-lg border border-gray-200 bg-gray-50 shadow-sm shadow-black/5'
             >
               <div className='flex h-full flex-col px-4'>
                 <div className='mb-2 flex-1'>

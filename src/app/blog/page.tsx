@@ -13,7 +13,7 @@ export default async function Home() {
     <>
       <Section className='col-full-width pt-[calc(theme(spacing.header)*2)]'>
         <div className='col-content'>
-          <SubTitle>Blog us</SubTitle>
+          <SubTitle>Blog</SubTitle>
           <Title asChild>
             <h1> NongDan.dev Tech Blog</h1>
           </Title>

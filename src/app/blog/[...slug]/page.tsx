@@ -144,7 +144,7 @@ export default async function PostPage({ params }: PostPageProps) {
               <div className='grid gap-2'>
                 {PostsArticle.slice(0, 4).map(post => (
                   <Link
-                    className='cursor-pointer rounded-md border border-gray-300 px-4 no-underline'
+                    className='blog-link cursor-pointer rounded-md border border-gray-200 bg-gray-50 px-4 shadow-sm shadow-black/5'
                     key={post.slug}
                     href={`/blog/${post.slugAsParams}`}
                   >
