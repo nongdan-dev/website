@@ -6,7 +6,7 @@ import WhatWeOffer1 from '@/assets/images/webp/what-we-offer-1.webp'
 import WhatWeOffer2 from '@/assets/images/webp/what-we-offer-2.webp'
 import WhatWeOffer3 from '@/assets/images/webp/what-we-offer-3.webp'
 import { Flame } from '@/components/icons'
-import { Section, SubTitle, Title, Content } from '@/components/widget/Section1'
+import { Section, SubTitle, Title, Content } from '@/components/widget/section'
 
 const offers = [
   {

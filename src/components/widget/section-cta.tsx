@@ -8,7 +8,7 @@ import { useMediaQuery } from '@/hooks/use-media-query'
 import { useTailwind } from '@/hooks/use-tailwind'
 
 import { Orbits } from '../icons'
-import { Section, Title, Content } from './Section'
+import { Section, Title, Content } from './section'
 
 export function SectionCTA() {
   const { theme } = useTailwind()
