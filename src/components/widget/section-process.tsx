@@ -11,7 +11,7 @@ import {
   Dashboard,
 } from '@/components/icons'
 
-import { Section, Title, Content } from './section'
+import { Section, Title, Content } from './Section1'
 
 const STEPS = [
   {

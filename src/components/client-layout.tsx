@@ -1,22 +1,36 @@
 'use client'
 
+import { NextIntlClientProvider } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
+import { useEffect } from 'react'
 
 interface ClientLayoutProps {
   children: ReactNode
+  locale: string
   messages: Record<string, any>
 }
 
-export function ClientLayout({ children }: ClientLayoutProps) {
+export function ClientLayout({
+  children,
+  locale,
+  messages,
+}: ClientLayoutProps) {
   return (
-    <ThemeProvider
-      attribute='class'
-      defaultTheme='system'
-      enableSystem
-      disableTransitionOnChange
+    <NextIntlClientProvider
+      locale={locale}
+      messages={messages}
+      timeZone='Asia/Ho_Chi_Minh'
     >
-      {children}
-    </ThemeProvider>
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='system'
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
+    </NextIntlClientProvider>
   )
 }

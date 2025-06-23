@@ -1,12 +1,14 @@
 'use client'
 
 import { throttle } from 'lodash'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import Logo from '@/assets/svg/logo.svg'
+import { LanguageSwitcher } from '@/components/language-switcher'
 import { Button, Link, Portal } from '@/components/ui'
 import {
   MobileMenu,
@@ -74,6 +76,7 @@ function ServicesMenuContent() {
 }
 
 function Header() {
+  const t = useTranslations('Header')
   const { theme } = useTailwind()
   const pathname = usePathname()
   const headerRef = useRef<HTMLElement>(null)
@@ -135,7 +138,7 @@ function Header() {
                 <li>
                   <DropdownMenu onOpenChange={setDropdownActive}>
                     <DropdownMenu.Trigger aria-haspopup='menu'>
-                      Services
+                      {t('services')}
                     </DropdownMenu.Trigger>
                     <DropdownMenu.Content containerRef={headerRef}>
                       <ServicesMenuContent />
@@ -144,25 +147,28 @@ function Header() {
                 </li>
                 <li>
                   <Link href='/our-work' className='flex h-full items-center'>
-                    Our work
+                    {t('ourWork')}
                   </Link>
                 </li>
                 <li>
                   <Link href='/about-us' className='flex h-full items-center'>
-                    About us
+                    {t('aboutUs')}
                   </Link>
                 </li>
                 <li>
                   <Link href='/blog' className='flex h-full items-center'>
-                    Blog
+                    {t('blog')}
                   </Link>
                 </li>
                 <li className='ml-2'>
                   <span className='flex h-full items-center'>
                     <Button asChild>
-                      <Link href='/contact-us'>Build with us</Link>
+                      <Link href='/contact-us'>{t('contact')}</Link>
                     </Button>
                   </span>
+                </li>
+                <li>
+                  <LanguageSwitcher />
                 </li>
               </ul>
             </nav>
