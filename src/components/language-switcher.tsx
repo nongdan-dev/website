@@ -1,45 +1,43 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
-import { Locale, locales, defaultLocale } from '@/i18n/routing'
+import { setLocaleCookie } from '@/app/actions/locale'
+import { routing } from '@/i18n/routing'
+import { Locale } from '@/types/cookie'
 
 import { DropdownMenu } from './widget/dropdown-menu'
 
+const { locales, defaultLocale } = routing
 type LanguageInfo = {
   name: string
   label: string
 }
 
 const languageNames: Record<Locale, LanguageInfo> = {
-  vi: { name: 'VN', label: 'Switch to English' },
-  en: { name: 'EN', label: 'Chuyển sang Tiếng Việt' },
+  en: { name: 'EN', label: 'English' },
+  vi: { name: 'VI', label: 'Tiếng Việt' },
 }
 
-export function LanguageSwitcher() {
-  const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale)
+export function LanguageSwitcher({
+  initialLocale = defaultLocale,
+}: {
+  initialLocale?: Locale
+}) {
+  const [currentLocale, setCurrentLocale] = useState<Locale>(initialLocale)
+  const router = useRouter()
 
-  useEffect(() => {
-    const cookieLocale = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('NEXT_LOCALE='))
-      ?.split('=')[1] as Locale | undefined
-
-    if (cookieLocale && locales.includes(cookieLocale)) {
-      setCurrentLocale(cookieLocale)
-    } else {
-      setCurrentLocale(defaultLocale)
-    }
-  }, [])
-
-  function changeLocale(locale: Locale) {
+  const changeLocale = async (locale: Locale) => {
     if (locale === currentLocale) return
 
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`
-
-    window.location.reload()
+    try {
+      await setLocaleCookie(locale)
+      setCurrentLocale(locale)
+      router.refresh()
+    } catch (error) {
+      console.error('Failed to change locale:', error)
+    }
   }
 
   return (
@@ -58,9 +56,17 @@ export function LanguageSwitcher() {
             disabled={locale === currentLocale}
             className='flex w-full items-center justify-between gap-x-1 rounded px-1 py-1 text-left text-sm hover:bg-neutral-100 disabled:opacity-50'
           >
-            <span>{languageNames[locale].name}</span>
+            <span
+              className={
+                locale === currentLocale ? 'font-medium text-indigo-600' : ''
+              }
+            >
+              {languageNames[locale].name}
+            </span>
             {locale === currentLocale && (
-              <span className='text-xs text-indigo-500'>✓</span>
+              <span className='text-xs text-indigo-600'>
+                {locale === 'en' ? 'Selected' : 'Đang chọn'}
+              </span>
             )}
           </button>
         ))}

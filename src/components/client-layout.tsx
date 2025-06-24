@@ -1,10 +1,8 @@
 'use client'
 
 import { NextIntlClientProvider } from 'next-intl'
-import { useLocale } from 'next-intl'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
-import { useEffect } from 'react'
 
 interface ClientLayoutProps {
   children: ReactNode
