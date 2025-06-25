@@ -1,23 +1,17 @@
+@import 'katex/dist/katex.min.css';
+
+@import './layout.css';
+@import './components.css';
+@import './mdx.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer reset {
-  html {
-    text-size-adjust: none;
-  }
-
-  input,
-  textarea,
-  select {
-    font: inherit;
-  }
-}
-
-/* --------------------------------------------- */
-
 @layer base {
   html {
+    text-size-adjust: none;
+    scroll-behavior: smooth;
     @apply leading-snug;
   }
 
@@ -29,144 +23,31 @@
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     @apply leading-title;
   }
 
   p {
     @apply text-pretty;
   }
-}
 
-/* --------------------------------------------- */
-
-@layer layout {
-  .content-grid {
-    --content-grid-gap: theme('spacing.12');
-    --content-grid-max-width: 90rem;
-
-    display: grid;
-    grid-template-columns:
-      [full-width-start] minmax(var(--content-grid-gap), 1fr)
-      [content-start] min(
-        100% - (var(--content-grid-gap) * 2),
-        var(--content-grid-max-width) - var(--content-grid-gap) * 2
-      )
-      [content-end] minmax(var(--content-grid-gap), 1fr) [full-width-end];
-
-    & .col-content {
-      grid-column: content;
-    }
-
-    & .col-full-width {
-      grid-column: full-width;
-      display: grid;
-      grid-template-columns: subgrid;
-    }
-
-    @media (width < theme('screens.md')) {
-      --content-grid-gap: theme('spacing.6');
-    }
-  }
-}
-
-/* --------------------------------------------- */
-
-@layer components {
-  #why-choose-us > #grid-layout {
-    @apply grid grid-cols-5 gap-6 md:gap-8;
-    grid-template-areas:
-      'b1 b1 b1 b2 b2'
-      'b1 b1 b1 b3 b3'
-      'b4 b4 b6 b6 b6'
-      'b5 b5 b6 b6 b6';
-
-    @media (width < theme('screens.lg')) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas:
-        'b1 b1'
-        'b2 b3'
-        'b4 b5'
-        'b6 b6';
-    }
-    @media (width < theme('screens.md')) {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        'b1 '
-        'b2'
-        'b3'
-        'b4'
-        'b5'
-        'b6';
-    }
-
-    & > div:nth-child(1) {
-      grid-area: b1;
-    }
-    & > div:nth-child(2) {
-      grid-area: b2;
-    }
-    & > div:nth-child(3) {
-      grid-area: b3;
-    }
-    & > div:nth-child(4) {
-      grid-area: b4;
-    }
-    & > div:nth-child(5) {
-      grid-area: b5;
-    }
-    & > div:nth-child(6) {
-      grid-area: b6;
-    }
+  input,
+  textarea,
+  select {
+    font: inherit;
   }
 
-  #about-us > #grid-layout {
-    @apply grid grid-cols-9 gap-6;
-    grid-template-areas:
-      'b1 b1 b1 b2 b2 b2 b3 b3 b3'
-      'b1 b1 b1 b2 b2 b2 b3 b3 b3'
-      'b1 b1 b1 b4 b4 b4 b4 b6 b6'
-      'b1 b1 b1 b5 b5 b5 b5 b6 b6';
+  ::-webkit-scrollbar {
+    @apply h-2 w-2;
+  }
 
-    @media (width < theme('screens.xl')) {
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-areas:
-        'b1 b1 b1 b1 b2 b2 b2 b2'
-        'b1 b1 b1 b1 b3 b3 b3 b3'
-        'b4 b4 b4 b4 b4 b6 b6 b6'
-        'b5 b5 b5 b5 b5 b6 b6 b6';
-    }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-200;
+  }
 
-    @media (width < theme('screens.md')) {
-      grid-template-columns: 1fr;
-      grid-template-rows: none;
-      grid-template-areas:
-        'b1'
-        'b2'
-        'b3'
-        'b4'
-        'b5'
-        'b6';
-    }
-
-    & > div:nth-child(1) {
-      grid-area: b1;
-    }
-    & > div:nth-child(2) {
-      grid-area: b2;
-    }
-    & > div:nth-child(3) {
-      grid-area: b3;
-    }
-    & > div:nth-child(4) {
-      grid-area: b4;
-    }
-    & > div:nth-child(5) {
-      grid-area: b5;
-    }
-    & > div:nth-child(6) {
-      grid-area: b6;
-    }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded bg-gray-300;
   }
 }
 

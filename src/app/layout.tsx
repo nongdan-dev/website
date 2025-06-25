@@ -1,9 +1,24 @@
-import type { Metadata } from 'next'
 import { Inter, Roboto_Slab } from 'next/font/google'
 
+import { getLocaleFromCookie } from '@/app/actions/locale'
+import { ClientLayout } from '@/components/client-layout'
+import { routing } from '@/i18n/routing'
 import Footer from '@/layout/footer'
 import Header from '@/layout/header'
 import '@/styles/index.css'
+
+export const dynamic = 'force-dynamic' // no catching
+const { defaultLocale } = routing
+
+async function getMessages(locale: string) {
+  try {
+    const messages = (await import(`@/../messages/${locale}.json`)).default
+    return messages
+  } catch (error) {
+    console.error(`Failed to load messages for locale: ${error}`)
+    return {}
+  }
+}
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,24 +32,32 @@ const robotoSlab = Roboto_Slab({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Nongdandev',
   description: 'Technology solutions for modern agriculture',
+  icons: {
+    icon: '/favicon-new.ico',
+  },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const locale = await getLocaleFromCookie()
+  const messages = await getMessages(locale)
+
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${inter.variable} ${robotoSlab.variable} font-sans antialiased`}
       >
-        <Header />
-        <main className='content-grid'>{children}</main>
-        <Footer />
+        <ClientLayout locale={locale || defaultLocale} messages={messages}>
+          <Header />
+          <main className='content-grid'>{children}</main>
+          <Footer />
+        </ClientLayout>
       </body>
     </html>
   )
