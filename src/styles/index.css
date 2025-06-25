@@ -38,17 +38,6 @@
     font: inherit;
   }
 
-  ::-webkit-scrollbar {
-    @apply h-2 w-2;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-gray-200;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply rounded bg-gray-300;
-  }
 }
 
 /* --------------------------------------------- */
