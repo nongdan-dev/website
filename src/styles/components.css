@@ -15,8 +15,6 @@
   grid-area: b2;
 }
 
-
-
 @media (max-width: 1023px) {
   #hero-section #grid-layout {
     display: block;
