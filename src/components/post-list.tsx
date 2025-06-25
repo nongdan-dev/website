@@ -3,17 +3,21 @@ import type { Post } from '#velite'
 import { Link } from '@/components/ui'
 import { sortPosts } from '@/lib/utils'
 
-interface RelatedProps {
+interface PostListProps {
   posts: Post[]
+  title: string
+  className?: string
 }
 
-export default function Related({ posts }: RelatedProps) {
+export function PostList({ posts, title, className = '' }: PostListProps) {
   const sortedPosts = sortPosts(posts.filter(post => post.published))
 
   return (
-    <div className='w-full border-t border-gray-200 pb-8 dark:border-gray-700'>
+    <div
+      className={`w-full border-t border-gray-200 pb-8 dark:border-gray-700 ${className}`}
+    >
       <h2 className='mb-6 text-2xl font-bold text-gray-900 dark:text-white'>
-        Related Posts
+        {title}
       </h2>
 
       {sortedPosts?.length > 0 ? (

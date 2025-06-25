@@ -1,17 +1,16 @@
 import { posts } from '#velite'
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { MDXContent } from '@/components/mdx-components'
+import { PostList } from '@/components/post-list'
 import { TableOfContents } from '@/components/table-of-content'
 import { Tag } from '@/components/tag'
+import { SectionSubscribe } from '@/components/widget/section-subscribe'
 import { siteConfig } from '@/config/site'
 import extractToc, { sortPosts } from '@/lib/utils'
 import '@/styles/components.css'
 import '@/styles/mdx.css'
-
-import Related from '../related'
 
 interface PostPageProps {
   params: Promise<{
@@ -119,45 +118,20 @@ export default async function PostPage({ params }: PostPageProps) {
             <hr className='my-4' />
             <MDXContent code={post.body} />
           </div>
-
-          <div className='self-start lg:sticky lg:top-24'>
-            <div className='flex w-full flex-col rounded-xl bg-green-400 p-6 shadow-xl'>
-              <span className='text-xl font-semibold leading-tight text-slate-900'>
-                Sign up for Nongdandev
-              </span>
-              <p className='mb-4 font-normal leading-normal text-slate-900'>
-                Stay updated with the latest news about us!
-              </p>
-              <Link href={siteConfig.social.links.website} passHref>
-                <button className='w-full rounded-md bg-green-950 px-4 py-2 text-[#DCFCE7] transition hover:bg-green-900'>
-                  Subscribe
-                </button>
-              </Link>
-            </div>
-
-            <div className='mt-6 w-full'>
-              {PostsArticle.length > 0 && (
-                <p className='mb-5 text-lg font-semibold leading-[150%]'>
-                  Similar category article
-                </p>
-              )}
-              <div className='grid gap-2'>
-                {PostsArticle.slice(0, 4).map(post => (
-                  <Link
-                    className='blog-link cursor-pointer rounded-md border border-gray-200 bg-gray-50 px-4 shadow-sm shadow-black/5'
-                    key={post.slug}
-                    href={`/blog/${post.slugAsParams}`}
-                  >
-                    <p>{post.title}</p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
+        {PostsArticle.length > 0 && (
+          <PostList
+            posts={PostsArticle}
+            title='Similar category article'
+            className='mt-6'
+          />
+        )}
 
-        {PostsRelated.length > 0 && <Related posts={PostsRelated} />}
+        {PostsRelated.length > 0 && (
+          <PostList posts={PostsRelated} title='Related Posts' />
+        )}
       </div>
+      <SectionSubscribe />
     </div>
   )
 }

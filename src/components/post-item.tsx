@@ -23,12 +23,12 @@ export function PostItem({ slug, title, date, tags, image }: PostItemProps) {
     <article
       className={`flex flex-col rounded-lg border border-gray-200 bg-gray-50 p-4 shadow-sm shadow-black/5`}
     >
-      <div className='relative aspect-[3/2] w-full overflow-clip rounded-lg'>
+      <div className='relative aspect-video w-full overflow-clip rounded-lg'>
         <Image
           src={image || ''}
           alt={title}
           fill
-          className='h-full w-full object-cover object-center'
+          className='h-full w-full object-cover'
         />
       </div>
       <div className='w-fit rounded-sm py-[2px] text-xs font-semibold uppercase text-[#242627] opacity-70'>

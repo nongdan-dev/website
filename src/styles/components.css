@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.75rem;
-  grid-template-areas: 'b1 b1 b1 b2 b2 b2 b2 b2 b2 b3 b3 b3';
+  grid-template-areas: 'b1 b1 b1 b2 b2 b2 b2 b2 b2 b2 b2 b2';
   width: 100%;
   max-width: 100%;
 }
@@ -15,9 +15,7 @@
   grid-area: b2;
 }
 
-#hero-section #grid-layout > div:nth-child(3) {
-  grid-area: b3;
-}
+
 
 @media (max-width: 1023px) {
   #hero-section #grid-layout {

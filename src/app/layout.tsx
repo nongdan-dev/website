@@ -38,6 +38,11 @@ export const metadata = {
   icons: {
     icon: '/favicon-new.ico',
   },
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'production'
+      ? 'https://nongdan.dev'
+      : 'http://localhost:3000',
+  ),
 }
 
 export default async function RootLayout({
