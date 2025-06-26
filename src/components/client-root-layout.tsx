@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { routing } from '@/i18n/routing'
-import Footer from '@/layout/footer'
-import Header from '@/layout/header'
+import Footer from '@/layout/Footer'
+import Header from '@/layout/Header'
 
 import { ClientLayout } from './client-layout'
 
