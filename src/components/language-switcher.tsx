@@ -34,7 +34,7 @@ export function LanguageSwitcher() {
   function changeLocale(localeLabel: string) {
     const locale =
       (Object.entries(languageNames).find(
-        ([_, { label }]) => label === localeLabel,
+        ([, { label }]) => label === localeLabel,
       )?.[0] as Locale) || defaultLocale
 
     document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`

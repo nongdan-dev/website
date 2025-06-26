@@ -1,6 +1,5 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import MessageDefault from '@/i18n/messages/en.json'

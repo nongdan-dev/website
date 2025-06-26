@@ -1,7 +1,7 @@
 'use client'
 
 import { throttle } from 'lodash'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Fragment, useState, useRef, useEffect, useCallback } from 'react'
@@ -16,7 +16,6 @@ import {
   MobileMenuTrigger,
 } from '@/components/widget'
 import { useTailwind } from '@/hooks'
-import { Locale } from '@/types/cookie'
 import { remToPx } from '@/utils/style'
 
 function ServicesMenuContent() {
