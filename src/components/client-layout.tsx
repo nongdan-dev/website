@@ -1,7 +1,6 @@
 'use client'
 
 import { NextIntlClientProvider } from 'next-intl'
-import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 
 interface ClientLayoutProps {
@@ -21,14 +20,7 @@ export function ClientLayout({
       messages={messages}
       timeZone='Asia/Ho_Chi_Minh'
     >
-      <ThemeProvider
-        attribute='class'
-        defaultTheme='system'
-        enableSystem
-        disableTransitionOnChange
-      >
-        {children}
-      </ThemeProvider>
+      {children}
     </NextIntlClientProvider>
   )
 }

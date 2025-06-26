@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "velite build && next dev",
+    "start": "rm -rf .next && velite build && next dev",
     "build": "velite build && next build",
     "prod": "next start",
     "lint": "next lint --fix && prettier --write --log-level=error --write ."
