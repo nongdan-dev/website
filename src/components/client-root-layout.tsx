@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 
 import MessageDefault from '@/i18n/messages/en.json'
 import { routing } from '@/i18n/routing'
+import Footer from '@/layout/Footer'
+import Header from '@/layout/Header'
 
 import { ClientLayout } from './client-layout'
 
