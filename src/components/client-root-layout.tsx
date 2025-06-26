@@ -3,9 +3,10 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+import MessageDefault from '@/i18n/messages/en.json'
 import { routing } from '@/i18n/routing'
-import Footer from '@/layout/Footer'
-import Header from '@/layout/Header'
+import Footer from '@/layout/footer'
+import Header from '@/layout/header'
 
 import { ClientLayout } from './client-layout'
 
@@ -13,8 +14,9 @@ const { locales, defaultLocale } = routing
 
 export function ClientRootLayout({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<string>(defaultLocale)
-  const [messages, setMessages] = useState<Record<string, any> | null>(null)
-  const router = useRouter()
+  const [messages, setMessages] = useState<Record<string, any> | null>(
+    MessageDefault,
+  )
 
   const getCookie = (name: string): string | undefined => {
     if (typeof document === 'undefined') return undefined
@@ -28,56 +30,47 @@ export function ClientRootLayout({ children }: { children: React.ReactNode }) {
     const cookieLocale = getCookie('NEXT_LOCALE')
     if (cookieLocale && locales.includes(cookieLocale as any)) {
       setLocale(cookieLocale)
-      return
+    } else {
+      document.cookie = `NEXT_LOCALE=${defaultLocale}; path=/; max-age=31536000; samesite=lax`
+      setLocale(defaultLocale)
     }
-
-    const browserLang = navigator.language.split('-')[0]
-    const detectedLocale =
-      browserLang && locales.includes(browserLang as any)
-        ? browserLang
-        : defaultLocale
-
-    document.cookie = `NEXT_LOCALE=${detectedLocale}; path=/; max-age=31536000; samesite=lax`
-    setLocale(detectedLocale)
   }, [])
+
+  async function loadMessages(locale: string) {
+    try {
+      const messages = await import(`@/i18n/messages/${locale}.json`)
+      return messages.default || messages
+    } catch (error) {
+      console.error(`Failed to load messages for ${locale}:`, error)
+      return null
+    }
+  }
 
   useEffect(() => {
     if (!locale) return
 
     let isMounted = true
 
-    const loadMessages = async () => {
+    const load = async () => {
       try {
-        const module = await import(`@/../messages/${locale}.json`)
-        if (isMounted) {
-          setMessages(module.default)
+        const loadedMessages = await loadMessages(locale)
+        if (isMounted && loadedMessages) {
+          setMessages(loadedMessages)
         }
       } catch (error) {
-        console.error(`Failed to load messages for locale: ${locale}`, error)
-        if (locale !== defaultLocale) {
-          document.cookie = `NEXT_LOCALE=${defaultLocale}; path=/; max-age=31536000; samesite=lax`
-          router.refresh()
-        }
+        console.error('Failed to load messages:', error)
       }
     }
 
-    loadMessages()
+    load()
 
     return () => {
       isMounted = false
     }
-  }, [locale, router])
-
-  if (!messages) {
-    return (
-      <div className='flex h-screen items-center justify-center'>
-        <div className='h-8 w-8 animate-spin rounded-full border-b-2 border-gray-900'></div>
-      </div>
-    )
-  }
+  }, [locale])
 
   return (
-    <ClientLayout locale={locale} messages={messages}>
+    <ClientLayout locale={locale} messages={messages || {}}>
       <Header />
       <main className='content-grid'>{children}</main>
       <Footer />
