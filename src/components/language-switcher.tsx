@@ -1,15 +1,15 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-import { setLocaleCookie } from '@/app/actions/locale'
 import { routing } from '@/i18n/routing'
 import { Locale } from '@/types/cookie'
 
 import { DropdownMenu } from './widget/dropdown-menu'
 
 const { locales, defaultLocale } = routing
+
 type LanguageInfo = {
   name: string
   label: string
@@ -20,21 +20,46 @@ const languageNames: Record<Locale, LanguageInfo> = {
   vi: { name: 'VI', label: 'Tiếng Việt' },
 }
 
-export function LanguageSwitcher({
-  initialLocale = defaultLocale,
-}: {
-  initialLocale?: Locale
-}) {
-  const [currentLocale, setCurrentLocale] = useState<Locale>(initialLocale)
-  const router = useRouter()
+function getCookie(name: string): string | undefined {
+  if (typeof document === 'undefined') return undefined
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop()?.split(';').shift()
+  return undefined
+}
 
-  const changeLocale = async (locale: Locale) => {
-    if (locale === currentLocale) return
+export function LanguageSwitcher() {
+  const pathname = usePathname()
+  const router = useRouter()
+  const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+
+    const cookieLocale = getCookie('NEXT_LOCALE')
+    if (cookieLocale && locales.includes(cookieLocale as Locale)) {
+      setCurrentLocale(cookieLocale as Locale)
+      return
+    }
+
+    if (typeof navigator !== 'undefined') {
+      const browserLang = navigator.language.split('-')[0]
+      if (browserLang && locales.includes(browserLang as Locale)) {
+        setCurrentLocale(browserLang as Locale)
+        document.cookie = `NEXT_LOCALE=${browserLang}; path=/; max-age=31536000; samesite=lax`
+      } else {
+        document.cookie = `NEXT_LOCALE=${defaultLocale}; path=/; max-age=31536000; samesite=lax`
+      }
+    }
+  }, [pathname])
+
+  const changeLocale = (locale: Locale) => {
+    if (locale === currentLocale || !isMounted) return
 
     try {
-      await setLocaleCookie(locale)
-      setCurrentLocale(locale)
-      router.refresh()
+      document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`
+      window.location.href = window.location.pathname
     } catch (error) {
       console.error('Failed to change locale:', error)
     }

@@ -25,6 +25,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'export',
 }
 
 const withNextIntl = createNextIntlPlugin()

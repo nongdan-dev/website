@@ -169,7 +169,7 @@ function Header() {
                   </span>
                 </li>
                 <li>
-                  <LanguageSwitcher initialLocale={useLocale() as Locale} />
+                  <LanguageSwitcher />
                 </li>
               </ul>
             </nav>
