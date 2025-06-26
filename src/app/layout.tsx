@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: 'Nongdandev',
   description: 'Technology solutions for modern agriculture',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon-new.ico',
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
