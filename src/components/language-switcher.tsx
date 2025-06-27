@@ -3,30 +3,27 @@
 import { useState, useEffect } from 'react'
 
 import { routing } from '@/i18n/routing'
-import { Locale } from '@/types/cookie'
+import { getCookie, setCookie } from '@/utils/cookie'
 
 import { DropdownMenu } from './widget/dropdown-menu'
 
-const { defaultLocale, locales } = routing
+const { defaultLocale } = routing
 
 const languageNames = {
   vi: { name: 'VN', label: 'vi' },
   en: { name: 'EN', label: 'en' },
 } as const
 
+type Locale = keyof typeof languageNames
+
 export function LanguageSwitcher() {
   const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale)
 
   useEffect(() => {
-    const cookieLocale = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('NEXT_LOCALE='))
-      ?.split('=')[1] as Locale | undefined
-
-    if (cookieLocale && locales.includes(cookieLocale)) {
+    const cookieLocale = getCookie('NEXT_LOCALE') as Locale | undefined
+    if (cookieLocale) {
       setCurrentLocale(cookieLocale)
     } else {
-      document.cookie = `NEXT_LOCALE=${defaultLocale}; path=/; max-age=31536000; samesite=lax`
       setCurrentLocale(defaultLocale)
     }
   }, [])
@@ -37,7 +34,11 @@ export function LanguageSwitcher() {
         ([, { label }]) => label === localeLabel,
       )?.[0] as Locale) || defaultLocale
 
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`
+    setCookie('NEXT_LOCALE', locale, {
+      path: '/',
+      maxAge: 31536000,
+      sameSite: 'lax',
+    })
     window.location.reload()
   }
 
@@ -58,7 +59,9 @@ export function LanguageSwitcher() {
           >
             <span>{name}</span>
             {localeKey === currentLocale && (
-              <span className='text-xs text-indigo-500'>✓</span>
+              <span className='text-xs text-indigo-500'>
+                {currentLocale === 'en' ? 'Selected' : 'Đã chọn'}
+              </span>
             )}
           </button>
         ))}
